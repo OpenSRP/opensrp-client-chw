@@ -156,6 +156,24 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
+            <Button
+                android:id="@+id/login_export_data"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_weight="8"
+                android:background="@drawable/login_button_bg"
+                android:ems="10"
+                android:shadowColor="#ffffff"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="0.5"
+                android:text="Export Data"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
         </LinearLayout>
         <!-- Bottom section -->
 
