@@ -26,8 +26,6 @@ import timber.log.Timber;
 
 public class LoginPresenter extends BaseLoginPresenter implements BaseLoginContract.Presenter {
 
-    private static final String TAG = LoginPresenter.class.getCanonicalName();
-
     public LoginPresenter(BaseLoginContract.View loginView) {
         mLoginView = new WeakReference<>(loginView);
         mLoginInteractor = new LoginInteractor(this);

@@ -24,6 +24,10 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
     <application
         android:name=".application.ChwApplication"
         android:allowBackup="true"
@@ -226,6 +230,13 @@
         <service android:name="org.smartregister.reporting.service.IndicatorGeneratorIntentService" />
         <service android:name=".service.SchedulesIntentService" />
         <service android:name=".sync.ChwSyncIntentService" />
+        <service android:name=".service.OpenSRPAccountTypeService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"></action>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/opensrp_authenticator"></meta-data>
+        </service>
 
         <uses-library
             android:name="org.apache.http.legacy"

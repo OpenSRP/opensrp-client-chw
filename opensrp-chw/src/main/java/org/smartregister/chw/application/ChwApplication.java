@@ -1,6 +1,8 @@
 package org.smartregister.chw.application;
 
 import android.Manifest;
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -48,6 +50,7 @@ import org.smartregister.chw.repository.ChwRepository;
 import org.smartregister.chw.schedulers.ChwScheduleTaskExecutor;
 import org.smartregister.chw.service.ChildAlertService;
 import org.smartregister.chw.sync.ChwClientProcessor;
+import org.smartregister.chw.util.AccountAuthenticatorConstants;
 import org.smartregister.chw.util.FileUtils;
 import org.smartregister.chw.util.JsonFormUtils;
 import org.smartregister.chw.util.Utils;
@@ -75,6 +78,8 @@ import timber.log.Timber;
 public class ChwApplication extends CoreChwApplication {
 
     private static Flavor flavor = new ChwApplicationFlv();
+    private AccountManager _accountManager;
+    private String password;
 
     @Override
     public void onCreate() {
@@ -169,6 +174,13 @@ public class ChwApplication extends CoreChwApplication {
         return flavor;
     }
 
+    public AccountManager getAccountManager() {
+        if (_accountManager == null)
+            _accountManager = AccountManager.get(getApplicationContext());
+
+        return _accountManager;
+    }
+
     public static void prepareGuideBooksFolder() {
         String rootFolder = getGuideBooksDirectory();
         createFolders(rootFolder, false);
@@ -189,6 +201,28 @@ public class ChwApplication extends CoreChwApplication {
         String[] packageName = ChwApplication.getInstance().getContext().applicationContext().getPackageName().split("\\.");
         String suffix = packageName[packageName.length - 1];
         return "opensrp_guidebooks_" + (suffix.equalsIgnoreCase("chw") ? "liberia" : suffix);
+    }
+
+    @Override
+    public String getPassword() {
+
+        if (password == null) {
+            String username = getContext().allSharedPreferences().fetchRegisteredANM();
+            password = getContext().userService().getGroupId(username);
+        }
+
+        // read the password from account manager
+        // current assumption is that there is only one account per device
+        if(password == null || password.trim().equals("")){
+            Account[] accounts = getAccountManager().getAccountsByType(AccountAuthenticatorConstants.ACCOUNT_TYPE);
+            if(accounts.length > 0){
+                Account account = accounts[0];
+                // get the device password from account manager
+                password = getAccountManager().getUserData(account, AllConstants.ENCRYPTED_GROUP_ID_PREFIX);
+                getAccountManager().getPassword(account)
+            }
+        }
+        return password;
     }
 
     @Override
