@@ -25,6 +25,7 @@ import org.smartregister.chw.anc.model.BaseAncHomeVisitAction;
 import org.smartregister.chw.anc.util.VisitUtils;
 import org.smartregister.chw.core.domain.Person;
 import org.smartregister.chw.core.rule.PNCHealthFacilityVisitRule;
+import org.smartregister.chw.core.utils.CoreConstants;
 import org.smartregister.chw.core.utils.VaccineScheduleUtil;
 import org.smartregister.chw.dao.ChwPNCDao;
 import org.smartregister.chw.dao.ChwPNCDaoFlv;
@@ -681,9 +682,19 @@ public class PncHomeVisitInteractorFlv extends DefaultPncHomeVisitInteractorFlv 
             }
         }
         if (getAgeInDays(baby.getDob()) <= 28) {
+            Map<String, List<VisitDetail>> details = null;
+            if (editMode) {
+                Visit lastVisit = AncLibrary.getInstance().visitRepository().getLatestVisit(baby.getBaseEntityID(), Constants.EventType.OBS_ILLNESS);
+                if (lastVisit != null) {
+                    details = VisitUtils.getVisitGroups(AncLibrary.getInstance().visitDetailsRepository().getVisits(lastVisit.getVisitId()));
+                }
+            }
+
             BaseAncHomeVisitAction action = new BaseAncHomeVisitAction.Builder(context, MessageFormat.format(context.getString(R.string.pnc_observation_and_illness_baby), baby.getFullName()))
                     .withOptional(true)
                     .withDetails(details)
+                    .withBaseEntityID(baby.getBaseEntityID())
+                    .withProcessingMode(BaseAncHomeVisitAction.ProcessingMode.SEPARATE)
                     .withFormName(Constants.JSON_FORM.PNC_HOME_VISIT.getObservationAndIllnessInfant())
                     .withHelper(new ObsIllnessBabyHelper())
                     .build();
