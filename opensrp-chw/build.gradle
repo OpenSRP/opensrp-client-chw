@@ -256,15 +256,18 @@ android {
             dimension = 'baseDimension'
             applicationIdSuffix ".lmh"
             versionCode 1
-            versionName "0.0.4"
+            versionName "0.0.7"
             buildConfigField "String", 'opensrp_url', '"https://lmh-liberia.smartregister.org/opensrp/"'
             buildConfigField "String", 'guidebooks_url', '"https://opensrp.s3.amazonaws.com/media/lmh/"'
-            buildConfigField "String", 'opensrp_url_debug', '"https://lmh-stage.smartregister.org/opensrp/"'
-            buildConfigField "String[]", "LOCATION_HIERACHY", '{"Clinic" , "CHSS" , "CHA"}'
+            buildConfigField "String", 'opensrp_url_debug', '"https://lmh-liberia-preview.smartregister.org/opensrp/"'
+            buildConfigField "String", 'opensrp_url_stage', '"https://lmh-liberia.smartregister.org/opensrp/"'
+            buildConfigField "String[]", "LOCATION_HIERACHY", '{"Country" , "County" , "District", "Clinic" , "CHSS" , "CHA", "Village"}'
             buildConfigField "String[]", "ALLOWED_LOCATION_LEVELS", '{"Country" , "County" , "District", "Clinics", "CHSS", "Village"}'
-            buildConfigField "String[]", "ALLOWED_LOCATION_LEVELS_DEBUG", '{"Clinic" , "CHSS" , "CHA"}'
+            buildConfigField "String[]", "ALLOWED_LOCATION_LEVELS_STAGE", '{"Clinic" , "CHSS" , "CHA"}'
+            buildConfigField "String[]", "ALLOWED_LOCATION_LEVELS_DEBUG", '{"Country" , "County" , "District", "Clinics", "CHSS", "Village"}'
             buildConfigField "String", 'DEFAULT_LOCATION', '"Village"'
-            buildConfigField "String", 'DEFAULT_LOCATION_DEBUG', '"CHA"'
+            buildConfigField "String", 'DEFAULT_LOCATION_DEBUG', '"Village"'
+            buildConfigField "String", 'DEFAULT_LOCATION_STAGE', '"CHA"'
             buildConfigField "int", "DATABASE_VERSION", '6'
         }
     }
