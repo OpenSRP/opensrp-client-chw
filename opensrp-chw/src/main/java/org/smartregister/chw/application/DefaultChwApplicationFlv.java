@@ -27,6 +27,11 @@ public abstract class DefaultChwApplicationFlv implements ChwApplication.Flavor 
     }
 
     @Override
+    public boolean hasOPD() {
+        return false;
+    }
+
+    @Override
     public boolean flvSetFamilyLocation() {
         return false;
     }

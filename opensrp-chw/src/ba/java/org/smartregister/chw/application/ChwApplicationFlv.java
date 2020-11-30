@@ -12,6 +12,11 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
     }
 
     @Override
+    public boolean hasOPD() {
+        return true;
+    }
+
+    @Override
     public boolean flvSetFamilyLocation(){
         return true;
     }

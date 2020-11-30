@@ -234,13 +234,15 @@ public class ChwApplication extends CoreChwApplication {
             ReferralLibrary.getInstance().setDatabaseVersion(BuildConfig.DATABASE_VERSION);
         }
 
-        OpdLibrary.init(context, getRepository(),
-                new OpdConfiguration.Builder(CoreAllClientsRegisterQueryProvider.class)
-                        .setBottomNavigationEnabled(true)
-                        .setOpdRegisterRowOptions(AllClientsRegisterRowOptions.class)
-                        .build(),
-                BuildConfig.VERSION_CODE, BuildConfig.DATABASE_VERSION
-        );
+        if (flavor.hasOPD()) {
+            OpdLibrary.init(context, getRepository(),
+                    new OpdConfiguration.Builder(CoreAllClientsRegisterQueryProvider.class)
+                            .setBottomNavigationEnabled(true)
+                            .setOpdRegisterRowOptions(AllClientsRegisterRowOptions.class)
+                            .build(),
+                    BuildConfig.VERSION_CODE, BuildConfig.DATABASE_VERSION
+            );
+        }
 
         SyncStatusBroadcastReceiver.init(this);
 
@@ -379,6 +381,8 @@ public class ChwApplication extends CoreChwApplication {
         boolean syncUsingPost();
 
         boolean hasReferrals();
+
+        boolean hasOPD();
 
         boolean flvSetFamilyLocation();
 
