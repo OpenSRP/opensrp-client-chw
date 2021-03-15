@@ -193,7 +193,7 @@ public class ChwApplication extends CoreChwApplication implements SyncStatusBroa
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         } else {
-            Timber.plant(new CrashlyticsTree(ChwApplication.getInstance().getContext().allSharedPreferences().fetchRegisteredANM()));
+            Timber.plant(new CrashlyticsTree("Chw-tree"));
         }
 
         Fabric.with(this, new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build());
