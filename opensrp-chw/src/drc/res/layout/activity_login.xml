@@ -29,8 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/login_logo_height"
                 android:layout_gravity="center"
-                android:layout_marginTop="60dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/logo"
                 android:scaleType="fitCenter"
@@ -156,6 +156,16 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/opensrp_logo_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/login_opensrp_logo_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_opensrp_logo_round" />
         </LinearLayout>
         <!-- Bottom section -->
 
@@ -166,11 +176,12 @@
             android:layout_below="@+id/middle_section"
             android:layout_alignParentBottom="true"
             android:orientation="vertical"
+            android:visibility="gone"
             android:paddingTop="30dp">
 
 
             <ImageView
-                android:id="@+id/opensrp_logo_image_view"
+                android:id="@+id/opensrp_logo_image_view1"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/login_opensrp_logo_height"
                 android:layout_gravity="center_horizontal"
