@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CRVS</string>
+    <string name="login_title">CRVS Login</string>
+    <string name="nav_logo">CRVS App</string>
+</resources>

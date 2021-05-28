@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_title_text_size">20sp</dimen>
+    <dimen name="login_logo_height">150dp</dimen>
+</resources>

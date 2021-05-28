@@ -12,7 +12,18 @@ buildscript {
         jcenter()
         mavenLocal()
         maven { url 'https://maven.fabric.io/public' }
-        maven { url "http://dl.bintray.com/ona/kujaku" }
+        maven {
+            def githubProperties = new Properties()
+            if (project.rootProject.file("github.properties").exists()) {
+                githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+            }
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/onaio/kujaku")
+            credentials {
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
+        }
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
@@ -55,7 +66,7 @@ allprojects {
         maven { url 'https://maven.fabric.io/public' }
         maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
         maven { url "https://dl.bintray.com/ona/rdt-capture" }
-        maven { url "http://dl.bintray.com/ona/kujaku" }
+        //maven { url "http://dl.bintray.com/ona/kujaku" }
         maven { url 'https://dl.bintray.com/ibm-watson-health/ibm-fhir-server-releases' }
         maven { url "https://dl.bintray.com/ona/kujaku" }
     }
