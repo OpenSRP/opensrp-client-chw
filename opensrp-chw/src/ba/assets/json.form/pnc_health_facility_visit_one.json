@@ -6,87 +6,85 @@
       {
         "key": "pnc_visit_1",
         "type": "native_radio",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Did the woman attend her PNC visit 1 at the health facility?\n\nVisit due date: [due date of visit]",
+        "label": "Je, mama alihudhuria hudhurio la kwanza la huduma ya mama  na  mtoto  baada ya kujifungua (ndani ya masaa 48) katika kituo cha kutolea  huduma za afya?\n\nTarehe ya hudhurio lingine: : [due date of visit]",
         "options": [
           {
             "key": "Yes",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "Ndiyo"
           },
           {
             "key": "No",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "Hapana"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       },
       {
         "key": "vit_a_mother",
         "type": "native_radio",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Did the woman receive Vitamin A within 24 hours of delivery?",
+        "label": "Je, mama alipewa Vitamini A ndani ya masaa 24 baada ya kujifungua?",
         "options": [
           {
             "key": "Yes",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "Ndiyo"
           },
           {
             "key": "No",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "Hapana"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       },
       {
         "key": "ifa_mother",
         "type": "native_radio",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Did the woman receive iron and folic acid (IFA) tablets within 24 hours of delivery?",
+        "label": "Je, mama alipewa dawa za kuongeza damu (FEFO) ndani ya masaa 24 baada ya kujifungua?",
         "options": [
           {
             "key": "Yes",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "Ndiyo"
           },
           {
             "key": "No",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "Hapana"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_health_facility_visit_one"
 }

@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "IPTp-SP {0} dose",
+    "title": "{{anc_hv_anc_iptp_sp.step1.title}}",
     "fields": [
       {
         "key": "iptp{0}_date",
@@ -56,14 +56,15 @@
         "openmrs_entity_id": "",
         "type": "date_picker",
         "image": "form_iptp_sp",
-        "hint": "When was IPTp-SP {0} dose given?",
+        "hint": "{{anc_hv_anc_iptp_sp.step1.iptp{0}_date.hint}}",
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the dose date"
+          "err": "{{anc_hv_anc_iptp_sp.step1.iptp{0}_date.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_anc_iptp_sp"
 }

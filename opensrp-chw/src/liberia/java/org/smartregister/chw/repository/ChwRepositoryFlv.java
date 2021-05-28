@@ -4,6 +4,7 @@ import android.content.Context;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.smartregister.chw.anc.repository.VisitRepository;
 import org.smartregister.chw.util.RepositoryUtils;
 import org.smartregister.domain.db.Column;
 import org.smartregister.immunization.repository.RecurringServiceRecordRepository;
@@ -38,6 +39,9 @@ public class ChwRepositoryFlv {
                     break;
                 case 5:
                     upgradeToVersion5(context, db);
+                    break;
+                case 6:
+                    upgradeToVersion7(db);
                     break;
                 default:
                     break;
@@ -120,6 +124,14 @@ public class ChwRepositoryFlv {
             IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
         } catch (Exception e) {
             Timber.e(e);
+        }
+    }
+
+    private static void upgradeToVersion7(SQLiteDatabase db) {
+        try {
+            db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion7");
         }
     }
 }

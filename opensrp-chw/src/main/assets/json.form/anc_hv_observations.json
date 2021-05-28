@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Observations & Illness Episodes",
+    "title": "{{anc_hv_observations.step1.title}}",
     "fields": [
       {
         "key": "date_of_illness",
@@ -55,12 +55,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date",
+        "hint": "{{anc_hv_observations.step1.date_of_illness.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter illness date"
+          "err": "{{anc_hv_observations.step1.date_of_illness.v_required.err}}"
         }
       },
       {
@@ -70,10 +70,10 @@
         "openmrs_entity_id": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "Description",
+        "hint": "{{anc_hv_observations.step1.illness_description.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter description"
+          "err": "{{anc_hv_observations.step1.illness_description.v_required.err}}"
         }
       },
       {
@@ -83,12 +83,17 @@
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Action taken",
+        "hint": "{{anc_hv_observations.step1.action_taken.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select action"
+          "err": "{{anc_hv_observations.step1.action_taken.v_required.err}}"
         },
         "values": [
+          "{{anc_hv_observations.step1.action_taken.values[0]}}",
+          "{{anc_hv_observations.step1.action_taken.values[1]}}",
+          "{{anc_hv_observations.step1.action_taken.values[2]}}"
+        ],
+        "keys": [
           "Managed",
           "Referred",
           "No action taken"
@@ -100,5 +105,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_observations"
 }

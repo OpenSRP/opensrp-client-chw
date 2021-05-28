@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Umbilical cord care",
+    "title": "{{pnc_umbilical_cord.step1.title}}",
     "fields": [
       {
         "key": "cord_care",
@@ -56,8 +56,13 @@
         "openmrs_entity_id": "161541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Are any products being applied to the umbilical cord stump?",
+        "hint": "{{pnc_umbilical_cord.step1.cord_care.hint}}",
         "values": [
+          "{{pnc_umbilical_cord.step1.cord_care.values[0]}}",
+          "{{pnc_umbilical_cord.step1.cord_care.values[1]}}",
+          "{{pnc_umbilical_cord.step1.cord_care.values[2]}}"
+        ],
+        "keys": [
           "No products",
           "Chlorhexidine",
           "Other"
@@ -69,7 +74,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{pnc_umbilical_cord.step1.cord_care.v_required.err}}"
         }
       },
       {
@@ -79,7 +84,7 @@
         "openmrs_entity_id": "cord_care_other",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "Other product:",
+        "hint": "{{pnc_umbilical_cord.step1.cord_care_other.hint}}",
         "expanded": false,
         "relevance": {
           "rules-engine": {
@@ -90,5 +95,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_umbilical_cord"
 }

@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Minimum dietary diversity",
+    "title": "{{child_hv_dietary_diversity.step1.title}}",
     "fields": [
       {
         "key": "diet_diversity",
@@ -57,25 +57,25 @@
         "openmrs_data_type": "select one",
         "type": "radio",
         "image": "ic_form_diverity",
-        "hint": "Has the child received, in the previous 24 hours, any animal products (e.g. eggs, liver, milk) or fruit?",
+        "hint": "{{child_hv_dietary_diversity.step1.diet_diversity.hint}}",
         "options": [
           {
             "key": "chk_no_animal_products",
-            "text": "0 - no animal products or fruit",
+            "text": "{{child_hv_dietary_diversity.step1.diet_diversity.options.chk_no_animal_products.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_no_animal_products"
           },
           {
             "key": "chw_one_animal_product_or_fruit",
-            "text": "1 - one animal product OR one fruit",
+            "text": "{{child_hv_dietary_diversity.step1.diet_diversity.options.chw_one_animal_product_or_fruit.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chw_one_animal_product_or_fruit"
           },
           {
             "key": "chw_one_animal_product_and_fruit",
-            "text": "2 - one animal product AND one fruit",
+            "text": "{{child_hv_dietary_diversity.step1.diet_diversity.options.chw_one_animal_product_and_fruit.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chw_one_animal_product_or_fruit"
@@ -83,5 +83,6 @@
         ]
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_dietary_diversity"
 }

@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Counselling",
+    "title": "{{fp_followup_counsel.step1.title}}",
     "fields": [
       {
         "key": "fp_counselling",
@@ -55,29 +55,29 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1382AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Did the client receive any family planning counselling?",
+        "label": "{{fp_followup_counsel.step1.fp_counselling.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{fp_followup_counsel.step1.fp_counselling.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{fp_followup_counsel.step1.fp_counselling.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_counsel.step1.fp_counselling.v_required.err}}"
         }
       }
-
     ]
-  }
+  },
+  "properties_file_name": "fp_followup_counsel"
 }

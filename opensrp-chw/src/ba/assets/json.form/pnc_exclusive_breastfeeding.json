@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Exclusive breastfeeding",
+    "title": "{{pnc_exclusive_breastfeeding.step1.title}}",
     "fields": [
       {
         "key": "exclusive_breast_feeding",
@@ -57,10 +57,10 @@
         "openmrs_data_type": "exclusive_breast_feeding",
         "type": "spinner",
         "image": "ic_form_bf",
-        "hint": "Has the child been exclusively breastfeeding only?",
+        "hint": "{{pnc_exclusive_breastfeeding.step1.exclusive_breast_feeding.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_exclusive_breastfeeding.step1.exclusive_breast_feeding.values[0]}}",
+          "{{pnc_exclusive_breastfeeding.step1.exclusive_breast_feeding.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -72,5 +72,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_exclusive_breastfeeding"
 }

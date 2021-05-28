@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "ANC Registration",
+    "title": "{{anc_member_registration.step1.title}}",
     "fields": [
       {
         "key": "relational_id",
@@ -62,15 +62,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Last Menstrual Period (LMP)",
-        "label_info_title": "LMP",
-        "label_info_text": "LMP = first day of Last Menstrual Period. If the exact date is unknown, but the period of the month is known, use day 5 for beginning of the month, day 15 for middle of the month and day 25 for end of the month.",
+        "hint": "{{anc_member_registration.step1.last_menstrual_period.hint}}",
+        "label_info_title": "{{anc_member_registration.step1.last_menstrual_period.label_info_title}}",
+        "label_info_text": "{{anc_member_registration.step1.last_menstrual_period.label_info_text}}",
         "expanded": false,
         "max_date": "today",
         "min_date": "today-50w",
         "v_required": {
           "value": "true",
-          "err": "LMP required"
+          "err": "{{anc_member_registration.step1.last_menstrual_period.v_required.err}}"
         },
         "calculation": {
           "rules-engine": {
@@ -97,7 +97,7 @@
         "options": [
           {
             "key": "lmp_unknown",
-            "text": "LMP unknown?",
+            "text": "{{anc_member_registration.step1.last_menstrual_period_unknown.options.lmp_unknown.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -109,7 +109,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Expected Date of Delivery (EDD)",
+        "hint": "{{anc_member_registration.step1.edd.hint}}",
         "max_date": "today+50w",
         "min_date": "today",
         "calculation": {
@@ -128,7 +128,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{anc_member_registration.step1.edd.v_required.err}}"
         }
       },
       {
@@ -137,7 +137,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Gestational Age (GA)",
+        "hint": "{{anc_member_registration.step1.gest_age_note.hint}}",
         "read_only": true,
         "calculation": {
           "rules-engine": {
@@ -152,7 +152,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
-        "value": "weeks",
+        "value": "semaines",
         "type": "hidden"
       },
       {
@@ -161,7 +161,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Expected Date of Delivery (EDD)",
+        "hint": "{{anc_member_registration.step1.edd_note.hint}}",
         "read_only": true,
         "calculation": {
           "rules-engine": {
@@ -192,22 +192,22 @@
         "openmrs_entity_id": "no_prev_preg",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "No. of previous pregnancies",
+        "hint": "{{anc_member_registration.step1.no_prev_preg.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_min.err}}"
         },
         "v_max": {
           "value": "45",
-          "err": "Number must be equal or less than 45"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_max.err}}"
         }
       },
       {
@@ -231,14 +231,14 @@
         "openmrs_entity_id": "164894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "No. of surviving children",
+        "hint": "{{anc_member_registration.step1.no_surv_children.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{anc_member_registration.step1.no_surv_children.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{anc_member_registration.step1.no_surv_children.v_numeric_integer.err}}"
         }
       },
       {
@@ -247,16 +247,17 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Phone number",
+        "hint": "{{anc_member_registration.step1.phone_number.hint}}",
         "v_numeric": {
           "value": "true",
-          "err": "Must be a number."
+          "err": "{{anc_member_registration.step1.phone_number.v_numeric.err}}"
         },
         "v_required": {
           "value": false,
-          "err": "Please specify the phone number"
+          "err": "{{anc_member_registration.step1.phone_number.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_member_registration"
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.smartregister.chw.anc.repository.VisitRepository;
 import org.smartregister.chw.core.repository.ScheduleRepository;
 import org.smartregister.chw.util.RepositoryUtils;
 import org.smartregister.domain.db.Column;
@@ -42,6 +43,9 @@ public class ChwRepositoryFlv {
                     break;
                 case 6:
                     upgradeToVersion6(context, db);
+                    break;
+                case 7:
+                    upgradeToVersion7(db);
                     break;
                 default:
                     break;
@@ -134,5 +138,14 @@ public class ChwRepositoryFlv {
             Timber.e(e);
         }
     }
+
+    private static void upgradeToVersion7(SQLiteDatabase db) {
+        try {
+            db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion7");
+        }
+    }
+
 
 }

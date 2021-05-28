@@ -52,15 +52,15 @@
     }
   },
   "step1": {
-    "title": "Add Child Under 5",
+    "title": "{{child_enrollment.step1.title}}",
     "fields": [
       {
         "key": "photo",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "choose_image",
-        "uploadButtonText": "Take a picture of the person"
+        "uploadButtonText": "{{child_enrollment.step1.photo.uploadButtonText}}"
       },
       {
         "key": "unique_id",
@@ -69,32 +69,32 @@
         "openmrs_entity_id": "opensrp_id",
         "type": "barcode",
         "barcode_type": "qrcode",
-        "hint": "Boresha Afya ID",
-        "scanButtonText": "Scan QR Code",
+        "hint": "{{child_enrollment.step1.unique_id.hint}}",
+        "scanButtonText": "{{child_enrollment.step1.unique_id.scanButtonText}}",
         "v_numeric": {
           "value": "true",
-          "err": "Please enter a valid ID"
+          "err": "{{child_enrollment.step1.unique_id.v_numeric.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the UNIQUE ID"
+          "err": "{{child_enrollment.step1.unique_id.v_required.err}}"
         }
       },
       {
         "key": "surname",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Surname",
+        "hint": "{{child_enrollment.step1.surname.hint}}",
         "edit_type": "name",
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{child_enrollment.step1.surname.v_regex.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "{{child_enrollment.step1.surname.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -107,18 +107,18 @@
       {
         "key": "same_as_fam_name",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_data_type": "text",
         "type": "check_box",
-        "label": "",
+        "label": "{{child_enrollment.step1.same_as_fam_name.label}}",
         "exclusive": [
           "none"
         ],
         "options": [
           {
             "key": "same_as_fam_name",
-            "text": "Surname same as family name",
+            "text": "{{child_enrollment.step1.same_as_fam_name.options.same_as_fam_name.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -127,7 +127,7 @@
       {
         "key": "fam_name",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "label",
         "hidden": "true"
@@ -138,7 +138,7 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "last_name",
         "type": "hidden",
-        "hint": "Surname as Family name",
+        "hint": "{{child_enrollment.step1.surname_calculation.hint}}",
         "calculation": {
           "rules-engine": {
             "ex-rules": {
@@ -154,16 +154,16 @@
         "openmrs_entity_id": "first_name",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "First name",
+        "hint": "{{child_enrollment.step1.first_name.hint}}",
         "expanded": false,
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter first name"
+          "err": "{{child_enrollment.step1.first_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\s\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{child_enrollment.step1.first_name.v_regex.err}}"
         }
       },
       {
@@ -173,16 +173,16 @@
         "openmrs_entity_id": "middle_name",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "Middle name",
+        "hint": "{{child_enrollment.step1.middle_name.hint}}",
         "expanded": false,
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter middle name"
+          "err": "{{child_enrollment.step1.middle_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please Enter a Valid Name"
+          "err": "{{child_enrollment.step1.middle_name.v_regex.err}}"
         }
       },
       {
@@ -191,16 +191,16 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "birthdate",
         "type": "date_picker",
-        "hint": "Date of birth (DOB)",
+        "hint": "{{child_enrollment.step1.dob.hint}}",
         "expanded": false,
         "duration": {
-          "label": "Age"
+          "label": "{{child_enrollment.step1.dob.duration.label}}"
         },
         "min_date": "today-5y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of birth"
+          "err": "{{child_enrollment.step1.dob.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -217,11 +217,11 @@
         "openmrs_entity_id": "birthdateApprox",
         "hidden": "false",
         "type": "check_box",
-        "label": "",
+        "label": "{{child_enrollment.step1.dob_unknown.label}}",
         "options": [
           {
             "key": "dob_unknown",
-            "text": "DOB unknown?",
+            "text": "{{child_enrollment.step1.dob_unknown.options.dob_unknown.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -233,18 +233,18 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "age",
         "type": "edit_text",
-        "hint": "Age",
+        "hint": "{{child_enrollment.step1.age.hint}}",
         "v_numeric": {
           "value": "true",
-          "err": "Number must begin with 0 and must be a total of 10 digits in length"
+          "err": "{{child_enrollment.step1.age.v_numeric.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Age must be equal or greater than 0"
+          "err": "{{child_enrollment.step1.age.v_min.err}}"
         },
         "v_max": {
           "value": "5",
-          "err": "Age must be equal or less than 5"
+          "err": "{{child_enrollment.step1.age.v_max.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -255,7 +255,7 @@
         },
         "v_required": {
           "value": true,
-          "err": "Please enter the age"
+          "err": "{{child_enrollment.step1.age.v_required.err}}"
         }
       },
       {
@@ -264,21 +264,21 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "insurance_provider",
         "type": "spinner",
-        "hint": "Health insurance provider",
+        "hint": "{{child_enrollment.step1.insurance_provider.hint}}",
         "values": [
-          "Community Health Fund (CHF)",
-          "iCHF",
-          "National Social Security Fund - Social Health Insurance Benefit (SHIB)",
-          "Tiba Kwa Kadi (TIKA)",
-          "AAR Healthcare",
-          "Strategies Insurance",
-          "Milvik Tanzania Ltd (BIMA Mkononi)",
-          "Britam Insurance Tanzania",
-          "Jubilee Insurance",
-          "Resolutions Insurance",
-          "Reliance Insurance",
-          "Other",
-          "None"
+          "{{child_enrollment.step1.insurance_provider.values[0]}}",
+          "{{child_enrollment.step1.insurance_provider.values[1]}}",
+          "{{child_enrollment.step1.insurance_provider.values[2]}}",
+          "{{child_enrollment.step1.insurance_provider.values[3]}}",
+          "{{child_enrollment.step1.insurance_provider.values[4]}}",
+          "{{child_enrollment.step1.insurance_provider.values[5]}}",
+          "{{child_enrollment.step1.insurance_provider.values[6]}}",
+          "{{child_enrollment.step1.insurance_provider.values[7]}}",
+          "{{child_enrollment.step1.insurance_provider.values[8]}}",
+          "{{child_enrollment.step1.insurance_provider.values[9]}}",
+          "{{child_enrollment.step1.insurance_provider.values[10]}}",
+          "{{child_enrollment.step1.insurance_provider.values[11]}}",
+          "{{child_enrollment.step1.insurance_provider.values[12]}}"
         ],
         "keys": [
           "Community Health Fund (CHF)",
@@ -312,7 +312,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the insurance provider"
+          "err": "{{child_enrollment.step1.insurance_provider.v_required.err}}"
         }
       },
       {
@@ -321,10 +321,10 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Other_Health_Insurance_Type",
         "type": "edit_text",
-        "hint": "Other health insurance provider",
+        "hint": "{{child_enrollment.step1.insurance_provider_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please specify the insurance provider"
+          "err": "{{child_enrollment.step1.insurance_provider_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -340,10 +340,10 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Health_Insurance_Number",
         "type": "edit_text",
-        "hint": "Health insurance provider number",
+        "hint": "{{child_enrollment.step1.insurance_provider_number.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please add the health insurance provider iD Number"
+          "err": "{{child_enrollment.step1.insurance_provider_number.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -359,10 +359,10 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "gender",
         "type": "spinner",
-        "hint": "Sex",
+        "hint": "{{child_enrollment.step1.gender.hint}}",
         "values": [
-          "Male",
-          "Female"
+          "{{child_enrollment.step1.gender.values[0]}}",
+          "{{child_enrollment.step1.gender.values[1]}}"
         ],
         "keys": [
           "Male",
@@ -370,7 +370,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please enter the sex"
+          "err": "{{child_enrollment.step1.gender.v_required.err}}"
         }
       },
       {
@@ -379,10 +379,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "162558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Physical disabilities",
+        "hint": "{{child_enrollment.step1.disabilities.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{child_enrollment.step1.disabilities.values[0]}}",
+          "{{child_enrollment.step1.disabilities.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -394,7 +394,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{child_enrollment.step1.disabilities.v_required.err}}"
         }
       },
       {
@@ -404,7 +404,7 @@
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "name",
-        "hint": "Type of physical disabilities",
+        "hint": "{{child_enrollment.step1.type_of_disability.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -414,7 +414,7 @@
         },
         "v_required": {
           "value": true,
-          "err": "Please enter type of physical disabilities"
+          "err": "{{child_enrollment.step1.type_of_disability.v_required.err}}"
         }
       },
       {
@@ -423,10 +423,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Birth registration/certificate",
+        "hint": "{{child_enrollment.step1.birth_cert_available.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{child_enrollment.step1.birth_cert_available.values[0]}}",
+          "{{child_enrollment.step1.birth_cert_available.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -443,7 +443,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "162052AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Birth registration number",
+        "hint": "{{child_enrollment.step1.birth_regist_number.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -458,10 +458,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164147AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Does the child have RCH card 1/child growth booklet?",
+        "hint": "{{child_enrollment.step1.rhc_card.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{child_enrollment.step1.rhc_card.values[0]}}",
+          "{{child_enrollment.step1.rhc_card.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -478,11 +478,11 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "163301AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Nutrition status",
+        "hint": "{{child_enrollment.step1.nutrition_status.hint}}",
         "values": [
-          "Green",
-          "Grey/Yellow",
-          "Red"
+          "{{child_enrollment.step1.nutrition_status.values[0]}}",
+          "{{child_enrollment.step1.nutrition_status.values[1]}}",
+          "{{child_enrollment.step1.nutrition_status.values[2]}}"
         ],
         "keys": [
           "Green",
@@ -496,7 +496,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please provide child nutrition status"
+          "err": "{{child_enrollment.step1.nutrition_status.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -507,5 +507,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_enrollment"
 }

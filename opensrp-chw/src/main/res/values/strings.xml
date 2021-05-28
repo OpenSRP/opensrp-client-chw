@@ -442,5 +442,7 @@
     <string name="counseling">Counseling</string>
     <string name="reset_pin_login">Reset Pin Login</string>
     <string name="birth_certificate_num_error_msg">Birth certificate number must be unique and cannot exceed 15 digits.</string>
+    
+    <string name="unauthorized_group">This account is not allowed to access this device</string>
 
 </resources>

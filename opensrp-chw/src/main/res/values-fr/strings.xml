@@ -357,4 +357,5 @@
     <string name="tutorials">Tutoriel</string>
     <string name="counseling">Conseil</string>
 
+    <string name="unauthorized_group">Ce compte n\'est pas autorisé à accéder à cet appareil</string>
 </resources>

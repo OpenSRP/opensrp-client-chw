@@ -53,7 +53,7 @@
     }
   },
   "step1": {
-    "title": "Malaria Confirmation",
+    "title": "{{malaria_confirmation.step1.title}}",
     "next": "step2",
     "fields": [
       {
@@ -85,13 +85,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fever_malaria_chw",
         "type": "native_radio",
-        "label": "Does this person have a fever or did they test positive for malaria in the last 14 days at a health facility?",
+        "label": "{{malaria_confirmation.step1.fever_malaria_chw.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
         "options": [
           {
             "key": "has_fever",
-            "text": "Has a fever",
+            "text": "{{malaria_confirmation.step1.fever_malaria_chw.options.has_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "has_fever",
@@ -99,7 +99,7 @@
           },
           {
             "key": "tested_positive_last_14_days",
-            "text": "Tested positive for malaria in the last 14 days at a health facility",
+            "text": "{{malaria_confirmation.step1.fever_malaria_chw.options.tested_positive_last_14_days.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "tested_positive_last_14_days",
@@ -108,7 +108,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{malaria_confirmation.step1.fever_malaria_chw.v_required.err}}"
         }
       },
       {
@@ -117,8 +117,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Duration of fever?",
+        "hint": "{{malaria_confirmation.step1.fever_duration.hint}}",
         "values": [
+          "{{malaria_confirmation.step1.fever_duration.values[0]}}",
+          "{{malaria_confirmation.step1.fever_duration.values[1]}}"
+        ],
+        "keys": [
           "Less than 24 hrs",
           "More than 24 hrs"
         ],
@@ -128,7 +132,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step1.fever_duration.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -144,14 +148,18 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "malaria_test_done",
         "type": "spinner",
-        "hint": "Was a malaria test done?",
+        "hint": "{{malaria_confirmation.step1.malaria_test_done.hint}}",
         "values": [
+          "{{malaria_confirmation.step1.malaria_test_done.values[0]}}",
+          "{{malaria_confirmation.step1.malaria_test_done.values[1]}}"
+        ],
+        "keys": [
           "No",
           "Yes, by the CHW"
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{malaria_confirmation.step1.malaria_test_done.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -167,8 +175,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "mRDT results",
+        "hint": "{{malaria_confirmation.step1.malaria_results.hint}}",
         "values": [
+          "{{malaria_confirmation.step1.malaria_results.values[0]}}",
+          "{{malaria_confirmation.step1.malaria_results.values[1]}}"
+        ],
+        "keys": [
           "Positive",
           "Negative"
         ],
@@ -178,7 +190,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step1.malaria_results.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -194,12 +206,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "date_hf_malaria_test",
         "type": "date_picker",
-        "hint": "Date of malaria test at health facility",
+        "hint": "{{malaria_confirmation.step1.date_hf_malaria_test.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of malaria test at health facility"
+          "err": "{{malaria_confirmation.step1.date_hf_malaria_test.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -245,8 +257,16 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "malaria_treat",
         "type": "spinner",
-        "hint": "Treatment given",
+        "hint": "{{malaria_confirmation.step1.malaria_treat.hint}}",
         "values": [
+          "{{malaria_confirmation.step1.malaria_treat.values[0]}}",
+          "{{malaria_confirmation.step1.malaria_treat.values[1]}}",
+          "{{malaria_confirmation.step1.malaria_treat.values[2]}}",
+          "{{malaria_confirmation.step1.malaria_treat.values[3]}}",
+          "{{malaria_confirmation.step1.malaria_treat.values[4]}}",
+          "{{malaria_confirmation.step1.malaria_treat.values[5]}}"
+        ],
+        "keys": [
           "ALU 6",
           "ALU 12",
           "ALU 18",
@@ -264,7 +284,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step1.malaria_treat.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -280,8 +300,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Please refer the client for a malaria test",
-        "toaster_info_text": "Please refer the client for a malaria test",
+        "text": "{{malaria_confirmation.step1.referral_note.text}}",
+        "toaster_info_text": "{{malaria_confirmation.step1.referral_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -294,7 +314,7 @@
     ]
   },
   "step2": {
-    "title": "Malaria Prevention",
+    "title": "{{malaria_confirmation.step2.title}}",
     "fields": [
       {
         "key": "fam_llin",
@@ -302,8 +322,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fam_llin",
         "type": "spinner",
-        "hint": "Do you have a long lasting insecticide net (LLIN)?",
+        "hint": "{{malaria_confirmation.step2.fam_llin.hint}}",
         "values": [
+          "{{malaria_confirmation.step2.fam_llin.values[0]}}",
+          "{{malaria_confirmation.step2.fam_llin.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -313,7 +337,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step2.fam_llin.v_required.err}}"
         }
       },
       {
@@ -322,8 +346,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "llin_2days",
         "type": "spinner",
-        "hint": "Did you sleep under the LLIN last night?",
+        "hint": "{{malaria_confirmation.step2.llin_2days.hint}}",
         "values": [
+          "{{malaria_confirmation.step2.llin_2days.values[0]}}",
+          "{{malaria_confirmation.step2.llin_2days.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -333,7 +361,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step2.llin_2days.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -349,8 +377,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "llin_condition",
         "type": "spinner",
-        "hint": "LLIN condition",
+        "hint": "{{malaria_confirmation.step2.llin_condition.hint}}",
         "values": [
+          "{{malaria_confirmation.step2.llin_condition.values[0]}}",
+          "{{malaria_confirmation.step2.llin_condition.values[1]}}"
+        ],
+        "keys": [
           "Okay",
           "Bad"
         ],
@@ -360,7 +392,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{malaria_confirmation.step2.llin_condition.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -376,7 +408,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "malaria_edu_chw",
         "type": "check_box",
-        "label": "Malaria topics covered",
+        "label": "{{malaria_confirmation.step2.malaria_edu_chw.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "combine_checkbox_option_values": "true",
@@ -386,42 +418,42 @@
         "options": [
           {
             "key": "overview_on_malaria",
-            "text": "Overview on malaria",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.overview_on_malaria.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1379AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "malaria_prevention",
-            "text": "Malaria prevention",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.malaria_prevention.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "uncomplicated_malaria",
-            "text": "Uncomplicated malaria",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.uncomplicated_malaria.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "159950AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "Severe_malaria",
-            "text": "Severe malaria",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.Severe_malaria.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "malaria_in_pregnancy",
-            "text": "Malaria in pregnancy",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.malaria_in_pregnancy.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "135361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{malaria_confirmation.step2.malaria_edu_chw.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_none"
@@ -429,9 +461,10 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Malaria topics covered required"
+          "err": "{{malaria_confirmation.step2.malaria_edu_chw.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "malaria_confirmation"
 }

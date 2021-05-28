@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Child vaccine card received",
+    "title": "{{child_hv_vaccine_card_received.step1.title}}",
     "fields": [
       {
         "key": "child_vaccine_card",
@@ -57,8 +57,12 @@
         "openmrs_data_type": "select one",
         "type": "spinner",
         "image": "form_received_card",
-        "hint": "Did the child receive their vaccine card?",
+        "hint": "{{child_hv_vaccine_card_received.step1.child_vaccine_card.hint}}",
         "values": [
+          "{{child_hv_vaccine_card_received.step1.child_vaccine_card.values[0]}}",
+          "{{child_hv_vaccine_card_received.step1.child_vaccine_card.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -68,5 +72,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_vaccine_card_received"
 }

@@ -52,12 +52,12 @@
     }
   },
   "step1": {
-    "title": "Remove Child Under 5",
+    "title": "{{family_details_remove_child.step1.title}}",
     "fields": [
       {
         "key": "spacer",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "spacer",
         "spacer_height": "10sp"
@@ -65,23 +65,23 @@
       {
         "key": "details",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "",
+        "text": "{{family_details_remove_child.step1.details.text}}",
         "text_size": "25px"
       },
       {
         "key": "divider1",
         "type": "h_line",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": ""
       },
       {
         "key": "spacer",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "spacer",
         "spacer_height": "15dp"
@@ -93,11 +93,11 @@
         "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Reason",
+        "hint": "{{family_details_remove_child.step1.remove_reason.hint}}",
         "values": [
-          "Died",
-          "Moved away",
-          "Other"
+          "{{family_details_remove_child.step1.remove_reason.values[0]}}",
+          "{{family_details_remove_child.step1.remove_reason.values[1]}}",
+          "{{family_details_remove_child.step1.remove_reason.values[2]}}"
         ],
         "keys": [
           "Died",
@@ -106,7 +106,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Select the reason for removing the child's record."
+          "err": "{{family_details_remove_child.step1.remove_reason.v_required.err}}"
         },
         "openmrs_choice_ids": {
           "Died": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -117,7 +117,7 @@
       {
         "key": "dob",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "spacer",
         "expanded": false,
@@ -131,20 +131,20 @@
         "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "Date moved away",
-        "hint": "Date moved away",
+        "label": "{{family_details_remove_child.step1.date_moved.label}}",
+        "hint": "{{family_details_remove_child.step1.date_moved.hint}}",
         "expanded": false,
         "min_date": "",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Enter the date that the member moved away"
+          "err": "{{family_details_remove_child.step1.date_moved.v_required.err}}"
         },
         "constraints": [
           {
             "type": "date",
             "ex": "greaterThanEqualTo(., step1:dob)",
-            "err": "Moved away date cannot be before date of birth"
+            "err": "{{family_details_remove_child.step1.date_moved.constraints.err}}"
           }
         ],
         "relevance": {
@@ -161,20 +161,20 @@
         "openmrs_entity_id": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "Date of death",
-        "hint": "Date of death",
+        "label": "{{family_details_remove_child.step1.date_died.label}}",
+        "hint": "{{family_details_remove_child.step1.date_died.hint}}",
         "expanded": false,
         "min_date": "",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Enter the date of death"
+          "err": "{{family_details_remove_child.step1.date_died.v_required.err}}"
         },
         "constraints": [
           {
             "type": "date",
             "ex": "greaterThanEqualTo(., step1:dob)",
-            "err": "Date of death can't occur before date of birth"
+            "err": "{{family_details_remove_child.step1.date_died.constraints.err}}"
           }
         ],
         "relevance": {
@@ -187,10 +187,10 @@
       {
         "key": "age_at_death",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
-        "label": "Age at death",
-        "hint": "Age at death",
+        "label": "{{family_details_remove_child.step1.age_at_death.label}}",
+        "hint": "{{family_details_remove_child.step1.age_at_death.hint}}",
         "type": "edit_text",
         "read_only": "true",
         "relevance": {
@@ -208,5 +208,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "family_details_remove_child"
 }

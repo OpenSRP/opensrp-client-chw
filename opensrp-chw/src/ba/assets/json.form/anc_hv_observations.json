@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Observations & Illness",
+    "title": "{{anc_hv_observations.step1.title}}",
     "fields": [
       {
         "key": "date_of_illness",
@@ -55,13 +55,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date ",
+        "hint": "{{anc_hv_observations.step1.date_of_illness.hint}}",
         "expanded": false,
         "min_date": "today-1y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of illness"
+          "err": "{{anc_hv_observations.step1.date_of_illness.v_required.err}}"
         }
       },
       {
@@ -70,10 +70,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Description",
+        "hint": "{{anc_hv_observations.step1.illness_description.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the description"
+          "err": "{{anc_hv_observations.step1.illness_description.v_required.err}}"
         }
       },
       {
@@ -82,7 +82,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Action taken",
+        "label": "{{anc_hv_observations.step1.action_taken.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -91,42 +91,42 @@
         "options": [
           {
             "key": "chk_ors",
-            "text": "ORS 5",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_ors.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "351AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_zinc",
-            "text": "Zinc 10",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_zinc.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "86672AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_paracetamol",
-            "text": "Panadol",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_paracetamol.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "70116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_referred",
-            "text": "Referred",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_referred.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163762AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_other_treatment",
-            "text": "Other treatment",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_other_treatment.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "No treatment given",
+            "text": "{{anc_hv_observations.step1.action_taken.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -139,10 +139,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Other treatment",
+        "hint": "{{anc_hv_observations.step1.other_treatment_illness.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the illness details"
+          "err": "{{anc_hv_observations.step1.other_treatment_illness.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -153,5 +153,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_observations"
 }

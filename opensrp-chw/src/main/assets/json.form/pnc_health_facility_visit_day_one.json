@@ -27,10 +27,10 @@
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_health_facility_visit_day_one"
 }

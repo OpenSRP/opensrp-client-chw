@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Danger signs",
+    "title": "{{anc_hv_danger_signs.step1.title}}",
     "fields": [
       {
         "key": "danger_signs_present",
@@ -55,9 +55,9 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label_info_image_src": "img/chw.png",
+        "label_info_image_src": "{{anc_hv_danger_signs.step1.danger_signs_present.label_info_image_src}}",
         "label_info_has_image": true,
-        "label": "Any danger signs present?",
+        "label": "{{anc_hv_danger_signs.step1.danger_signs_present.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -66,56 +66,56 @@
         "options": [
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_fever",
-            "text": "Fever",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_bleeding_vaginally",
-            "text": "Bleeding vaginally",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_bleeding_vaginally.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "150802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_server_headache",
-            "text": "Severe headache",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_server_headache.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_convulsions",
-            "text": "Convulsions",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_convulsions.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164483AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_difficulty_breathing",
-            "text": "Difficulty breathing",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_difficulty_breathing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_swollen_face",
-            "text": "Swollen face and legs",
+            "text": "{{anc_hv_danger_signs.step1.danger_signs_present.options.chk_swollen_face.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -123,7 +123,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{anc_hv_danger_signs.step1.danger_signs_present.v_required.err}}"
         }
       },
       {
@@ -132,7 +132,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Danger sign! \nRefer immediately to health facility.",
+        "text": "{{anc_hv_danger_signs.step1.danger_signs_present_toaster.text}}",
         "text_color": "#CF0800",
         "toaster_type": "problem",
         "relevance": {
@@ -160,8 +160,12 @@
         "openmrs_entity_id": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Counseling on seeking care immediately for danger signs",
+        "hint": "{{anc_hv_danger_signs.step1.danger_signs_counseling.hint}}",
         "values": [
+          "{{anc_hv_danger_signs.step1.danger_signs_counseling.values[0]}}",
+          "{{anc_hv_danger_signs.step1.danger_signs_counseling.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -171,9 +175,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_danger_signs.step1.danger_signs_counseling.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_danger_signs"
 }

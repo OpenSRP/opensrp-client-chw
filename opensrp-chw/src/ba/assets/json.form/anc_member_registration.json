@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "ANC Registration",
+    "title": "{{anc_member_registration.step1.title}}",
     "fields": [
       {
         "key": "relational_id",
@@ -62,15 +62,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Last Menstrual Period (LMP)",
-        "label_info_title": "LMP",
-        "label_info_text": "LMP = first day of Last Menstrual Period. If the exact date is unknown, but the period of the month is known, use day 5 for beginning of the month, day 15 for middle of the month and day 25 for end of the month.",
+        "hint": "{{anc_member_registration.step1.last_menstrual_period.hint}}",
+        "label_info_title": "{{anc_member_registration.step1.last_menstrual_period.label_info_title}}",
+        "label_info_text": "{{anc_member_registration.step1.last_menstrual_period.label_info_text}}",
         "expanded": false,
         "max_date": "today",
         "min_date": "today-50w",
         "v_required": {
           "value": "true",
-          "err": "LMP required"
+          "err": "{{anc_member_registration.step1.last_menstrual_period.v_required.err}}"
         },
         "calculation": {
           "rules-engine": {
@@ -97,7 +97,7 @@
         "options": [
           {
             "key": "lmp_unknown",
-            "text": "LMP unknown?",
+            "text": "{{anc_member_registration.step1.last_menstrual_period_unknown.options.lmp_unknown.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -109,7 +109,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Expected Date of Delivery (EDD)",
+        "hint": "{{anc_member_registration.step1.edd.hint}}",
         "max_date": "today+50w",
         "min_date": "today",
         "calculation": {
@@ -128,16 +128,16 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{anc_member_registration.step1.edd.v_required.err}}"
         }
       },
       {
         "key": "gest_age_note",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Gestational Age (GA)",
+        "hint": "{{anc_member_registration.step1.gest_age_note.hint}}",
         "read_only": true,
         "calculation": {
           "rules-engine": {
@@ -153,7 +153,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Expected Date of Delivery (EDD)",
+        "hint": "{{anc_member_registration.step1.edd_note.hint}}",
         "read_only": true,
         "calculation": {
           "rules-engine": {
@@ -184,18 +184,18 @@
         "openmrs_entity_id": "no_prev_preg",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "No. of previous pregnancies",
+        "hint": "{{anc_member_registration.step1.no_prev_preg.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Equal or greater than 0"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{anc_member_registration.step1.no_prev_preg.v_min.err}}"
         }
       },
       {
@@ -218,7 +218,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Have you delivered your child(ren) vaginally or by cesarean section?",
+        "label": "{{anc_member_registration.step1.delivery_method.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "relevance": {
@@ -231,21 +231,21 @@
         "options": [
           {
             "key": "chk_vaginally",
-            "text": "Vaginally",
+            "text": "{{anc_member_registration.step1.delivery_method.options.chk_vaginally.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_cesarean_section",
-            "text": "Cesarean section",
+            "text": "{{anc_member_registration.step1.delivery_method.options.chk_cesarean_section.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_miscarriage",
-            "text": "Miscarriage",
+            "text": "{{anc_member_registration.step1.delivery_method.options.chk_miscarriage.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -253,7 +253,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{anc_member_registration.step1.delivery_method.v_required.err}}"
         }
       },
       {
@@ -262,7 +262,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "native_radio",
-        "label": "Have you delivered your child(ren) vaginally or by cesarean section?",
+        "label": "{{anc_member_registration.step1.delivery_method_one.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "relevance": {
@@ -275,21 +275,21 @@
         "options": [
           {
             "key": "chk_vaginally",
-            "text": "Vaginally",
+            "text": "{{anc_member_registration.step1.delivery_method_one.options.chk_vaginally.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_cesarean_section",
-            "text": "Cesarean section",
+            "text": "{{anc_member_registration.step1.delivery_method_one.options.chk_cesarean_section.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_miscarriage",
-            "text": "Miscarriage",
+            "text": "{{anc_member_registration.step1.delivery_method_one.options.chk_miscarriage.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -297,7 +297,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select all that apply"
+          "err": "{{anc_member_registration.step1.delivery_method_one.v_required.err}}"
         }
       },
       {
@@ -307,7 +307,7 @@
         "openmrs_entity_id": "164894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "No. of surviving children",
+        "hint": "{{anc_member_registration.step1.no_surv_children.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -317,15 +317,15 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{anc_member_registration.step1.no_surv_children.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{anc_member_registration.step1.no_surv_children.v_numeric_integer.err}}"
         },
-        "v_relative_max": {
-          "value": "no_prev_preg",
-          "err": "Number must be less than or equal to Number of Previous Pregnancies"
+        "v_min": {
+          "value": "0",
+          "err": "{{anc_member_registration.step1.no_surv_children.v_min.err}}"
         }
       },
       {
@@ -335,17 +335,17 @@
         "openmrs_entity_id": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Marital status",
+        "hint": "{{anc_member_registration.step1.marital_status.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_member_registration.step1.marital_status.v_required.err}}"
         },
         "values": [
-          "Married",
-          "Co-habiting",
-          "Single",
-          "Divorced",
-          "Widowed"
+          "{{anc_member_registration.step1.marital_status.values[0]}}",
+          "{{anc_member_registration.step1.marital_status.values[1]}}",
+          "{{anc_member_registration.step1.marital_status.values[2]}}",
+          "{{anc_member_registration.step1.marital_status.values[3]}}",
+          "{{anc_member_registration.step1.marital_status.values[4]}}"
         ],
         "keys": [
           "Married",
@@ -368,17 +368,17 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Phone number",
+        "hint": "{{anc_member_registration.step1.phone_number.hint}}",
+        "v_required": {
+          "value": false
+        },
         "v_numeric": {
           "value": "true",
-          "err": "Number must be a total of 10 digits in length"
+          "err": "{{anc_member_registration.step1.phone_number.v_numeric.err}}"
         },
         "v_regex": {
           "value": "(0[0-9]{9})|\\s*",
-          "err": "Number must be 10 digits and must start with 0."
-        },
-        "v_required": {
-          "value": false
+          "err": "{{anc_member_registration.step1.phone_number.v_regex.err}}"
         }
       },
       {
@@ -388,14 +388,14 @@
         "openmrs_entity_id": "159771AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Does the mother have anyone, 18 years or older, who would be able to assist her during her pregnancy?",
+        "hint": "{{anc_member_registration.step1.person_assist.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_member_registration.step1.person_assist.v_required.err}}"
         },
         "values": [
-          "Yes",
-          "No"
+          "{{anc_member_registration.step1.person_assist.values[0]}}",
+          "{{anc_member_registration.step1.person_assist.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -412,7 +412,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160638AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Name of close person/relative who lives with her and is 18 years or olders",
+        "hint": "{{anc_member_registration.step1.name_person_assist.hint}}",
         "edit_type": "name",
         "relevance": {
           "rules-engine": {
@@ -423,7 +423,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the person's name"
+          "err": "{{anc_member_registration.step1.name_person_assist.v_required.err}}"
         }
       },
       {
@@ -432,7 +432,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160642AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Phone number",
+        "hint": "{{anc_member_registration.step1.phone_person_assist.hint}}",
         "v_required": {
           "value": false
         },
@@ -445,13 +445,14 @@
         },
         "v_numeric": {
           "value": "true",
-          "err": "Number must be a total of 10 digits in length"
+          "err": "{{anc_member_registration.step1.phone_person_assist.v_numeric.err}}"
         },
         "v_regex": {
           "value": "(0[0-9]{9})|\\s*",
-          "err": "Number must be 10 digits and must start with 0."
+          "err": "{{anc_member_registration.step1.phone_person_assist.v_regex.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_member_registration"
 }

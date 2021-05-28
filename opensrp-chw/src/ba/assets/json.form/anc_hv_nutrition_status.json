@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Nutrition status",
+    "title": "{{anc_hv_nutrition_status.step1.title}}",
     "fields": [
       {
         "key": "nutrition_status",
@@ -56,11 +56,11 @@
         "openmrs_entity_id": "163300AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "What is the nutrition status of the mother?",
+        "hint": "{{anc_hv_nutrition_status.step1.nutrition_status.hint}}",
         "values": [
-          "Normal/Green",
-          "Moderate/Yellow",
-          "Severe/Red"
+          "{{anc_hv_nutrition_status.step1.nutrition_status.values[0]}}",
+          "{{anc_hv_nutrition_status.step1.nutrition_status.values[1]}}",
+          "{{anc_hv_nutrition_status.step1.nutrition_status.values[2]}}"
         ],
         "keys": [
           "Normal",
@@ -74,9 +74,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_nutrition_status.step1.nutrition_status.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_nutrition_status"
 }

@@ -297,6 +297,7 @@ public class ChwApplication extends CoreChwApplication implements SyncStatusBroa
         Form form = new Form();
         form.setDatePickerDisplayFormat("dd MMM yyyy");
 
+        NativeFormLibrary.getInstance().setPerformFormTranslation(true);
         NativeFormLibrary.getInstance().setClientFormDao(CoreLibrary.getInstance().context().getClientFormRepository());
         // ThinkMD library
         ThinkMDConfig thinkMDConfig = new ThinkMDConfig();

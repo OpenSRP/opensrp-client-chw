@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Monthly Tallies",
+    "title": "{{in_app_monthly_tallies_report.step1.title}}",
     "fields": [
       {
         "key": "indicator_code",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "indicator_code",
         "type": "edit_text",
-        "hint": "Indicator code",
+        "hint": "{{in_app_monthly_tallies_report.step1.indicator_code.hint}}",
         "value": ""
       },
       {
@@ -64,7 +64,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "month",
         "type": "edit_text",
-        "hint": "Month",
+        "hint": "{{in_app_monthly_tallies_report.step1.month.hint}}",
         "value": ""
       },
       {
@@ -73,7 +73,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "edited",
         "type": "edit_text",
-        "hint": "edited",
+        "hint": "{{in_app_monthly_tallies_report.step1.edited.hint}}",
         "value": ""
       },
       {
@@ -82,7 +82,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "date_sent",
         "type": "edit_text",
-        "hint": "Date sent",
+        "hint": "{{in_app_monthly_tallies_report.step1.date_sent.hint}}",
         "value": ""
       },
       {
@@ -91,7 +91,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "created_at",
         "type": "edit_text",
-        "hint": "Created at",
+        "hint": "{{in_app_monthly_tallies_report.step1.created_at.hint}}",
         "value": ""
       },
       {
@@ -100,9 +100,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "value",
         "type": "edit_text",
-        "hint": "Updated at",
+        "hint": "{{in_app_monthly_tallies_report.step1.value.hint}}",
         "value": ""
       }
     ]
-  }
+  },
+  "properties_file_name": "in_app_monthly_tallies_report"
 }

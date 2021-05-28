@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Family Planning",
+    "title": "{{pnc_family_planning.step1.title}}",
     "fields": [
       {
         "key": "fp_counseling",
@@ -56,10 +56,10 @@
         "openmrs_entity_id": "1382AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Was the mother recently counselled on family planning at the health facility?",
+        "hint": "{{pnc_family_planning.step1.fp_counseling.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_family_planning.step1.fp_counseling.values[0]}}",
+          "{{pnc_family_planning.step1.fp_counseling.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -71,7 +71,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{pnc_family_planning.step1.fp_counseling.v_required.err}}"
         }
       },
       {
@@ -80,27 +80,27 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159860AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "During what period was she counselled?",
+        "label": "{{pnc_family_planning.step1.fp_period_received.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "options": [
           {
             "key": "chk_during_anc",
-            "text": "During ANC",
+            "text": "{{pnc_family_planning.step1.fp_period_received.options.chk_during_anc.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_during_anc"
           },
           {
             "key": "chk_during_labour_and_delivery",
-            "text": "During labour and delivery",
+            "text": "{{pnc_family_planning.step1.fp_period_received.options.chk_during_labour_and_delivery.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_during_labour_and_delivery"
           },
           {
             "key": "chk_during_pnc",
-            "text": "During PNC",
+            "text": "{{pnc_family_planning.step1.fp_period_received.options.chk_during_pnc.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_during_pnc"
@@ -108,7 +108,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{pnc_family_planning.step1.fp_period_received.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -125,17 +125,17 @@
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Family Planning method chosen?",
+        "hint": "{{pnc_family_planning.step1.fp_method.hint}}",
         "values": [
-          "PPIUCD",
-          "Pills",
-          "Implant",
-          "Condoms",
-          "LAM",
-          "Standard day method",
-          "Permanent (BTL)",
-          "Permanent (Vascemtomy)",
-          "None"
+          "{{pnc_family_planning.step1.fp_method.values[0]}}",
+          "{{pnc_family_planning.step1.fp_method.values[1]}}",
+          "{{pnc_family_planning.step1.fp_method.values[2]}}",
+          "{{pnc_family_planning.step1.fp_method.values[3]}}",
+          "{{pnc_family_planning.step1.fp_method.values[4]}}",
+          "{{pnc_family_planning.step1.fp_method.values[5]}}",
+          "{{pnc_family_planning.step1.fp_method.values[6]}}",
+          "{{pnc_family_planning.step1.fp_method.values[7]}}",
+          "{{pnc_family_planning.step1.fp_method.values[8]}}"
         ],
         "keys": [
           "PPIUCD",
@@ -161,7 +161,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{pnc_family_planning.step1.fp_method.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -174,15 +174,15 @@
       {
         "key": "fp_start_date",
         "openmrs_entity_parent": "163757AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "1418AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Start date",
+        "hint": "{{pnc_family_planning.step1.fp_start_date.hint}}",
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the start date of method"
+          "err": "{{pnc_family_planning.step1.fp_start_date.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -193,5 +193,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_family_planning"
 }

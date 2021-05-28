@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Family planning",
+    "title": "{{anc_hv_family_planning.step1.title}}",
     "fields": [
       {
         "key": "fam_planning",
@@ -56,10 +56,10 @@
         "openmrs_entity_id": "1382AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Was the mother advised on family planning when you visited the health visit?",
+        "hint": "{{anc_hv_family_planning.step1.fam_planning.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{anc_hv_family_planning.step1.fam_planning.values[0]}}",
+          "{{anc_hv_family_planning.step1.fam_planning.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -71,9 +71,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_family_planning.step1.fam_planning.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_family_planning"
 }

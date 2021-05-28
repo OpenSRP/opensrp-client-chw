@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "ANC {0} health facility visit",
+    "title": "{{anc_hv_health_facility_visit.step1.title}}",
     "fields": [
       {
         "key": "anc_hf_visit",
@@ -55,11 +55,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1889AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
-        "label_info_title": "Did the woman attend her ANC {0} visit at the health facility?",
-        "label_info_text": "Did the woman attend her ANC visit at the health facility?",
+        "label_info_title": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.label_info_title}}",
+        "label_info_text": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.label_info_text}}",
         "type": "spinner",
-        "hint": "Did the woman attend her ANC {0} visit at the health facility?\n\nVisit due date: {1}",
+        "hint": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.hint}}",
         "values": [
+          "{{anc_hv_health_facility_visit.step1.anc_hf_visit.values[0]}}",
+          "{{anc_hv_health_facility_visit.step1.anc_hf_visit.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -69,7 +73,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.v_required.err}}"
         }
       },
       {
@@ -79,14 +83,14 @@
         "openmrs_entity_id": "159590AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "ANC visit date",
-        "hint": "ANC visit date",
+        "label": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.label}}",
+        "hint": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.hint}}",
         "expanded": false,
         "min_date": "today-10y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Enter the date that the member moved away"
+          "err": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.v_required.err}}"
         },
         "relevance": {
           "step1:anc_hf_visit": {
@@ -108,7 +112,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Tests done",
+        "label": "{{anc_hv_health_facility_visit.step1.tests_done.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -117,63 +121,63 @@
         "options": [
           {
             "key": "chk_haemoglobin",
-            "text": "Haemoglobin level",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_haemoglobin.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "21AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_urine_analysis_uti",
-            "text": "Urine analysis for UTI",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_urine_analysis_uti.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "302AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_urine_analysis_protein",
-            "text": "Urine analysis for protein and sugar",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_urine_analysis_protein.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1875AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_hiv",
-            "text": "HIV test",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_hiv.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_syphilis",
-            "text": "Syphilis test",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_syphilis.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_malaria",
-            "text": "Malaria test",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_malaria.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_tb",
-            "text": "TB screening",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_tb.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164800AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_other",
-            "text": "Other test",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_other.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -181,7 +185,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{anc_hv_health_facility_visit.step1.tests_done.v_required.err}}"
         },
         "relevance": {
           "step1:anc_hf_visit": {
@@ -196,7 +200,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1767AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Immunisations and medicine provided",
+        "label": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -205,49 +209,49 @@
         "options": [
           {
             "key": "chk_tetanus",
-            "text": "Tetanus toxoid (TT)",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_tetanus.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "84879AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_malaria",
-            "text": "Malaria prevention (IPTp-SP)",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_malaria.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "105232AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_iron",
-            "text": "Iron and Folic acid (FEFO) tablets",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_iron.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "773AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_albendazole",
-            "text": "Albendazole / Medandozle",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_albendazole.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "159922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_calcuim",
-            "text": "Calcium supplement",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_calcuim.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "72650AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_other",
-            "text": "Other immunisation or medicine",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_other.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -255,7 +259,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{anc_hv_health_facility_visit.step1.imm_medicine_given.v_required.err}}"
         },
         "relevance": {
           "step1:anc_hf_visit": {
@@ -270,10 +274,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Other immunisation or medicine",
+        "hint": "{{anc_hv_health_facility_visit.step1.other_imm_medicine_given.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the immunisation or medicine details"
+          "err": "{{anc_hv_health_facility_visit.step1.other_imm_medicine_given.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -290,8 +294,12 @@
         "openmrs_entity_id": "159855AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did mother receive a LLIN in her first ANC contact at the health facility?",
+        "hint": "{{anc_hv_health_facility_visit.step1.llin_given.hint}}",
         "values": [
+          "{{anc_hv_health_facility_visit.step1.llin_given.values[0]}}",
+          "{{anc_hv_health_facility_visit.step1.llin_given.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -301,7 +309,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_health_facility_visit.step1.llin_given.v_required.err}}"
         },
         "relevance": {
           "step1:anc_hf_visit": {
@@ -326,5 +334,6 @@
         "value": "0"
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_health_facility_visit"
 }

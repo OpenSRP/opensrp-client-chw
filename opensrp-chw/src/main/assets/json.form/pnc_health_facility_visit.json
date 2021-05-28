@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "PNC Health Facility Visit - Day {0}",
+    "title": "{{pnc_health_facility_visit.step1.title}}",
     "fields": [
       {
         "key": "pnc_visit_{0}",
@@ -56,12 +56,16 @@
         "openmrs_entity_id": "",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did the woman attend her PNC visit (Day {0}) at the health facility?\n\nVisit due date: {1}",
+        "hint": "{{pnc_health_facility_visit.step1.pnc_visit_{0}.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select option"
+          "err": "{{pnc_health_facility_visit.step1.pnc_visit_{0}.v_required.err}}"
         },
         "values": [
+          "{{pnc_health_facility_visit.step1.pnc_visit_{0}.values[0]}}",
+          "{{pnc_health_facility_visit.step1.pnc_visit_{0}.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ]
@@ -72,12 +76,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164093AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of visit",
+        "hint": "{{pnc_health_facility_visit.step1.pnc_hf_visit{0}_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date"
+          "err": "{{pnc_health_facility_visit.step1.pnc_hf_visit{0}_date.v_required.err}}"
         },
         "relevance": {
           "step1:pnc_visit_{0}": {
@@ -93,22 +97,22 @@
         "openmrs_entity_id": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "Baby's weight (kg)",
+        "hint": "{{pnc_health_facility_visit.step1.baby_weight.hint}}",
         "v_min": {
-          "value": "0.0",
-          "err": "The value must be greater than or equal to 0"
+          "value": "0",
+          "err": "{{pnc_health_facility_visit.step1.baby_weight.v_min.err}}"
         },
         "v_max": {
-          "value": "20.0",
-          "err": "The value must be less than or equal to 20"
+          "value": "20",
+          "err": "{{pnc_health_facility_visit.step1.baby_weight.v_max.err}}"
         },
         "v_required": {
           "value": "false",
-          "err": "Required"
+          "err": "{{pnc_health_facility_visit.step1.baby_weight.v_required.err}}"
         },
         "v_numeric": {
           "value": "true",
-          "err": "Enter a valid weight"
+          "err": "{{pnc_health_facility_visit.step1.baby_weight.v_numeric.err}}"
         },
         "relevance": {
           "step1:pnc_visit_{0}": {
@@ -124,22 +128,22 @@
         "openmrs_entity_id": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "Baby's temperature (°C)",
+        "hint": "{{pnc_health_facility_visit.step1.baby_temp.hint}}",
         "v_min": {
-          "value": "35.0",
-          "err": "The value must be greater than or equal to 35"
+          "value": "35",
+          "err": "{{pnc_health_facility_visit.step1.baby_temp.v_min.err}}"
         },
         "v_max": {
-          "value": "42.0",
-          "err": "The value must be less than or equal to 42"
+          "value": "42",
+          "err": "{{pnc_health_facility_visit.step1.baby_temp.v_max.err}}"
         },
         "v_required": {
           "value": "false",
-          "err": "Required"
+          "err": "{{pnc_health_facility_visit.step1.baby_temp.v_required.err}}"
         },
         "v_numeric": {
           "value": "true",
-          "err": "Enter a valid weight"
+          "err": "{{pnc_health_facility_visit.step1.baby_temp.v_numeric.err}}"
         },
         "relevance": {
           "step1:pnc_visit_{0}": {
@@ -176,5 +180,6 @@
         "type": "spacer"
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_health_facility_visit"
 }

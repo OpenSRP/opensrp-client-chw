@@ -51,7 +51,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Change or Stop FP form",
+    "title": "{{male_family_planning_change_method.step1.title}}",
     "next": "step2",
     "fields": [
       {
@@ -74,28 +74,28 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Reason the man is stopping his current family planning method",
+        "label": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.label}}",
         "options": [
           {
             "key": "side_effects",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164154AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Side-effects"
+            "text": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.options.side_effects.text}}"
           },
           {
             "key": "wants_to_conceive",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Wants to conceive"
+            "text": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.options.wants_to_conceive.text}}"
           },
           {
             "key": "doesnt_want_to_use_anymore",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Doesn't want to use anymore"
+            "text": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.options.doesnt_want_to_use_anymore.text}}"
           },
           {
             "key": "decided_to_change_method",
@@ -103,19 +103,19 @@
             "openmrs_entity_id": "163494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
             "value": false,
-            "text": "Decided to change method"
+            "text": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.options.decided_to_change_method.text}}"
           },
           {
             "key": "others",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Others"
+            "text": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.options.others.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{male_family_planning_change_method.step1.reason_stop_fp_chw.v_required.err}}"
         }
       },
       {
@@ -125,10 +125,10 @@
         "openmrs_entity_id": "other_reason_fp_chw",
         "openmrs_entity_parent": "164901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Other reason",
+        "hint": "{{male_family_planning_change_method.step1.other_reason_fp_chw.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{male_family_planning_change_method.step1.other_reason_fp_chw.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -145,10 +145,10 @@
         "openmrs_entity_id": "side_effects_fp",
         "openmrs_entity_parent": "164154AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Side effects",
+        "hint": "{{male_family_planning_change_method.step1.side_effects_fp.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{male_family_planning_change_method.step1.side_effects_fp.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -161,7 +161,7 @@
     ]
   },
   "step2": {
-    "title": "Family planning method",
+    "title": "{{male_family_planning_change_method.step2.title}}",
     "next": "step3",
     "fields": [
       {
@@ -171,8 +171,13 @@
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Family planning method selected",
+        "hint": "{{male_family_planning_change_method.step2.fp_method_chosen.hint}}",
         "values": [
+          "{{male_family_planning_change_method.step2.fp_method_chosen.values[0]}}",
+          "{{male_family_planning_change_method.step2.fp_method_chosen.values[1]}}",
+          "{{male_family_planning_change_method.step2.fp_method_chosen.values[2]}}"
+        ],
+        "keys": [
           "Male condom",
           "Female condom",
           "Male sterilization"
@@ -184,7 +189,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{male_family_planning_change_method.step2.fp_method_chosen.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -211,7 +216,7 @@
     ]
   },
   "step3": {
-    "title": "Family planning method info",
+    "title": "{{male_family_planning_change_method.step3.title}}",
     "fields": [
       {
         "key": "no_condoms",
@@ -220,18 +225,18 @@
         "openmrs_entity_id": "no_condoms",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "How many condoms was he given?",
+        "hint": "{{male_family_planning_change_method.step3.no_condoms.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Equal or greater than 0"
+          "err": "{{male_family_planning_change_method.step3.no_condoms.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{male_family_planning_change_method.step3.no_condoms.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{male_family_planning_change_method.step3.no_condoms.v_min.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -268,8 +273,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "counselling_use",
         "type": "spinner",
-        "hint": "Was he counselled on how to use the family planning method?",
+        "hint": "{{male_family_planning_change_method.step3.counselling_use.hint}}",
         "values": [
+          "{{male_family_planning_change_method.step3.counselling_use.values[0]}}",
+          "{{male_family_planning_change_method.step3.counselling_use.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -279,7 +288,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_change_method.step3.counselling_use.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -295,7 +304,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_male_ster",
         "type": "date_picker",
-        "hint": "Date of male sterilization",
+        "hint": "{{male_family_planning_change_method.step3.fp_start_male_ster.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -306,7 +315,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{male_family_planning_change_method.step3.fp_start_male_ster.v_required.err}}"
         }
       },
       {
@@ -315,8 +324,8 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Advise the man to use condoms for the first 3 months to prevent pregnancy",
-        "toaster_info_text": "A note to inform the client that they should use condoms for the first three months after the sterialization to prevent pregnancy",
+        "text": "{{male_family_planning_change_method.step3.fp_male_ster_note.text}}",
+        "toaster_info_text": "{{male_family_planning_change_method.step3.fp_male_ster_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -332,26 +341,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_given",
         "openmrs_entity_parent": "",
-        "label": "Was he referred to the health facility?",
+        "label": "{{male_family_planning_change_method.step3.referral_given.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{male_family_planning_change_method.step3.referral_given.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{male_family_planning_change_method.step3.referral_given.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_change_method.step3.referral_given.v_required.err}}"
         }
       },
       {
@@ -370,5 +379,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "male_family_planning_change_method"
 }

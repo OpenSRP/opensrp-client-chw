@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Nutrition Status - Mother",
+    "title": "{{pnc_nutrition_status_mother.step1.title}}",
     "fields": [
       {
         "key": "nutrition_status_mama",
@@ -56,11 +56,11 @@
         "openmrs_entity_id": "163300AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Nutrition status of woman",
+        "hint": "{{pnc_nutrition_status_mother.step1.nutrition_status_mama.hint}}",
         "values": [
-          "Normal/Green",
-          "Moderate/Yellow",
-          "Severe/Red"
+          "{{pnc_nutrition_status_mother.step1.nutrition_status_mama.values[0]}}",
+          "{{pnc_nutrition_status_mother.step1.nutrition_status_mama.values[1]}}",
+          "{{pnc_nutrition_status_mother.step1.nutrition_status_mama.values[2]}}"
         ],
         "keys": [
           "Normal",
@@ -74,9 +74,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{pnc_nutrition_status_mother.step1.nutrition_status_mama.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_nutrition_status_mother"
 }

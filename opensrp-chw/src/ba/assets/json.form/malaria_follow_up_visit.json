@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Follow-up Visit",
+    "title": "{{malaria_follow_up_visit.step1.title}}",
     "fields": [
       {
         "key": "date_chw_mfollowup",
@@ -62,26 +62,25 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "1889AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Did you receive a referral or go to the hospital for malaria treatment?",
+        "label": "{{malaria_follow_up_visit.step1.hf_chw_mfollowup.label}}",
         "options": [
           {
             "key": "Yes",
             "openmrs_entity": "",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{malaria_follow_up_visit.step1.hf_chw_mfollowup.options.Yes.text}}"
           },
           {
             "key": "No",
             "openmrs_entity": "",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{malaria_follow_up_visit.step1.hf_chw_mfollowup.options.No.text}}"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       },
       {
@@ -90,61 +89,60 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "162686AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Treatment given",
+        "label": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.label}}",
         "options": [
           {
             "key": "ALU_6",
             "openmrs_entity": "",
             "openmrs_entity_id": "1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "ALU 6"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.ALU_6.text}}"
           },
           {
             "key": "ALU_12",
             "openmrs_entity": "",
             "openmrs_entity_id": "1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "ALU 12"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.ALU_12.text}}"
           },
           {
             "key": "ALU_18",
             "openmrs_entity": "",
             "openmrs_entity_id": "1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "ALU 18"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.ALU_18.text}}"
           },
           {
             "key": "ALU_24",
             "openmrs_entity": "",
             "openmrs_entity_id": "1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "ALU 24"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.ALU_24.text}}"
           },
           {
             "key": "Other_treatment",
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Other treatment"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.Other_treatment.text}}"
           },
           {
             "key": "Received_treatment_but_dont_remember_which_treatment",
             "openmrs_entity": "",
             "openmrs_entity_id": "1767AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Received treatment, but don't remember which treatment"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.Received_treatment_but_dont_remember_which_treatment.text}}"
           },
           {
             "key": "Not_given_treatment",
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Not given treatment"
+            "text": "{{malaria_follow_up_visit.step1.treat_given_chw_mfollowup.options.Not_given_treatment.text}}"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         },
         "relevance": {
           "rules-engine": {
@@ -160,33 +158,32 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "1743AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Reason treatment was not given",
+        "label": "{{malaria_follow_up_visit.step1.reason_no_treat.label}}",
         "options": [
           {
             "key": "Referral_unsuccessful",
             "openmrs_entity": "",
             "openmrs_entity_id": "160068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Referral unsuccessful"
+            "text": "{{malaria_follow_up_visit.step1.reason_no_treat.options.Referral_unsuccessful.text}}"
           },
           {
             "key": "Drugs_stock_out",
             "openmrs_entity": "",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Drugs stock out"
+            "text": "{{malaria_follow_up_visit.step1.reason_no_treat.options.Drugs_stock_out.text}}"
           },
           {
             "key": "Other_reason",
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Other reason"
+            "text": "{{malaria_follow_up_visit.step1.reason_no_treat.options.Other_reason.text}}"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         },
         "relevance": {
           "rules-engine": {
@@ -199,31 +196,28 @@
       {
         "key": "fever_still",
         "type": "native_radio",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Do you still have a fever?",
+        "label": "{{malaria_follow_up_visit.step1.fever_still.label}}",
         "options": [
           {
             "key": "Yes",
             "openmrs_entity": "",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes",
-            "value": false
+            "text": "{{malaria_follow_up_visit.step1.fever_still.options.Yes.text}}"
           },
           {
             "key": "No",
             "openmrs_entity": "",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No",
-            "value": false
+            "text": "{{malaria_follow_up_visit.step1.fever_still.options.No.text}}"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         }
       },
       {
@@ -232,44 +226,26 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "1731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Duration of fever",
+        "label": "{{malaria_follow_up_visit.step1.fever_duration.label}}",
         "options": [
           {
             "key": "Less_than_24hrs",
             "openmrs_entity": "",
             "openmrs_entity_id": "164449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Less than 24hrs"
+            "text": "{{malaria_follow_up_visit.step1.fever_duration.options.Less_than_24hrs.text}}"
           },
           {
             "key": "More_than_24hrs",
             "openmrs_entity": "",
             "openmrs_entity_id": "NA",
             "openmrs_entity_parent": "",
-            "text": "More than 24hrs"
+            "text": "{{malaria_follow_up_visit.step1.fever_duration.options.More_than_24hrs.text}}"
           }
         ],
         "v_required": {
-          "value": "true",
-          "err": null
+          "value": "true"
         },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "malaria_followup_relevance.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "referral_note",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "Refer client to the health facility for further examination and tests",
-        "toaster_info_text": "Refer client to the health facility for further examination and tests",
-        "toaster_type": "info",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -279,5 +255,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "malaria_follow_up_visit"
 }

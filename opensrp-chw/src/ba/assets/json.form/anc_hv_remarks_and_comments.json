@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Remarks/Comments",
+    "title": "{{anc_hv_remarks_and_comments.step1.title}}",
     "fields": [
       {
         "key": "chw_comment_anc",
@@ -55,12 +55,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Remarks/Comments",
+        "hint": "{{anc_hv_remarks_and_comments.step1.chw_comment_anc.hint}}",
         "v_required": {
           "value": "false",
-          "err": "Please enter the your remarks/comments"
+          "err": "{{anc_hv_remarks_and_comments.step1.chw_comment_anc.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_remarks_and_comments"
 }

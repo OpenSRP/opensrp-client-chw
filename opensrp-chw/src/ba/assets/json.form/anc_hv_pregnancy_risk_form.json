@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Pregnancy risk",
+    "title": "{{anc_hv_pregnancy_risk_form.step1.title}}",
     "fields": [
       {
         "key": "preg_risk",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "preg_risk",
         "type": "check_box",
-        "label": "Pregnancy risk for the woman ",
+        "label": "{{anc_hv_pregnancy_risk_form.step1.preg_risk.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "saveObsAsArray": true,
@@ -67,21 +67,21 @@
         "options": [
           {
             "key": "Low",
-            "text": "Low",
+            "text": "{{anc_hv_pregnancy_risk_form.step1.preg_risk.options.Low.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "Low"
           },
           {
             "key": "Medium",
-            "text": "Medium",
+            "text": "{{anc_hv_pregnancy_risk_form.step1.preg_risk.options.Medium.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "Medium"
           },
           {
             "key": "High",
-            "text": "High",
+            "text": "{{anc_hv_pregnancy_risk_form.step1.preg_risk.options.High.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "High"
@@ -89,9 +89,10 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{anc_hv_pregnancy_risk_form.step1.preg_risk.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_pregnancy_risk_form"
 }

@@ -54,7 +54,7 @@
     }
   },
   "step1": {
-    "title": "Sick Child",
+    "title": "{{child_sick_form.step1.title}}",
     "fields": [
       {
         "key": "age_in_months",
@@ -76,7 +76,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "This child is below 2 months of age. If you continue, you will be providing this care outside of the recommended national guidelines. If you do not wish to proceed, please exit the form..",
+        "text": "{{child_sick_form.step1.sick_child_warning.text}}",
         "text_color": "#CF0800",
         "toaster_type": "warning",
         "relevance": {
@@ -94,14 +94,14 @@
         "openmrs_entity_id": "manual_date",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "Date of visit",
-        "hint": "Date of visit",
+        "label": "{{child_sick_form.step1.manual_date.label}}",
+        "hint": "{{child_sick_form.step1.manual_date.hint}}",
         "expanded": false,
         "min_date": "today-1y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Enter the visit date"
+          "err": "{{child_sick_form.step1.manual_date.v_required.err}}"
         }
       },
       {
@@ -110,28 +110,28 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "native_radio",
-        "label": "What kind of visit is this?",
+        "label": "{{child_sick_form.step1.visit_type.label}}",
         "options": [
           {
             "key": "Initial Visit",
-            "text": "Initial Visit"
+            "text": "{{child_sick_form.step1.visit_type.options.Initial_Visit.text}}"
           },
           {
             "key": "1st follow-up visit",
-            "text": "1st follow-up visit"
+            "text": "{{child_sick_form.step1.visit_type.options.1st_follow-up_visit.text}}"
           },
           {
             "key": "2nd follow-up visit",
-            "text": "2nd follow-up visit"
+            "text": "{{child_sick_form.step1.visit_type.options.2nd_follow-up_visit.text}}"
           },
           {
             "key": "3rd follow-up visit",
-            "text": "3rd follow-up visit"
+            "text": "{{child_sick_form.step1.visit_type.options.3rd_follow-up_visit.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.visit_type.v_required.err}}"
         }
       },
       {
@@ -140,20 +140,20 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "source",
         "type": "native_radio",
-        "label": "How did you find the child?",
+        "label": "{{child_sick_form.step1.source.label}}",
         "options": [
           {
             "key": "Passive case finding (Parent came to me)",
-            "text": "Passive case finding (Parent came to me)"
+            "text": "{{child_sick_form.step1.source.options.Passive_case_finding_(Parent_came_to_me).text}}"
           },
           {
             "key": "Active case finding (CHA went to sick child or on routine visit)",
-            "text": "Active case finding (CHA went to sick child or on routine visit)"
+            "text": "{{child_sick_form.step1.source.options.Active_case_finding_(CHA_went_to_sick_child_or_on_routine_visit).text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.source.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -169,7 +169,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "danger_signs",
         "type": "check_box",
-        "label": "Ask and look to see if the child has any DANGER SIGNS:",
+        "label": "{{child_sick_form.step1.danger_signs.label}}",
         "label_text_style": "normal",
         "exclusive": [
           "chk_none"
@@ -177,91 +177,91 @@
         "options": [
           {
             "key": "chk_muac",
-            "text": "Red MUAC Strap",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_muac.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_muac"
           },
           {
             "key": "chk_feet_swelling",
-            "text": "Both feet swelling",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_feet_swelling.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_feet_swelling"
           },
           {
             "key": "chk_sleepy_unconscious",
-            "text": "Very sleepy or unconscious",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_sleepy_unconscious.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_sleepy_unconscious"
           },
           {
             "key": "chk_convulsions",
-            "text": "Convulsions (Jerking)",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_convulsions.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_convulsions"
           },
           {
             "key": "chk_unable_to_eat",
-            "text": "Unable to eat or drink anything",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_unable_to_eat.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_unable_to_eat"
           },
           {
             "key": "chk_vomiting",
-            "text": "Vomiting everything",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_vomiting.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_vomiting"
           },
           {
             "key": "chk_blood_in_poo",
-            "text": "Blood in poo poo",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_blood_in_poo.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_blood_in_poo"
           },
           {
             "key": "chk_coughing",
-            "text": "Coughing more than 21 days",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_coughing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_coughing"
           },
           {
             "key": "chk_chest_indrawing",
-            "text": "Chest indrawing",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_chest_indrawing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_coughing"
           },
           {
             "key": "chk_fever",
-            "text": "Fever more than 7 days",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_fever"
           },
           {
             "key": "chk_running_stomach",
-            "text": "Stomach running more than 14 days",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_running_stomach.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_running_stomach"
           },
           {
             "key": "chk_other",
-            "text": "Any other problem you cannot treat",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_other.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_other"
           },
           {
             "key": "chk_none",
-            "text": "None of the above",
+            "text": "{{child_sick_form.step1.danger_signs.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "chk_none"
@@ -288,11 +288,11 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "{firstName} has the following danger signs and needs to be referred to a health facility:\n{dangerSigns}",
+        "text": "{{child_sick_form.step1.danger_signs_present_toaster.text}}",
         "toaster_type": "problem",
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.danger_signs_present_toaster.v_required.err}}"
         },
         "calculation": {
           "rules-engine": {
@@ -315,16 +315,16 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_information_one",
         "type": "native_radio",
-        "label": "Explain why the caregiver must take the child to a health facility",
+        "label": "{{child_sick_form.step1.referral_information_one.label}}",
         "options": [
           {
             "key": "I have explained to the caregiver why the child must be moved to the health facility",
-            "text": "I have explained to the caregiver why the child must be moved to the health facility"
+            "text": "{{child_sick_form.step1.referral_information_one.options.I_have_explained_to_the_caregiver_why_the_child_must_be_moved_to_the_health_facility.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_information_one.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -337,7 +337,7 @@
       {
         "key": "chest_indrawing_label",
         "type": "label",
-        "text": "Referral - Chest Indrawing",
+        "text": "{{child_sick_form.step1.chest_indrawing_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -359,20 +359,20 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_provided_amoxicillin",
         "type": "native_radio",
-        "label": "PNEUMONIA: If the child can drink, give child first dose of oral antibiotics (amoxicillin)",
+        "label": "{{child_sick_form.step1.referral_provided_amoxicillin.label}}",
         "options": [
           {
             "key": "Yes. I have given the child oral antibiotics (amoxicillin)",
-            "text": "Yes. I have given the child oral antibiotics (amoxicillin)"
+            "text": "{{child_sick_form.step1.referral_provided_amoxicillin.options.Yes._I_have_given_the_child_oral_antibiotics_(amoxicillin).text}}"
           },
           {
             "key": "No. Oral antibiotics (amoxicillin) were not provided",
-            "text": "No. Oral antibiotics (amoxicillin) were not provided"
+            "text": "{{child_sick_form.step1.referral_provided_amoxicillin.options.No._Oral_antibiotics_(amoxicillin)_were_not_provided.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_provided_amoxicillin.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -385,7 +385,7 @@
       {
         "key": "fever_label",
         "type": "label",
-        "text": "Referral - Fever (+) 7 days",
+        "text": "{{child_sick_form.step1.fever_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -407,22 +407,22 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "give_act",
         "type": "native_radio",
-        "label": "MALARIA: Refer + Treat Malaria. Help caregiver give first dose of ACT and Paracetamol",
-        "label_info_title": "See dose card",
-        "label_info_text": "See dose card",
+        "label": "{{child_sick_form.step1.give_act.label}}",
+        "label_info_title": "{{child_sick_form.step1.give_act.label_info_title}}",
+        "label_info_text": "{{child_sick_form.step1.give_act.label_info_text}}",
         "options": [
           {
             "key": "Yes. I provided the first dose of ACT and Paracetamol",
-            "text": "Yes. I provided the first dose of ACT and Paracetamol"
+            "text": "{{child_sick_form.step1.give_act.options.Yes._I_provided_the_first_dose_of_ACT_and_Paracetamol.text}}"
           },
           {
             "key": "No. I did not provide the first dose of ACT and Paracetamol",
-            "text": "No. I did not provide the first dose of ACT and Paracetamol"
+            "text": "{{child_sick_form.step1.give_act.options.No._I_did_not_provide_the_first_dose_of_ACT_and_Paracetamol.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.give_act.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -435,7 +435,7 @@
       {
         "key": "running_stomach_label",
         "type": "label",
-        "text": "Referral - Running Stomach (+) 14 days",
+        "text": "{{child_sick_form.step1.running_stomach_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -458,22 +458,22 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "provided_ors",
         "type": "native_radio",
-        "label": "DIARRHEA: Give ORS right away",
-        "label_info_title": "See dose card",
-        "label_info_text": "See dose card",
+        "label": "{{child_sick_form.step1.provided_ors.label}}",
+        "label_info_title": "{{child_sick_form.step1.provided_ors.label_info_title}}",
+        "label_info_text": "{{child_sick_form.step1.provided_ors.label_info_text}}",
         "options": [
           {
             "key": "Yes. I have given ORS to the child",
-            "text": "Yes. I have given ORS to the child"
+            "text": "{{child_sick_form.step1.provided_ors.options.Yes._I_have_given_ORS_to_the_child.text}}"
           },
           {
             "key": "No. I have not given ORS to the child",
-            "text": "No. I have not given ORS to the child"
+            "text": "{{child_sick_form.step1.provided_ors.options.No._I_have_not_given_ORS_to_the_child.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.provided_ors.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -490,16 +490,16 @@
         "openmrs_entity_id": "referral_give_fluids",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Advise the caregiver to give water and continue feeding the child",
+        "label": "{{child_sick_form.step1.referral_give_fluids.label}}",
         "options": [
           {
             "key": "I have advised the caregiver to give fluids and continue feeding",
-            "text": "I have advised the caregiver to give fluids and continue feeding"
+            "text": "{{child_sick_form.step1.referral_give_fluids.options.I_have_advised_the_caregiver_to_give_fluids_and_continue_feeding.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_give_fluids.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -516,19 +516,19 @@
         "openmrs_entity_id": "referral_keep_child_warm",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Advise the caregiver to keep the child warm",
+        "label": "{{child_sick_form.step1.referral_keep_child_warm.label}}",
         "values": [
           "I have advised the caregiver to keep the child warm"
         ],
         "options": [
           {
             "key": "I have advised the caregiver to keep the child warm",
-            "text": "I have advised the caregiver to keep the child warm"
+            "text": "{{child_sick_form.step1.referral_keep_child_warm.options.I_have_advised_the_caregiver_to_keep_the_child_warm.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_keep_child_warm.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -545,16 +545,16 @@
         "openmrs_entity_id": "referral_keep_child_cool",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Advise the caregiver to keep the child cool",
+        "label": "{{child_sick_form.step1.referral_keep_child_cool.label}}",
         "options": [
           {
             "key": "I have advised the caregiver to keep the child cool",
-            "text": "I have advised the caregiver to keep the child cool"
+            "text": "{{child_sick_form.step1.referral_keep_child_cool.options.I_have_advised_the_caregiver_to_keep_the_child_cool.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_keep_child_cool.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -571,20 +571,20 @@
         "openmrs_entity_id": "referral_complete_form",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Complete the 1.3 Community Trigger and Referral Form",
+        "label": "{{child_sick_form.step1.referral_complete_form.label}}",
         "options": [
           {
             "key": "Yes. I have completed the 1.3 Community Trigger and Referral Form",
-            "text": "Yes. I have completed the 1.3 Community Trigger and Referral Form"
+            "text": "{{child_sick_form.step1.referral_complete_form.options.Yes._I_have_completed_the_1.3_Community_Trigger_and_Referral_Form.text}}"
           },
           {
             "key": "No. I have NOT completed the 1.3 Community Trigger and Referral Form",
-            "text": "No. I have NOT completed the 1.3 Community Trigger and Referral Form"
+            "text": "{{child_sick_form.step1.referral_complete_form.options.No._I_have_NOT_completed_the_1.3_Community_Trigger_and_Referral_Form.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_complete_form.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -601,20 +601,20 @@
         "openmrs_entity_id": "referral_arranged_transport",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Arrange transport for the child and refer the child to the health facility",
+        "label": "{{child_sick_form.step1.referral_arranged_transport.label}}",
         "options": [
           {
             "key": "I have attempted and was successful in arranging transport for the child for a referral visit to the facility",
-            "text": "I have attempted and was successful in arranging transport for the child for a referral visit to the facility"
+            "text": "{{child_sick_form.step1.referral_arranged_transport.options.I_have_attempted_and_was_successful_in_arranging_transport_for_the_child_for_a_referral_visit_to_the_facility.text}}"
           },
           {
             "key": "I have attempted but was not successful in arranging transport for the child for a referral visit to the facility",
-            "text": "I have attempted but was not successful in arranging transport for the child for a referral visit to the facility"
+            "text": "{{child_sick_form.step1.referral_arranged_transport.options.I_have_attempted_but_was_not_successful_in_arranging_transport_for_the_child_for_a_referral_visit_to_the_facility.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_arranged_transport.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -631,20 +631,20 @@
         "openmrs_entity_id": "referral_successful",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Has the caregiver agreed to take child to health facility?",
+        "label": "{{child_sick_form.step1.referral_successful.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes"
+            "text": "{{child_sick_form.step1.referral_successful.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No"
+            "text": "{{child_sick_form.step1.referral_successful.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.referral_successful.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -660,7 +660,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Child has no danger signs. Please look for the following symptoms which can be treated at home",
+        "text": "{{child_sick_form.step1.no_danger_signs_toaster.text}}",
         "toaster_type": "positive",
         "relevance": {
           "rules-engine": {
@@ -677,7 +677,7 @@
         "openmrs_entity_id": "",
         "type": "label",
         "text_size": "6sp",
-        "text": "Please look for the following symptoms which can be treated at home",
+        "text": "{{child_sick_form.step1.look_for_symptoms_toaster.text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -690,7 +690,7 @@
       {
         "key": "yellow_muac_label",
         "type": "label",
-        "text": "GRP-Yellow MUAC",
+        "text": "{{child_sick_form.step1.yellow_muac_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -714,20 +714,20 @@
         "openmrs_entity_id": "referral_provided_amoxicillin",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Does the child have Yellow MUAC?",
+        "label": "{{child_sick_form.step1.yellow_muac.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes"
+            "text": "{{child_sick_form.step1.yellow_muac.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No"
+            "text": "{{child_sick_form.step1.yellow_muac.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.yellow_muac.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -740,7 +740,7 @@
       {
         "key": "coughing_or_difficulty_label",
         "type": "label",
-        "text": "Coughing or Difficult Breathing",
+        "text": "{{child_sick_form.step1.coughing_or_difficulty_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -764,20 +764,20 @@
         "openmrs_entity_id": "referral_provided_amoxicillin",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Is the child coughing?",
+        "label": "{{child_sick_form.step1.child_coughing.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes"
+            "text": "{{child_sick_form.step1.child_coughing.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No"
+            "text": "{{child_sick_form.step1.child_coughing.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.child_coughing.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -794,20 +794,20 @@
         "openmrs_entity_id": "referral_provided_amoxicillin",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Child has fast breathing?\n    - If 2-11 months: 50+ breaths per minute\n    - If 1-5 years: 40+ breaths per minute",
+        "label": "{{child_sick_form.step1.fast_breathing.label}}",
         "options": [
           {
             "key": "Yes, has fast breathing",
-            "text": "Yes, has fast breathing"
+            "text": "{{child_sick_form.step1.fast_breathing.options.Yes,_has_fast_breathing.text}}"
           },
           {
             "key": "Not fast breathing",
-            "text": "Not fast breathing"
+            "text": "{{child_sick_form.step1.fast_breathing.options.Not_fast_breathing.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.fast_breathing.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -820,7 +820,7 @@
       {
         "key": "fever_group_label",
         "type": "label",
-        "text": "Fever",
+        "text": "{{child_sick_form.step1.fever_group_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -844,20 +844,20 @@
         "openmrs_entity_id": "fever",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Child had fever in past 3 days?",
+        "label": "{{child_sick_form.step1.fever.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes"
+            "text": "{{child_sick_form.step1.fever.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No"
+            "text": "{{child_sick_form.step1.fever.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.fever.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -874,20 +874,20 @@
         "openmrs_entity_id": "gave_rdt",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Perform an RDT on the child",
+        "label": "{{child_sick_form.step1.gave_rdt.label}}",
         "options": [
           {
             "key": "Yes, I gave the child an RDT",
-            "text": "Yes, I gave the child an RDT"
+            "text": "{{child_sick_form.step1.gave_rdt.options.Yes,_I_gave_the_child_an_RDT.text}}"
           },
           {
             "key": "No, I did not give the child an RDT",
-            "text": "No, I did not give the child an RDT"
+            "text": "{{child_sick_form.step1.gave_rdt.options.No,_I_did_not_give_the_child_an_RDT.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.gave_rdt.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -904,20 +904,20 @@
         "openmrs_entity_id": "postive_malaria",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "What was the result of the RDT?",
+        "label": "{{child_sick_form.step1.positive_malaria.label}}",
         "options": [
           {
             "key": "Positive RDT",
-            "text": "Positive RDT"
+            "text": "{{child_sick_form.step1.positive_malaria.options.Positive_RDT.text}}"
           },
           {
             "key": "Negative RDT",
-            "text": "Negative RDT"
+            "text": "{{child_sick_form.step1.positive_malaria.options.Negative_RDT.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.positive_malaria.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -930,7 +930,7 @@
       {
         "key": "diarrhea_label",
         "type": "label",
-        "text": "Diarrhea",
+        "text": "{{child_sick_form.step1.diarrhea_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
@@ -954,20 +954,20 @@
         "openmrs_entity_id": "fever",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Has the child had 3 or more diarrhea (watery poo poos) in the last 24 hours?",
+        "label": "{{child_sick_form.step1.diarrhea.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes"
+            "text": "{{child_sick_form.step1.diarrhea.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No"
+            "text": "{{child_sick_form.step1.diarrhea.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.diarrhea.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1053,7 +1053,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "treat_at_home_toaster",
         "type": "toaster_notes",
-        "text": "Begin home treatment. {firstName} has the following symptoms: {symptoms} ",
+        "text": "{{child_sick_form.step1.treat_at_home_toaster.text}}",
         "text_color": "#CF0800",
         "toaster_type": "warning",
         "calculation": {
@@ -1077,20 +1077,20 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "native_radio",
-        "label": "PNEUMONIA: Treat at home with Amoxicillin. Teach caregiver how to give treatment and watch caregiver give first dose now. Check caregiver's understanding and ask him/her to explain treatment plan",
+        "label": "{{child_sick_form.step1.treat_pneumonia.label}}",
         "options": [
           {
             "key": "Yes",
-            "text": "Yes, I told the caregiver and gave him/her Amoxicillin"
+            "text": "{{child_sick_form.step1.treat_pneumonia.options.Yes.text}}"
           },
           {
             "key": "No",
-            "text": "No, I did not give the caregiver Amoxicillin"
+            "text": "{{child_sick_form.step1.treat_pneumonia.options.No.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.treat_pneumonia.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1106,8 +1106,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "pneumonia_dose_given",
         "type": "edit_text",
-        "label": "Dose given:",
-        "hint": "Dose given:",
+        "label": "{{child_sick_form.step1.pneumonia_dose_given.label}}",
+        "hint": "{{child_sick_form.step1.pneumonia_dose_given.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -1122,24 +1122,24 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "native_radio",
-        "label": "Why was treatment for Pneumonia not provided?",
+        "label": "{{child_sick_form.step1.did_not_treat_pneumonia_reason.label}}",
         "options": [
           {
             "key": "out_of_stock",
-            "text": "Out of stock"
+            "text": "{{child_sick_form.step1.did_not_treat_pneumonia_reason.options.out_of_stock.text}}"
           },
           {
             "key": "treatment_provided_by_outreach_or_clinic",
-            "text": "Treatment provided by outreach  or clinic"
+            "text": "{{child_sick_form.step1.did_not_treat_pneumonia_reason.options.treatment_provided_by_outreach_or_clinic.text}}"
           },
           {
             "key": "other",
-            "text": "Other"
+            "text": "{{child_sick_form.step1.did_not_treat_pneumonia_reason.options.other.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.did_not_treat_pneumonia_reason.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1155,8 +1155,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "did_not_treat_pneumonia_reason_other",
         "type": "edit_text",
-        "label": "Other:",
-        "hint": "Other:",
+        "label": "{{child_sick_form.step1.did_not_treat_pneumonia_reason_other.label}}",
+        "hint": "{{child_sick_form.step1.did_not_treat_pneumonia_reason_other.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -1172,20 +1172,20 @@
         "openmrs_entity_id": "treat_malaria",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "MALARIA: Teach caregiver how to give treatment and watch caregiver give first ACT and Paracetamol doses now. Check caregiver's understanding and ask him/her to explain treatment plan",
+        "label": "{{child_sick_form.step1.treat_malaria.label}}",
         "options": [
           {
             "key": "Yes, I informed the caregiver and gave child ACT and Paracetamol",
-            "text": "Yes, I informed the caregiver and gave child ACT and Paracetamol"
+            "text": "{{child_sick_form.step1.treat_malaria.options.Yes,_I_informed_the_caregiver_and_gave_child_ACT_and_Paracetamol.text}}"
           },
           {
             "key": "No, I did not give the child ACT and Paracetamol",
-            "text": "No, I did not give the child ACT and Paracetamol"
+            "text": "{{child_sick_form.step1.treat_malaria.options.No,_I_did_not_give_the_child_ACT_and_Paracetamol.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.treat_malaria.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1202,11 +1202,11 @@
         "openmrs_entity_id": "malaria_dose_given",
         "openmrs_data_type": "",
         "type": "edit_text",
-        "label": "Dose given:",
-        "hint": "Dose given:",
+        "label": "{{child_sick_form.step1.malaria_dose_given.label}}",
+        "hint": "{{child_sick_form.step1.malaria_dose_given.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.malaria_dose_given.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1223,24 +1223,24 @@
         "openmrs_entity_id": "did_not_treat_malaria_reason",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Why was treatment for Malaria not provided?",
+        "label": "{{child_sick_form.step1.did_not_treat_malaria_reason.label}}",
         "options": [
           {
             "key": "Out of stock",
-            "text": "Out of stock"
+            "text": "{{child_sick_form.step1.did_not_treat_malaria_reason.options.Out_of_stock.text}}"
           },
           {
             "key": "Treatment provided by outreach clinic",
-            "text": "Treatment provided by outreach clinic"
+            "text": "{{child_sick_form.step1.did_not_treat_malaria_reason.options.Treatment_provided_by_outreach_clinic.text}}"
           },
           {
             "key": "Other",
-            "text": "Other"
+            "text": "{{child_sick_form.step1.did_not_treat_malaria_reason.options.Other.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.did_not_treat_malaria_reason.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1257,11 +1257,11 @@
         "openmrs_entity_id": "did_not_treat_malaria_reason_other",
         "openmrs_data_type": "",
         "type": "edit_text",
-        "label": "Other:",
-        "hint": "Other:",
+        "label": "{{child_sick_form.step1.did_not_treat_malaria_reason_other.label}}",
+        "hint": "{{child_sick_form.step1.did_not_treat_malaria_reason_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.did_not_treat_malaria_reason_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1277,23 +1277,23 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "did_not_treat_malaria_reason",
         "openmrs_data_type": "",
-        "label_info_text": "Use dose card to determine correct treatment plan",
-        "label_info_title": "Treat diarrhea",
+        "label_info_text": "{{child_sick_form.step1.treat_diarrhea.label_info_text}}",
+        "label_info_title": "{{child_sick_form.step1.treat_diarrhea.label_info_title}}",
         "type": "native_radio",
-        "label": "DIARRHEA: Teach caregiver how to give treatment and watch caregiver give first dose of ORS and Zinc now. Check caregiver's understanding and ask him/her to explain treatment plan",
+        "label": "{{child_sick_form.step1.treat_diarrhea.label}}",
         "options": [
           {
             "key": "Yes, I informed the caregiver and gave child ORS and Zinc",
-            "text": "Yes, I informed the caregiver and gave child ORS and Zinc"
+            "text": "{{child_sick_form.step1.treat_diarrhea.options.Yes,_I_informed_the_caregiver_and_gave_child_ORS_and_Zinc.text}}"
           },
           {
             "key": "No, I did not give the child ORS and Zinc",
-            "text": "No, I did not give the child ORS and Zinc"
+            "text": "{{child_sick_form.step1.treat_diarrhea.options.No,_I_did_not_give_the_child_ORS_and_Zinc.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.treat_diarrhea.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1310,11 +1310,11 @@
         "openmrs_entity_id": "diarrhea_dose_given",
         "openmrs_data_type": "",
         "type": "edit_text",
-        "label": "Dose given:",
-        "hint": "Dose given:",
+        "label": "{{child_sick_form.step1.diarrhea_dose_given.label}}",
+        "hint": "{{child_sick_form.step1.diarrhea_dose_given.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.diarrhea_dose_given.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1331,24 +1331,24 @@
         "openmrs_entity_id": "did_not_treat_diarrhea_reason",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Why was treatment for Diarrhea not provided?",
+        "label": "{{child_sick_form.step1.did_not_treat_diarrhea_reason.label}}",
         "options": [
           {
             "key": "Out of stock",
-            "text": "Out of stock"
+            "text": "{{child_sick_form.step1.did_not_treat_diarrhea_reason.options.Out_of_stock.text}}"
           },
           {
             "key": "Treatment provided by outreach clinic",
-            "text": "Treatment provided by outreach clinic"
+            "text": "{{child_sick_form.step1.did_not_treat_diarrhea_reason.options.Treatment_provided_by_outreach_clinic.text}}"
           },
           {
             "key": "Other",
-            "text": "Other"
+            "text": "{{child_sick_form.step1.did_not_treat_diarrhea_reason.options.Other.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.did_not_treat_diarrhea_reason.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1365,11 +1365,11 @@
         "openmrs_entity_id": "did_not_treat_diarrhea_reason_other",
         "openmrs_data_type": "",
         "type": "edit_text",
-        "label": "Other:",
-        "hint": "Other:",
+        "label": "{{child_sick_form.step1.did_not_treat_diarrhea_reason_other.label}}",
+        "hint": "{{child_sick_form.step1.did_not_treat_diarrhea_reason_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.did_not_treat_diarrhea_reason_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1386,20 +1386,20 @@
         "openmrs_entity_id": "counseled_for_malnutrition",
         "openmrs_data_type": "",
         "type": "native_radio",
-        "label": "Yellow MUAC - Child is malnourished. Advise the caregiver on malnutrition and how to give child a balanced diet and good food. Notify your supervisor.",
+        "label": "{{child_sick_form.step1.counseled_for_malnutrition.label}}",
         "options": [
           {
             "key": "Yes, I advised on malnutrition and will notify my supervisor",
-            "text": "Yes, I advised on malnutrition and will notify my supervisor"
+            "text": "{{child_sick_form.step1.counseled_for_malnutrition.options.Yes,_I_advised_on_malnutrition_and_will_notify_my_supervisor.text}}"
           },
           {
             "key": "No, I did not advise on malnutrition",
-            "text": "No, I did not advise on malnutrition"
+            "text": "{{child_sick_form.step1.counseled_for_malnutrition.options.No,_I_did_not_advise_on_malnutrition.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Required field"
+          "err": "{{child_sick_form.step1.counseled_for_malnutrition.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -1415,7 +1415,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_warm",
         "type": "toaster_notes",
-        "text": "Advise the caregiver to keep the child warm",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_warm.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1432,7 +1432,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_cool",
         "type": "toaster_notes",
-        "text": "Advise the caregiver to keep the child cool",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_cool.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1449,7 +1449,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_fluids",
         "type": "toaster_notes",
-        "text": "Advise caregiver to give more fluids and continue feeding",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_fluids.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1466,7 +1466,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_follow_up",
         "type": "toaster_notes",
-        "text": "Reminder: Follow up with the child",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_follow_up.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1483,7 +1483,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_no_symptoms",
         "type": "toaster_notes",
-        "text": "Child has no symptoms. Follow up with caregiver to make sure the child stays healthy",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_no_symptoms.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1500,7 +1500,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "child_has_danger_sign_toaster_treatment_completed",
         "type": "toaster_notes",
-        "text": "Treatment completed. Ask caregiver to return if the child has any other health problems",
+        "text": "{{child_sick_form.step1.child_has_danger_sign_toaster_treatment_completed.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1531,7 +1531,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "notify_supervisor_toaster",
         "type": "toaster_notes",
-        "text": "Child has not recovered in three follow up visits. Please notify your supervisor",
+        "text": "{{child_sick_form.step1.notify_supervisor_toaster.text}}",
         "text_color": "#D56900",
         "toaster_type": "warning",
         "relevance": {
@@ -1543,5 +1543,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_sick_form"
 }

@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Referral followup",
+    "title": "{{referral_followup_form.step1.title}}",
     "fields": [
       {
         "key": "chw_followup_feedback",
@@ -82,7 +82,7 @@
         "openmrs_entity_id": "chw_followup_date",
         "type": "edit_text"
       }
-
     ]
-  }
+  },
+  "properties_file_name": "referral_followup_form"
 }

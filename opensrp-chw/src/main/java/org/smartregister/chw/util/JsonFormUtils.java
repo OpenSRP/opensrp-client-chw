@@ -50,6 +50,8 @@ import java.util.TimeZone;
 
 import timber.log.Timber;
 
+import static com.vijay.jsonwizard.utils.NativeFormLangUtils.getTranslatedString;
+
 /**
  * Created by keyman on 13/11/2018.
  */
@@ -577,7 +579,7 @@ public class JsonFormUtils extends CoreJsonFormUtils {
 
     public static JSONObject getJson(Context context, String formName, String baseEntityID) throws Exception {
         String locationId = ChwApplication.getInstance().getContext().allSharedPreferences().getPreference(AllConstants.CURRENT_LOCATION_ID);
-        JSONObject jsonObject = FormUtils.getInstance(context).getFormJson(formName);
+        JSONObject jsonObject = new JSONObject(getTranslatedString(FormUtils.getInstance(context).getFormJson(formName).toString(), context));
         org.smartregister.chw.anc.util.JsonFormUtils.getRegistrationForm(jsonObject, baseEntityID, locationId);
         return jsonObject;
     }

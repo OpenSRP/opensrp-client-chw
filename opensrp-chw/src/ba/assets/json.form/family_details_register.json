@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Family Details",
+    "title": "{{family_details_register.step1.title}}",
     "fields": [
       {
         "key": "fam_name",
@@ -60,15 +60,15 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "first_name",
         "type": "edit_text",
-        "hint": "Family name",
+        "hint": "{{family_details_register.step1.fam_name.hint}}",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the family name"
+          "err": "{{family_details_register.step1.fam_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{family_details_register.step1.fam_name.v_regex.err}}"
         }
       },
       {
@@ -79,11 +79,11 @@
         "hidden": "true",
         "type": "barcode",
         "barcode_type": "qrcode",
-        "hint": "ID *",
-        "scanButtonText": "Scan QR Code",
+        "hint": "{{family_details_register.step1.unique_id.hint}}",
+        "scanButtonText": "{{family_details_register.step1.unique_id.scanButtonText}}",
         "v_numeric": {
           "value": "true",
-          "err": "Please enter a valid ID"
+          "err": "{{family_details_register.step1.unique_id.v_numeric.err}}"
         }
       },
       {
@@ -92,10 +92,10 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "cityVillage",
         "type": "edit_text",
-        "hint": "Village/Town",
+        "hint": "{{family_details_register.step1.village_town.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the village or town"
+          "err": "{{family_details_register.step1.village_town.v_required.err}}"
         }
       },
       {
@@ -104,7 +104,7 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "landmark",
         "type": "edit_text",
-        "hint": "Landmark"
+        "hint": "{{family_details_register.step1.landmark.hint}}"
       },
       {
         "key": "gps",
@@ -121,13 +121,14 @@
         "openmrs_entity_id": "162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "tree",
-        "hint": "Nearest health facility",
+        "hint": "{{family_details_register.step1.nearest_facility.hint}}",
         "tree": [],
         "v_required": {
           "value": true,
-          "err": "Please enter the nearest health facility"
+          "err": "{{family_details_register.step1.nearest_facility.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "family_details_register"
 }

@@ -49,7 +49,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Pregnancy Outcome",
+    "title": "{{anc_pregnancy_outcome.step1.title}}",
     "fields": [
       {
         "key": "relational_id",
@@ -61,12 +61,11 @@
       {
         "key": "pregnancy_outcome_label",
         "type": "label",
-        "text": "PREGNANCY OUTCOME",
+        "text": "{{anc_pregnancy_outcome.step1.pregnancy_outcome_label.text}}",
         "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
-        "text_size": "7sp",
-        "text_color": "#000000"
+        "text_size": "7sp"
       },
       {
         "key": "preg_outcome",
@@ -75,8 +74,14 @@
         "openmrs_entity_id": "161033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Pregnancy outcome",
+        "hint": "{{anc_pregnancy_outcome.step1.preg_outcome.hint}}",
         "values": [
+          "{{anc_pregnancy_outcome.step1.preg_outcome.values[0]}}",
+          "{{anc_pregnancy_outcome.step1.preg_outcome.values[1]}}",
+          "{{anc_pregnancy_outcome.step1.preg_outcome.values[2]}}",
+          "{{anc_pregnancy_outcome.step1.preg_outcome.values[3]}}"
+        ],
+        "keys": [
           "Live birth",
           "Stillbirth",
           "Miscarriage",
@@ -90,7 +95,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_pregnancy_outcome.step1.preg_outcome.v_required.err}}"
         }
       },
       {
@@ -99,12 +104,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165248AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of miscarriage",
+        "hint": "{{anc_pregnancy_outcome.step1.miscarriage_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date the woman miscarried."
+          "err": "{{anc_pregnancy_outcome.step1.miscarriage_date.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -120,12 +125,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Delivery date",
+        "hint": "{{anc_pregnancy_outcome.step1.delivery_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date the woman delivered"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_date.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -142,8 +147,13 @@
         "openmrs_entity_id": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Place of delivery",
+        "hint": "{{anc_pregnancy_outcome.step1.delivery_place.hint}}",
         "values": [
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[0]}}",
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[1]}}",
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[2]}}"
+        ],
+        "keys": [
           "Home",
           "Health facility",
           "Other"
@@ -155,7 +165,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_place.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -168,7 +178,7 @@
       {
         "key": "baby_label",
         "type": "label",
-        "text": "BABY DETAILS",
+        "text": "{{anc_pregnancy_outcome.step1.baby_label.text}}",
         "left_padding": "20dp",
         "right_padding": "20dp",
         "text_size": "7sp",
@@ -197,8 +207,8 @@
       {
         "key": "no_children_no",
         "type": "repeating_group",
-        "reference_edit_text_hint": "Number of children born",
-        "repeating_group_label": "Baby Details #",
+        "reference_edit_text_hint": "{{anc_pregnancy_outcome.step1.no_children_no.reference_edit_text_hint}}",
+        "repeating_group_label": "Détails de l\u0027enfant #",
         "repeating_group_max": "10",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -212,7 +222,7 @@
         },
         "v_required": {
           "value": true,
-          "err": "Please specify the # of babies"
+          "err": "{{anc_pregnancy_outcome.step1.no_children_no.v_required.err}}"
         },
         "value": [
           {
@@ -221,7 +231,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "type": "edit_text",
-            "hint": "Surname",
+            "hint": "Nom",
             "edit_type": "name",
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
@@ -229,7 +239,7 @@
             },
             "v_required": {
               "value": "true",
-              "err": "Please enter the surname"
+              "err": "obligatoire"
             },
             "relevance": {
               "rules-engine": {
@@ -249,7 +259,7 @@
             "options": [
               {
                 "key": "same_as_fam_name",
-                "text": "Surname same as family name",
+                "text": "Même nom que ménage",
                 "text_size": "18px",
                 "value": "false"
               }
@@ -261,15 +271,15 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "first_name",
             "type": "edit_text",
-            "hint": "First name",
+            "hint": "Prénom",
             "edit_type": "name",
             "v_required": {
               "value": "true",
-              "err": "Please enter the first name"
+              "err": "obligatoire"
             },
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-              "err": "Please enter a valid name"
+              "err": "Entrez un nom valide"
             }
           },
           {
@@ -278,11 +288,11 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "middle_name",
             "type": "edit_text",
-            "hint": "Middle name",
+            "hint": "Deuxième prénom",
             "edit_type": "name",
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-              "err": "Please enter a valid name"
+              "err": "Entrez un nom valide"
             }
           },
           {
@@ -298,14 +308,18 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "gender",
             "type": "spinner",
-            "hint": "Sex",
+            "hint": "Sexe",
             "values": [
+              "Masculin",
+              "Feminin"
+            ],
+            "keys": [
               "Male",
               "Female"
             ],
             "v_required": {
               "value": "true",
-              "err": "Please enter the sex"
+              "err": "Obligatoire"
             }
           },
           {
@@ -314,8 +328,12 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "spinner",
-            "hint": "Is the baby low birth weight (weighs less than 2.5 kg)?",
+            "hint": "Est-ce que le bébé est de poids faible à la naissance (pèse moins de 2.5 kg)? ",
             "values": [
+              "Oui",
+              "Non"
+            ],
+            "keys": [
               "Yes",
               "No"
             ],
@@ -325,7 +343,7 @@
             },
             "v_required": {
               "value": "true",
-              "err": "Please select if baby has low the weight"
+              "err": "Obligatoire"
             }
           },
           {
@@ -334,8 +352,12 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "161543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "spinner",
-            "hint": "Early initiation of breastfeeding (1 hr)?",
+            "hint": "Mise au sein precoce á la naissance (1 hr)?",
             "values": [
+              "Oui",
+              "Non"
+            ],
+            "keys": [
               "Yes",
               "No"
             ],
@@ -345,7 +367,7 @@
             },
             "v_required": {
               "value": "true",
-              "err": "Please enter Early initiation of breastfeeding"
+              "err": "Obligatoire"
             }
           },
           {
@@ -354,8 +376,12 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "159522AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "spinner",
-            "hint": "Physically challenged?",
+            "hint": "Enfant vivant avec un handicap?",
             "values": [
+              "Oui",
+              "Non"
+            ],
+            "keys": [
               "Yes",
               "No"
             ],
@@ -365,7 +391,7 @@
             },
             "v_required": {
               "value": "true",
-              "err": "Please enter if Physically challenged"
+              "err": "Obligatoire"
             }
           },
           {
@@ -374,7 +400,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "essential_newborn_care",
             "type": "check_box",
-            "label": "Essential newborn care received at the health facility?",
+            "label": "Soins essentiels aux nouveau-nés reçu au structure sanitaire?",
             "label_text_style": "normal",
             "text_color": "#C0C0C0",
             "exclusive": [
@@ -383,21 +409,21 @@
             "options": [
               {
                 "key": "chk_none",
-                "text": "None",
+                "text": "Aucun",
                 "value": false,
                 "openmrs_entity": "concept",
                 "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               {
                 "key": "chk_chlorhexidine",
-                "text": "Chlorhexidine applied to umbilical stump",
+                "text": "Cordon ombilical traité avec une solution de chlorhexidine ",
                 "value": false,
                 "openmrs_entity": "concept",
                 "openmrs_entity_id": "73263AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               {
                 "key": "chk_skin_contact",
-                "text": "Skin to skin contact for at least 2 hours",
+                "text": "Contact peau contre peau pour au moins 2 heures",
                 "value": false,
                 "openmrs_entity": "concept",
                 "openmrs_entity_id": "164173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -410,7 +436,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "opv0_date",
             "type": "date_picker",
-            "hint": "OPV 0 date",
+            "hint": "Date de VPO",
             "expanded": false,
             "min_date": "today-120y",
             "max_date": "today",
@@ -418,7 +444,7 @@
               {
                 "type": "date",
                 "ex": "greaterThanEqualTo(., step1:delivery_date)",
-                "err": "Date of OPV 0 can't occur before delivery date"
+                "err": "Date of OPV 0 can\u0027t occur before delivery date"
               }
             ]
           },
@@ -428,19 +454,21 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "opv0_date",
             "type": "date_picker",
-            "hint": "BCG date",
+            "hint": "Date de BCG",
             "expanded": false,
+            "min_date": "today-120y",
             "max_date": "today",
             "constraints": [
               {
                 "type": "date",
                 "ex": "greaterThanEqualTo(., step1:delivery_date)",
-                "err": "Date of BCG can't occur before delivery date"
+                "err": "Date of BCG can\u0027t occur before delivery date"
               }
             ]
           }
         ]
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_pregnancy_outcome"
 }

@@ -54,7 +54,7 @@
     }
   },
   "step1": {
-    "title": "Family planning registration Info",
+    "title": "{{male_family_planning_registration.step1.title}}",
     "next": "step2",
     "fields": [
       {
@@ -77,26 +77,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "using_method",
         "openmrs_entity_parent": "",
-        "label": "Is the man already using a family planning method?",
+        "label": "{{male_family_planning_registration.step1.using_method.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{male_family_planning_registration.step1.using_method.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{male_family_planning_registration.step1.using_method.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step1.using_method.v_required.err}}"
         }
       },
       {
@@ -105,26 +105,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1382AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Was he counselled on different family planning methods?",
+        "label": "{{male_family_planning_registration.step1.couselling_fp_methods.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{male_family_planning_registration.step1.couselling_fp_methods.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{male_family_planning_registration.step1.couselling_fp_methods.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step1.couselling_fp_methods.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -140,26 +140,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "couselling_HIV_STI",
         "openmrs_entity_parent": "",
-        "label": "Was he counselled on HIV and STI prevention?",
+        "label": "{{male_family_planning_registration.step1.couselling_HIV_STI.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{male_family_planning_registration.step1.couselling_HIV_STI.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{male_family_planning_registration.step1.couselling_HIV_STI.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step1.couselling_HIV_STI.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -172,7 +172,7 @@
     ]
   },
   "step2": {
-    "title": "Family planning method",
+    "title": "{{male_family_planning_registration.step2.title}}",
     "next": "step3",
     "fields": [
       {
@@ -181,8 +181,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Family planning method selected",
+        "hint": "{{male_family_planning_registration.step2.fp_method_chw.hint}}",
         "values": [
+          "{{male_family_planning_registration.step2.fp_method_chw.values[0]}}",
+          "{{male_family_planning_registration.step2.fp_method_chw.values[1]}}"
+        ],
+        "keys": [
           "Male condom",
           "Female condom"
         ],
@@ -192,7 +196,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step2.fp_method_chw.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -208,8 +212,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Family planning method selected",
+        "hint": "{{male_family_planning_registration.step2.fp_method_already.hint}}",
         "values": [
+          "{{male_family_planning_registration.step2.fp_method_already.values[0]}}",
+          "{{male_family_planning_registration.step2.fp_method_already.values[1]}}",
+          "{{male_family_planning_registration.step2.fp_method_already.values[2]}}"
+        ],
+        "keys": [
           "Male condom",
           "Female condom",
           "Male sterilization"
@@ -221,7 +230,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step2.fp_method_already.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -248,7 +257,7 @@
     ]
   },
   "step3": {
-    "title": "Family planning method info",
+    "title": "{{male_family_planning_registration.step3.title}}",
     "fields": [
       {
         "key": "ecp",
@@ -271,18 +280,18 @@
         "openmrs_entity_id": "no_condoms",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "How many condoms was he given?",
+        "hint": "{{male_family_planning_registration.step3.no_condoms.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Equal or greater than 0"
+          "err": "{{male_family_planning_registration.step3.no_condoms.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{male_family_planning_registration.step3.no_condoms.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{male_family_planning_registration.step3.no_condoms.v_min.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -312,8 +321,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "counselling_use",
         "type": "spinner",
-        "hint": "Was he counselled on how to use the family planning method?",
+        "hint": "{{male_family_planning_registration.step3.counselling_use.hint}}",
         "values": [
+          "{{male_family_planning_registration.step3.counselling_use.values[0]}}",
+          "{{male_family_planning_registration.step3.counselling_use.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -323,7 +336,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step3.counselling_use.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -339,7 +352,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_male_ster",
         "type": "date_picker",
-        "hint": "Date of male sterilization",
+        "hint": "{{male_family_planning_registration.step3.fp_start_male_ster.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -350,7 +363,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{male_family_planning_registration.step3.fp_start_male_ster.v_required.err}}"
         }
       },
       {
@@ -359,8 +372,8 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Advise the man to use condoms for the first 3 months to prevent pregnancy",
-        "toaster_info_text": "A note to inform the client that they should use condoms for the first three months after the sterialization to prevent pregnancy",
+        "text": "{{male_family_planning_registration.step3.fp_male_ster_note.text}}",
+        "toaster_info_text": "{{male_family_planning_registration.step3.fp_male_ster_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -376,26 +389,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_given",
         "openmrs_entity_parent": "",
-        "label": "Was he referred to the health facility?",
+        "label": "{{male_family_planning_registration.step3.referral_given.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{male_family_planning_registration.step3.referral_given.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{male_family_planning_registration.step3.referral_given.options.no.text}}"
           }
-        ],       
+        ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{male_family_planning_registration.step3.referral_given.v_required.err}}"
         }
       },
       {
@@ -414,5 +427,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "male_family_planning_registration"
 }

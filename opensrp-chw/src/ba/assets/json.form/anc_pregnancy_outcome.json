@@ -49,7 +49,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Pregnancy Outcome",
+    "title": "{{anc_pregnancy_outcome.step1.title}}",
     "fields": [
       {
         "key": "relational_id",
@@ -64,13 +64,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "161033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "native_radio",
-        "label": "Pregnancy outcome",
+        "label": "{{anc_pregnancy_outcome.step1.preg_outcome.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
         "options": [
           {
             "key": "born_alive",
-            "text": "Child was born alive",
+            "text": "{{anc_pregnancy_outcome.step1.preg_outcome.options.born_alive.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "151849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -78,7 +78,7 @@
           },
           {
             "key": "born_alive_died",
-            "text": "Child was born alive, but died",
+            "text": "{{anc_pregnancy_outcome.step1.preg_outcome.options.born_alive_died.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164816AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -86,7 +86,7 @@
           },
           {
             "key": "still_born",
-            "text": "Child was stillborn",
+            "text": "{{anc_pregnancy_outcome.step1.preg_outcome.options.still_born.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "125872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -94,7 +94,7 @@
           },
           {
             "key": "alive_with_problem",
-            "text": "Child was born alive, but they have a problem (i.e. disability, respiratory issues, etc.)",
+            "text": "{{anc_pregnancy_outcome.step1.preg_outcome.options.alive_with_problem.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "161599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -102,7 +102,7 @@
           },
           {
             "key": "miscarriage",
-            "text": "Miscarriage",
+            "text": "{{anc_pregnancy_outcome.step1.preg_outcome.options.miscarriage.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -111,7 +111,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select pregnancy outcome"
+          "err": "{{anc_pregnancy_outcome.step1.preg_outcome.v_required.err}}"
         }
       },
       {
@@ -120,12 +120,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165248AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of miscarriage",
+        "hint": "{{anc_pregnancy_outcome.step1.miscarriage_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date the woman miscarried."
+          "err": "{{anc_pregnancy_outcome.step1.miscarriage_date.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -141,12 +141,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Delivery date",
+        "hint": "{{anc_pregnancy_outcome.step1.delivery_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date the woman delivered"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_date.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -170,12 +170,12 @@
         "openmrs_entity_id": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "The place the mother gave birth",
+        "hint": "{{anc_pregnancy_outcome.step1.delivery_place.hint}}",
         "values": [
-          "At home",
-          "At a health facility",
-          "On the way to the health facility",
-          "Other"
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[0]}}",
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[1]}}",
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[2]}}",
+          "{{anc_pregnancy_outcome.step1.delivery_place.values[3]}}"
         ],
         "keys": [
           "At home",
@@ -184,14 +184,14 @@
           "Other"
         ],
         "openmrs_choice_ids": {
-          "At home": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "At Home": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "At a health facility": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "On the way to the health facility": "1601AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_place.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -207,12 +207,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1573AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "native_radio",
-        "label": "Who helped the mother with a home delivery?",
+        "label": "{{anc_pregnancy_outcome.step1.delivery_home.label}}",
         "label_text_style": "bold",
         "text_color": "#C0C0C0",
         "v_required": {
           "value": "true",
-          "err": "Please select"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_home.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -224,7 +224,7 @@
         "options": [
           {
             "key": "gave_birth_alone",
-            "text": "She gave birth at home alone",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_home.options.gave_birth_alone.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -232,7 +232,7 @@
           },
           {
             "key": "gave_birth_with_help",
-            "text": "She gave birth at home with the help of a family member/friend/neighbor",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_home.options.gave_birth_with_help.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -240,7 +240,7 @@
           },
           {
             "key": "midwife_help",
-            "text": "She gave birth at home with the help of a traditional midwife",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_home.options.midwife_help.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -254,12 +254,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159771AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "native_radio",
-        "label": "The mother gave birth in a health facility. Who accompanied the mother to the health facility?",
+        "label": "{{anc_pregnancy_outcome.step1.delivery_hf.label}}",
         "label_text_style": "bold",
         "text_color": "#C0C0C0",
         "v_required": {
           "value": "true",
-          "err": "Please select"
+          "err": "{{anc_pregnancy_outcome.step1.delivery_hf.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -271,7 +271,7 @@
         "options": [
           {
             "key": "facility_family_member",
-            "text": "She gave birth in a health facility, and she was accompanied by family member(s)",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_hf.options.facility_family_member.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -279,7 +279,7 @@
           },
           {
             "key": "facility_midwife",
-            "text": "She gave birth in a health facility, and she was accompanied by a traditional midwife",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_hf.options.facility_midwife.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -287,7 +287,7 @@
           },
           {
             "key": "alone",
-            "text": "She gave birth in a health facility, and she came by herself",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_hf.options.alone.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -295,7 +295,7 @@
           },
           {
             "key": "other_pple",
-            "text": "She gave birth in a health facility, and she was accompanied by other people",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_hf.options.other_pple.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -303,7 +303,7 @@
           },
           {
             "key": "other_chw",
-            "text": "She gave birth in a health facility, and she was accompanied by the CHW",
+            "text": "{{anc_pregnancy_outcome.step1.delivery_hf.options.other_chw.text}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -314,15 +314,15 @@
       {
         "key": "baby_label",
         "type": "label",
-        "text": "BABY DETAILS",
+        "text": "{{anc_pregnancy_outcome.step1.baby_label.text}}",
+        "has_bg": true,
         "left_padding": "20dp",
         "right_padding": "20dp",
-        "text_size": "7sp",
+        "text_size": "8sp",
         "text_color": "#000000",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
-
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -341,8 +341,8 @@
       {
         "key": "no_children_no",
         "type": "repeating_group",
-        "reference_edit_text_hint": "Number of children born alive",
-        "repeating_group_label": "Baby Details #",
+        "reference_edit_text_hint": "{{anc_pregnancy_outcome.step1.no_children_no.reference_edit_text_hint}}",
+        "repeating_group_label": "Maelezo ya mtoto #",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
@@ -356,24 +356,24 @@
         },
         "v_required": {
           "value": true,
-          "err": "Please specify the # of babies"
+          "err": "{{anc_pregnancy_outcome.step1.no_children_no.v_required.err}}"
         },
         "value": [
           {
             "key": "surname",
             "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": "",
             "type": "edit_text",
-            "hint": "Surname",
+            "hint": "Jina la mwisho (ukoo)",
             "edit_type": "name",
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-              "err": "Please enter a valid name"
+              "err": "Tafadhali ingiza jina halali"
             },
             "v_required": {
               "value": "true",
-              "err": "Please enter the surname"
+              "err": "Tafadhali ingiza jina la ukoo"
             },
             "relevance": {
               "rules-engine": {
@@ -382,7 +382,6 @@
                 }
               }
             }
-
           },
           {
             "key": "same_as_fam_name_chk",
@@ -394,7 +393,7 @@
             "options": [
               {
                 "key": "same_as_fam_name",
-                "text": "Surname same as family name",
+                "text": "Surname sawa na jina la ukoo",
                 "text_size": "18px",
                 "value": "false"
               }
@@ -406,11 +405,11 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "first_name",
             "type": "edit_text",
-            "hint": "First name",
+            "hint": "Jina la kwanza",
             "edit_type": "name",
             "v_required": {
               "value": "true",
-              "err": "Please enter the first name"
+              "err": "Tafadhali ingiza jina la kwanza"
             },
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
@@ -423,11 +422,11 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "middle_name",
             "type": "edit_text",
-            "hint": "Middle name",
+            "hint": "Jina la kati",
             "edit_type": "name",
             "v_regex": {
               "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-              "err": "Please enter a valid name"
+              "err": "Tafadhali ingiza jina halali"
             }
           },
           {
@@ -443,10 +442,10 @@
             "openmrs_entity": "person",
             "openmrs_entity_id": "gender",
             "type": "spinner",
-            "hint": "Sex",
+            "hint": "Jinsi",
             "values": [
-              "Male",
-              "Female"
+              "Me",
+              "Ke"
             ],
             "keys": [
               "Male",
@@ -454,7 +453,7 @@
             ],
             "v_required": {
               "value": "true",
-              "err": "Gender required"
+              "err": "Tafadhali ingiza jinsia"
             }
           },
           {
@@ -463,10 +462,10 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "159522AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "spinner",
-            "hint": "Physical disabilities",
+            "hint": "Ulemavu",
             "values": [
-              "Yes",
-              "No"
+              "Ndiyo",
+              "Hapana"
             ],
             "keys": [
               "Yes",
@@ -478,7 +477,7 @@
             },
             "v_required": {
               "value": "true",
-              "err": "Required"
+              "err": "Tafadhali ingiza ulemavu"
             }
           },
           {
@@ -487,7 +486,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "edit_text",
-            "hint": "Type of physical disabilities",
+            "hint": "Aina ya ulemavu",
             "edit_type": "name",
             "relevance": {
               "rules-engine": {
@@ -503,10 +502,10 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "spinner",
-            "hint": "Early initiation of breastfeeding (1 hr)?",
+            "hint": "Unyonyeshaji wa mtoto ndani ya saa moja baada ya kujifungua?",
             "values": [
-              "Yes",
-              "No"
+              "Ndiyo",
+              "Hapana"
             ],
             "keys": [
               "Yes",
@@ -523,7 +522,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "984AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "type": "check_box",
-            "label": "Which vaccinations were given?",
+            "label": "Chanjo gani alizopata mtoto?",
             "label_text_style": "normal",
             "text_color": "#C0C0C0",
             "exclusive": [
@@ -532,7 +531,7 @@
             "options": [
               {
                 "key": "chk_none",
-                "text": "None",
+                "text": "Hajapata chanjo",
                 "value": false,
                 "openmrs_entity": "concept",
                 "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -554,11 +553,12 @@
             ],
             "v_required": {
               "value": "true",
-              "err": "vaccinations given required"
+              "err": "Tafadhali chagua chaguo angalau moja"
             }
           }
         ]
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_pregnancy_outcome"
 }

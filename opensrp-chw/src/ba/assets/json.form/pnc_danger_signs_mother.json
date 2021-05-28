@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Danger Signs Mother",
+    "title": "{{pnc_danger_signs_mother.step1.title}}",
     "fields": [
       {
         "key": "danger_signs_present_mama",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Does the mother have any danger signs?",
+        "label": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -64,98 +64,98 @@
         "options": [
           {
             "key": "chk_fever",
-            "text": "Fever",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_bleeding_vaginally",
-            "text": "Bleeding vaginally",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_bleeding_vaginally.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "150802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_server_headache",
-            "text": "Severe headache",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_server_headache.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_convulsions",
-            "text": "Convulsions",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_convulsions.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164483AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_difficulty_breathing",
-            "text": "Difficulty breathing",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_difficulty_breathing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_severe_leg_pain",
-            "text": "Severe leg pain",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_severe_leg_pain.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "114395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_unusual_behaviour",
-            "text": "Unusual behaviour (stress, confusion)",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_unusual_behaviour.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "152376AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_swelling of breast",
-            "text": "Swelling of the breast and nipple",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_swelling_of_breast.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "125212AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_vaginal_discharge",
-            "text": "Discoloured or watery, liquid vaginal discharge with a bad smell",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_vaginal_discharge.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "123395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_blurred_vision",
-            "text": "Blurred vision",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_blurred_vision.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "147104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_loss_conscioueness",
-            "text": "Loss of consciousness",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_loss_conscioueness.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "135592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_urination",
-            "text": "Urinate a little or urine leakage",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_urination.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "118982AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -163,7 +163,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{pnc_danger_signs_mother.step1.danger_signs_present_mama.v_required.err}}"
         }
       },
       {
@@ -172,7 +172,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Danger sign! \nRefer immediately to health facility.",
+        "text": "{{pnc_danger_signs_mother.step1.danger_signs_present_toaster.text}}",
         "text_color": "#CF0800",
         "toaster_type": "problem",
         "relevance": {
@@ -200,5 +200,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_danger_signs_mother"
 }

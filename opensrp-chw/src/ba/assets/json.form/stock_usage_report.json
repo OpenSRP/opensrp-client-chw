@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Stock Report",
+    "title": "{{stock_usage_report.step1.title}}",
     "fields": [
       {
         "key": "stock_name",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "stock_name",
         "type": "edit_text",
-        "hint": "Stock Name",
+        "hint": "{{stock_usage_report.step1.stock_name.hint}}",
         "value": ""
       },
       {
@@ -64,7 +64,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "stock_year",
         "type": "edit_text",
-        "hint": "Stock Year",
+        "hint": "{{stock_usage_report.step1.stock_year.hint}}",
         "value": ""
       },
       {
@@ -73,7 +73,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "stock_month",
         "type": "edit_text",
-        "hint": "Stock Month",
+        "hint": "{{stock_usage_report.step1.stock_month.hint}}",
         "value": ""
       },
       {
@@ -82,7 +82,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "stock_usage",
         "type": "edit_text",
-        "hint": "Stock Usage",
+        "hint": "{{stock_usage_report.step1.stock_usage.hint}}",
         "value": ""
       },
       {
@@ -91,9 +91,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "stock_provider",
         "type": "edit_text",
-        "hint": "Stock Provider",
+        "hint": "{{stock_usage_report.step1.stock_provider.hint}}",
         "value": ""
       }
     ]
-  }
+  },
+  "properties_file_name": "stock_usage_report"
 }

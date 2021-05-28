@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Health Facility Visit",
+    "title": "{{pnc_health_facility_visit.step1.title}}",
     "fields": [
       {
         "key": "pnc_visit_{0}",
@@ -56,12 +56,16 @@
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did the woman attend her PNC visit {0} at the health facility?\n\nVisit due date: {1}",
+        "hint": "{{pnc_health_facility_visit.step1.pnc_visit_{0}.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select option"
+          "err": "{{pnc_health_facility_visit.step1.pnc_visit_{0}.v_required.err}}"
         },
         "values": [
+          "{{pnc_health_facility_visit.step1.pnc_visit_{0}.values[0]}}",
+          "{{pnc_health_facility_visit.step1.pnc_visit_{0}.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ]
@@ -72,12 +76,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164093AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of PNC health facility visit {0}",
+        "hint": "{{pnc_health_facility_visit.step1.pnc_hf_visit{0}_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date"
+          "err": "{{pnc_health_facility_visit.step1.pnc_hf_visit{0}_date.v_required.err}}"
         },
         "relevance": {
           "step1:pnc_visit_{0}": {
@@ -93,12 +97,16 @@
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did the woman receive Vitamin A within 24 hours of delivery?",
+        "hint": "{{pnc_health_facility_visit.step1.vit_a_mother.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select option"
+          "err": "{{pnc_health_facility_visit.step1.vit_a_mother.v_required.err}}"
         },
         "values": [
+          "{{pnc_health_facility_visit.step1.vit_a_mother.values[0]}}",
+          "{{pnc_health_facility_visit.step1.vit_a_mother.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -116,12 +124,16 @@
         "openmrs_entity_id": "104677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did the woman receive iron and folic acid (IFA) tablets within 24 hours of delivery?",
+        "hint": "{{pnc_health_facility_visit.step1.ifa_mother.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select option"
+          "err": "{{pnc_health_facility_visit.step1.ifa_mother.v_required.err}}"
         },
         "values": [
+          "{{pnc_health_facility_visit.step1.ifa_mother.values[0]}}",
+          "{{pnc_health_facility_visit.step1.ifa_mother.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -164,5 +176,6 @@
         "type": "spacer"
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_health_facility_visit"
 }

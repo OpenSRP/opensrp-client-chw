@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Sleeping under a LLITN",
+    "title": "{{child_hv_sleeping_under_llitn.step1.title}}",
     "fields": [
       {
         "key": "llitn",
@@ -57,10 +57,10 @@
         "openmrs_data_type": "select one",
         "type": "spinner",
         "image": "form_llitn",
-        "hint": "Is the child sleeping under a Long Lasting Insecticide-Treated Net (LLITN)?",
+        "hint": "{{child_hv_sleeping_under_llitn.step1.llitn.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{child_hv_sleeping_under_llitn.step1.llitn.values[0]}}",
+          "{{child_hv_sleeping_under_llitn.step1.llitn.values[1]}}"
         ],
         "openmrs_choice_ids": {
           "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -68,5 +68,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_sleeping_under_llitn"
 }

@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Sleeping under a LLITN",
+    "title": "{{anc_hv_sleeping_under_llitn.step1.title}}",
     "fields": [
       {
         "key": "sleeping_llitn",
@@ -57,10 +57,14 @@
         "openmrs_data_type": "select one",
         "type": "spinner",
         "image": "form_llitn",
-        "hint": "Is the woman sleeping under a Long Lasting Insecticide-Treated Net (LLITN)?",
-        "label_info_title": "Whether the pregnant woman sleeps under a LLITN",
-        "label_info_text": "Malaria is very dangerous for pregnant women. Wherever malaria is common, women should prevent malaria by taking anti-malarial tablets recommended by a trained health worker and by sleeping under an insecticide-treated mosquito net.",
+        "hint": "{{anc_hv_sleeping_under_llitn.step1.sleeping_llitn.hint}}",
+        "label_info_title": "{{anc_hv_sleeping_under_llitn.step1.sleeping_llitn.label_info_title}}",
+        "label_info_text": "{{anc_hv_sleeping_under_llitn.step1.sleeping_llitn.label_info_text}}",
         "values": [
+          "{{anc_hv_sleeping_under_llitn.step1.sleeping_llitn.values[0]}}",
+          "{{anc_hv_sleeping_under_llitn.step1.sleeping_llitn.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -70,5 +74,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_sleeping_under_llitn"
 }

@@ -16,7 +16,6 @@
       "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     },
     "today": {
-      "openmrs_entity_parent": "",
       "openmrs_entity": "encounter",
       "openmrs_entity_id": "encounter_date"
     },
@@ -47,7 +46,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Health Facility Visit",
+    "title": "{{pnc_health_facility_visit_two.step1.title}}",
     "fields": [
       {
         "key": "pnc_visit_{0}",
@@ -56,12 +55,16 @@
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Did the woman attend her PNC visit {0} at the health facility?\n\nVisit due date: {1}",
+        "hint": "{{pnc_health_facility_visit_two.step1.pnc_visit_{0}.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select option"
+          "err": "{{pnc_health_facility_visit_two.step1.pnc_visit_{0}.v_required.err}}"
         },
         "values": [
+          "{{pnc_health_facility_visit_two.step1.pnc_visit_{0}.values[0]}}",
+          "{{pnc_health_facility_visit_two.step1.pnc_visit_{0}.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ]
@@ -72,12 +75,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164093AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of PNC health facility visit {0}",
+        "hint": "{{pnc_health_facility_visit_two.step1.pnc_hf_visit{0}_date.hint}}",
         "expanded": false,
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter date"
+          "err": "{{pnc_health_facility_visit_two.step1.pnc_hf_visit{0}_date.v_required.err}}"
         },
         "relevance": {
           "step1:pnc_visit_{0}": {
@@ -107,5 +110,6 @@
         "value": "0"
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_health_facility_visit_two"
 }
