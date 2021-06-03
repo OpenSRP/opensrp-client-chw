@@ -67,6 +67,8 @@ public class ContactUtilTest {
         Map<Integer, LocalDate> contacts = ContactUtil.getContactWeeks(false, lastContact, lastMenstrualPeriod);
 
         TestCase.assertNotNull(contacts);
+        Map<Integer, LocalDate> contactWithExption = ContactUtil.getContactWeeks(false, null, lastMenstrualPeriod);
+        TestCase.assertEquals(0,contactWithExption.size());
         //assertTrue(isEqual(contacts, expectedResult));
     }
 
