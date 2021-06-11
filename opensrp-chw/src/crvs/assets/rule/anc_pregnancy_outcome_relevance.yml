@@ -1,0 +1,89 @@
+---
+name: step1_miscarriage_date
+description: miscarriage_date relevance
+priority: 1
+condition: "step1_preg_outcome == 'Miscarriage'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_delivery_date
+description: miscarriage_date relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_delivery_place
+description: delivery_place relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_baby_label
+description: baby_label relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_no_children_no
+description: no_children_no relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_surname
+description: surname relevance
+priority: 1
+condition: "!step1_same_as_fam_name.contains('same_as_fam_name')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_stillbirth_classification
+description: stillbirth classification relevance
+priority: 1
+condition: "step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_del_attendant
+description: del attendant relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_del_mode
+description: del_mode relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_type_of_pregnancy
+description: type of pregnancy relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_weight
+description: birth weight relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_link_to_father
+description: link to father relevance
+priority: 1
+condition: "step1_preg_outcome == 'Live birth' || step1_preg_outcome == 'Stillbirth'"
+actions:
+  - "isRelevant = true"

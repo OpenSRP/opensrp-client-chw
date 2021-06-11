@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "{{family_details_remove_member.step1.title}}",
+    "title": "Remove Family Member",
     "fields": [
       {
         "key": "spacer",
@@ -68,22 +68,22 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "{{family_details_remove_member.step1.details.text}}",
+        "text": "",
         "text_size": "25px"
       },
       {
         "key": "divider1",
+        "type": "h_line",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "h_line"
+        "openmrs_entity_id": ""
       },
       {
         "key": "spacer",
-        "type": "spacer",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
+        "type": "spacer",
         "spacer_height": "15dp"
       },
       {
@@ -91,27 +91,22 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "spinner",
         "openmrs_data_type": "select one",
-        "hint": "{{family_details_remove_member.step1.remove_reason.hint}}",
+        "type": "spinner",
+        "hint": "Reason",
         "v_required": {
           "value": "true",
-          "err": "{{family_details_remove_member.step1.remove_reason.v_required.err}}"
+          "err": "Select the reason for removing the family member's record"
         },
         "values": [
-          "{{family_details_remove_member.step1.remove_reason.values[0]}}",
-          "{{family_details_remove_member.step1.remove_reason.values[1]}}",
-          "{{family_details_remove_member.step1.remove_reason.values[2]}}"
-        ],
-        "keys": [
           "Died",
           "Moved away",
           "Other"
         ],
         "openmrs_choice_ids": {
-          "Décédé": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Déménagé": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Autre": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          "Died": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Moved away": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         }
       },
       {
@@ -131,20 +126,20 @@
         "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "{{family_details_remove_member.step1.date_moved.label}}",
-        "hint": "{{family_details_remove_member.step1.date_moved.hint}}",
+        "label": "Date moved away",
+        "hint": "Date moved away",
         "expanded": false,
         "min_date": "",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "{{family_details_remove_member.step1.date_moved.v_required.err}}"
+          "err": "Enter the date that the member moved away"
         },
         "constraints": [
           {
             "type": "date",
-            "err": "Date déménagé est avant la date de naissance",
-            "ex": "greaterThanEqualTo(., step1:dob)"
+            "ex": "greaterThanEqualTo(., step1:dob)",
+            "err": "Date moved away occur before date of birth"
           }
         ],
         "relevance": {
@@ -161,20 +156,20 @@
         "openmrs_entity_id": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "{{family_details_remove_member.step1.date_died.label}}",
-        "hint": "{{family_details_remove_member.step1.date_died.hint}}",
+        "label": "Date of death",
+        "hint": "Date of death",
         "expanded": false,
         "min_date": "today-80y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "{{family_details_remove_member.step1.date_died.v_required.err}}"
+          "err": "Enter the date of death"
         },
         "constraints": [
           {
             "type": "date",
             "ex": "greaterThanEqualTo(., step1:dob)",
-            "err": "Date du décès ne peut pas être avant la date de naissance"
+            "err": "Date of death can't occur before date of birth"
           }
         ],
         "relevance": {
@@ -190,8 +185,8 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "label": "{{family_details_remove_member.step1.age_at_death.label}}",
-        "hint": "{{family_details_remove_member.step1.age_at_death.hint}}",
+        "label": "Age at death",
+        "hint": "Age at death",
         "type": "edit_text",
         "read_only": "true",
         "relevance": {
@@ -208,8 +203,457 @@
             }
           }
         }
+      },
+      {
+        "key": "death_place",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Place of occurrence of death (if known)",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Home",
+          "Place of work",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Home": "home_id_openmrs",
+          "Place of work": "place_of_work_id_openmrs",
+          "Other": "other_id_openmrs"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "nationality",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Nationality (citizenship)",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Togo",
+          "DRC",
+          "Guinea",
+          "Liberia",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Togo": "togo_id_openmrs",
+          "DRC": "drc_id_openmrs",
+          "Guinea": "guinea_id_openmrs",
+          "Liberia": "liberia_id_openmrs",
+          "Other": "other_id_openmrs"
+        }
+      },
+      {
+        "key": "marital_status",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Marital Status",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Co-Habiting",
+          "Divorced",
+          "Married",
+          "Single",
+          "Widowed"
+        ],
+        "openmrs_choice_ids": {
+          "Co-Habiting": "co_habiting_id_openmrs",
+          "Divorced": "divorced_id_openmrs",
+          "Married": "married_id_openmrs",
+          "Single": "single_id_openmrs",
+          "Widowed": "widowed_id_openmrs"
+        }
+      },
+      {
+        "key": "death_certificate_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Death Certificate",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "has_death_certificate",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Does the family of the decedent have a death certificate (Y/N)?",
+        "values": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_certificate_issue_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "type": "date_picker",
+        "label": "Death certificate issuance date (if certificate received)",
+        "hint": "Death certificate issuance date (if certificate received)",
+        "expanded": false,
+        "min_date": "",
+        "max_date": "today",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_certificate_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Death certificate number (if certificate received)",
+        "hint": "Death certificate number (if certificate received)",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_notification_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Was the death notification done (if certificate not received) - Y/N)?",
+        "values": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "ask_family_member",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "text": "Ask to see the death notification and instruct the family member to register the death at CRO. (if death notification done)",
+        "type": "label",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "instruct_family_member",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "text": "Instruct the family member to have the death registered at CRO. (if birth notification not done)",
+        "type": "label",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Informant Details",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Name",
+        "hint": "Name",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_relationship",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Relationship to decedent",
+        "values": [
+          "Sibling",
+          "Parent",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Sibling": "sibling_id_openmrs",
+          "Parent": "parent_id_openmrs",
+          "Other": "other_id_openmrs"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Address",
+        "hint": "Address",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_phone",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Phone",
+        "hint": "Phone",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Official Details",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Full Name",
+        "hint": "Full Name",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_ID",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Personal ID number",
+        "hint": "Personal ID number",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Official position",
+        "hint": "Official position",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "physician_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Name of physician signing MCCD",
+        "hint": "Name of physician signing MCCD",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "physician_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Position of physician signing MCCD",
+        "hint": "Position of physician signing MCCD",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_cause",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Cause of death",
+        "hint": "Cause of death",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_manner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Manner of death",
+        "hint": "Manner of death",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Address of official",
+        "hint": "Address of official",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Phone number of official",
+        "hint": "Phone number of official",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
       }
     ]
-  },
-  "properties_file_name": "family_details_remove_member"
+  }
 }

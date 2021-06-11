@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "{{birth_certification.step1.title}}",
+    "title": "Birth Certification",
     "fields": [
       {
         "key": "birth_cert",
@@ -56,12 +56,8 @@
         "openmrs_entity_id": "165406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "{{birth_certification.step1.birth_cert.hint}}",
+        "hint": "Does the child have a birth certificate?",
         "values": [
-          "{{birth_certification.step1.birth_cert.values[0]}}",
-          "{{birth_certification.step1.birth_cert.values[1]}}"
-        ],
-        "keys": [
           "Yes",
           "No"
         ],
@@ -71,7 +67,7 @@
         },
         "v_required": {
           "value": true,
-          "err": "{{birth_certification.step1.birth_cert.v_required.err}}"
+          "err": "Please select option"
         }
       },
       {
@@ -80,13 +76,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164129AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "{{birth_certification.step1.birth_cert_issue_date.hint}}",
+        "hint": "Birth certificate issuance date",
         "expanded": false,
         "max_date": "today",
         "min_date": "",
         "v_required": {
           "value": "true",
-          "err": "{{birth_certification.step1.birth_cert_issue_date.v_required.err}}"
+          "err": "Please enter Birth certificate issuance date"
         },
         "relevance": {
           "rules-engine": {
@@ -103,18 +99,18 @@
         "openmrs_entity_id": "162052AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "{{birth_certification.step1.birth_cert_num.hint}}",
+        "hint": "Birth certificate number",
         "v_required": {
           "value": "true",
-          "err": "{{birth_certification.step1.birth_cert_num.v_required.err}}"
+          "err": "Please enter number"
         },
         "v_numeric": {
           "value": "true",
-          "err": "{{birth_certification.step1.birth_cert_num.v_numeric.err}}"
+          "err": "Number must be 15 digits or Less."
         },
         "v_regex": {
           "value": "([0-9]{1,15})|\\s*",
-          "err": "{{birth_certification.step1.birth_cert_num.v_regex.err}}"
+          "err": "Number must be 15 digits or Less."
         },
         "relevance": {
           "rules-engine": {
@@ -131,12 +127,8 @@
         "openmrs_entity_id": "165405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "{{birth_certification.step1.birth_notification.hint}}",
+        "hint": "Was the birth notification done?",
         "values": [
-          "{{birth_certification.step1.birth_notification.values[0]}}",
-          "{{birth_certification.step1.birth_notification.values[1]}}"
-        ],
-        "keys": [
           "Yes",
           "No"
         ],
@@ -146,7 +138,7 @@
         },
         "v_required": {
           "value": false,
-          "err": "{{birth_certification.step1.birth_notification.v_required.err}}"
+          "err": "Please select option"
         },
         "relevance": {
           "rules-engine": {
@@ -162,7 +154,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "{{birth_certification.step1.birthinstroductions.text}}",
+        "text": "Ask to see the birth notification and instruct the caregiver to register the birth at County Health.",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -177,7 +169,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "{{birth_certification.step1.caregiverinstroductions.text}}",
+        "text": "Instruct the caregiver to have the birth registered at County Health.",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -187,6 +179,5 @@
         }
       }
     ]
-  },
-  "properties_file_name": "birth_certification"
+  }
 }
