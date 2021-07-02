@@ -305,8 +305,6 @@ public class CoreBirthNotificationFragment extends BaseChwRegisterFragment imple
     }
 
     private String filterandSortQuery() {
-        SmartRegisterQueryBuilder sqb = new SmartRegisterQueryBuilder(mainSelect);
-
         String query = "";
         try {
             if (StringUtils.isNotBlank(filters)) {

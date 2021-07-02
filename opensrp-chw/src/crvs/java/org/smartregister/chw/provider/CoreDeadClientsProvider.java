@@ -2,7 +2,6 @@ package org.smartregister.chw.provider;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +61,6 @@ public class CoreDeadClientsProvider implements RecyclerViewProvider<RegisterVie
         CommonPersonObjectClient pc = (CommonPersonObjectClient) client;
         if (visibleColumns.isEmpty()) {
             populatePatientColumn(pc, client, viewHolder);
-            populateIdentifierColumn(pc, viewHolder);
         }
     }
 
@@ -165,9 +163,6 @@ public class CoreDeadClientsProvider implements RecyclerViewProvider<RegisterVie
         }
 
         addButtonClickListeners(client, viewHolder);
-    }
-
-    protected void populateIdentifierColumn(CommonPersonObjectClient pc, RegisterViewHolder viewHolder) {
     }
 
     public void addButtonClickListeners(SmartRegisterClient client, RegisterViewHolder viewHolder) {

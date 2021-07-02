@@ -1,7 +1,7 @@
 package org.smartregister.chw.fragment;
 
 import android.content.Intent;
-import org.smartregister.chw.R;
+import android.util.Log;
 import org.smartregister.chw.activity.ChildProfileActivity;
 import org.smartregister.chw.anc.domain.MemberObject;
 import org.smartregister.chw.application.ChwApplication;
@@ -11,7 +11,6 @@ import org.smartregister.chw.provider.DeadClientsProvider;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.configurableviews.model.View;
 import org.smartregister.cursoradapter.RecyclerViewPaginatedAdapter;
-import org.smartregister.family.util.JsonFormUtils;
 import org.smartregister.family.util.Utils;
 import org.smartregister.view.activity.BaseRegisterActivity;
 import java.util.Set;
@@ -22,9 +21,7 @@ public class DeadClientsFragment extends CoreDeadClientsFragment {
 
     protected void onViewClicked(android.view.View view) {
         super.onViewClicked(view);
-        if (view.getTag() instanceof CommonPersonObjectClient
-                && view.getTag(R.id.VIEW_ID) == CLICK_VIEW_DOSAGE_STATUS) {
-        }
+        Log.d("nothing", "do nothing");
     }
 
     @Override

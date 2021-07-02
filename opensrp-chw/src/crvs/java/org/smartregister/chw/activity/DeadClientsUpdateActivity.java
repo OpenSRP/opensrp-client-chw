@@ -3,6 +3,7 @@ package org.smartregister.chw.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -26,7 +27,13 @@ import java.util.HashMap;
 import java.util.Map;
 import timber.log.Timber;
 import static org.smartregister.chw.core.utils.FormUtils.getFormUtils;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.BASE_ENTITY_ID;
+import static org.smartregister.chw.util.CrvsConstants.CLIENT_TYPE;
+import static org.smartregister.chw.util.CrvsConstants.DEATH_CERTIFICATE_ISSUE_DATE;
+import static org.smartregister.chw.util.CrvsConstants.DEATH_FORM;
+import static org.smartregister.chw.util.CrvsConstants.DEATH_MEMBER_FORM;
+import static org.smartregister.chw.util.CrvsConstants.HAS_DEATH_CERTIFICATE;
+import static org.smartregister.chw.util.CrvsConstants.RECEIVED_DEATH_CERTIFICATE;
 
 public class DeadClientsUpdateActivity extends CoreFamilyRegisterActivity {
 
@@ -81,6 +88,7 @@ public class DeadClientsUpdateActivity extends CoreFamilyRegisterActivity {
 
     @Override
     public void startFormActivity(String s, String s1, Map<String, String> map) {
+        // code
     }
 
     @Override
@@ -118,7 +126,6 @@ public class DeadClientsUpdateActivity extends CoreFamilyRegisterActivity {
 
             String hasCertificate = has_death_certificate.getString("value");
             String issueDate = death_certificate_issue_date.getString("value");
-            String deathCertNum = certificateNumber.getString("value");
 
             if (getIntent().getStringExtra(CLIENT_TYPE).equals("child")) {
                 String tableName = "ec_child";

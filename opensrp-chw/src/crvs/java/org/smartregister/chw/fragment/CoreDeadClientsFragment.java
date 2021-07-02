@@ -271,7 +271,6 @@ public class CoreDeadClientsFragment extends BaseChwRegisterFragment implements 
     @Override
     public void countExecute() {
         Cursor c = null;
-        Cursor c2 = null;
         try {
             c = commonRepository().rawCustomQueryForAdapter(getCountSelect());
             c.moveToFirst();
@@ -311,8 +310,6 @@ public class CoreDeadClientsFragment extends BaseChwRegisterFragment implements 
     }
 
     private String filterandSortQuery() {
-        SmartRegisterQueryBuilder sqb = new SmartRegisterQueryBuilder(mainSelect);
-
         String query = "";
         try {
             if (StringUtils.isNoneBlank(filters)) {

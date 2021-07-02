@@ -32,7 +32,12 @@ import java.util.Locale;
 import java.util.Map;
 import timber.log.Timber;
 import static org.smartregister.chw.core.utils.Utils.getDuration;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERTIFICATE_ISSUE_DATE;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT_NUM;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_NOTIFICATION;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_REGISTRATION;
+import static org.smartregister.chw.util.CrvsConstants.YES;
 
 public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, Void> {
     public final Context context;
@@ -99,10 +104,10 @@ public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, 
             String birth_notification = Utils.getValue(commonPersonObject.getColumnmaps(), BIRTH_NOTIFICATION, true);
             String birth_registration = Utils.getValue(pc.getColumnmaps(), BIRTH_REGISTRATION, true);
             try {
-                if (birth_cert.trim().toLowerCase().equals(YES)) {
+                if (birth_cert.trim().equalsIgnoreCase(YES)) {
                     setReceivedButtonColor(context, viewHolder.dueButton);
                 } else {
-                    if (birth_notification.trim().toLowerCase().equals(YES) || birth_registration.trim().toLowerCase().equals(YES)) {
+                    if (birth_notification.trim().equalsIgnoreCase(YES) || birth_registration.trim().equalsIgnoreCase(YES)) {
                         setStatusUpdated(context, viewHolder.dueButton);
                     } else {
                         setUpdateStatusButtonColor(context, viewHolder.dueButton);
@@ -115,9 +120,6 @@ public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, 
             viewHolder.dueButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String firstName = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.FIRST_NAME, true);
-                    String lastName = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.LAST_NAME, true);
-                    String middleName = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.MIDDLE_NAME, true);
                     String entityId = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.BASE_ENTITY_ID, true);
                     String birth_cert_issue_date = Utils.getValue(commonPersonObject.getColumnmaps(), BIRTH_CERTIFICATE_ISSUE_DATE, true);
                     String birth_cert_num = Utils.getValue(commonPersonObject.getColumnmaps(), BIRTH_CERT_NUM, true);

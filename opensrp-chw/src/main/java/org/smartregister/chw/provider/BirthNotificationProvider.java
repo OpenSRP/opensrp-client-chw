@@ -22,7 +22,12 @@ import org.smartregister.view.contract.SmartRegisterClient;
 import java.util.Set;
 
 import static org.smartregister.chw.core.utils.Utils.getDuration;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_NOTIFICATION;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_REGISTRATION;
+import static org.smartregister.chw.util.CrvsConstants.NOTIFICATION_DONE;
+import static org.smartregister.chw.util.CrvsConstants.REGISTRATION_DONE;
+import static org.smartregister.chw.util.CrvsConstants.YES;
 import static org.smartregister.chw.util.Utils.getClientName;
 
 /**
@@ -117,13 +122,13 @@ public class BirthNotificationProvider extends CoreChildRegisterProvider {
         String notification = Utils.getValue(pc.getColumnmaps(), BIRTH_NOTIFICATION, true);
         String birth_cert = Utils.getValue(pc.getColumnmaps(), BIRTH_CERT, true);
 
-        if (birth_cert.trim().toLowerCase().equals(YES)) {
+        if (birth_cert.trim().equalsIgnoreCase(YES)) {
             viewHolder.textViewChildAge.setVisibility(View.GONE);
         } else {
-            if (notification.trim().toLowerCase().equals(YES)) {
+            if (notification.trim().equalsIgnoreCase(YES)) {
                 viewHolder.textViewChildAge.setVisibility(View.VISIBLE);
                 viewHolder.textViewChildAge.setText(NOTIFICATION_DONE);
-            } else if (registration.trim().toLowerCase().equals(YES)) {
+            } else if (registration.trim().equalsIgnoreCase(YES)) {
                 viewHolder.textViewChildAge.setVisibility(View.VISIBLE);
                 viewHolder.textViewChildAge.setText(REGISTRATION_DONE);
             } else {

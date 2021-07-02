@@ -54,7 +54,7 @@ public class FpRegisterActivity extends CoreFpRegisterActivity {
 
     @Override
     public void startFormActivity(String s, String s1, Map<String, String> map) {
-
+        // code
     }
 
     @Override

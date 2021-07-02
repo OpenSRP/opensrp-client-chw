@@ -3,6 +3,7 @@ package org.smartregister.chw.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,7 +28,13 @@ import java.util.HashMap;
 import java.util.Map;
 import timber.log.Timber;
 import static org.smartregister.chw.core.utils.FormUtils.getFormUtils;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERTIFICATE_ISSUE_DATE;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERTIFICATION_CHANGED;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT_NUM;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_FORM;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_NOTIFICATION;
+import static org.smartregister.chw.util.CrvsConstants.BIRTH_REGISTRATION;
 
 public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity {
 
@@ -58,7 +65,6 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
     public void startAncDangerSignsOutcomeForm() {
 
         try {
-            String cert_id = getIntent().getStringExtra(DBConstants.KEY.BASE_ENTITY_ID);
             String birth_cert = getIntent().getStringExtra(BIRTH_CERT);
             String birth_cert_issue_date = getIntent().getStringExtra(BIRTH_CERTIFICATE_ISSUE_DATE);
             String birth_cert_num = getIntent().getStringExtra(BIRTH_CERT_NUM);
@@ -90,6 +96,7 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
 
     @Override
     public void startFormActivity(String s, String s1, Map<String, String> map) {
+        // code
     }
 
     @Override

@@ -28,7 +28,7 @@ public class ChwRepositoryFlv {
         while (upgradeTo <= newVersion) {
             switch (upgradeTo) {
                 case 2:
-                    upgradeToVersion2(context, db);
+                    upgradeToVersion2(db);
                     break;
                 case 3:
                     upgradeToVersion3(db);
@@ -49,7 +49,7 @@ public class ChwRepositoryFlv {
         }
     }
 
-    private static void upgradeToVersion2(Context context, SQLiteDatabase db) {
+    private static void upgradeToVersion2(SQLiteDatabase db) {
         try {
             // nuke the database and recreate everything
 

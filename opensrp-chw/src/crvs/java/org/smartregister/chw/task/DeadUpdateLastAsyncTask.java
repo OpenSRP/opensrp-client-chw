@@ -27,7 +27,12 @@ import java.util.Locale;
 import java.util.Map;
 import timber.log.Timber;
 import static org.smartregister.chw.core.utils.Utils.getDuration;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.BASE_ENTITY_ID;
+import static org.smartregister.chw.util.CrvsConstants.CLIENT_TYPE;
+import static org.smartregister.chw.util.CrvsConstants.DEATH_CERTIFICATE_ISSUE_DATE;
+import static org.smartregister.chw.util.CrvsConstants.NO;
+import static org.smartregister.chw.util.CrvsConstants.RECEIVED_DEATH_CERTIFICATE;
+import static org.smartregister.chw.util.CrvsConstants.YES;
 
 public class DeadUpdateLastAsyncTask extends AsyncTask<Void, Void, Void> {
     public final Context context;
@@ -96,9 +101,9 @@ public class DeadUpdateLastAsyncTask extends AsyncTask<Void, Void, Void> {
         String received_death_certificate = "";
         try {
             received_death_certificate = Utils.getValue(baseEntityId.getColumnmaps(), RECEIVED_DEATH_CERTIFICATE, false);
-            if (received_death_certificate.trim().toLowerCase().equals(YES)) {
+            if (received_death_certificate.trim().equalsIgnoreCase(YES)) {
                 setReceivedButtonColor(context, viewHolder.dueButton);
-            } else if (received_death_certificate.trim().toLowerCase().equals(NO)) {
+            } else if (received_death_certificate.trim().equalsIgnoreCase(NO)) {
                 setNotReceivedButtonColor(context, viewHolder.dueButton);
             } else {
                 setUpdateStatusButtonColor(context, viewHolder.dueButton);

@@ -17,7 +17,8 @@ import org.smartregister.family.util.Utils;
 import org.smartregister.view.contract.SmartRegisterClient;
 import java.util.Set;
 import static org.smartregister.chw.core.utils.Utils.getDuration;
-import static org.smartregister.chw.util.CrvsConstants.*;
+import static org.smartregister.chw.util.CrvsConstants.CLIENT_TYPE;
+import static org.smartregister.chw.util.CrvsConstants.PREG_OUTCOME;
 import static org.smartregister.chw.util.Utils.getClientName;
 
 public class DeadClientsProvider extends CoreDeadClientsProvider {
@@ -40,7 +41,6 @@ public class DeadClientsProvider extends CoreDeadClientsProvider {
         CommonPersonObjectClient pc = (CommonPersonObjectClient) client;
         if (visibleColumns.isEmpty()) {
             populatePatientColumn(pc, client, viewHolder);
-            populateIdentifierColumn(pc, viewHolder);
             populateLastColumn(pc, viewHolder);
             return;
         }
