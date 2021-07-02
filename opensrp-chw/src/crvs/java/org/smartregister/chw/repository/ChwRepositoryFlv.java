@@ -39,6 +39,9 @@ public class ChwRepositoryFlv {
                 case 5:
                     upgradeToVersion5(context, db);
                     break;
+                case 6:
+                    upgradeToVersion6(db);
+                    break;
                 default:
                     break;
             }
@@ -118,6 +121,19 @@ public class ChwRepositoryFlv {
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL_INDEX);
 
             IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+    }
+
+    private static void upgradeToVersion6(SQLiteDatabase db) {
+        try {
+            db.execSQL(RepositoryUtils.ADD_DEATH_RECEIVE_COLUMN_TO_ECCHILD);
+            db.execSQL(RepositoryUtils.ADD_DEATH_CERT_DATE_TO_ECCHILD);
+            db.execSQL(RepositoryUtils.ADD_DEATH_RECEIVE_COLUMNS_TO_FAMILY_MEMBER);
+            db.execSQL(RepositoryUtils.ADD_DEATH_CERT_DATE_TO_FAMILY_MEMBER);
+            db.execSQL(RepositoryUtils.ADD_BIRTH_REG_TO_CHILD);
+            db.execSQL(RepositoryUtils.ADD_OUT_OF_AREA_CHILD_TABLE);
         } catch (Exception e) {
             Timber.e(e);
         }

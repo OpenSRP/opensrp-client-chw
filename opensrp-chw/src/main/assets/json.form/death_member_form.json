@@ -1,0 +1,314 @@
+{
+  "count": "1",
+  "encounter_type": "Remove Family Member",
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "Remove Family Member",
+    "fields": [
+      {
+        "key": "death_certificate_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Death Certificate"
+      },
+      {
+        "key": "has_death_certificate",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Does the family of the decedent have a death certificate (Y/N)?",
+        "values": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": "true",
+          "err": "Please choose an option"
+        }
+      },
+      {
+        "key": "death_certificate_issue_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "type": "date_picker",
+        "label": "Death certificate issuance date (if certificate received)",
+        "hint": "Death certificate issuance date (if certificate received)",
+        "expanded": false,
+        "min_date": "",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Required issue date"
+        },
+        "relevance": {
+          "step1:has_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "death_certificate_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Death certificate number (if certificate received)",
+        "hint": "Death certificate number (if certificate received)",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:has_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "death_notification_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Was the death notification done (if certificate not received) - Y/N)?",
+        "values": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      },
+      {
+        "key": "ask_family_member",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "text": "Ask to see the death notification and instruct the family member to register the death at CRO. (if death notification done)",
+        "type": "label"
+      },
+      {
+        "key": "instruct_family_member",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "text": "Instruct the family member to have the death registered at CRO. (if birth notification not done)",
+        "type": "label"
+      },
+      {
+        "key": "informant_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Informant Details"
+      },
+      {
+        "key": "informant_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Name",
+        "hint": "Name",
+        "type": "edit_text"
+      },
+      {
+        "key": "informant_relationship",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Relationship to decedent",
+        "values": [
+          "Sibling",
+          "Parent",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Sibling": "sibling_id_openmrs",
+          "Parent": "parent_id_openmrs",
+          "Other": "other_id_openmrs"
+        }
+      },
+      {
+        "key": "informant_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Address",
+        "hint": "Address",
+        "type": "edit_text"
+      },
+      {
+        "key": "informant_phone",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Phone",
+        "hint": "Phone",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        }
+      },
+      {
+        "key": "official_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Official Details"
+      },
+      {
+        "key": "official_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Full Name",
+        "hint": "Full Name",
+        "type": "edit_text"
+      },
+      {
+        "key": "official_ID",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Personal ID number",
+        "hint": "Personal ID number",
+        "type": "edit_text"
+      },
+      {
+        "key": "official_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Official position",
+        "hint": "Official position",
+        "type": "edit_text"
+      },
+      {
+        "key": "physician_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Name of physician signing MCCD",
+        "hint": "Name of physician signing MCCD",
+        "type": "edit_text"
+      },
+      {
+        "key": "physician_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Position of physician signing MCCD",
+        "hint": "Position of physician signing MCCD",
+        "type": "edit_text"
+      },
+      {
+        "key": "death_cause",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Cause of death",
+        "hint": "Cause of death",
+        "type": "edit_text"
+      },
+      {
+        "key": "death_manner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Manner of death",
+        "hint": "Manner of death",
+        "type": "edit_text"
+      },
+      {
+        "key": "official_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Address of official",
+        "hint": "Address of official",
+        "type": "edit_text"
+      },
+      {
+        "key": "official_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Phone number of official",
+        "hint": "Phone number of official",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        }
+      }
+    ]
+  }
+}

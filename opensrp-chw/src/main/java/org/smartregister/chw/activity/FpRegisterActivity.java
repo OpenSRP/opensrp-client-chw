@@ -15,6 +15,8 @@ import org.smartregister.family.util.JsonFormUtils;
 import org.smartregister.helper.BottomNavigationHelper;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
+import java.util.Map;
+
 public class FpRegisterActivity extends CoreFpRegisterActivity {
 
     private static String baseEntityId;
@@ -48,6 +50,11 @@ public class FpRegisterActivity extends CoreFpRegisterActivity {
     @Override
     protected BaseRegisterFragment getRegisterFragment() {
         return new FpRegisterFragment();
+    }
+
+    @Override
+    public void startFormActivity(String s, String s1, Map<String, String> map) {
+
     }
 
     @Override

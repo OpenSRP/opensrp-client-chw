@@ -1,0 +1,42 @@
+---
+name: step1_birthinstroductions
+description: birth introduction
+priority: 1
+condition: "step1_birth_cert == 'No' && step1_birth_registration == 'No'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_cert_issue_date
+description: birth certification issue date
+priority: 1
+condition: "step1_birth_cert == 'Yes'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_notification
+description: birth notification
+priority: 1
+condition: "step1_birth_cert == 'No' && step1_birth_registration == 'No'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_cert_num
+description: birth certificate number
+priority: 1
+condition: "step1_birth_cert == 'Yes'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_registration
+description: birth registration
+priority: 1
+condition: "step1_birth_cert == 'No'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_birth_registration
+description: birth registration
+priority: 1
+condition: "step1_birth_cert == 'No'"
+actions:
+  - "isRelevant = true"

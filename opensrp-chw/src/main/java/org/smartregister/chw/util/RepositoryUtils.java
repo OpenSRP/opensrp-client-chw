@@ -15,6 +15,45 @@ import timber.log.Timber;
 public interface RepositoryUtils {
 
     String ADD_MISSING_REPORTING_COLUMN = "ALTER TABLE 'indicator_queries' ADD COLUMN expected_indicators TEXT NULL;";
+    String ADD_DEATH_RECEIVE_COLUMN_TO_ECCHILD = "ALTER TABLE ec_child ADD received_death_certificate VARCHAR;";
+    String ADD_DEATH_CERT_DATE_TO_ECCHILD = "ALTER TABLE ec_child ADD death_certificate_issue_date VARCHAR;";
+    String ADD_DEATH_RECEIVE_COLUMNS_TO_FAMILY_MEMBER = "ALTER TABLE ec_family_member ADD received_death_certificate VARCHAR;";
+    String ADD_DEATH_CERT_DATE_TO_FAMILY_MEMBER = "ALTER TABLE ec_family_member ADD death_certificate_issue_date VARCHAR;";
+    String ADD_BIRTH_REG_TO_CHILD = "ALTER TABLE ec_child ADD birth_registration VARCHAR;";
+    String ADD_OUT_OF_AREA_CHILD_TABLE = "CREATE TABLE \"ec_out_of_area_child\" (\n" +
+            "\t\"id\"\tVARCHAR,\n" +
+            "\t\"relationalid\"\tVARCHAR,\n" +
+            "\t\"is_closed\"\tVARCHAR,\n" +
+            "\t\"base_entitty_id\"\tVARCHAR,\n" +
+            "\t\"unique_id\"\tVARCHAR,\n" +
+            "\t\"image\"\tVARCHAR,\n" +
+            "\t\"opensrp_id\"\tVARCHAR,\n" +
+            "\t\"surname\"\tVARCHAR,\n" +
+            "\t\"first_name\"\tVARCHAR,\n" +
+            "\t\"middle_name\"\tVARCHAR,\n" +
+            "\t\"dob\"\tVARCHAR,\n" +
+            "\t\"dob_estimated\"\tVARCHAR,\n" +
+            "\t\"age\"\tVARCHAR,\n" +
+            "\t\"gender\"\tVARCHAR,\n" +
+            "\t\"birth_place_type\"\tVARCHAR,\n" +
+            "\t\"birth_place_name\"\tVARCHAR,\n" +
+            "\t\"mother_name\"\tVARCHAR,\n" +
+            "\t\"mother_id\"\tVARCHAR,\n" +
+            "\t\"mother_dob\"\tVARCHAR,\n" +
+            "\t\"mother_age\"\tVARCHAR,\n" +
+            "\t\"mother_marital_status\"\tVARCHAR,\n" +
+            "\t\"mother_highest_edu_level\"\tVARCHAR,\n" +
+            "\t\"mother_usual_residence\"\tVARCHAR,\n" +
+            "\t\"mother_birth_place\"\tVARCHAR,\n" +
+            "\t\"father_name\"\tVARCHAR,\n" +
+            "\t\"father_id\"\tVARCHAR,\n" +
+            "\t\"father_dob\"\tVARCHAR,\n" +
+            "\t\"father_age\"\tVARCHAR,\n" +
+            "\t\"father_marital_status\"\tVARCHAR,\n" +
+            "\t\"father_highest_edu_level\"\tVARCHAR,\n" +
+            "\t\"father_birth_place\"\tVARCHAR\n" +
+            ");";
+
     String FAMILY_MEMBER_ADD_REASON_FOR_REGISTRATION = "ALTER TABLE 'ec_family_member' ADD COLUMN reasons_for_registration TEXT NULL;";
     String EC_REFERRAL_ADD_FP_METHOD_COLUMN = "ALTER TABLE 'ec_referral' ADD COLUMN fp_method_accepted_referral TEXT NULL;";
 

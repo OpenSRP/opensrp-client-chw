@@ -30,4 +30,7 @@
     // forms colors
     <color name="family_actionbar">@color/primary</color>
     <color name="family_navigation">#61a5c9</color>
+    // certificate button colors
+    <color name="certificate_not_received">#FFD13F3F</color>
+    <color name="certificate_received">#5FD13F</color>
 </resources>

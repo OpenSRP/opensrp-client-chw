@@ -1,10 +1,8 @@
 package org.smartregister.chw.activity;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
 import org.apache.commons.lang3.EnumUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,9 +17,7 @@ import org.smartregister.chw.fragment.PncRegisterFragment;
 import org.smartregister.chw.schedulers.ChwScheduleTaskExecutor;
 import org.smartregister.job.SyncServiceJob;
 import org.smartregister.view.fragment.BaseRegisterFragment;
-
 import java.util.Date;
-
 import timber.log.Timber;
 
 public class PncRegisterActivity extends CorePncRegisterActivity {

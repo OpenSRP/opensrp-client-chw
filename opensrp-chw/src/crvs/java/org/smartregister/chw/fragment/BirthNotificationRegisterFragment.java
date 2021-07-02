@@ -5,10 +5,9 @@ import org.smartregister.chw.activity.ChildHomeVisitActivity;
 import org.smartregister.chw.activity.ChildProfileActivity;
 import org.smartregister.chw.anc.domain.MemberObject;
 import org.smartregister.chw.application.ChwApplication;
-import org.smartregister.chw.core.fragment.CoreChildRegisterFragment;
 import org.smartregister.chw.model.ChildRegisterFragmentModel;
 import org.smartregister.chw.presenter.ChildRegisterFragmentPresenter;
-import org.smartregister.chw.provider.ChildRegisterProvider;
+import org.smartregister.chw.provider.BirthNotificationProvider;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.configurableviews.model.View;
 import org.smartregister.cursoradapter.RecyclerViewPaginatedAdapter;
@@ -18,8 +17,9 @@ import java.util.Set;
 import timber.log.Timber;
 import static org.smartregister.chw.core.utils.ChildDBConstants.KEY.FAMILY_LAST_NAME;
 
-public class ChildRegisterFragment extends CoreChildRegisterFragment {
+public class BirthNotificationRegisterFragment extends CoreBirthNotificationFragment {
 
+    @Override
     protected void onViewClicked(android.view.View view) {
         super.onViewClicked(view);
         if (view.getTag() instanceof CommonPersonObjectClient
@@ -41,7 +41,7 @@ public class ChildRegisterFragment extends CoreChildRegisterFragment {
 
     @Override
     public void initializeAdapter(Set<View> visibleColumns) {
-        ChildRegisterProvider childRegisterProvider = new ChildRegisterProvider(getActivity(), commonRepository(), visibleColumns, registerActionHandler, paginationViewHandler);
+        BirthNotificationProvider childRegisterProvider = new BirthNotificationProvider(getActivity(), commonRepository(), visibleColumns, registerActionHandler, paginationViewHandler);
         clientAdapter = new RecyclerViewPaginatedAdapter(null, childRegisterProvider, context().commonrepository(this.tablename));
         clientAdapter.setCurrentlimit(20);
         clientsView.setAdapter(clientAdapter);
@@ -69,4 +69,8 @@ public class ChildRegisterFragment extends CoreChildRegisterFragment {
         }
     }
 
+    @Override
+    protected int getToolBarTitle() {
+        return R.string.birth_certification;
+    }
 }

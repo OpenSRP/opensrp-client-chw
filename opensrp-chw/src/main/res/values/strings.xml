@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="login_title">CFC App</string>
     <string name="logo">logo</string>
 
@@ -8,7 +8,7 @@
 
     <string name="child_under_five">Child under 5 years</string>
     <string name="add_eligible_child">Eligible child</string>
-    <string name="add_child_under_11">Add child under 11</string>
+    <string name="add_child_under_11" tools:ignore="MissingTranslation">Add child under 11</string>
     <string name="go_to_family_s_profile">Go to family\'s profile</string>
     <string name="family_has_nothing_due">Family has nothing due</string>
     <string name="family_has_services_due">Family has services due</string>
@@ -45,7 +45,7 @@
     <string name="observations_illness_episodes_medical"><![CDATA[Observations & Illness Episodes]]></string>
     <string name="home_visit_suffix"> &#183; Home Visit</string>
     <string name="wash_check_suffix"> &#183; WASH check</string>
-    <string name="family_kit_suffix"> &#183; Family Kit</string>
+    <string name="family_kit_suffix" tools:ignore="MissingTranslation"> &#183; Family Kit</string>
     <string name="last_visit_prefix">Last visit %1$s ago</string>
     <string name="completed_on_prefix">Completed on %1$s</string>
 
@@ -113,14 +113,14 @@
     <string name="children_0_24_months_overdue_vaccinations">Children (6&#8211;23 months) who are currently overdue for at least one or more vaccinations</string>
 
 
-    <string name="total_under_2_children_label">Total U2 children</string>
-    <string name="deceased_children_12_23_months">Children (12&#8211;23 months) who died in the last year</string>
-    <string name="children_0_23_months_with_birth_certificate">Children (0&#8211;23 months) with a birth certificate</string>
-    <string name="children_0_23_months_without_birth__certificate">Children (0&#8211;23 months) without a birth certificate </string>
-    <string name="children_12_23_months_dewormed">Children (12&#8211;23 months) who were dewormed in the last 6 months</string>
-    <string name="children_12_23_months_not_dewormed">Children (12&#8211;23 months) who were not dewormed in the last 6 months</string>
-    <string name="children_6_23_months_received_vitamin_A">Children (6&#8211;23 months) who received Vitamin A in the last 6 months</string>
-    <string name="children_6_23_months_not_received_vitamin_A">Children (6&#8211;23 months) who did not receive Vitamin A in the last 6 months</string>
+    <string name="total_under_2_children_label" tools:ignore="MissingTranslation">Total U2 children</string>
+    <string name="deceased_children_12_23_months" tools:ignore="MissingTranslation">Children (12&#8211;23 months) who died in the last year</string>
+    <string name="children_0_23_months_with_birth_certificate" tools:ignore="MissingTranslation">Children (0&#8211;23 months) with a birth certificate</string>
+    <string name="children_0_23_months_without_birth__certificate" tools:ignore="MissingTranslation">Children (0&#8211;23 months) without a birth certificate </string>
+    <string name="children_12_23_months_dewormed" tools:ignore="MissingTranslation">Children (12&#8211;23 months) who were dewormed in the last 6 months</string>
+    <string name="children_12_23_months_not_dewormed" tools:ignore="MissingTranslation">Children (12&#8211;23 months) who were not dewormed in the last 6 months</string>
+    <string name="children_6_23_months_received_vitamin_A" tools:ignore="MissingTranslation">Children (6&#8211;23 months) who received Vitamin A in the last 6 months</string>
+    <string name="children_6_23_months_not_received_vitamin_A" tools:ignore="MissingTranslation">Children (6&#8211;23 months) who did not receive Vitamin A in the last 6 months</string>
 
 
 
@@ -292,8 +292,8 @@
     <string name="pnc_indicator_7">Newborns with no danger signs in their last PNC home visit</string>
     <string name="pnc_indicator_8">Postpartum women\'s chosen family planning methods (last 6 months)</string>
     <string name="pnc_indicator_9">Newborns (0&#8211;28 days) who died in the last year</string>
-    <string name="pnc_indicator_10">Women up to date with their PNC health facility visits</string>
-    <string name="physically_challenged">PHYSICALLY CHALLENGED</string>
+    <string name="pnc_indicator_10" tools:ignore="MissingTranslation">Women up to date with their PNC health facility visits</string>
+    <string name="physically_challenged" tools:ignore="MissingTranslation">PHYSICALLY CHALLENGED</string>
 
     <string name="maternal_deaths_slice_label">Maternal deaths</string>
     <string name="other_wra_deaths_slice_label">Other WRA deaths</string>
@@ -320,7 +320,7 @@
     <string name="pnc_birth_certification">Birth certification ({0})</string>
     <string name="pnc_kangaroo_mother_care">Kangaroo mother care (KMC) - ({0})</string>
     <string name="pnc_family_planning">Family planning</string>
-    <string name="fp_update_family_planning">Update Family planning Registration</string>
+    <string name="fp_update_family_planning" tools:ignore="MissingTranslation">Update Family planning Registration</string>
     <string name="pnc_observation_and_illness_mother">Observations &amp; illness - mother </string>
     <string name="pnc_observation_and_illness_baby">Observations &amp; illness - baby ({0}) </string>
 
@@ -444,5 +444,7 @@
     <string name="birth_certificate_num_error_msg">Birth certificate number must be unique and cannot exceed 15 digits.</string>
     
     <string name="unauthorized_group">This account is not allowed to access this device</string>
+
+    <string name="birth_notification" translatable="false">Birth Notification</string>
 
 </resources>

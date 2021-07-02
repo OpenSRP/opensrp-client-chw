@@ -1,5 +1,13 @@
-<resources>
-    <string name="app_name">CRVS</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">CRVS</string>
     <string name="login_title">CRVS Login</string>
-    <string name="nav_logo">CRVS App</string>
+    <string name="nav_logo" tools:ignore="MissingTranslation">CRVS App</string>
+    <string name="dead_clients" tools:ignore="MissingTranslation">Dead Clients</string>
+    <string name="birth_certification">Birth certification</string>
+    <string name="birth_notification" tools:ignore="MissingTranslation">Birth Notification</string>
+    <string name="death_certification" tools:ignore="MissingTranslation">Death certification</string>
+    <string name="certificate_received" tools:ignore="MissingTranslation">Certificate received</string>
+    <string name="certificate_not_received" tools:ignore="MissingTranslation">Certificate not received</string>
+    <string name="status_updated" tools:ignore="MissingTranslation">Status updated</string>
+    <string name="update_status" tools:ignore="MissingTranslation">Update Status</string>
 </resources>

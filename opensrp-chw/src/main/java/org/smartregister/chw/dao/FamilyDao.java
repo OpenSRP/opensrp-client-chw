@@ -1,12 +1,10 @@
 package org.smartregister.chw.dao;
 
 import android.util.Pair;
-
 import org.smartregister.chw.core.dao.AlertDao;
 import org.smartregister.chw.model.FamilyDetailsModel;
 import org.smartregister.dao.AbstractDao;
 import org.smartregister.domain.AlertStatus;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -199,4 +197,5 @@ public class FamilyDao extends AbstractDao {
 
         return familyProfileModels.get(0);
     }
+
 }

@@ -1,0 +1,35 @@
+---
+name: step1_surname
+description: surname relevance
+priority: 1
+condition: "!step1_same_as_fam_name.contains('same_as_fam_name')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_mother_dob_entered
+description: mother_dob_entered relevance
+priority: 1
+condition: "!step1_mother_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_mother_age_entered
+description: mother_age_entered relevance
+priority: 1
+condition: "step1_mother_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_father_dob_entered
+description: father_dob_entered relevance
+priority: 1
+condition: "!step1_father_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_father_age_entered
+description: father_age_entered relevance
+priority: 1
+condition: "step1_father_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
