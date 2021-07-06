@@ -236,7 +236,16 @@
           "json_mapping": {
             "field": "attributes.dateRemoved"
           }
+        },
+        {
+          "column_name": "marital_status",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
         }
+
       ]
     },
     {

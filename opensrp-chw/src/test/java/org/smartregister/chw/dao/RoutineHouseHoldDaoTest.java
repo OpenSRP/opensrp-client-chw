@@ -60,4 +60,9 @@ public class RoutineHouseHoldDaoTest extends RoutineHouseHoldDao {
         Mockito.verify(database).rawQuery(Mockito.anyString(), Mockito.any());
         Assert.assertEquals(eventDetails.size(), 1);
     }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 }

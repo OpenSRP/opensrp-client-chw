@@ -1,0 +1,14 @@
+---
+name: step1_age_calculated
+description: Age calculated
+priority: 1
+condition: "true"
+actions:
+  - "calculation = (!step1_dob_unknown.isEmpty() && step1_dob_unknown.contains('dob_unknown')) ? step1_age : helper.getDifferenceDays(step1_dob) / 365.25"
+---
+name: step1_wra
+description: wra calculation
+priority: 1
+condition: "step1_sex == 'Female' && (step1_age_calculated >= 10 && step1_age_calculated <= 49)"
+actions:
+  - "calculation = 1"

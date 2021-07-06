@@ -7,8 +7,12 @@ import android.view.Menu;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
+import com.vijay.jsonwizard.utils.FormUtils;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.chw.R;
+import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.activity.CoreFamilyOtherMemberProfileActivity;
 import org.smartregister.chw.core.activity.CoreFamilyProfileActivity;
 import org.smartregister.chw.core.form_data.NativeFormsDataBinder;
@@ -19,6 +23,7 @@ import org.smartregister.chw.dataloader.FamilyMemberDataLoader;
 import org.smartregister.chw.fp.util.FamilyPlanningConstants;
 import org.smartregister.chw.fragment.FamilyOtherMemberProfileFragment;
 import org.smartregister.chw.presenter.FamilyOtherMemberActivityPresenter;
+import org.smartregister.chw.util.Constants;
 import org.smartregister.chw.util.Utils;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.family.adapter.ViewPagerAdapter;
@@ -47,7 +52,7 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
         super.onCreateOptionsMenu(menu);
         String gender = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.GENDER, false);
         // Check if woman is already registered
-        if (flavor.hasANC() && !presenter().isWomanAlreadyRegisteredOnAnc(commonPersonObject) && flavor.isOfReproductiveAge(commonPersonObject, "Female") &&  gender.equalsIgnoreCase("Female") ) {
+        if (flavor.hasANC() && !presenter().isWomanAlreadyRegisteredOnAnc(commonPersonObject) && flavor.isOfReproductiveAge(commonPersonObject, "Female") && gender.equalsIgnoreCase("Female")) {
             flavor.updateFpMenuItems(baseEntityId, menu);
             menu.findItem(R.id.action_anc_registration).setVisible(true);
         } else {
@@ -63,6 +68,17 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
             flavor.updateMaleFpMenuItems(baseEntityId, menu);
         }
 
+        if (!ChwApplication.getApplicationFlavor().hasHIV()) {
+            menu.findItem(R.id.action_hiv_registration).setVisible(false);
+        } else {
+            flavor.updateHivMenuItems(baseEntityId, menu);
+        }
+
+        if (!ChwApplication.getApplicationFlavor().hasTB()) {
+            menu.findItem(R.id.action_tb_registration).setVisible(false);
+        } else {
+            flavor.updateTbMenuItems(baseEntityId, menu);
+        }
         return true;
     }
 
@@ -102,6 +118,24 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
     protected void removeIndividualProfile() {
         IndividualProfileRemoveActivity.startIndividualProfileActivity(FamilyOtherMemberProfileActivity.this,
                 commonPersonObject, familyBaseEntityId, familyHead, primaryCaregiver, FamilyRegisterActivity.class.getCanonicalName());
+    }
+
+    @Override
+    protected void startHivRegister() {
+        try {
+            HivRegisterActivity.startHIVFormActivity(FamilyOtherMemberProfileActivity.this, baseEntityId, Constants.JSON_FORM.getHivRegistration(), (new FormUtils()).getFormJsonFromRepositoryOrAssets(this, Constants.JSON_FORM.getHivRegistration()).toString());
+        } catch (JSONException e) {
+            Timber.e(e);
+        }
+    }
+
+    @Override
+    protected void startTbRegister() {
+        try {
+            TbRegisterActivity.startTbFormActivity(FamilyOtherMemberProfileActivity.this, baseEntityId, Constants.JSON_FORM.getTbRegistration(), (new FormUtils()).getFormJsonFromRepositoryOrAssets(this, Constants.JSON_FORM.getTbRegistration()).toString());
+        } catch (JSONException e) {
+            Timber.e(e);
+        }
     }
 
     @Override
@@ -154,7 +188,7 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
     @Override
     protected void initializePresenter() {
         super.initializePresenter();
-        onClickFloatingMenu = flavor.getOnClickFloatingMenu(this, familyBaseEntityId,baseEntityId);
+        onClickFloatingMenu = flavor.getOnClickFloatingMenu(this, familyBaseEntityId, baseEntityId);
     }
 
     @Override
@@ -173,11 +207,26 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
         return FamilyOtherMemberProfileFragment.newInstance(getIntent().getExtras());
     }
 
+    @Override
+    protected void startMalariaFollowUpVisit() {
+        MalariaFollowUpVisitActivity.startMalariaFollowUpActivity(this, baseEntityId);
+    }
+
+    @Override
+    protected void setIndependentClient(boolean isIndependentClient) {
+        super.isIndependent = isIndependentClient;
+    }
+
+    @Override
+    protected void startHfMalariaFollowupForm() {
+        //Implements from super
+    }
+
     /**
      * build implementation differences file
      */
     public interface Flavor {
-        OnClickFloatingMenu getOnClickFloatingMenu(final Activity activity, final String familyBaseEntityId , final String baseEntityId);
+        OnClickFloatingMenu getOnClickFloatingMenu(final Activity activity, final String familyBaseEntityId, final String baseEntityId);
 
         boolean isOfReproductiveAge(CommonPersonObjectClient commonPersonObject, String gender);
 
@@ -187,21 +236,10 @@ public class FamilyOtherMemberProfileActivity extends CoreFamilyOtherMemberProfi
 
         void updateMaleFpMenuItems(@Nullable String baseEntityId, @Nullable Menu menu);
 
+        void updateHivMenuItems(@Nullable String baseEntityId, @Nullable Menu menu);
+
+        void updateTbMenuItems(@Nullable String baseEntityId, @Nullable Menu menu);
+
         boolean hasANC();
-    }
-
-    @Override
-    protected void startMalariaFollowUpVisit() {
-        MalariaFollowUpVisitActivity.startMalariaFollowUpActivity(this, baseEntityId);
-    }
-
-    @Override
-    protected void startHfMalariaFollowupForm() {
-        //Implements from super
-    }
-
-    @Override
-    protected void setIndependentClient(boolean isIndependentClient) {
-        super.isIndependent = isIndependentClient;
     }
 }

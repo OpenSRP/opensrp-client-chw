@@ -52,7 +52,7 @@
     <string name="profile_activity_not_visited">Marqué comme non-visité le %s</string>
 
     <string name="cancel">ANNULER</string>
-    <string name="submit">VALIDER</string>
+    <string name="submit">Sauvegarder</string>
 
     <string name="dose_not_given">La dose n\'a pas été donnée</string>
     <string name="has_birt_cert">Possède un acte de naissance?</string>
@@ -257,6 +257,9 @@
     <string name="pnc_indicator_7">Nouveau-nés sans signes de danger lors de leur dernière visite CPoN à domicile</string>
     <string name="pnc_indicator_8">Méthodes de planification familiale choisies par les femmes en postpartum (6 derniers mois)</string>
     <string name="pnc_indicator_9">Nouveau-nés (0&#8211;28 jours) décédés au cours de la dernière année</string>
+    <string name="pnc_indicator_10">Femmes à jour avec leurs visites CPoN au centres de santé</string>
+    <string name="physically_challenged">VIVRE AVEC UN HANDICAP</string>
+
 
     <string name="maternal_deaths_slice_label">Décès maternels</string>
     <string name="other_wra_deaths_slice_label">Autres décès des FAP</string>
@@ -334,5 +337,25 @@
     <string name="cancel_download_confirmation">Vous êtes sûr de vouloir annuler ce téléchargement ?</string>
     <string name="cancel_download">Annuler le téléchargement</string>
 
+    <string name="update">Mise à jour</string>
+    <string name="hint_kit_type">Quel type de kit familiale a été reçu par la famille?</string>
+    <string name="simple_kit_hint">Kit simple (SRO/ZINC et paracétamol)</string>
+    <string name="simple_kit_with_micro_hint">Kit simple + micronutriments</string>
+    <string name="no_kit_received_hint">Aucun kit reçu</string>
+    <string name="kit_been_used_hint">Le kit a-t-il été utilisé?</string>
+    <string name="family_kit">Kit Familiale</string>
 
+    <string name="drc_minimum_dietary_choice_0">0 - Aucun des 4 produits</string>
+    <string name="drc_minimum_dietary_choice_1">1 - Un seul type d\'aliment</string>
+    <string name="drc_minimum_dietary_choice_2">2 - Deux types d\'aliments différents</string>
+    <string name="drc_minimum_dietary_choice_3">3 - Trois types d\'aliment différents</string>
+    <string name="drc_minimum_dietary_choice_4">4 - Quatre types d\'aliment différents</string>
+    <string name="anc_home_visit_delivery_kit_received">Kit d\'accouchement reçu</string>
+    <string name="delivery_kit">Kit d\'accouchement</string>
+    <string name="family_profile_title">Ménage %1$s</string>
+    <string name="family_profile_title_with_firstname">Ménage %1$s %2$s</string>
+    <string name="tutorials">Tutoriel</string>
+    <string name="counseling">Conseil</string>
+
+    <string name="unauthorized_group">Ce compte n\'est pas autorisé à accéder à cet appareil</string>
 </resources>

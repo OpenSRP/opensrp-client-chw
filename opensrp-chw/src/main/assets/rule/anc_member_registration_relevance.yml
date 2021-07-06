@@ -26,3 +26,10 @@ priority: 1
 condition: "step1_last_menstrual_period_unknown.contains('lmp_unknown')"
 actions:
   - "isRelevant = true"
+---
+name: step1_no_surv_children
+description: no of surviving children
+priority: 1
+condition: "step1_no_prev_preg > 0 && step1_no_prev_preg != ''"
+actions:
+  - "isRelevant = true"

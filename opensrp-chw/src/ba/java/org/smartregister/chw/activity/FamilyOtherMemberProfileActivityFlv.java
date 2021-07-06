@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
 import org.smartregister.chw.BuildConfig;
 import org.smartregister.chw.R;
 import org.smartregister.chw.core.fragment.FamilyCallDialogFragment;
@@ -27,7 +29,7 @@ public class FamilyOtherMemberProfileActivityFlv implements FamilyOtherMemberPro
                     break;
                 case R.id.refer_to_facility_layout:
                     if (BuildConfig.USE_UNIFIED_REFERRAL_APPROACH) {
-                        launchClientReferralActivity(activity,  getCommonReferralTypes(activity), baseEntityId);
+                        launchClientReferralActivity(activity, getCommonReferralTypes(activity), baseEntityId);
                     } else {
                         Toast.makeText(activity, "Refer to facility", Toast.LENGTH_SHORT).show();
                     }
@@ -46,6 +48,16 @@ public class FamilyOtherMemberProfileActivityFlv implements FamilyOtherMemberPro
     @Override
     public void updateMaleFpMenuItems(String baseEntityId, Menu menu) {
         UtilsFlv.updateFpMenuItems(baseEntityId, menu);
+    }
+
+    @Override
+    public void updateHivMenuItems(@Nullable String baseEntityId, @Nullable Menu menu) {
+        UtilsFlv.updateHivMenuItems(baseEntityId, menu);
+    }
+
+    @Override
+    public void updateTbMenuItems(@Nullable String baseEntityId, @Nullable Menu menu) {
+        UtilsFlv.updateTbMenuItems(baseEntityId, menu);
     }
 
     @Override

@@ -27,4 +27,7 @@
     <color name="pie_chart_purple">#A64D79</color>
     <color name="pie_chart_orange">#E69138</color>
     <color name="pie_chart_brown">#803F04</color>
+    // forms colors
+    <color name="family_actionbar">@color/primary</color>
+    <color name="family_navigation">#61a5c9</color>
 </resources>

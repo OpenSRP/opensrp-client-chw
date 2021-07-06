@@ -24,6 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class Utils extends org.smartregister.chw.core.utils.Utils {
 
@@ -41,16 +43,6 @@ public class Utils extends org.smartregister.chw.core.utils.Utils {
     public static List<ReferralTypeModel> getCommonReferralTypes(Activity activity) {
         List<ReferralTypeModel> referralTypeModels = new ArrayList<>();
         if (BuildConfig.USE_UNIFIED_REFERRAL_APPROACH) {
-
-            referralTypeModels.add(new ReferralTypeModel(activity.getString(R.string.suspected_malaria),
-                    Constants.JSON_FORM.getMalariaReferralForm(), CoreConstants.TASKS_FOCUS.SUSPECTED_MALARIA));
-
-            referralTypeModels.add(new ReferralTypeModel(activity.getString(R.string.hiv_referral),
-                    Constants.JSON_FORM.getHivReferralForm(), CoreConstants.TASKS_FOCUS.SUSPECTED_HIV));
-
-            referralTypeModels.add(new ReferralTypeModel(activity.getString(R.string.tb_referral),
-                    Constants.JSON_FORM.getTbReferralForm(), CoreConstants.TASKS_FOCUS.SUSPECTED_TB));
-
             referralTypeModels.add(new ReferralTypeModel(activity.getString(R.string.gbv_referral),
                     Constants.JSON_FORM.getGbvReferralForm(), CoreConstants.TASKS_FOCUS.SUSPECTED_GBV));
         }
@@ -113,6 +105,13 @@ public class Utils extends org.smartregister.chw.core.utils.Utils {
         return format.format(newDate);
     }
 
+    public static String getFormattedDateFromTimeStamp(Long time, String mDateFormat) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(mDateFormat, Locale.getDefault());
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date dateTime = new Date(time);
+        return dateFormat.format(dateTime);
+    }
+
     public static String getClientName(String firstName, String middleName, String lastName) {
         String trimFirstName = firstName.trim();
         String trimMiddleName = middleName.trim();
@@ -123,6 +122,5 @@ public class Utils extends org.smartregister.chw.core.utils.Utils {
             return Utils.getName(trimFirstName, trimMiddleName);
         }
     }
-
 
 }

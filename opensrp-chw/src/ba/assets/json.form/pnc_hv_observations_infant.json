@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Observations & Illness - Child",
+    "title": "{{pnc_hv_observations_infant.step1.title}}",
     "fields": [
       {
         "key": "date_of_illness_child",
@@ -55,13 +55,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date ",
+        "hint": "{{pnc_hv_observations_infant.step1.date_of_illness_child.hint}}",
         "expanded": false,
         "min_date": "today-1y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of illness"
+          "err": "{{pnc_hv_observations_infant.step1.date_of_illness_child.v_required.err}}"
         }
       },
       {
@@ -70,10 +70,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Description",
+        "hint": "{{pnc_hv_observations_infant.step1.illness_description_child.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the description"
+          "err": "{{pnc_hv_observations_infant.step1.illness_description_child.v_required.err}}"
         }
       },
       {
@@ -82,7 +82,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Action taken",
+        "label": "{{pnc_hv_observations_infant.step1.action_taken_child.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -91,42 +91,42 @@
         "options": [
           {
             "key": "chk_ors",
-            "text": "ORS 5",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_ors.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "351AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_zinc",
-            "text": "Zinc 10",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_zinc.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "86672AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_paracetamol",
-            "text": "Panadol",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_paracetamol.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "70116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_referred",
-            "text": "Referred",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_referred.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163762AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_other_treatment",
-            "text": "Other treatment",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_other_treatment.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "No treatment given",
+            "text": "{{pnc_hv_observations_infant.step1.action_taken_child.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -139,10 +139,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Other treatment",
+        "hint": "{{pnc_hv_observations_infant.step1.other_treatment_illness_child.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the illness details"
+          "err": "{{pnc_hv_observations_infant.step1.other_treatment_illness_child.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -153,5 +153,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_hv_observations_infant"
 }

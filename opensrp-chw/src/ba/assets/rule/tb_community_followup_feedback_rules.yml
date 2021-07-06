@@ -1,0 +1,8 @@
+---
+name: "tb_community_followup_visit_date_calculation"
+description: "calculating the tb followup visit date"
+priority: 1
+condition: "true"
+actions:
+  - "tb_community_followup_visit_date_calculation = System.currentTimeMillis()"
+

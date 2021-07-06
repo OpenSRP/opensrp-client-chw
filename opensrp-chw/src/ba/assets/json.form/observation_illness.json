@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Observations & Illness",
+    "title": "{{observation_illness.step1.title}}",
     "fields": [
       {
         "key": "date_of_illness",
@@ -55,13 +55,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date",
+        "hint": "{{observation_illness.step1.date_of_illness.hint}}",
         "expanded": false,
         "max_date": "today",
         "min_date": "",
         "v_required": {
           "value": "true",
-          "err": "Please enter illness date"
+          "err": "{{observation_illness.step1.date_of_illness.v_required.err}}"
         }
       },
       {
@@ -71,10 +71,10 @@
         "openmrs_entity_id": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "Description",
+        "hint": "{{observation_illness.step1.illness_description.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter description"
+          "err": "{{observation_illness.step1.illness_description.v_required.err}}"
         }
       },
       {
@@ -84,38 +84,34 @@
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Action taken",
+        "hint": "{{observation_illness.step1.action_taken_1m5yr.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please select action"
+          "err": "{{observation_illness.step1.action_taken_1m5yr.v_required.err}}"
         },
         "values": [
-          "ORS 5",
-          "Zinc 10",
-          "Panadol",
-          "Referred",
-          "Other treatment",
-          "No treatment given"
+          "{{observation_illness.step1.action_taken_1m5yr.values[0]}}",
+          "{{observation_illness.step1.action_taken_1m5yr.values[1]}}",
+          "{{observation_illness.step1.action_taken_1m5yr.values[2]}}",
+          "{{observation_illness.step1.action_taken_1m5yr.values[3]}}"
         ],
         "keys": [
           "ORS 5",
           "Zinc 10",
-          "Panadol",
-          "Referred",
-          "Other treatment given",
-          "No treatment"
+          "Paracetamol",
+          "Other treatment"
         ]
       },
       {
         "key": "other_treat_1m5yr",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Other treatment",
+        "hint": "{{observation_illness.step1.other_treat_1m5yr.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please specify the other treatment"
+          "err": "{{observation_illness.step1.other_treat_1m5yr.v_required.err}}"
         },
         "relevance": {
           "step1:action_taken_1m5yr": {
@@ -125,5 +121,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "observation_illness"
 }

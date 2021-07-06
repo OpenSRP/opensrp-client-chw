@@ -4,6 +4,7 @@ import android.content.Context;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.smartregister.chw.anc.repository.VisitRepository;
 import org.smartregister.chw.core.repository.ScheduleRepository;
 import org.smartregister.chw.util.RepositoryUtils;
 import org.smartregister.domain.db.Column;
@@ -40,10 +41,27 @@ public class ChwRepositoryFlv {
                 case 5:
                     upgradeToVersion5(db);
                     break;
+                case 6:
+                    upgradeToVersion6(context, db);
+                    break;
+                case 7:
+                    upgradeToVersion7(db);
+                    break;
+                case 8:
+                    upgradeToVersion8(db);
+                    break;
                 default:
                     break;
             }
             upgradeTo++;
+        }
+    }
+
+    private static void upgradeToVersion8(SQLiteDatabase db) {
+        try {
+            db.execSQL("ALTER TABLE ec_family_member ADD COLUMN marital_status VARCHAR;");
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion8");
         }
     }
 
@@ -57,7 +75,6 @@ public class ChwRepositoryFlv {
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_OUT_OF_AREA_COL);
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_OUT_OF_AREA_COL_INDEX);
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_HIA2_STATUS_COL);
-            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
 
             // add missing event repository table
             Column[] columns = {EventClientRepository.event_column.formSubmissionId};
@@ -116,10 +133,30 @@ public class ChwRepositoryFlv {
 
     private static void upgradeToVersion5(SQLiteDatabase db) {
         try {
-           RepositoryUtils.addDetailsColumnToFamilySearchTable(db);
+            RepositoryUtils.addDetailsColumnToFamilySearchTable(db);
         } catch (Exception e) {
             Timber.e(e, "upgradeToVersion5");
         }
     }
+
+    private static void upgradeToVersion6(Context context, SQLiteDatabase db) {
+        try {
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL);
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL_INDEX);
+
+            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+    }
+
+    private static void upgradeToVersion7(SQLiteDatabase db) {
+        try {
+            db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion7");
+        }
+    }
+
 
 }

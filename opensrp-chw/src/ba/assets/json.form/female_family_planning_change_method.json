@@ -51,7 +51,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Change or Stop FP form",
+    "title": "{{female_family_planning_change_method.step1.title}}",
     "next": "step2",
     "fields": [
       {
@@ -81,35 +81,35 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Reason the woman is stopping her current family planning method",
+        "label": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.label}}",
         "options": [
           {
             "key": "side_effects",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164154AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Side-effects"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.side_effects.text}}"
           },
           {
             "key": "wants_to_conceive",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Wants to conceive"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.wants_to_conceive.text}}"
           },
           {
             "key": "doesnt_want_to_use_anymore",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Doesn't want to use anymore"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.doesnt_want_to_use_anymore.text}}"
           },
           {
             "key": "menopause",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "134346AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Menopause"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.menopause.text}}"
           },
           {
             "key": "decided_to_change_method",
@@ -117,19 +117,19 @@
             "openmrs_entity_id": "163494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
             "value": false,
-            "text": "Decided to change method"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.decided_to_change_method.text}}"
           },
           {
             "key": "others",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Others"
+            "text": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.options.others.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{female_family_planning_change_method.step1.reason_stop_fp_chw.v_required.err}}"
         }
       },
       {
@@ -139,10 +139,10 @@
         "openmrs_entity_id": "other_reason_fp_chw",
         "openmrs_entity_parent": "164901AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Other reason",
+        "hint": "{{female_family_planning_change_method.step1.other_reason_fp_chw.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step1.other_reason_fp_chw.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -159,10 +159,10 @@
         "openmrs_entity_id": "side_effects_fp",
         "openmrs_entity_parent": "164154AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Side effects",
+        "hint": "{{female_family_planning_change_method.step1.side_effects_fp.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step1.side_effects_fp.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -175,7 +175,7 @@
     ]
   },
   "step2": {
-    "title": "Family planning method",
+    "title": "{{female_family_planning_change_method.step2.title}}",
     "next": "step3",
     "fields": [
       {
@@ -184,26 +184,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "pill",
         "openmrs_entity_parent": "",
-        "label": "Does she want to use a contraceptive pill?",
+        "label": "{{female_family_planning_change_method.step2.pill.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.pill.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.pill.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.pill.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -219,8 +219,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Oral Contraception check List",
-        "toaster_info_text": "Check-list\n for providing Combined Oral Contraception (COC) or Progestin Only Pills (POP)",
+        "text": "{{female_family_planning_change_method.step2.user_toaster_info.text}}",
+        "toaster_info_text": "{{female_family_planning_change_method.step2.user_toaster_info.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -236,26 +236,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "breast_lump",
         "openmrs_entity_parent": "",
-        "label": "Does she have any breast lumps?",
+        "label": "{{female_family_planning_change_method.step2.breast_lump.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.breast_lump.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.breast_lump.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.breast_lump.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -271,26 +271,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "abnormal_vaginal",
         "openmrs_entity_parent": "",
-        "label": "Does she have any abnomal vaginal bleeding or discharge?",
+        "label": "{{female_family_planning_change_method.step2.abnormal_vaginal.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.abnormal_vaginal.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.abnormal_vaginal.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.abnormal_vaginal.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -306,26 +306,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "pregnant",
         "openmrs_entity_parent": "",
-        "label": "Is she pregnant?",
+        "label": "{{female_family_planning_change_method.step2.pregnant.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.pregnant.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.pregnant.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.pregnant.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -341,26 +341,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "difficultly_breathing",
         "openmrs_entity_parent": "",
-        "label": "Does she have any severe chest pain and difficultly breathing?",
+        "label": "{{female_family_planning_change_method.step2.difficultly_breathing.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.difficultly_breathing.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.difficultly_breathing.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.difficultly_breathing.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -376,26 +376,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "headaches",
         "openmrs_entity_parent": "",
-        "label": "Does she have any unusual headaches associated with nausea, vomiting or blurred vision?",
+        "label": "{{female_family_planning_change_method.step2.headaches.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.headaches.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.headaches.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.headaches.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -411,26 +411,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "frequent_urge",
         "openmrs_entity_parent": "",
-        "label": "Does she frequently feel thirsty, need to urinate or feel tired?",
+        "label": "{{female_family_planning_change_method.step2.frequent_urge.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.frequent_urge.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.frequent_urge.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.frequent_urge.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -446,26 +446,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "falling_loss_unconsciousness",
         "openmrs_entity_parent": "",
-        "label": "Does she have the tendency of falling down/collapsing and loss of consciousness?",
+        "label": "{{female_family_planning_change_method.step2.falling_loss_unconsciousness.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.falling_loss_unconsciousness.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.falling_loss_unconsciousness.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.falling_loss_unconsciousness.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -481,26 +481,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "breastfeed",
         "openmrs_entity_parent": "",
-        "label": "Is she breastfeeding a baby 6 months or younger and having any issues producing milk?",
+        "label": "{{female_family_planning_change_method.step2.breastfeed.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step2.breastfeed.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step2.breastfeed.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step2.breastfeed.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -558,8 +558,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "The woman is eligible for either Combined Oral Contraceptive (COC) or Progestin Only Pills (POP)",
-        "toaster_info_text": "COC or POP eligible:\nThe woman is eligible for either Combined Oral Contraceptive (COC) or Progestin Only Pills (POP)",
+        "text": "{{female_family_planning_change_method.step2.COC_POP_note.text}}",
+        "toaster_info_text": "{{female_family_planning_change_method.step2.COC_POP_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -575,8 +575,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "The woman is eligible for Progestin Only Pills (POP) only",
-        "toaster_info_text": "POP only eligible:\nThe woman is eligible for Progestin Only Pills (POP) only",
+        "text": "{{female_family_planning_change_method.step2.POP_note.text}}",
+        "toaster_info_text": "{{female_family_planning_change_method.step2.POP_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -592,8 +592,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "The woman is not eligible for Combined Oral Contraception (COC) or Progestin Only Pills (POP). Please advise the client to use condoms and give her a referral to go to the health facility for further counselling on family planning.",
-        "toaster_info_text": "Not eligible:\nThe woman is not eligible for Combined Oral Contraception (COC) or Progestin Only Pills (POP). Please advise the client to use condoms and give her a referral to go to the health facility for further counselling on family planning.",
+        "text": "{{female_family_planning_change_method.step2.no_pill_note.text}}",
+        "toaster_info_text": "{{female_family_planning_change_method.step2.no_pill_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -610,8 +610,21 @@
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Family planning method selected",
+        "hint": "{{female_family_planning_change_method.step2.fp_method_chosen.hint}}",
         "values": [
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[0]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[1]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[2]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[3]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[4]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[5]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[6]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[7]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[8]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[9]}}",
+          "{{female_family_planning_change_method.step2.fp_method_chosen.values[10]}}"
+        ],
+        "keys": [
           "Male condom",
           "Female condom",
           "COC",
@@ -639,7 +652,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{female_family_planning_change_method.step2.fp_method_chosen.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -666,7 +679,7 @@
     ]
   },
   "step3": {
-    "title": "Family planning method info",
+    "title": "{{female_family_planning_change_method.step3.title}}",
     "fields": [
       {
         "key": "no_condoms",
@@ -675,18 +688,18 @@
         "openmrs_entity_id": "no_condoms",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "How many condoms was she given?",
+        "hint": "{{female_family_planning_change_method.step3.no_condoms.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Equal or greater than 0"
+          "err": "{{female_family_planning_change_method.step3.no_condoms.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{female_family_planning_change_method.step3.no_condoms.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{female_family_planning_change_method.step3.no_condoms.v_min.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -724,18 +737,18 @@
         "openmrs_entity_id": "163171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "number",
-        "hint": "How many pill cycles was she given?",
+        "hint": "{{female_family_planning_change_method.step3.no_pillcycles.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Equal or greater than 0"
+          "err": "{{female_family_planning_change_method.step3.no_pillcycles.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{female_family_planning_change_method.step3.no_pillcycles.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "0",
-          "err": "Number must be equal or greater than 0"
+          "err": "{{female_family_planning_change_method.step3.no_pillcycles.v_min.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -751,7 +764,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_cocpop",
         "type": "date_picker",
-        "hint": "When did she start or plan to start using COC/POP?",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_cocpop.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -762,7 +775,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_cocpop.v_required.err}}"
         }
       },
       {
@@ -771,8 +784,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "counselling_use",
         "type": "spinner",
-        "hint": "Was she counselled on how to use the family planning method?",
+        "hint": "{{female_family_planning_change_method.step3.counselling_use.hint}}",
         "values": [
+          "{{female_family_planning_change_method.step3.counselling_use.values[0]}}",
+          "{{female_family_planning_change_method.step3.counselling_use.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -782,7 +799,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step3.counselling_use.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -798,7 +815,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "162881AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of last injection",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_injectable.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -809,7 +826,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_injectable.v_required.err}}"
         }
       },
       {
@@ -818,7 +835,7 @@
         "openmrs_entity": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_id": "next_injection_due_date",
         "type": "edit_text",
-        "hint": "Next injection due:",
+        "hint": "{{female_family_planning_change_method.step3.next_injection_due_date.hint}}",
         "read_only": "true",
         "value": "0",
         "relevance": {
@@ -842,7 +859,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_iucd",
         "type": "date_picker",
-        "hint": "Date of IUCD insertion",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_iucd.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -853,7 +870,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_iucd.v_required.err}}"
         }
       },
       {
@@ -862,7 +879,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_implant_nxt",
         "type": "date_picker",
-        "hint": "Date of Implanon - NXT insertion",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_implant_nxt.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -873,7 +890,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_implant_nxt.v_required.err}}"
         }
       },
       {
@@ -882,7 +899,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_implant_jad",
         "type": "date_picker",
-        "hint": "Date of Jadelle insertion",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_implant_jad.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -893,7 +910,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_implant_jad.v_required.err}}"
         }
       },
       {
@@ -902,7 +919,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_female_ster",
         "type": "date_picker",
-        "hint": "Date of female sterilization",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_female_ster.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -913,7 +930,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_female_ster.v_required.err}}"
         }
       },
       {
@@ -922,7 +939,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "fp_start_male_ster",
         "type": "date_picker",
-        "hint": "Date of male sterilization",
+        "hint": "{{female_family_planning_change_method.step3.fp_start_male_ster.hint}}",
         "max_date": "today",
         "relevance": {
           "rules-engine": {
@@ -933,7 +950,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Required"
+          "err": "{{female_family_planning_change_method.step3.fp_start_male_ster.v_required.err}}"
         }
       },
       {
@@ -942,8 +959,8 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Advise the woman to use condoms for the first 3 months to prevent pregnancy",
-        "toaster_info_text": "A note to inform the client that they should use condoms for the first three months after the sterialization to prevent pregnancy",
+        "text": "{{female_family_planning_change_method.step3.fp_male_ster_note.text}}",
+        "toaster_info_text": "{{female_family_planning_change_method.step3.fp_male_ster_note.toaster_info_text}}",
         "toaster_type": "info",
         "relevance": {
           "rules-engine": {
@@ -959,26 +976,26 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_given",
         "openmrs_entity_parent": "",
-        "label": "Was she referred to the health facility?",
+        "label": "{{female_family_planning_change_method.step3.referral_given.label}}",
         "options": [
           {
             "key": "yes",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Yes"
+            "text": "{{female_family_planning_change_method.step3.referral_given.options.yes.text}}"
           },
           {
             "key": "no",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No"
+            "text": "{{female_family_planning_change_method.step3.referral_given.options.no.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one choice"
+          "err": "{{female_family_planning_change_method.step3.referral_given.v_required.err}}"
         }
       },
       {
@@ -997,5 +1014,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "female_family_planning_change_method"
 }

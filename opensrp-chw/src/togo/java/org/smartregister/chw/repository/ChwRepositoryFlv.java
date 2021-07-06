@@ -27,8 +27,8 @@ import org.smartregister.chw.util.PNCVisitUtil;
 import org.smartregister.chw.util.RepositoryUtils;
 import org.smartregister.chw.util.RepositoryUtilsFlv;
 import org.smartregister.clientandeventmodel.Obs;
-import org.smartregister.domain.db.Column;
 import org.smartregister.domain.Event;
+import org.smartregister.domain.db.Column;
 import org.smartregister.domain.db.EventClient;
 import org.smartregister.family.util.DBConstants;
 import org.smartregister.immunization.repository.RecurringServiceRecordRepository;
@@ -100,10 +100,27 @@ public class ChwRepositoryFlv {
                 case 17:
                     upgradeToVersion17(db);
                     break;
+                case 18:
+                    upgradeToVersion18(db);
+                    break;
+                case 19:
+                    upgradeToVersion19(context, db);
+                    break;
+                case 20:
+                    upgradeToVersion20(db);
+                    break;
                 default:
                     break;
             }
             upgradeTo++;
+        }
+    }
+
+    private static void upgradeToVersion20(SQLiteDatabase db) {
+        try {
+            db.execSQL("ALTER TABLE ec_family_member ADD COLUMN marital_status VARCHAR;");
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion20");
         }
     }
 
@@ -119,8 +136,6 @@ public class ChwRepositoryFlv {
 
 //            EventClientRepository.createTable(db, EventClientRepository.Table.path_reports, EventClientRepository.report_column.values());
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_HIA2_STATUS_COL);
-
-            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
 
         } catch (Exception e) {
             Timber.e(e, "upgradeToVersion2 ");
@@ -392,7 +407,7 @@ public class ChwRepositoryFlv {
 
     private static void upgradeToVersion16(SQLiteDatabase db) {
         try {
-           RepositoryUtils.addDetailsColumnToFamilySearchTable(db);
+            RepositoryUtils.addDetailsColumnToFamilySearchTable(db);
         } catch (Exception e) {
             Timber.e(e);
         }
@@ -403,6 +418,26 @@ public class ChwRepositoryFlv {
             db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
         } catch (Exception e) {
             Timber.e(e, "upgradeToVersion17");
+        }
+    }
+  
+    private static void upgradeToVersion18(SQLiteDatabase db) {
+        try {
+            ReportingLibrary reportingLibraryInstance = ReportingLibrary.getInstance();
+            initializeIndicatorDefinitions(reportingLibraryInstance, db);
+        } catch (Exception e){
+            Timber.e(e, "upgradeToVersion18");
+        }
+    }
+  
+   private static void upgradeToVersion19(Context context, SQLiteDatabase db) {
+        try {
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL);
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL_INDEX);
+
+            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
+        } catch (Exception e) {
+            Timber.e(e);
         }
     }
 }

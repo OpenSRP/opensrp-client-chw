@@ -1,5 +1,6 @@
 package org.smartregister.chw.task;
 
+import org.joda.time.DateTime;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.contract.ScheduleTask;
 import org.smartregister.chw.core.domain.BaseScheduleTask;
@@ -24,7 +25,7 @@ public class FamilyKitCheckScheduler extends BaseTaskExecutor {
         baseScheduleTask.setScheduleDueDate(alertRule.getDueDate());
         baseScheduleTask.setScheduleExpiryDate(alertRule.getExpiryDate());
         baseScheduleTask.setScheduleCompletionDate(alertRule.getCompletionDate());
-        baseScheduleTask.setScheduleOverDueDate(alertRule.getOverDueDate());
+        baseScheduleTask.setScheduleOverDueDate(new DateTime(alertRule.getLastDayOfMonth(alertRule.getDueDate())).plusDays(1).toDate());
         if (FamilyDao.familyHasChildUnderFive(baseEntityID))
             return toScheduleList(baseScheduleTask);
         else

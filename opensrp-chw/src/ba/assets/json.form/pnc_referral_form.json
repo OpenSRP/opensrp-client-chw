@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "PNC referral form",
+    "title": "{{pnc_referral_form.step1.title}}",
     "fields": [
       {
         "key": "chw_referral_hf_pnc",
@@ -75,12 +75,12 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "check_box",
-        "label": "Client condition / problem",
+        "label": "{{pnc_referral_form.step1.problem_hf_pnc.label}}",
         "label_text_style": "bold",
         "options": [
           {
             "key": "Vaginal_bleeding",
-            "text": "Vaginal bleeding",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Vaginal_bleeding.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147232AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -88,7 +88,7 @@
           },
           {
             "key": "Discoloured_or_watery_liquid_vaginal_discharge",
-            "text": "Discoloured or watery, liquid vaginal discharge with a bad smell",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Discoloured_or_watery_liquid_vaginal_discharge.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -96,7 +96,7 @@
           },
           {
             "key": "Severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -104,7 +104,7 @@
           },
           {
             "key": "Severe_anaemia",
-            "text": "Severe anaemia",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Severe_anaemia.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "162044AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -112,7 +112,7 @@
           },
           {
             "key": "Convulsions",
-            "text": "Convulsions",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Convulsions.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "113054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -120,7 +120,7 @@
           },
           {
             "key": "A_severe_headache_dizziness",
-            "text": "A severe headache / dizziness",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.A_severe_headache_dizziness.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -128,7 +128,7 @@
           },
           {
             "key": "Swelling_of_the_face_and_or_hands",
-            "text": "Swelling of the face and/or hands",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Swelling_of_the_face_and_or_hands.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -136,7 +136,7 @@
           },
           {
             "key": "Fever",
-            "text": "Fever",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Fever.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -144,7 +144,7 @@
           },
           {
             "key": "Shivering_trembling",
-            "text": "Shivering/trembling",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Shivering_trembling.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "158359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -152,7 +152,7 @@
           },
           {
             "key": "Nausea",
-            "text": "Nausea",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Nausea.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -160,7 +160,7 @@
           },
           {
             "key": "Vomiting",
-            "text": "Vomiting",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Vomiting.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "122983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -168,7 +168,7 @@
           },
           {
             "key": "Cord_prolapse",
-            "text": "Cord prolapse",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Cord_prolapse.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "113617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -176,7 +176,7 @@
           },
           {
             "key": "Perineum_bleeding",
-            "text": "Perineum bleeding",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Perineum_bleeding.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "136938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -184,7 +184,7 @@
           },
           {
             "key": "Fullness_or_pain_of_the_breasts",
-            "text": "Breast engorgement",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Fullness_or_pain_of_the_breasts.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "118620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -192,7 +192,7 @@
           },
           {
             "key": "HIV_care_and_support_services",
-            "text": "HIV care and support services",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.HIV_care_and_support_services.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159811AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -200,7 +200,7 @@
           },
           {
             "key": "Family_planning_services",
-            "text": "Family planning services",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Family_planning_services.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -208,7 +208,7 @@
           },
           {
             "key": "PMTCT_for_mothers",
-            "text": "PMTCT for mothers",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.PMTCT_for_mothers.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -216,7 +216,7 @@
           },
           {
             "key": "Fistula",
-            "text": "Fistula",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Fistula.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "160854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -224,7 +224,7 @@
           },
           {
             "key": "Fast_breathing_and_difficulty_with_breathing",
-            "text": "Fast breathing and difficulty with breathing",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Fast_breathing_and_difficulty_with_breathing.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -232,7 +232,7 @@
           },
           {
             "key": "Umbilical_cord",
-            "text": "Umbilical cord/navel bleeding",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Umbilical_cord.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "123844AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -240,7 +240,7 @@
           },
           {
             "key": "Excessive_crying",
-            "text": "Excessive crying",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Excessive_crying.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "140944AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -248,7 +248,7 @@
           },
           {
             "key": "Unable_to_breastfeed_or_swallow",
-            "text": "Unable to breastfeed or swallow",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Unable_to_breastfeed_or_swallow.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159861AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -256,7 +256,7 @@
           },
           {
             "key": "Neck_stiffness",
-            "text": "Neck stiffness",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Neck_stiffness.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "112721AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -264,7 +264,7 @@
           },
           {
             "key": "Bloating",
-            "text": "Bloating",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Bloating.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -272,7 +272,7 @@
           },
           {
             "key": "Redness_around_the_umbilical_cord_foul",
-            "text": "Redness around the umbilical cord, foul-smelling discharge from the umbilical cord",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Redness_around_the_umbilical_cord_foul.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "132407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -280,7 +280,7 @@
           },
           {
             "key": "Bacterial_conjunctivitis",
-            "text": "Bacterial conjunctivitis",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Bacterial_conjunctivitis.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "148026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -288,7 +288,7 @@
           },
           {
             "key": "Pale_or_jaundiced",
-            "text": "Pale or jaundiced",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Pale_or_jaundiced.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -296,7 +296,7 @@
           },
           {
             "key": "Cyanosis_blueness_of_lips",
-            "text": "Cyanosis (blueness of lips)",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Cyanosis_blueness_of_lips.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "143050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -304,7 +304,7 @@
           },
           {
             "key": "Skin_rash_pustules",
-            "text": "Skin rash / pustules",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Skin_rash_pustules.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -312,7 +312,7 @@
           },
           {
             "key": "Diarrhea",
-            "text": "Diarrhea",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Diarrhea.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "142412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -320,7 +320,7 @@
           },
           {
             "key": "Disabilities",
-            "text": "Congenital Disabilities",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Disabilities.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "162558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -328,7 +328,7 @@
           },
           {
             "key": "Premature_baby",
-            "text": "Premature baby",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Premature_baby.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159908AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -336,7 +336,7 @@
           },
           {
             "key": "Failure_to_pass_urine_or_stool",
-            "text": "Failure to pass urine or stool within 24 hours after birth",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Failure_to_pass_urine_or_stool.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "",
@@ -344,7 +344,7 @@
           },
           {
             "key": "Care_of_HIV_exposed_infant",
-            "text": "Care of HIV-exposed infant",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Care_of_HIV_exposed_infant.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164818AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -352,7 +352,7 @@
           },
           {
             "key": "Immunisation",
-            "text": "Immunisation",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Immunisation.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1914AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -360,7 +360,7 @@
           },
           {
             "key": "Other_symptom",
-            "text": "Other symptom",
+            "text": "{{pnc_referral_form.step1.problem_hf_pnc.options.Other_symptom.text}}",
             "value": false,
             "ignore": true,
             "openmrs_entity": "",
@@ -370,7 +370,7 @@
         ],
         "v_required": {
           "value": true,
-          "err": "Please specify client condition/problem"
+          "err": "{{pnc_referral_form.step1.problem_hf_pnc.v_required.err}}"
         }
       },
       {
@@ -380,7 +380,7 @@
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
         "edit_type": "name",
-        "hint": "Other symptom",
+        "hint": "{{pnc_referral_form.step1.problem_hf_pnc_other.hint}}",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -395,7 +395,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Pre-referral management given",
+        "label": "{{pnc_referral_form.step1.service_before_pnc.label}}",
         "label_text_style": "bold",
         "is_problem": false,
         "exclusive": [
@@ -404,7 +404,7 @@
         "options": [
           {
             "key": "ORS",
-            "text": "ORS",
+            "text": "{{pnc_referral_form.step1.service_before_pnc.options.ORS.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "351AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -412,7 +412,7 @@
           },
           {
             "key": "Panadol",
-            "text": "Panadol",
+            "text": "{{pnc_referral_form.step1.service_before_pnc.options.Panadol.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "70116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -420,7 +420,7 @@
           },
           {
             "key": "Other_treatment",
-            "text": "Other treatment",
+            "text": "{{pnc_referral_form.step1.service_before_pnc.options.Other_treatment.text}}",
             "value": false,
             "ignore": true,
             "openmrs_entity": "",
@@ -429,7 +429,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{pnc_referral_form.step1.service_before_pnc.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -438,7 +438,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Pre-referral management field is required"
+          "err": "{{pnc_referral_form.step1.service_before_pnc.v_required.err}}"
         }
       },
       {
@@ -448,11 +448,11 @@
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
         "edit_type": "name",
-        "hint": "Other treatment",
+        "hint": "{{pnc_referral_form.step1.service_before_pnc_other.hint}}",
         "is_problem": false,
         "v_required": {
           "value": "true",
-          "err": "Please specify other treatment"
+          "err": "{{pnc_referral_form.step1.service_before_pnc_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -493,5 +493,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_referral_form"
 }

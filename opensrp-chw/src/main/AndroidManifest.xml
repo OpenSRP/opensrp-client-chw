@@ -16,20 +16,23 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".application.ChwApplication"
         android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/ChwTheme"
         tools:replace="android:theme">
+
         <activity
             android:name=".activity.FamilyPlanningMemberProfileActivity"
             android:label="@string/family_planning"
@@ -123,7 +126,20 @@
         <activity
             android:name=".activity.ChildProfileActivity"
             android:label="@string/child_details"
-            android:theme="@style/ChwTheme.NoActionBar" />
+            android:launchMode="singleTop"
+            android:theme="@style/ChwTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="org.smartregister.action.THINKMD_ASSESSMENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="smartregister.org"
+                    android:path="/"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.ChildMedicalHistoryActivity"
             android:label="@string/medical_history"
@@ -199,7 +215,6 @@
             android:name=".core.activity.ServiceJsonFormActivity"
             android:label="@string/stock_usage_report"
             android:theme="@style/ChwTheme.NoActionBar" />
-
         <activity
             android:name=".core.activity.CoreStockInventoryReportActivity"
             android:label="@string/stock_usage_report"
@@ -207,11 +222,9 @@
         <activity
             android:name=".core.activity.CoreStockInventoryItemDetailsReportActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
-
         <activity
             android:name=".activity.ReportsActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
-
         <activity
             android:name=".activity.FragmentBaseActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
@@ -221,21 +234,21 @@
         <activity
             android:name=".activity.AllClientsRegisterActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
-
+        <activity
+            android:name=".core.activity.DisplayCarePlanActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
         <activity
             android:name="org.smartregister.opd.activity.BaseOpdFormActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
-
         <activity
             android:name=".activity.SickChildJsonFormActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
         <activity
-            android:name="org.smartregister.chw.activity.UpdatesRegisterActivity"
+            android:name=".activity.UpdatesRegisterActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
         <activity
-            android:name="org.smartregister.chw.activity.UpdateRegisterDetailsActivity"
+            android:name=".activity.UpdateRegisterDetailsActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
-
         <activity
             android:name=".activity.AllClientsMemberProfileActivity"
             android:label="@string/title_family_detail"
@@ -243,11 +256,68 @@
             android:theme="@style/FamilyTheme.NoActionBar" />
 
         <activity
+<<<<<<< HEAD
+=======
             android:name=".activity.AncMemberMapActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
 
         <activity
             android:name=".core.activity.CoreCommunityRespondersRegisterActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
+            android:name=".activity.HivRegisterActivity"
+            android:label="@string/hiv_register"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.TbRegisterActivity"
+            android:label="@string/tb_register"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.TbProfileActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+        <activity
+            android:name=".core.activity.CoreTbUpcomingServicesActivity"
+            android:label="@string/upcoming_services"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.HivProfileActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.HivCommunityFollowupDetailsActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.TbCommunityFollowupDetailsActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".core.activity.CoreHivUpcomingServicesActivity"
+            android:label="@string/upcoming_services"
+<<<<<<< HEAD
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.AncMemberMapActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".core.activity.CoreCommunityRespondersRegisterActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.GuideBooksTutorialsActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.GuideBooksCounselingActivity"
+=======
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
             android:theme="@style/ChwTheme.NoActionBar" />
 
         <meta-data
@@ -279,7 +349,7 @@
         <service android:name="org.smartregister.reporting.service.IndicatorGeneratorIntentService" />
         <service android:name=".service.SchedulesIntentService" />
         <service android:name=".sync.ChwSyncIntentService" />
-        <service android:name="org.smartregister.chw.core.service.StockUsageReportService" />
+        <service android:name=".core.service.StockUsageReportService" />
         <service android:name="org.smartregister.growthmonitoring.service.intent.WeightForHeightIntentService" />
 
         <uses-library

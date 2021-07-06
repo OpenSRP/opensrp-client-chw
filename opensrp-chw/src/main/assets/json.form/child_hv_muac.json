@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Mid-upper arm circumference (MUAC)",
+    "title": "{{child_hv_muac.step1.title}}",
     "fields": [
       {
         "key": "muac",
@@ -57,25 +57,25 @@
         "openmrs_data_type": "select one",
         "type": "radio",
         "image": "ic_muac",
-        "hint": "What is the color of the MUAC tape for the child?",
+        "hint": "{{child_hv_muac.step1.muac.hint}}",
         "options": [
           {
             "key": "chk_green",
-            "text": "Green",
+            "text": "{{child_hv_muac.step1.muac.options.chk_green.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160909AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_yellow",
-            "text": "Yellow",
+            "text": "{{child_hv_muac.step1.muac.options.chk_yellow.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_red",
-            "text": "Red",
+            "text": "{{child_hv_muac.step1.muac.options.chk_red.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "127778AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -83,5 +83,6 @@
         ]
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_muac"
 }

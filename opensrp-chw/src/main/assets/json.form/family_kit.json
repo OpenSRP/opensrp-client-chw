@@ -1,0 +1,128 @@
+{
+  "count": "1",
+  "encounter_type": "Family Kit",
+  "entity_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": ""
+  },
+  "step1": {
+    "title": "{{family_kit.step1.title}}",
+    "fields": [
+      {
+        "key": "illustration_text_description",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "image_view",
+        "image_folder": "img/",
+        "text": "{{family_kit.step1.illustration_text_description.text}}",
+        "image_file": "family_kit.png",
+        "text_color": "#ffffff"
+      },
+      {
+        "key": "family_kit_received",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "family_kit_entity_id",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{family_kit.step1.family_kit_received.label_info_title}}",
+        "hint": "{{family_kit.step1.family_kit_received.hint}}",
+        "values": [
+          "{{family_kit.step1.family_kit_received.values[0]}}",
+          "{{family_kit.step1.family_kit_received.values[1]}}",
+          "{{family_kit.step1.family_kit_received.values[2]}}"
+        ],
+        "keys": [
+          "Simple Kit (ORS/ZINC and Paracetamol)",
+          "Simple Kit (ORS/ZINC and Paracetamol) with micronutrients",
+          "No kit received"
+        ],
+        "openmrs_choice_ids": {
+          "Simple Kit (ORS/ZINC and Paracetamol)": "key_simple_kit_simple",
+          "Simple Kit (ORS/ZINC and Paracetamol) with micronutrients": "key_simple_kit_with_micronutrients",
+          "No kit received": "key_no_kit_received"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{family_kit.step1.family_kit_received.v_required.err}}"
+        }
+      },
+      {
+        "key": "family_kit_used",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "expanded": false,
+        "type": "spinner",
+        "hint": "{{family_kit.step1.family_kit_used.hint}}",
+        "values": [
+          "{{family_kit.step1.family_kit_used.values[0]}}",
+          "{{family_kit.step1.family_kit_used.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "key_kit_used",
+          "No": "key_kit_not_used"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{family_kit.step1.family_kit_used.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "family_kit_relevance.yml"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "properties_file_name": "family_kit"
+}

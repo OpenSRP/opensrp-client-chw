@@ -27,7 +27,7 @@ import org.smartregister.chw.R;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.job.ChwIndicatorGeneratingJob;
 import org.smartregister.chw.fragment.JobAidsDashboardFragment;
-import org.smartregister.chw.fragment.JobAidsGuideBooksFragment;
+import org.smartregister.chw.fragment.GuideBooksFragment;
 import org.smartregister.chw.listener.JobsAidsBottomNavigationListener;
 import org.smartregister.chw.util.Utils;
 import org.smartregister.helper.BottomNavigationHelper;
@@ -86,7 +86,7 @@ public class JobAidsActivity extends FamilyRegisterActivity {
                 case 0:
                     return JobAidsDashboardFragment.newInstance();
                 case 1:
-                    return JobAidsGuideBooksFragment.newInstance();
+                    return GuideBooksFragment.newInstance();
                 default:
                     return JobAidsDashboardFragment.newInstance();
             }
@@ -120,7 +120,7 @@ public class JobAidsActivity extends FamilyRegisterActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE
         };
         boolean hasPermission = PermissionUtils.isPermissionGranted(this, request_permissions, PermissionUtils.READ_EXTERNAL_STORAGE_REQUEST_CODE);
-        if (hasPermission) ChwApplication.prepareGuideBooksFolder();
+        if (hasPermission) ChwApplication.prepareDirectories();
 
         ChwIndicatorGeneratingJob.scheduleJobImmediately(ChwIndicatorGeneratingJob.TAG);
     }
@@ -197,7 +197,7 @@ public class JobAidsActivity extends FamilyRegisterActivity {
         if (!granted) {
             showPermissionDeniedDialog();
         } else {
-            ChwApplication.prepareGuideBooksFolder();
+            ChwApplication.prepareDirectories();
         }
     }
 

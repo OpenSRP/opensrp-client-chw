@@ -27,9 +27,11 @@ import org.smartregister.chw.fp.dao.FpDao;
 import org.smartregister.chw.fragment.FamilyProfileActivityFragment;
 import org.smartregister.chw.fragment.FamilyProfileDueFragment;
 import org.smartregister.chw.fragment.FamilyProfileMemberFragment;
+import org.smartregister.chw.hiv.dao.HivDao;
 import org.smartregister.chw.model.FamilyProfileModel;
 import org.smartregister.chw.pnc.activity.BasePncMemberProfileActivity;
 import org.smartregister.chw.presenter.FamilyProfilePresenter;
+import org.smartregister.chw.tb.dao.TbDao;
 import org.smartregister.commonregistry.CommonPersonObject;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.family.adapter.ViewPagerAdapter;
@@ -40,6 +42,7 @@ import org.smartregister.family.util.Utils;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import static org.smartregister.chw.core.utils.Utils.passToolbarTitle;
 
@@ -168,6 +171,16 @@ public class FamilyProfileActivity extends CoreFamilyProfileActivity {
     @Override
     protected void goToFpProfile(String baseEntityId, Activity activity) {
         FamilyPlanningMemberProfileActivity.startFpMemberProfileActivity(activity, FpDao.getMember(baseEntityId));
+    }
+
+    @Override
+    protected void goToHivProfile(String baseEntityId, Activity activity) {
+        HivProfileActivity.startHivProfileActivity(this, Objects.requireNonNull(HivDao.getMember(baseEntityId)));
+    }
+
+    @Override
+    protected void goToTbProfile(String baseEntityId, Activity activity) {
+        TbProfileActivity.startTbProfileActivity(this, Objects.requireNonNull(TbDao.getMember(baseEntityId)));
     }
 
 

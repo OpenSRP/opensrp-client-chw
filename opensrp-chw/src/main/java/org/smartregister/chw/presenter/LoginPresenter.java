@@ -4,14 +4,10 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.android.volley.toolbox.ImageLoader;
 
 import org.smartregister.chw.R;
 import org.smartregister.chw.application.ChwApplication;
-import org.smartregister.chw.core.utils.ImageLoaderRequest;
 import org.smartregister.chw.interactor.LoginInteractor;
 import org.smartregister.configurableviews.model.LoginConfiguration;
 import org.smartregister.configurableviews.model.ViewConfiguration;
@@ -25,8 +21,6 @@ import java.lang.ref.WeakReference;
 import timber.log.Timber;
 
 public class LoginPresenter extends BaseLoginPresenter implements BaseLoginContract.Presenter {
-
-    private static final String TAG = LoginPresenter.class.getCanonicalName();
 
     public LoginPresenter(BaseLoginContract.View loginView) {
         mLoginView = new WeakReference<>(loginView);
@@ -65,13 +59,6 @@ public class LoginPresenter extends BaseLoginPresenter implements BaseLoginContr
                 gradientDrawable.setColors(new int[]{Color.parseColor(background.getStartColor()),
                         Color.parseColor(background.getEndColor())});
                 loginLayout.setBackground(gradientDrawable);
-            }
-
-            ImageView imageView = getLoginView().getActivityContext().findViewById(R.id.login_logo);
-            if (metadata.getLogoUrl() != null) {
-                ImageLoaderRequest.getInstance(getLoginView().getActivityContext()).getImageLoader()
-                        .get(metadata.getLogoUrl(), ImageLoader.getImageListener(imageView,
-                                R.drawable.ic_who_logo, R.drawable.ic_who_logo)).getBitmap();
             }
 
         } catch (Exception e) {

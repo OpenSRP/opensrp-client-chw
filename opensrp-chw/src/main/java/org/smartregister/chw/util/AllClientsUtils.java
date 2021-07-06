@@ -13,13 +13,17 @@ import org.smartregister.chw.activity.AncMemberProfileActivity;
 import org.smartregister.chw.activity.ChildProfileActivity;
 import org.smartregister.chw.activity.FamilyOtherMemberProfileActivity;
 import org.smartregister.chw.activity.FamilyPlanningMemberProfileActivity;
+import org.smartregister.chw.activity.HivProfileActivity;
 import org.smartregister.chw.activity.MalariaProfileActivity;
 import org.smartregister.chw.activity.PncMemberProfileActivity;
+import org.smartregister.chw.activity.TbProfileActivity;
 import org.smartregister.chw.anc.domain.MemberObject;
 import org.smartregister.chw.core.application.CoreChwApplication;
 import org.smartregister.chw.core.utils.CoreChildUtils;
 import org.smartregister.chw.core.utils.CoreConstants;
 import org.smartregister.chw.fp.dao.FpDao;
+import org.smartregister.chw.hiv.dao.HivDao;
+import org.smartregister.chw.tb.dao.TbDao;
 import org.smartregister.clientandeventmodel.Client;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.family.domain.FamilyEventClient;
@@ -75,6 +79,12 @@ public class AllClientsUtils {
 
     public static void goToFamilyPlanningProfile(Activity activity, CommonPersonObjectClient patient) {
         FamilyPlanningMemberProfileActivity.startFpMemberProfileActivity(activity, FpDao.getMember(patient.getCaseId()));
+    }
+    public static void goToHivProfile(Activity activity, CommonPersonObjectClient patient) {
+        HivProfileActivity.startHivProfileActivity(activity, HivDao.getMember(patient.getCaseId()));
+    }
+    public static void goToTbProfile(Activity activity, CommonPersonObjectClient patient) {
+        TbProfileActivity.startTbProfileActivity(activity, TbDao.getMember(patient.getCaseId()));
     }
 
     private static Intent initProfileActivityIntent(Activity activity, CommonPersonObjectClient patient, Bundle bundle, Class clazz) {

@@ -205,7 +205,7 @@ public class FamilyProfileDueFragment extends BaseFamilyProfileDueFragment {
 
             Form form = new Form();
             form.setWizard(false);
-            form.setActionBarBackground(org.smartregister.family.R.color.customAppThemeBlue);
+            form.setActionBarBackground(R.color.family_actionbar);
 
             intent.putExtra(JsonFormConstants.JSON_FORM_KEY.FORM, form);
             intent.putExtra(Constants.WizardFormActivity.EnableOnCloseDialog, true);

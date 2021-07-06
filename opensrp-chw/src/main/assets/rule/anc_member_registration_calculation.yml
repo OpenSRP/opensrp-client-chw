@@ -12,7 +12,7 @@ description: Gestational age calculated
 priority: 1
 condition: "true"
 actions:
-  - "calculation = step1_gest_age + ' weeks'"
+  - "calculation = step1_gest_age + ' ' + step1_weeks"
 
 ---
 name: step1_edd

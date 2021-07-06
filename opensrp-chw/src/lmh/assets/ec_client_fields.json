@@ -250,6 +250,29 @@
           }
         },
         {
+          "column_name": "thinkmd_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "identifiers.thinkmd_id"
+          }
+        },
+        {
+          "column_name": "thinkmd_fhir_bundle",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "thinkmd_fhir_bundle"
+          }
+        },
+        {
+          "column_name": "care_plan_date",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "carePlanDate"
+          }
+        },
+        {
           "column_name": "unique_id",
           "type": "Client",
           "json_mapping": {

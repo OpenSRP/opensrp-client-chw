@@ -80,9 +80,6 @@ public class DefaultChildHomeVisitInteractorFlvTest extends BaseHomeVisitInterac
         Mockito.doReturn(context).when(view).getContext();
         Mockito.doReturn(false).when(view).getEditMode();
 
-        Date dob = LocalDate.now().minusDays(70).toDate();
-        Mockito.doReturn(new SimpleDateFormat("yyyy-MM-dd").format(dob)).when(memberObject).getDob();
-
         Repository repository = Mockito.mock(Repository.class);
         ReflectionHelpers.setStaticField(AbstractDao.class, "repository", repository);
 

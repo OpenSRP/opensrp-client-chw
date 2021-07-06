@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Remove Family",
+    "title": "{{family_details_remove_family.step1.title}}",
     "fields": [
       {
         "key": "spacer",
@@ -68,7 +68,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "",
+        "text": "{{family_details_remove_family.step1.fam_name.text}}",
         "text_size": "25px"
       },
       {
@@ -77,7 +77,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "",
+        "text": "{{family_details_remove_family.step1.details.text}}",
         "text_size": "25px"
       },
       {
@@ -102,18 +102,22 @@
         "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Reason",
+        "hint": "{{family_details_remove_family.step1.remove_reason.hint}}",
         "values": [
+          "{{family_details_remove_family.step1.remove_reason.values[0]}}",
+          "{{family_details_remove_family.step1.remove_reason.values[1]}}"
+        ],
+        "keys": [
           "Moved away",
           "Other"
         ],
         "v_required": {
           "value": "true",
-          "err": "Select the reason for removing the family's record."
+          "err": "{{family_details_remove_family.step1.remove_reason.v_required.err}}"
         },
         "openmrs_choice_ids": {
-          "Moved away": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          "Déménagé": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Autre": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         }
       },
       {
@@ -123,19 +127,19 @@
         "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "text",
         "type": "date_picker",
-        "label": "Date moved away",
-        "hint": "Date moved away",
+        "label": "{{family_details_remove_family.step1.date_moved.label}}",
+        "hint": "{{family_details_remove_family.step1.date_moved.hint}}",
         "expanded": false,
         "min_date": "today-10y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Enter the date that the member moved away"
+          "err": "{{family_details_remove_family.step1.date_moved.v_required.err}}"
         },
         "constraints": [
           {
             "type": "date",
-            "err": "Date moved away occur before date of birth"
+            "err": "Date déménagé est avant la date de naissance"
           }
         ],
         "relevance": {
@@ -146,5 +150,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "family_details_remove_family"
 }

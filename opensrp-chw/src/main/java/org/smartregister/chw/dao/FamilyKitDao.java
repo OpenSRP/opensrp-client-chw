@@ -3,7 +3,6 @@ package org.smartregister.chw.dao;
 import org.smartregister.chw.anc.domain.VisitDetail;
 import org.smartregister.dao.AbstractDao;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,15 +10,14 @@ import java.util.Map;
 public class FamilyKitDao extends AbstractDao {
 
     public static long getLastFamilyKitDate(String familyBaseEntityID) {
-        String sql = "select eventDate from event where eventType = 'Family Kit' and " +
-                "baseEntityId = '" + familyBaseEntityID + "' order by eventDate desc limit 1";
+        String sql = "select CASE WHEN created_at <= visit_date THEN created_at ELSE visit_date END family_kit_date from visits where visit_type = 'Family Kit' and " +
+                "base_entity_id = '" + familyBaseEntityID + "' order by created_at desc limit 1";
 
-        DataMap<Date> dataMap = c -> getCursorValueAsDate(c, "eventDate", getDobDateFormat());
-        List<Date> res = AbstractDao.readData(sql, dataMap);
-        if (res == null || res.size() == 0)
-            return 0;
+        DataMap<Long> dataMap = c -> getCursorLongValue(c, "family_kit_date");
 
-        return res.get(0).getTime();
+        List<Long> res = AbstractDao.readData(sql, dataMap);
+
+        return res == null || res.isEmpty() ? 0 : res.get(0);
     }
 
     public static Map<String, VisitDetail> getFamilyKitDetails(Long familyKitDate, String baseEntityID) {

@@ -1,0 +1,141 @@
+{
+  "form": "TB Case Closure form",
+  "count": "1",
+  "encounter_type": "TB Case Closure",
+  "entity_id": "",
+  "relational_id": "",
+  "rules_file": "rule/tb_case_closure_form_rules.yml",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "steps": [
+    {
+      "title": "Fuzu huduma za TB",
+      "fields": [
+        {
+          "name": "client_condition",
+          "type": "spinner",
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "client_condition",
+            "openmrs_entity_parent": ""
+          },
+          "properties": {
+            "text": "Hali ya mteja wakati wakumtembelea"
+          },
+          "options": [
+            {
+              "name": "client_does_her_daily_activities",
+              "text": "Anaweza kufanya shughuli zake za kila siku",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_does_her_daily_activities",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_takes_care_of_himself",
+              "text": "Anajimudu mwenyewe (kuoga, kula, kuvaa)",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_takes_care_of_himself",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_is_unable_to_take_care_of_himself",
+              "text": "Hajimudu",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_is_unable_to_take_care_of_himself",
+                "openmrs_entity_parent": ""
+              }
+            }
+          ],
+          "required_status": "yes:Tafadhali jaza hali ya mteja wakati wa kumtembelea",
+          "dependent_calculations": [
+            "tb_case_closure_date"
+          ]
+        },
+        {
+          "name": "completed_medication_as_required",
+          "type": "spinner",
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "completed_medication_as_required",
+            "openmrs_entity_parent": ""
+          },
+          "properties": {
+            "text": "Mteja ametumia dawa kwa usahihi"
+          },
+          "options": [
+            {
+              "name": "yes",
+              "text": "Ndio",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "yes",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "no",
+              "text": "Hapana",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "no",
+                "openmrs_entity_parent": ""
+              }
+            }
+          ],
+          "required_status": "yes:Tafadhali jibu swali hili"
+        }
+      ]
+    }
+  ]
+}

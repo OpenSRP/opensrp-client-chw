@@ -48,7 +48,7 @@ public class FamilyKitDaoTest extends FamilyKitDao {
     public void testGetLastFamilyKitDate() {
         Mockito.doReturn(database).when(repository).getReadableDatabase();
 
-        MatrixCursor matrixCursor = new MatrixCursor(new String[]{"eventDate"});
+        MatrixCursor matrixCursor = new MatrixCursor(new String[]{"family_kit_date"});
 
         Mockito.doReturn(matrixCursor).when(database).rawQuery(Mockito.any(), Mockito.any());
 

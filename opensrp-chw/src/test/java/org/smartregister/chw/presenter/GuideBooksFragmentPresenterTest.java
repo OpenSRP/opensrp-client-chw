@@ -6,12 +6,14 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.smartregister.chw.BaseUnitTest;
+import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.contract.GuideBooksFragmentContract;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GuideBooksFragmentPresenterTest {
+public class GuideBooksFragmentPresenterTest extends BaseUnitTest {
 
     @Mock
     private GuideBooksFragmentContract.Interactor interactor;
@@ -30,8 +32,8 @@ public class GuideBooksFragmentPresenterTest {
 
     @Test
     public void testInitialize() {
-        presenter.initialize();
-        Mockito.verify(interactor).getVideos(null, presenter);
+        presenter.initialize("files.json", ChwApplication.getGuideBooksDirectory());
+        Mockito.verify(interactor).getFiles(null, "files.json", ChwApplication.getGuideBooksDirectory(),presenter);
     }
 
     @Test
@@ -41,7 +43,7 @@ public class GuideBooksFragmentPresenterTest {
 
     @Test
     public void testOnDataFetched() {
-        List<GuideBooksFragmentContract.Video> videos = new ArrayList<>();
+        List<GuideBooksFragmentContract.RemoteFile> videos = new ArrayList<>();
         presenter.onDataFetched(videos);
         Mockito.verify(view).onDataReceived(videos);
     }

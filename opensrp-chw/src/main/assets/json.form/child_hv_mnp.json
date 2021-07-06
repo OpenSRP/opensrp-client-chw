@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "MNP {0} pack",
+    "title": "{{child_hv_mnp.step1.title}}",
     "fields": [
       {
         "key": "mnp{0}_date",
@@ -56,14 +56,15 @@
         "openmrs_entity_id": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
         "image": "ic_form_mnp",
-        "hint": "When was MNP {0} pack given?",
+        "hint": "{{child_hv_mnp.step1.mnp{0}_date.hint}}",
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date mnp was given"
+          "err": "{{child_hv_mnp.step1.mnp{0}_date.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_mnp"
 }

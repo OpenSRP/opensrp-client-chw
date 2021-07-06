@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Re-supply or Next Health Facility Visit",
+    "title": "{{fp_followup_resupply.step1.title}}",
     "fields": [
       {
         "key": "fp_method",
@@ -64,14 +64,14 @@
         "openmrs_entity_id": "163171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "number",
-        "hint": "How many condoms was she/he given?",
+        "hint": "{{fp_followup_resupply.step1.no_condoms.hint}}",
         "v_required": {
           "value": "true",
-          "err": "this value cannot be null"
+          "err": "{{fp_followup_resupply.step1.no_condoms.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{fp_followup_resupply.step1.no_condoms.v_numeric_integer.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -88,14 +88,14 @@
         "openmrs_entity_id": "163171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5274AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "number",
-        "hint": "How many pill cycles was she given?",
+        "hint": "{{fp_followup_resupply.step1.no_pillcycles.hint}}",
         "v_required": {
           "value": "true",
-          "err": "this value cannot be null"
+          "err": "{{fp_followup_resupply.step1.no_pillcycles.v_required.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{fp_followup_resupply.step1.no_pillcycles.v_numeric_integer.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -111,16 +111,16 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "162881AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
-        "hint": "Date of last injection",
+        "hint": "{{fp_followup_resupply.step1.fp_refill_injectable.hint}}",
         "expanded": false,
         "duration": {
-          "label": "last injection"
+          "label": "{{fp_followup_resupply.step1.fp_refill_injectable.duration.label}}"
         },
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please Date of last injection"
+          "err": "{{fp_followup_resupply.step1.fp_refill_injectable.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -136,7 +136,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Date of next injection: {fp_refill_injectable}",
+        "text": "{{fp_followup_resupply.step1.next_injection_date.text}}",
         "text_color": "#1199F9",
         "toaster_type": "info",
         "relevance": {
@@ -155,5 +155,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "fp_followup_resupply"
 }

@@ -31,6 +31,7 @@ import org.smartregister.chw.util.JsonFormUtils;
 import org.smartregister.chw.util.Utils;
 import org.smartregister.clientandeventmodel.Client;
 import org.smartregister.clientandeventmodel.Event;
+import org.smartregister.commonregistry.CommonPersonObject;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.family.util.DBConstants;
 
@@ -52,9 +53,10 @@ public class ChildProfilePresenter extends CoreChildProfilePresenter {
 
     private List<ReferralTypeModel> referralTypeModels;
 
-    public ChildProfilePresenter(CoreChildProfileContract.View childView, CoreChildProfileContract.Model model, String childBaseEntityId) {
+    public ChildProfilePresenter(CoreChildProfileContract.View childView, CoreChildProfileContract.Flavor flavor, CoreChildProfileContract.Model model, String childBaseEntityId) {
         super(childView, model, childBaseEntityId);
         setView(new WeakReference<>(childView));
+        setFlavor(new WeakReference<>(flavor));
         setInteractor(new ChildProfileInteractor());
         getInteractor().setChildBaseEntityId(childBaseEntityId);
         setModel(model);
@@ -130,8 +132,8 @@ public class ChildProfilePresenter extends CoreChildProfilePresenter {
     }
 
     @Override
-    public void refreshProfileTopSection(CommonPersonObjectClient client) {
-        super.refreshProfileTopSection(client);
+    public void refreshProfileTopSection(CommonPersonObjectClient client, CommonPersonObject familyPersonObject) {
+        super.refreshProfileTopSection(client, familyPersonObject);
 
         if (ChwApplication.getApplicationFlavor().showLastNameOnChildProfile()) {
             String relationalId = getValue(client.getColumnmaps(), ChildDBConstants.KEY.RELATIONAL_ID, true).toLowerCase();
@@ -145,6 +147,15 @@ public class ChildProfilePresenter extends CoreChildProfilePresenter {
             getView().setProfileName(getName(childName, familyName));
             getView().setAge(org.smartregister.family.util.Utils.getTranslatedDate(getDuration(getValue(client.getColumnmaps(), DBConstants.KEY.DOB, false)), getView().getContext()));
         }
+
+        if (ChwApplication.getApplicationFlavor().showsPhysicallyDisabledView()) {
+            getFlavor().togglePhysicallyDisabled(isPhysicallyChallenged(client));
+        }
+    }
+
+    private boolean isPhysicallyChallenged(CommonPersonObjectClient client) {
+        String physicallyChallenged = getValue(client.getColumnmaps(), ChildDBConstants.KEY.CHILD_PHYSICAL_CHANGE, true);
+        return physicallyChallenged.equals("Yes");
     }
 
     public void referToFacility() {
@@ -199,7 +210,7 @@ public class ChildProfilePresenter extends CoreChildProfilePresenter {
             super.updateFamilyMemberServiceDue(serviceDueStatus);
         } else {
             if (getView() != null) {
-                 if (serviceDueStatus.equalsIgnoreCase(CoreConstants.FamilyServiceType.DUE.name())) {
+                if (serviceDueStatus.equalsIgnoreCase(CoreConstants.FamilyServiceType.DUE.name())) {
                     getView().setFamilyHasServiceDue();
                 } else if (serviceDueStatus.equalsIgnoreCase(CoreConstants.FamilyServiceType.OVERDUE.name())) {
                     getView().setFamilyHasServiceOverdue();

@@ -58,6 +58,12 @@ public class AllClientsRegisterFragment extends CoreAllClientsRegisterFragment {
                 case CoreConstants.REGISTER_TYPE.FAMILY_PLANNING:
                     AllClientsUtils.goToFamilyPlanningProfile(this.getActivity(), commonPersonObjectClient);
                     break;
+                case CoreConstants.REGISTER_TYPE.TB:
+                    AllClientsUtils.goToTbProfile(this.getActivity(), commonPersonObjectClient);
+                    break;
+                case CoreConstants.REGISTER_TYPE.HIV:
+                    AllClientsUtils.goToHivProfile(this.getActivity(), commonPersonObjectClient);
+                    break;
                 default:
                     AllClientsUtils.goToOtherMemberProfile(this.getActivity(), commonPersonObjectClient, bundle,
                             familyDetailsModel.getFamilyHead(), familyDetailsModel.getPrimaryCareGiver());

@@ -1,0 +1,158 @@
+{
+  "case_classification_rules": [
+    {
+      "comment": "Patient: This rule checks whether a given case belongs to register",
+      "rule": {
+        "type": "event",
+        "fields": [
+          {
+            "field": "eventType",
+            "field_value": "Family Registration",
+            "creates_case": [
+              "ec_family"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Family Member Registration",
+            "creates_case": [
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Child Registration",
+            "creates_case": [
+              "ec_child",
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "PNC Child Registration",
+            "creates_case": [
+              "ec_child",
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update Family Registration",
+            "creates_case": [
+              "ec_family"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update Family Member Registration",
+            "creates_case": [
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update Child Registration",
+            "creates_case": [
+              "ec_child",
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update Family Relations",
+            "creates_case": [
+              "ec_family"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update Family Member Relations",
+            "creates_case": [
+              "ec_family_member"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Child Home Visit",
+            "creates_case": [
+              "ec_child",
+              "ec_child_activity"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Visit not done",
+            "creates_case": [
+              "ec_child",
+              "ec_child_activity"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Birth Certification",
+            "creates_case": [
+              "ec_child"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Observations Illness",
+            "creates_case": [
+              "ec_child"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "ANC Registration",
+            "creates_case": [
+              "ec_anc_register",
+              "ec_anc_log"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "ANC Home Visit",
+            "creates_case": [
+              "ec_anc_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Pregnancy Outcome",
+            "closes_case": [
+              "ec_anc_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Pregnancy Outcome",
+            "creates_case": [
+              "ec_pregnancy_outcome"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "PNC Home Visit",
+            "creates_case": [
+              "ec_pregnancy_outcome"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "update_thinkmd_id",
+            "creates_case": [
+              "ec_child"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "thinkMd_assessment",
+            "creates_case": [
+              "ec_child"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

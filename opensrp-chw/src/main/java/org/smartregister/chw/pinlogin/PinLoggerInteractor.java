@@ -18,7 +18,7 @@ public class PinLoggerInteractor implements PinLoginContract.Interactor {
     @Override
     public void authenticateUser(String userName, String password, @NonNull PinLogger.EventListener eventListener) {
         eventListener.onEvent("Attempting to authenticate");
-        boolean isAuthenticated = getUserService().isUserInValidGroup(userName, password);
+        boolean isAuthenticated = false; // getUserService().isUserInValidGroup(userName, password);
         if (!isAuthenticated) {
             eventListener.onEvent("User authentication failed");
             eventListener.onError(new Exception("Authentication failed"));
@@ -30,7 +30,7 @@ public class PinLoggerInteractor implements PinLoginContract.Interactor {
     }
 
     private void cleanUpLogin(String userName, String password, @NonNull PinLogger.EventListener eventListener) {
-        getUserService().localLogin(userName, password);
+        //getUserService().localLogin(userName, password);
         eventListener.onSuccess();
         CoreLibrary.getInstance().initP2pLibrary(userName);
 

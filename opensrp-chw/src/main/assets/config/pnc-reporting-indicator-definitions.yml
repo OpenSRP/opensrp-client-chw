@@ -17,11 +17,31 @@ indicators:
 
   - key: "pnc_report_indicator_3_1"
     description: "COUNT of babies born who were early initiated into breastfeeding (last 6 months)"
-    indicatorQuery: "select count(*) from ec_child where ec_child.early_bf_1hr = 'Yes' and ec_child.dob >= date('now', '-6 month') and ec_child.dod ISNULL and ec_child.relational_id in (select ec_pregnancy_outcome.relational_id from ec_pregnancy_outcome where ec_pregnancy_outcome.preg_outcome = 'Live birth' and (substr(ec_pregnancy_outcome.delivery_date, 7, 4) || '-' || substr(ec_pregnancy_outcome.delivery_date, 4, 2) || '-' || substr(ec_pregnancy_outcome.delivery_date, 1, 2)) >= date('now', '-6 month'));"
+    indicatorQuery: "select count(*) from ec_child where ec_child.early_bf_1hr = 'Yes' and ec_child.dob >= date('now', '-6 month') and ec_child.dod ISNULL;"
 
   - key: "pnc_report_indicator_3_2"
     description: "COUNT of babies born who were not early initiated into breastfeeding"
-    indicatorQuery: "select count(*) from ec_child where ec_child.early_bf_1hr = 'No' and ec_child.dob >= date('now', '-6 month') and ec_child.dod ISNULL and ec_child.relational_id in (select ec_pregnancy_outcome.relational_id from ec_pregnancy_outcome where ec_pregnancy_outcome.preg_outcome = 'Live birth' and (substr(ec_pregnancy_outcome.delivery_date, 7, 4) || '-' || substr(ec_pregnancy_outcome.delivery_date, 4, 2) || '-' || substr(ec_pregnancy_outcome.delivery_date, 1, 2)) >= date('now', '-6 month'));"
+    indicatorQuery: "select count(*) from ec_child where ec_child.early_bf_1hr = 'No' and ec_child.dob >= date('now', '-6 month') and ec_child.dod ISNULL;"
+
+  - key: "pnc_report_indicator_10_1"
+    description: "Women up to date with their PNC health facility visits"
+    indicatorQuery: "SELECT count(DISTINCT ec_pregnancy_outcome.base_entity_id) FROM ec_pregnancy_outcome
+                     inner join ec_family_member  on ec_family_member.base_entity_id = ec_pregnancy_outcome.base_entity_id
+                     inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id
+                     where ec_family_member.date_removed is null  and ec_pregnancy_outcome.is_closed is 0
+                     AND  ec_pregnancy_outcome.base_entity_id IN (SELECT  ec_pregnancy_outcome.base_entity_id
+                     FROM visits INNER JOIN ec_pregnancy_outcome ON visits.base_entity_id = ec_pregnancy_outcome.base_entity_id
+                     WHERE  ec_pregnancy_outcome.is_closed = '0' AND visits.visit_type = 'PNC Home Visit');"
+
+  - key: "pnc_report_indicator_10_2"
+    description: "Women not up to date with their PNC health facility visits"
+    indicatorQuery: "SELECT count(DISTINCT ec_pregnancy_outcome.base_entity_id) FROM ec_pregnancy_outcome
+                     inner join ec_family_member  on ec_family_member.base_entity_id = ec_pregnancy_outcome.base_entity_id
+                     inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id
+                     where ec_family_member.date_removed is null  and ec_pregnancy_outcome.is_closed is 0
+                     AND  ec_pregnancy_outcome.base_entity_id NOT IN (SELECT  ec_pregnancy_outcome.base_entity_id
+                     FROM visits INNER JOIN ec_pregnancy_outcome ON visits.base_entity_id = ec_pregnancy_outcome.base_entity_id
+                     WHERE  ec_pregnancy_outcome.is_closed = '0' AND visits.visit_type = 'PNC Home Visit');"
 
   - key: "pnc_report_indicator_4_1"
     description: "COUNT of babies born in the last 6 months who received BCG on time (Within 4 weeks of birth)"
@@ -30,7 +50,7 @@ indicators:
         inner join ec_child ec on ec.base_entity_id = vacc.base_entity_id and (ifnull(ec.entry_point,'') = 'PNC')
         inner join ec_family_member ef on ec.base_entity_id = ef.base_entity_id and ef.date_removed is null
         inner join ec_pregnancy_outcome po on ec.mother_entity_id = po.base_entity_id
-        where vacc.name = 'bcg' and ec.dob >= date('now', '-6 month') and STRFTIME('%Y-%m-%d', datetime(vacc.date/1000,'unixepoch')) <= date(ec.dob, '+28 days')
+        where vacc.name = 'bcg' and vacc.is_voided = '0' and ec.dob >= date('now', '-6 month') and STRFTIME('%Y-%m-%d', datetime(vacc.date/1000,'unixepoch')) <= date(ec.dob, '+28 days')
         and po.preg_outcome = 'Live birth' and (substr(po.delivery_date, 7, 4) || '-' || substr(po.delivery_date, 4, 2) || '-' || substr(po.delivery_date, 1, 2)) >= date('now', '-6 month');"
 
   - key: "pnc_report_indicator_4_2"
@@ -40,7 +60,7 @@ indicators:
                                inner join ec_child ec on ec.base_entity_id = vacc.base_entity_id and (ifnull(ec.entry_point,'') = 'PNC')
                                inner join ec_family_member ef on ec.base_entity_id = ef.base_entity_id and ef.date_removed is null
                                inner join ec_pregnancy_outcome po on ec.mother_entity_id = po.base_entity_id
-                               where vacc.name = 'bcg' and ec.dob >= date('now', '-6 month') and STRFTIME('%Y-%m-%d', datetime(vacc.date/1000,'unixepoch')) > date(ec.dob, '+28 days')
+                               where vacc.name = 'bcg' and vacc.is_voided = '0' and ec.dob >= date('now', '-6 month') and STRFTIME('%Y-%m-%d', datetime(vacc.date/1000,'unixepoch')) > date(ec.dob, '+28 days')
                                and po.preg_outcome = 'Live birth' and (substr(po.delivery_date, 7, 4) || '-' || substr(po.delivery_date, 4, 2) || '-' || substr(po.delivery_date, 1, 2)) >= date('now', '-6 month');"
 
   - key: "pnc_report_indicator_5_1"

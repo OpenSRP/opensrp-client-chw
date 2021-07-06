@@ -14,6 +14,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.smartregister.chw.core.domain.Child;
 import org.smartregister.repository.Repository;
 
+import java.util.List;
+
 @RunWith(MockitoJUnitRunner.class)
 public class ChwChildDaoTest extends ChwChildDao {
 
@@ -208,5 +210,20 @@ public class ChwChildDaoTest extends ChwChildDao {
 
         Mockito.verify(database).rawQuery(Mockito.anyString(), Mockito.any());
         Assert.assertEquals(dueVaccines, false);
+    }
+
+    @Test
+    public void testGetRegisteredCertificateNumbers() {
+        Mockito.doReturn(database).when(repository).getReadableDatabase();
+
+        MatrixCursor matrixCursor = new MatrixCursor(new String[]{"birth_cert_num"});
+        matrixCursor.addRow(new Object[]{0});
+
+        Mockito.doReturn(matrixCursor).when(database).rawQuery(Mockito.any(), Mockito.any());
+
+        List<String> certificateNumbers = ChwChildDao.getRegisteredCertificateNumbers();
+
+        Mockito.verify(database).rawQuery(Mockito.anyString(), Mockito.any());
+        Assert.assertTrue(certificateNumbers.size() > 0);
     }
 }

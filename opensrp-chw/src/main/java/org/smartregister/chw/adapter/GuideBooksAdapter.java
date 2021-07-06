@@ -16,19 +16,25 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.smartregister.chw.R;
+import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.contract.GuideBooksFragmentContract;
 import org.smartregister.chw.util.DownloadGuideBooksUtils;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.MyViewHolder> {
-    private List<GuideBooksFragmentContract.Video> videos;
-    private GuideBooksFragmentContract.View view;
+import static org.smartregister.chw.adapter.GuideBooksAdapter.FileType.PDF;
+import static org.smartregister.chw.adapter.GuideBooksAdapter.FileType.VIDEO;
 
-    public GuideBooksAdapter(List<GuideBooksFragmentContract.Video> videos, GuideBooksFragmentContract.View view) {
-        this.videos = videos;
+public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.MyViewHolder> {
+    private List<GuideBooksFragmentContract.RemoteFile> remoteFiles;
+    private GuideBooksFragmentContract.View view;
+    private String directory;
+
+    public GuideBooksAdapter(List<GuideBooksFragmentContract.RemoteFile> remoteFiles, GuideBooksFragmentContract.View view, String directory) {
+        this.remoteFiles = remoteFiles;
         this.view = view;
+        this.directory = directory;
     }
 
     @NonNull
@@ -41,16 +47,17 @@ public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull GuideBooksAdapter.MyViewHolder myViewHolder, int position) {
-        GuideBooksFragmentContract.Video video = videos.get(position);
+        GuideBooksFragmentContract.RemoteFile remoteFile = remoteFiles.get(position);
 
         myViewHolder.icon.setVisibility(View.VISIBLE);
-        if (video.isDowloaded()) {
-            myViewHolder.icon.setImageResource(R.drawable.ic_play_circle_black);
+        if (remoteFile.isDowloaded()) {
+            showDownloadedIcon(myViewHolder);
+
         } else {
             myViewHolder.icon.setImageResource(R.drawable.ic_save_outline_black);
         }
         myViewHolder.progressBar.setVisibility(View.GONE);
-        AtomicReference<DownloadGuideBooksUtils> downloadTask = new AtomicReference<>(getDownloadTask(video, myViewHolder));
+        AtomicReference<DownloadGuideBooksUtils> downloadTask = new AtomicReference<>(getDownloadTask(remoteFile, myViewHolder, position));
 
         myViewHolder.progressBar.setOnClickListener(v -> {
             if (myViewHolder.progressBar.getVisibility() == View.VISIBLE) {
@@ -62,7 +69,7 @@ public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.My
                             if (downloadTask.get() != null)
                                 downloadTask.get().cancelDownload();
 
-                            downloadTask.set(getDownloadTask(video, myViewHolder));
+                            downloadTask.set(getDownloadTask(remoteFile, myViewHolder, position));
 
                             dialog.dismiss();
                             myViewHolder.progressBar.setVisibility(View.GONE);
@@ -75,44 +82,58 @@ public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.My
         });
 
         myViewHolder.icon.setOnClickListener(v -> {
-            if (video.isDowloaded()) {
-                view.playVideo(video);
+            if (remoteFile.isDowloaded()) {
+                view.openFile(remoteFile);
             } else {
                 if (downloadTask.get() != null) {
                     if (downloadTask.get().getStatus() == AsyncTask.Status.FINISHED)
-                        downloadTask.set(getDownloadTask(video, myViewHolder));
+                        downloadTask.set(getDownloadTask(remoteFile, myViewHolder, position));
 
                     downloadTask.get().execute();
                 }
             }
         });
-        myViewHolder.title.setText(video.getTitle());
+        myViewHolder.title.setText(remoteFile.getTitle());
+    }
+
+    private void showDownloadedIcon(@NonNull MyViewHolder myViewHolder) {
+        switch (getFileType(directory)) {
+            case PDF:
+                myViewHolder.icon.setImageResource(R.drawable.ic_pdf_icon);
+                break;
+            case VIDEO:
+                myViewHolder.icon.setImageResource(R.drawable.ic_play_circle_black);
+                break;
+            default:
+                myViewHolder.icon.setImageResource(R.drawable.ic_save_outline_black);
+                break;
+        }
     }
 
     @Nullable
-    private DownloadGuideBooksUtils getDownloadTask(GuideBooksFragmentContract.Video video, @NonNull GuideBooksAdapter.MyViewHolder myViewHolder) {
+    private DownloadGuideBooksUtils getDownloadTask(GuideBooksFragmentContract.RemoteFile remoteFile, @NonNull GuideBooksAdapter.MyViewHolder myViewHolder, int position) {
         DownloadGuideBooksUtils downloadTask = null;
-        if (!video.isDowloaded()) {
+        if (!remoteFile.isDowloaded()) {
             GuideBooksFragmentContract.DownloadListener listener = new GuideBooksFragmentContract.DownloadListener() {
                 @Override
                 public void onDownloadComplete(boolean successful, String localPath) {
 
-                    video.setDownloaded(successful);
-                    video.setLocalPath(localPath);
+                    remoteFile.setDownloaded(successful);
+                    remoteFile.setLocalPath(localPath);
 
                     myViewHolder.progressBar.setVisibility(View.GONE);
                     myViewHolder.icon.setVisibility(View.VISIBLE);
 
                     if (successful) {
-                        myViewHolder.icon.setImageResource(R.drawable.ic_play_circle_black);
+                        remoteFiles.get(position).setDownloaded(true);
                     } else {
-                        myViewHolder.icon.setImageResource(R.drawable.ic_save_outline_black);
-
+                        remoteFiles.get(position).setDownloaded(false);
                         if (view.getViewContext() != null)
                             Toast.makeText(view.getViewContext(),
-                                    view.getViewContext().getString(R.string.jobs_aid_failed_download, video.getTitle())
+                                    view.getViewContext().getString(R.string.jobs_aid_failed_download, remoteFile.getTitle())
                                     , Toast.LENGTH_SHORT).show();
                     }
+                    notifyDataSetChanged();
                 }
 
                 @Override
@@ -122,18 +143,18 @@ public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.My
                 }
             };
 
-            downloadTask = new DownloadGuideBooksUtils(listener, video.getName(), myViewHolder.getContext());
+            downloadTask = new DownloadGuideBooksUtils(listener, remoteFile.getName(), directory, myViewHolder.getContext());
         }
         return downloadTask;
     }
 
     @Override
     public int getItemCount() {
-        return videos.size();
+        return remoteFiles.size();
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         private ImageView icon;
         private ProgressBar progressBar;
@@ -152,4 +173,16 @@ public class GuideBooksAdapter extends RecyclerView.Adapter<GuideBooksAdapter.My
         }
     }
 
+    private FileType getFileType(String directory) {
+        if (directory.equals(ChwApplication.getGuideBooksDirectory()))
+            return VIDEO;
+        else if (directory.equals(ChwApplication.getCounselingDocsDirectory()))
+            return PDF;
+        return VIDEO;
+    }
+
+    public enum FileType {
+        VIDEO,
+        PDF
+    }
 }

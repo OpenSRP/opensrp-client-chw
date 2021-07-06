@@ -1,6 +1,7 @@
 package org.smartregister.chw.fragment;
 
 import android.app.DialogFragment;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,12 +13,16 @@ import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
 
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.DateTime;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.chw.R;
 import org.smartregister.chw.anc.domain.VisitDetail;
+import org.smartregister.chw.anc.util.AppExecutors;
 import org.smartregister.chw.anc.util.NCUtils;
 import org.smartregister.chw.dao.WashCheckDao;
 import org.smartregister.util.JsonFormUtils;
@@ -43,6 +48,10 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
     private RadioButton handwashingYes, handwashingNo, drinkingYes, drinkingNo;
     private RadioButton latrineYes, latrineNo;
     private Map<String, Boolean> selectedOptions = new HashMap<>();
+    private String visitJson;
+    private boolean olderThen24Hours;
+    private AppExecutors appExecutors;
+    private ProgressDialog progressDialog;
 
     public static WashCheckDialogFragment getInstance(String familyBaseEntityID, Long visitDate) {
         WashCheckDialogFragment washCheckDialogFragment = new WashCheckDialogFragment();
@@ -61,7 +70,14 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initFragment();
+    }
 
+    private void initFragment() {
+        appExecutors = new AppExecutors();
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage(getActivity().getResources().getString(R.string.updating));
+        progressDialog.setCancelable(false);
         setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Holo_Light_NoActionBar);
     }
 
@@ -94,10 +110,15 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
         latrineYes = view.findViewById(R.id.choice_1_latrine);
         latrineNo = view.findViewById(R.id.choice_2_latrine);
         view.findViewById(R.id.close).setOnClickListener(this);
+        view.findViewById(R.id.textview_update).setOnClickListener(this);
 
 
         Observable<String> observable = Observable.create(e -> {
             Map<String, VisitDetail> washData = WashCheckDao.getWashCheckDetails(washCheckDate, baseEntityID);
+            visitJson = washData.get("handwashing_facilities").getJsonDetails();
+            olderThen24Hours = new DateTime(washData.get("handwashing_facilities").getCreatedAt())
+                    .isBefore(DateTime.now().minusDays(1));
+            notifyUpdateButtonUi();
             if (washData.get("details_info") != null) {
                 parseOldData(washData.get("details_info").getDetails());
             } else {
@@ -136,6 +157,13 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
         });
     }
 
+    private void notifyUpdateButtonUi() {
+        if (olderThen24Hours)
+            getView().findViewById(R.id.textview_update).setVisibility(View.GONE);
+        else
+            getView().findViewById(R.id.textview_update).setVisibility(View.VISIBLE);
+    }
+
     private void parseOldData(String jsonData) {
         try {
             JSONObject jsonObject = new JSONObject(jsonData);
@@ -149,7 +177,7 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
         }
     }
 
-    private Boolean getValueFromJsonFieldNode(JSONArray field, String key) {
+    public Boolean getValueFromJsonFieldNode(JSONArray field, String key) {
         JSONObject jsonObject = JsonFormUtils.getFieldJSONObject(field, key);
         if (jsonObject == null)
             return null;
@@ -173,10 +201,10 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
         if (handWashing != null) {
             if (handWashing) {
                 radioButtonYes.setChecked(true);
-                radioButtonNo.setEnabled(false);
+                if (olderThen24Hours) radioButtonNo.setEnabled(false);
             } else {
                 radioButtonNo.setChecked(true);
-                radioButtonYes.setEnabled(false);
+                if (olderThen24Hours) radioButtonYes.setEnabled(false);
             }
         }
     }
@@ -186,5 +214,63 @@ public class WashCheckDialogFragment extends DialogFragment implements View.OnCl
         if (v.getId() == R.id.close) {
             dismiss();
         }
+        if (v.getId() == R.id.textview_update) {
+            updateDB();
+        }
+    }
+
+    private void updateDB() {
+        progressDialog.show();
+        Runnable runnable = () -> {
+            try {
+                visitJson = updateVisitJson(visitJson);
+            } catch (JSONException e) {
+                Timber.e(e);
+            }
+            // update visits table
+            WashCheckDao.updateWashCheckVisitDetails(washCheckDate,
+                    baseEntityID,
+                    handwashingYes.isChecked() ? "Yes" : "No",
+                    drinkingYes.isChecked() ? "Yes" : "No",
+                    latrineYes.isChecked() ? "Yes" : "No");
+            // update visit details table
+            WashCheckDao.updateWashCheckVisits(washCheckDate,
+                    baseEntityID,
+                    visitJson);
+            // closing the fragment
+            appExecutors.mainThread().execute(this::dismissFragment);
+        };
+
+        appExecutors.diskIO().execute(runnable);
+    }
+
+    private void dismissFragment() {
+        if (progressDialog.isShowing()) progressDialog.cancel();
+        dismiss();
+    }
+
+    @VisibleForTesting
+    protected String updateVisitJson(String visitJson) throws JSONException {
+        JSONObject visitJsonObject = new JSONObject(visitJson);
+        JSONArray obsArray = visitJsonObject.getJSONArray("obs");
+        for (int i = 0; i < obsArray.length(); i++) {
+            JSONObject obsObject = obsArray.getJSONObject(i);
+            String formSubmissionField = obsObject.getString("formSubmissionField");
+            if ("handwashing_facilities".equalsIgnoreCase(formSubmissionField)) {
+
+                obsObject.getJSONArray("humanReadableValues").remove(0);
+                obsObject.getJSONArray("humanReadableValues").put(handwashingYes.isChecked() ? "Yes" : "No");
+            } else if ("drinking_water".equalsIgnoreCase(formSubmissionField)) {
+
+                obsObject.getJSONArray("humanReadableValues").remove(0);
+                obsObject.getJSONArray("humanReadableValues").put(drinkingYes.isChecked() ? "Yes" : "No");
+            } else if ("hygienic_latrine".equalsIgnoreCase(formSubmissionField)) {
+
+                obsObject.getJSONArray("humanReadableValues").remove(0);
+                obsObject.getJSONArray("humanReadableValues").put(latrineYes.isChecked() ? "Yes" : "No");
+            }
+
+        }
+        return visitJsonObject.toString();
     }
 }

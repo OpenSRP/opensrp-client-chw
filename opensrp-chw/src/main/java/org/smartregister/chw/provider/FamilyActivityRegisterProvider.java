@@ -20,9 +20,7 @@ import org.smartregister.family.util.Utils;
 import org.smartregister.view.contract.SmartRegisterClient;
 import org.smartregister.view.customcontrols.FontVariant;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -30,6 +28,7 @@ import timber.log.Timber;
 
 import static org.smartregister.chw.core.utils.Utils.getDuration;
 import static org.smartregister.chw.util.Utils.getClientName;
+import static org.smartregister.chw.util.Utils.getFormattedDateFromTimeStamp;
 
 public class FamilyActivityRegisterProvider extends org.smartregister.family.provider.FamilyActivityRegisterProvider {
     public FamilyActivityRegisterProvider(Context context, CommonRepository commonRepository, Set visibleColumns, View.OnClickListener onClickListener, View.OnClickListener paginationClickListener) {
@@ -61,10 +60,10 @@ public class FamilyActivityRegisterProvider extends org.smartregister.family.pro
 
         if (notVisited) {
             viewHolder.status.setImageResource(Utils.getActivityProfileImageResourceNotVistedIDentifier());
-            fillValue(viewHolder.lastVisit, String.format(context.getString(R.string.profile_activity_not_visited), new SimpleDateFormat("dd MMM yyyy").format(new Date(eventDate))));
+            fillValue(viewHolder.lastVisit, String.format(context.getString(R.string.profile_activity_not_visited), getFormattedDateFromTimeStamp(eventDate, "dd MMM yyyy")));
         } else {
             viewHolder.status.setImageResource(Utils.getActivityProfileImageResourceVistedIDentifier());
-            fillValue(viewHolder.lastVisit, String.format(context.getString(R.string.profile_activity_completed), new SimpleDateFormat("dd MMM yyyy").format(new Date(eventDate))));
+            fillValue(viewHolder.lastVisit, String.format(context.getString(R.string.profile_activity_completed), getFormattedDateFromTimeStamp(eventDate, "dd MMM yyyy")));
         }
 
         String patientName = getClientName(firstName, middleName, lastName);

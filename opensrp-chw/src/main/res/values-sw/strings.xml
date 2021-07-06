@@ -188,7 +188,7 @@
     <string name="anc_home_visit_remarks_and_comments">Maoni</string>
 
     <string name="anc_home_visit_anc_card_received">Amepewa kadi ya kliniki ya mama mjamzito</string>
-    <string name="anc_woman_delivery_kit_received">Vifaa vya kujifungua vimepokelewa</string>
+    <string name="anc_home_visit_delivery_kit_received">Vifaa vya kujifungua vimepokelewa</string>
     <string name="anc_home_visit_sleeping_under_llitn_net">Analala kwenye chandarua chenye viuwatilifu cha muda mrefu</string>
     <string name="anc_home_visit_counseling">Ushauri kuhusu kliniki ya wajawazito</string>
     <string name="anc_home_visit_tt_immunization">Pepopunda {0} chanjo</string>
@@ -405,9 +405,15 @@
     <!---Anc Home Visit Strings -->
     <string name="anc_home_visit_pregnancy_risk">Hatari ya ujauzito</string>
     <string name="loading_content">Inapakia taarifa</string>
+    <string name="update">Sasisha</string>
 
     <string name="ten_digits_validation">Namba iwe na tarakimu 10</string>
     <string name="select_communities">Chagua jamii</string>
+<<<<<<< HEAD
+    <string name="family_title">Kaya ya {0} </string>
+    <string name="family_profile_title_with_firstname">Kaya ya %1$s %2$s</string>
+=======
 
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
     <string name="created">Imeumbwa: %s</string>
 </resources>

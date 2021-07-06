@@ -1,0 +1,136 @@
+{
+  "form": "HIV Registration form",
+  "count": "1",
+  "encounter_type": "HIV Registration",
+  "entity_id": "",
+  "relational_id": "",
+  "rules_file": "rule/hiv_registration_form_rules.yml",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "steps": [
+    {
+      "title": "Usajili wa wateja wa VVU",
+      "fields": [
+        {
+          "name": "ctc_number",
+          "type": "text_input_edit_text",
+          "properties": {
+            "hint": "Namba ya CTC",
+            "type": "Namba ya CTC"
+          },
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "ctc_number",
+            "openmrs_entity_parent": ""
+          },
+          "required_status": "false"
+        },
+        {
+          "name": "cbhs_number",
+          "type": "text_input_edit_text",
+          "properties": {
+            "hint": "Namba ya HUWANYU",
+            "type": "Namba ya HUWANYU"
+          },
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "cbhs_number",
+            "openmrs_entity_parent": ""
+          },
+          "required_status": "false"
+        },
+        {
+          "name": "client_hiv_status_during_registration",
+          "type": "spinner",
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "client_hiv_status_during_registration",
+            "openmrs_entity_parent": ""
+          },
+          "properties": {
+            "text": "Hali ya maambukizo ya VVU wakati wa kuandikishwa"
+          },
+          "options": [
+            {
+              "name": "unknown",
+              "text": "Haihusiki",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "unknown",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "positive",
+              "text": "Ana maambukizi ",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "positive",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "negative",
+              "text": "Hana maambukizi ",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "negative",
+                "openmrs_entity_parent": ""
+              }
+            }
+          ],
+          "required_status": "yes:Tafadhali jaza hali ya maabukizo ya vvu wakati wa kuandikisha",
+          "dependent_calculations": [
+            "hiv_registration_date"
+          ]
+        }
+      ]
+    }
+  ]
+}

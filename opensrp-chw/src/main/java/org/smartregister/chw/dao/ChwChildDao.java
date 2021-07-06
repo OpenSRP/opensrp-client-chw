@@ -1,5 +1,7 @@
 package org.smartregister.chw.dao;
 
+import android.database.Cursor;
+
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.smartregister.chw.application.ChwApplication;
@@ -67,14 +69,14 @@ public class ChwChildDao extends ChildDao {
     public static boolean hasDueTodayVaccines(String baseEntityID) {
         Map<String, List<Vaccine>> allVaccines = ReportDao.fetchAllVaccines();
         String dob = PersonDao.getDob(baseEntityID);
-        int age =  (int)Math.floor(Days.daysBetween(new DateTime(dob).toLocalDate(), new DateTime().toLocalDate()).getDays() / 365.4);
+        int age = (int) Math.floor(Days.daysBetween(new DateTime(dob).toLocalDate(), new DateTime().toLocalDate()).getDays() / 365.4);
 
         List<Vaccine> myVaccines = allVaccines.get(baseEntityID);
         List<Alert> raw_alerts = ReportDao.computeChildAlerts(age, new DateTime(dob), baseEntityID, allVaccines.get(baseEntityID));
 
         Set<String> myGivenVaccines = new HashSet<>();
-        if(myVaccines != null){
-            for(Vaccine vaccine : myVaccines) {
+        if (myVaccines != null) {
+            for (Vaccine vaccine : myVaccines) {
                 myGivenVaccines.add(ReportDao.cleanName(vaccine.getName()));
             }
         }
@@ -163,5 +165,35 @@ public class ChwChildDao extends ChildDao {
         return values.get(0) == null ? "" : values.get(0); // Return a default value of Low
     }
 
+    public static Boolean isPNCChild(String baseEntityId) {
+        String sql = "select 1 child_exists , (SELECT is_closed FROM ec_family_member WHERE base_entity_id = mother_entity_id ) mother_alive " +
+                "from ec_child where base_entity_id = '" + baseEntityId + "' " +
+                "and entry_point = 'PNC' and date (dob, '+28 days') >= date() ";
 
+        final boolean[] childExists = {false};
+        final boolean[] motherAlive = {true};
+        DataMap<Void> dataMap = new DataMap<Void>() {
+            @Override
+            public Void readCursor(Cursor cursor) {
+                childExists[0] = (getCursorIntValue(cursor, "child_exists", 0) == 1);
+                motherAlive[0] = (getCursorIntValue(cursor, "mother_alive", 0) == 0);
+                return null;
+            }
+        };
+
+        AbstractDao.readData(sql, dataMap);
+        return childExists[0] && motherAlive[0];
+    }
+
+    public static List<String> getRegisteredCertificateNumbers() {
+        String sql = "SELECT birth_cert_num FROM ec_child e WHERE e.birth_cert_num NOTNULL GROUP BY e.birth_cert_num;";
+
+        AbstractDao.DataMap<String> dataMap = c -> getCursorValue(c, "birth_cert_num");
+
+        List<String> res = readData(sql, dataMap);
+        if (res == null || res.size() < 1)
+            return new ArrayList<>();
+
+        return res;
+    }
 }

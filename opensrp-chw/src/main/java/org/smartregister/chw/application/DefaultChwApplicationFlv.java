@@ -34,6 +34,11 @@ public abstract class DefaultChwApplicationFlv implements ChwApplication.Flavor 
     }
 
     @Override
+    public boolean hasDeliveryKit() {
+        return false;
+    }
+
+    @Override
     public boolean hasPNC() {
         return true;
     }
@@ -163,7 +168,17 @@ public abstract class DefaultChwApplicationFlv implements ChwApplication.Flavor 
     }
 
     @Override
+    public boolean hasHIV() {
+        return false;
+    }
+
+    @Override
     public boolean hasFamilyLocationRow() {
+        return false;
+    }
+
+    @Override
+    public boolean hasTB() {
         return false;
     }
 
@@ -289,4 +304,12 @@ public abstract class DefaultChwApplicationFlv implements ChwApplication.Flavor 
         });
         return map;
     }
+<<<<<<< HEAD
+
+    @Override
+    public boolean showsPhysicallyDisabledView() {
+        return true;
+    }
+=======
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 }

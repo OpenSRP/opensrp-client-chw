@@ -41,7 +41,15 @@ public class NavigationMenuFlv implements NavigationMenu.Flavour {
 
     @Override
     public boolean hasCommunityResponders() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        return false;
+=======
         return true;
+>>>>>>> 69df23d8fe897da2e4190cddc9d9437ea1942817
+=======
+        return true;
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
     }
 
     @Override

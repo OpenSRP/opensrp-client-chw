@@ -2,9 +2,12 @@ package org.smartregister.chw.actionhelper;
 
 import android.content.Context;
 
+import com.vijay.jsonwizard.constants.JsonFormConstants;
+
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.chw.R;
@@ -24,15 +27,38 @@ public class ObservationAction implements BaseAncHomeVisitAction.AncHomeVisitAct
     private String illness_description;
     private String action_taken;
     private LocalDate illnessDate = null;
+    private JSONObject jsonObject;
+    private String dob;
+
+    public ObservationAction() {
+    }
+
+    public ObservationAction(String dob) {
+        this.dob = dob;
+    }
 
     @Override
     public void onJsonFormLoaded(String jsonString, Context context, Map<String, List<VisitDetail>> details) {
         this.context = context;
+        try {
+            if (StringUtils.isNotBlank(dob)) {
+                jsonObject = new JSONObject(jsonString);
+                JSONArray fields = JsonFormUtils.fields(jsonObject);
+                JSONObject dateOfIllness = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "date_of_illness");
+                dateOfIllness.put(JsonFormConstants.MIN_DATE, dob);
+            }
+        } catch (JSONException e) {
+            Timber.e(e);
+        }
     }
 
     @Override
     public String getPreProcessed() {
-        return null;
+        if (StringUtils.isNotBlank(dob)) {
+            return jsonObject.toString();
+        } else {
+            return null;
+        }
     }
 
     @Override

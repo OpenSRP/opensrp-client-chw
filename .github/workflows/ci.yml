@@ -24,9 +24,11 @@ jobs:
       run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${ANDROID_SDK_ROOT}
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Run unit tests with Gradle
-      run: ./gradlew :opensrp-chw:clean :opensrp-chw:jacocoTestReport  --stacktrace
-    - name: Upload coverage to Coveralls with Gradle
-      run: ./gradlew coveralls --stacktrace
+    - name: Decode google-services.json
+      env:
+       FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+      run: echo $FIREBASE_CONFIG > opensrp-chw/google-services.json
+    - name: Run unit tests with Gradle and upload to coveralls
+      run: ./gradlew :opensrp-chw:clean :opensrp-chw:jacocoTestReport coveralls --stacktrace
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}

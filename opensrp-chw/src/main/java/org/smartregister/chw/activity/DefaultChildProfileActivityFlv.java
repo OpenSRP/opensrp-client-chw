@@ -34,6 +34,9 @@ public abstract class DefaultChildProfileActivityFlv implements ChildProfileActi
 
     @Override
     public boolean isChildOverTwoMonths(CommonPersonObjectClient client) {
+        if (client == null) {
+            return false;
+        }
         String dobStr = Utils.getValue(client.getColumnmaps(), DBConstants.KEY.DOB, false);
         Date dobDate = null;
         try {

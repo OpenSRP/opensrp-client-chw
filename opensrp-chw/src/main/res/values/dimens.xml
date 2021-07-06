@@ -37,6 +37,12 @@
     <dimen name="member_profile_list_title_size">18sp</dimen>
     <dimen name="member_due_list_title_size">17.5sp</dimen>
 
+<<<<<<< HEAD
+    <dimen name="family_register_text_size">4sp</dimen>
+    <dimen name="family_register_image_size">22dp</dimen>
+    <dimen name="family_register_count_size">34dp</dimen>
+=======
     <dimen name="default_font_size_search_bar">@dimen/_10ssp</dimen>
 
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 </resources>

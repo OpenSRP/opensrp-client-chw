@@ -1,16 +1,20 @@
 package org.smartregister.chw.interactor;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.util.Pair;
 
 import androidx.annotation.VisibleForTesting;
 
 import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.chw.anc.AncLibrary;
 import org.smartregister.chw.anc.domain.Visit;
+import org.smartregister.chw.application.ChwApplication;
+import org.smartregister.chw.core.application.CoreChwApplication;
 import org.smartregister.chw.core.contract.CoreChildProfileContract;
 import org.smartregister.chw.core.interactor.CoreChildProfileInteractor;
 import org.smartregister.chw.core.model.ChildVisit;
@@ -19,18 +23,24 @@ import org.smartregister.chw.core.utils.ChildHomeVisit;
 import org.smartregister.chw.core.utils.CoreChildService;
 import org.smartregister.chw.core.utils.CoreChildUtils;
 import org.smartregister.chw.core.utils.CoreConstants;
+import org.smartregister.chw.dao.ChildFHIRBundleDao;
 import org.smartregister.chw.schedulers.ChwScheduleTaskExecutor;
 import org.smartregister.chw.util.ChildUtils;
 import org.smartregister.chw.util.Constants;
 import org.smartregister.chw.util.Utils;
 import org.smartregister.clientandeventmodel.Client;
 import org.smartregister.clientandeventmodel.Event;
+import org.smartregister.commonregistry.AllCommonsRepository;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.domain.Photo;
+import org.smartregister.family.FamilyLibrary;
 import org.smartregister.family.util.AppExecutors;
 import org.smartregister.family.util.DBConstants;
 import org.smartregister.family.util.JsonFormUtils;
 import org.smartregister.location.helper.LocationHelper;
+import org.smartregister.repository.AllSharedPreferences;
+import org.smartregister.thinkmd.ThinkMDLibrary;
+import org.smartregister.thinkmd.model.FHIRBundleModel;
 import org.smartregister.util.FormUtils;
 import org.smartregister.util.ImageUtils;
 import org.smartregister.view.LocationPickerView;
@@ -45,6 +55,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
+
+import static org.smartregister.chw.core.utils.CoreConstants.ThinkMdConstants.THINKMD_IDENTIFIER_TYPE;
+import static org.smartregister.opd.utils.OpdJsonFormUtils.locationId;
 
 public class ChildProfileInteractor extends CoreChildProfileInteractor {
     public static final String TAG = ChildProfileInteractor.class.getName();
@@ -259,6 +272,60 @@ public class ChildProfileInteractor extends CoreChildProfileInteractor {
                 jsonObject.put(JsonFormUtils.VALUE, JsonFormUtils.dd_MM_yyyy.format(dob));
             }
         }
+    }
+
+    @Override
+    public void launchThinkMDHealthAssessment(@NotNull Context context) {
+        Runnable runnable = () -> {
+            try {
+                ChildFHIRBundleDao fhirBundleDao = new ChildFHIRBundleDao();
+                FHIRBundleModel bundle = fhirBundleDao.fetchFHIRDateModel(context, getChildBaseEntityId());
+                addThinkmdIdentifier(bundle.getUniqueIdGeneratedForThinkMD(), getChildBaseEntityId());
+                ThinkMDLibrary.getInstance().processHealthAssessment(context, bundle);
+            } catch (Exception e) {
+                Timber.e(e);
+            }
+        };
+
+        appExecutors.diskIO().execute(runnable);
+    }
+
+    private void addThinkmdIdentifier(String uniqueIdGeneratedForThinkMD, @NotNull String childBaseEntityId) {
+        Event event = new Event()
+                .withBaseEntityId(childBaseEntityId)
+                .withEventType("update_thinkmd_id")
+                .withEntityType("ec_child")
+                .withEventDate(new Date())
+                .addIdentifier(THINKMD_IDENTIFIER_TYPE, uniqueIdGeneratedForThinkMD);
+        event.withDateCreated(new Date());
+        tagSyncMetadata(ChwApplication.getInstance().getContext().allSharedPreferences(), event);
+
+        try {
+            // update event
+            JSONObject eventPartialJson = new JSONObject(JsonFormUtils.gson.toJson(event));
+            getSyncHelper().addEvent(childBaseEntityId, eventPartialJson);
+            // update local storage
+            AllCommonsRepository allCommonsRepository = CoreChwApplication.getInstance().getAllCommonsRepository("ec_child");
+            //Update REGISTER and FTS Tables
+            if (allCommonsRepository != null) {
+                ContentValues values = new ContentValues();
+                values.put(THINKMD_IDENTIFIER_TYPE, uniqueIdGeneratedForThinkMD);
+                allCommonsRepository.update("ec_child", values, childBaseEntityId);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void tagSyncMetadata(AllSharedPreferences allSharedPreferences, Event event) {
+        String providerId = allSharedPreferences.fetchRegisteredANM();
+        event.setProviderId(providerId);
+        event.setLocationId(locationId(allSharedPreferences));
+        event.setChildLocationId(allSharedPreferences.fetchCurrentLocality());
+        event.setTeam(allSharedPreferences.fetchDefaultTeam(providerId));
+        event.setTeamId(allSharedPreferences.fetchDefaultTeamId(providerId));
+        event.setClientDatabaseVersion(FamilyLibrary.getInstance().getDatabaseVersion());
+        event.setClientApplicationVersion(FamilyLibrary.getInstance().getApplicationVersion());
     }
 
     private void getPhoto(CommonPersonObjectClient client, JSONObject jsonObject) throws JSONException {

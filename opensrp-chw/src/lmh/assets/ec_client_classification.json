@@ -139,6 +139,20 @@
             "creates_case": [
               "ec_pregnancy_outcome"
             ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "update_thinkmd_id",
+            "creates_case": [
+              "ec_child"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "thinkMd_assessment",
+            "creates_case": [
+              "ec_child"
+            ]
           }
         ]
       }

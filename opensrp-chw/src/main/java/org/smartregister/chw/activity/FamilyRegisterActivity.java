@@ -16,6 +16,10 @@ import org.smartregister.chw.util.Utils;
 import org.smartregister.helper.BottomNavigationHelper;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
+import java.util.Map;
+
+import timber.log.Timber;
+
 public class FamilyRegisterActivity extends CoreFamilyRegisterActivity {
 
     public static void startFamilyRegisterForm(Activity activity) {
@@ -51,5 +55,10 @@ public class FamilyRegisterActivity extends CoreFamilyRegisterActivity {
     @Override
     protected BaseRegisterFragment getRegisterFragment() {
         return new FamilyRegisterFragment();
+    }
+
+    @Override
+    public void startFormActivity(String s, String s1, Map<String, String> map) {
+        Timber.v("startFormActivity");
     }
 }

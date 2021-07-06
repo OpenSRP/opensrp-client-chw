@@ -13,10 +13,10 @@ import timber.log.Timber;
 
 public class DownloadGuideBooksUtils extends DownloadUtil {
 
-    public DownloadGuideBooksUtils(GuideBooksFragmentContract.DownloadListener downloadListener, String fileName, Context context) {
+    public DownloadGuideBooksUtils(GuideBooksFragmentContract.DownloadListener downloadListener, String fileName, String directory, Context context) {
         this.fileName = fileName;
         folder = Environment.getExternalStorageDirectory() + File.separator +
-                ChwApplication.getGuideBooksDirectory() + File.separator +
+                directory + File.separator +
                 context.getResources().getConfiguration().locale + "/";
         this.downloadListener = downloadListener;
         this.serverUrl = getDownloadUrl(fileName, context);

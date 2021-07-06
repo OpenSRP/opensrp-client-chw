@@ -15,9 +15,17 @@ local.properties
 classes/
 tmp/
 project.properties
+github.properties
 /github.properties
 .DS_Store
 .settings
 build/
 jacoco.exec
 opensrp-chw/ba/
+opensrp-chw/chad/
+opensrp-chw/drc/
+opensrp-chw/guinea/
+opensrp-chw/togo/
+opensrp-chw/liberia/
+opensrp-chw/lmh/
+*google-services.json

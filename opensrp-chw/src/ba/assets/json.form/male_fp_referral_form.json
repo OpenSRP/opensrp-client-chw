@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Family Planning Referral",
+    "title": "{{male_fp_referral_form.step1.title}}",
     "fields": [
       {
         "key": "fp_method_accepted_referral",
@@ -60,7 +60,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "FP method chosen requiring a referral",
+        "label": "{{male_fp_referral_form.step1.fp_method_accepted_referral.label}}",
         "label_text_style": "bold",
         "options": [
           {
@@ -68,40 +68,40 @@
             "openmrs_entity": "",
             "openmrs_entity_id": "164813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Male condom"
+            "text": "{{male_fp_referral_form.step1.fp_method_accepted_referral.options.Male_condom.text}}"
           },
           {
             "key": "Female_condom",
             "openmrs_entity": "",
             "openmrs_entity_id": "164814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Female condom"
+            "text": "{{male_fp_referral_form.step1.fp_method_accepted_referral.options.Female_condom.text}}"
           },
           {
             "key": "Male_sterilization",
             "openmrs_entity": "",
             "openmrs_entity_id": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Male sterilization"
+            "text": "{{male_fp_referral_form.step1.fp_method_accepted_referral.options.Male_sterilization.text}}"
           },
           {
             "key": "None",
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "None"
+            "text": "{{male_fp_referral_form.step1.fp_method_accepted_referral.options.None.text}}"
           },
           {
             "key": "Not_applicable",
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Not applicable"
+            "text": "{{male_fp_referral_form.step1.fp_method_accepted_referral.options.Not_applicable.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a family planning method"
+          "err": "{{male_fp_referral_form.step1.fp_method_accepted_referral.v_required.err}}"
         }
       },
       {
@@ -110,7 +110,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Family planning side-effects",
+        "label": "{{male_fp_referral_form.step1.side_effects_sterialization.label}}",
         "label_text_style": "bold",
         "exclusive": [
           "None",
@@ -119,7 +119,7 @@
         "options": [
           {
             "key": "Incisional_bleeding",
-            "text": "Incisional bleeding",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.Incisional_bleeding.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -127,7 +127,7 @@
           },
           {
             "key": "Pus_Discharge_from_incision",
-            "text": "Pus/Discharge from incision",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.Pus_Discharge_from_incision.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164495AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -135,7 +135,7 @@
           },
           {
             "key": "Swollen_around_the_incision",
-            "text": "Swollen around the incision",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.Swollen_around_the_incision.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159012AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -143,7 +143,7 @@
           },
           {
             "key": "Others",
-            "text": "Others",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.Others.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -151,7 +151,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -159,7 +159,7 @@
           },
           {
             "key": "Not_applicable",
-            "text": "Not applicable",
+            "text": "{{male_fp_referral_form.step1.side_effects_sterialization.options.Not_applicable.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -168,7 +168,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a value"
+          "err": "{{male_fp_referral_form.step1.side_effects_sterialization.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -199,10 +199,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "hint": "Other side effects",
+        "hint": "{{male_fp_referral_form.step1.fp_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please specify other side effects"
+          "err": "{{male_fp_referral_form.step1.fp_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -243,5 +243,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "male_fp_referral_form"
 }

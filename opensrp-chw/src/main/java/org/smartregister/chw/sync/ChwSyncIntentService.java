@@ -6,6 +6,6 @@ public class ChwSyncIntentService extends SyncIntentService {
 
     @Override
     public int getEventPullLimit() {
-        return 500;
+        return 1000;
     }
 }

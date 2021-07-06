@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Danger Signs Baby",
+    "title": "{{pnc_danger_signs_baby.step1.title}}",
     "fields": [
       {
         "key": "danger_signs_present_child",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159860AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Does the baby have any danger signs?",
+        "label": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -64,98 +64,98 @@
         "options": [
           {
             "key": "chk_fever",
-            "text": "Fever",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_excessive_crying",
-            "text": "Excessive crying",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_excessive_crying.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "110540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_fast_breathing",
-            "text": "Fast breathing",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_fast_breathing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "125061AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_difficult_breathing",
-            "text": "Difficulty breathing",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_difficult_breathing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_unable_to_suck",
-            "text": "Unable to suck",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_unable_to_suck.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "159861AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_umbilical_discharge",
-            "text": "Umbilical blood / pus discharge",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_umbilical_discharge.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "123843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_no_movement",
-            "text": "No movement",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_no_movement.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164455AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_convulsions",
-            "text": "Convulsions",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_convulsions.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164483AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_skin_rashes",
-            "text": "Skin rashes",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_skin_rashes.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_pale",
-            "text": "Pale or jaundiced",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_pale.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_eye_discharge",
-            "text": "Eye discharge",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_eye_discharge.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "142246AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_lethargy",
-            "text": "Lethargy",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_lethargy.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "116334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -163,16 +163,16 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{pnc_danger_signs_baby.step1.danger_signs_present_child.v_required.err}}"
         }
       },
       {
         "key": "danger_signs_present_toaster",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Danger sign! \nRefer immediately to health facility.",
+        "text": "{{pnc_danger_signs_baby.step1.danger_signs_present_toaster.text}}",
         "text_color": "#CF0800",
         "toaster_type": "problem",
         "relevance": {
@@ -200,5 +200,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_danger_signs_baby"
 }

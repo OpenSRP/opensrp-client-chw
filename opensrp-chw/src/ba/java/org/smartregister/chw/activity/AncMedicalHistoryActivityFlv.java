@@ -5,13 +5,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.smartregister.chw.R;
-import org.smartregister.chw.core.activity.DefaultAncMedicalHistoryActivityFlv;
 
 import java.text.MessageFormat;
 import java.util.List;
 import java.util.Map;
 
-public class AncMedicalHistoryActivityFlv extends DefaultAncMedicalHistoryActivityFlv {
+public class AncMedicalHistoryActivityFlv extends DefaultChwAncMedicalHistoryActivityFlv {
 
     @Override
     protected void processAncCard(String has_card, Context context) {

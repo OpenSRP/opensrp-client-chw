@@ -8,11 +8,16 @@ import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.smartregister.chw.R;
+import org.smartregister.chw.anc.AncLibrary;
 import org.smartregister.chw.anc.domain.MemberObject;
+import org.smartregister.chw.anc.domain.Visit;
+import org.smartregister.chw.anc.domain.VisitDetail;
 import org.smartregister.chw.anc.model.BaseUpcomingService;
+import org.smartregister.chw.anc.util.VisitUtils;
 import org.smartregister.chw.core.utils.CoreConstants;
 import org.smartregister.chw.core.utils.RecurringServiceUtil;
 import org.smartregister.chw.core.utils.VisitVaccineUtil;
+import org.smartregister.chw.util.Constants;
 import org.smartregister.chw.util.ContactUtil;
 import org.smartregister.domain.Alert;
 import org.smartregister.immunization.domain.ServiceWrapper;
@@ -123,6 +128,13 @@ public abstract class DefaultAncUpcomingServicesInteractorFlv implements AncUpco
 
 
         String iteration = serviceWrapper.getName().substring(serviceWrapper.getName().length() - 1);
+        Visit latestVisit = AncLibrary.getInstance().visitRepository().getLatestVisit(memberObject.getBaseEntityId(), Constants.EventType.IPTP_SP);
+        Map<String, List<VisitDetail>> visitDetails = VisitUtils.getVisitGroups(AncLibrary.getInstance().visitDetailsRepository().getVisits(latestVisit.getVisitId()));
+        Object firstKey = visitDetails.keySet().toArray()[0];
+        DateTime lastVisitDate = DateTime.parse(visitDetails.get(firstKey).get(0).getDetails());
+        if (latestVisit != null && latestVisit.getUpdatedAt() != null)
+            return Pair.of(iteration, lastVisitDate.plusMonths(1).toDate());
+
         return Pair.of(iteration, serviceWrapper.getVaccineDate().toDate());
     }
 }

@@ -25,9 +25,6 @@ public class LmhAuthorizationService implements P2PAuthorizationService {
     @Override
     public void authorizeConnection(@NonNull final Map<String, Object> peerDeviceMap, @NonNull final AuthorizationCallback authorizationCallback) {
         getAuthorizationDetails(map -> {
-            Object peerDeviceTeamId = peerDeviceMap.get(AllConstants.PeerToPeer.KEY_TEAM_ID);
-            if (peerDeviceTeamId instanceof String
-                    && peerDeviceTeamId.equals(map.get(AllConstants.PeerToPeer.KEY_TEAM_ID))) {
                 Object peerDeviceLocationId = peerDeviceMap.get(CoreConstants.PEER_TO_PEER.LOCATION_ID);
                 Object myLocationId = authorizationDetails.get(CoreConstants.PEER_TO_PEER.LOCATION_ID);
                 Object myPeerStatus = authorizationDetails.get(org.smartregister.p2p.util.Constants.AuthorizationKeys.PEER_STATUS);
@@ -43,9 +40,6 @@ public class LmhAuthorizationService implements P2PAuthorizationService {
                 } else {
                     rejectConnection(authorizationCallback);
                 }
-            } else {
-                rejectConnection(authorizationCallback);
-            }
         });
     }
 

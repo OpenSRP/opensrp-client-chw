@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -251,5 +252,19 @@ public class LoginActivityTest extends BaseActivityTest<LoginActivity> {
 
         Assert.assertEquals(spyActivity, spyActivity.getActivityContext());
 
+    }
+
+    @Test
+    public void testOnOptionsItemSelected(){
+
+        LoginActivity spyActivity = Mockito.spy(getActivity());
+
+        MenuItem item = Mockito.mock(MenuItem.class);
+        Mockito.doReturn(spyActivity.getString(R.string.export_database)).when(item).getTitle();
+        Mockito.doReturn(true).when(spyActivity).hasPermissions();
+
+        spyActivity.onOptionsItemSelected(item);
+
+        Mockito.verify(spyActivity).copyDatabase(Mockito.any(),Mockito.any(),Mockito.any());
     }
 }

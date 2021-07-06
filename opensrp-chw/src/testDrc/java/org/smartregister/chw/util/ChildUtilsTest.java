@@ -62,6 +62,13 @@ public class ChildUtilsTest extends BaseUnitTest {
     }
 
     @Test
+    public void testGetOneYearVaccines() {
+        String[] expected = new String[]{"bcg", "opv1", "penta1", "pcv1", "rota1", "opv2", "penta2", "pcv2", "rota2", "opv3", "penta3", "pcv3", "ipv", "mcv1",
+                "yellowfever", "rota3", "mena", "rubella1"};
+        Assert.assertArrayEquals(expected, childUtilsFlv.getOneYearVaccines());
+    }
+
+    @Test
     public void durationWithTwoDate() {
         CommonPersonObjectClient childClient = new CommonPersonObjectClient("", null, "");
         Map<String, String> map = new HashMap<>();

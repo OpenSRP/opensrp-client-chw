@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Side Effects",
+    "title": "{{fp_followup_side_effects.step1.title}}",
     "fields": [
       {
         "key": "fp_method",
@@ -64,9 +64,9 @@
         "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "values": [
-          "Allergic reactions",
-          "Others",
-          "None"
+          "{{fp_followup_side_effects.step1.condom_side_effects.values[0]}}",
+          "{{fp_followup_side_effects.step1.condom_side_effects.values[1]}}",
+          "{{fp_followup_side_effects.step1.condom_side_effects.values[2]}}"
         ],
         "keys": [
           "Allergic_reactions",
@@ -78,10 +78,10 @@
           "Others": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "None": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        "hint": "Is she/he experiencing any side effects?",
+        "hint": "{{fp_followup_side_effects.step1.condom_side_effects.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.condom_side_effects.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -98,10 +98,10 @@
         "openmrs_entity_id": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Others:",
+        "hint": "{{fp_followup_side_effects.step1.condom_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.condom_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -118,10 +118,10 @@
         "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5274AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "values": [
-          "Heavy bleeding",
-          "Irregular periods",
-          "Others",
-          "None"
+          "{{fp_followup_side_effects.step1.cocpop_side_effects.values[0]}}",
+          "{{fp_followup_side_effects.step1.cocpop_side_effects.values[1]}}",
+          "{{fp_followup_side_effects.step1.cocpop_side_effects.values[2]}}",
+          "{{fp_followup_side_effects.step1.cocpop_side_effects.values[3]}}"
         ],
         "keys": [
           "Heavy_bleeding_",
@@ -135,10 +135,10 @@
           "Others": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "None": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        "hint": "Is she experiencing any side effects?",
+        "hint": "{{fp_followup_side_effects.step1.cocpop_side_effects.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.cocpop_side_effects.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -155,10 +155,10 @@
         "openmrs_entity_id": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5274AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Others:",
+        "hint": "{{fp_followup_side_effects.step1.cocpop_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.cocpop_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -175,10 +175,10 @@
         "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "values": [
-          "Heavy bleeding",
-          "Irregular periods",
-          "Others",
-          "None"
+          "{{fp_followup_side_effects.step1.inject_side_effects.values[0]}}",
+          "{{fp_followup_side_effects.step1.inject_side_effects.values[1]}}",
+          "{{fp_followup_side_effects.step1.inject_side_effects.values[2]}}",
+          "{{fp_followup_side_effects.step1.inject_side_effects.values[3]}}"
         ],
         "keys": [
           "Heavy_bleeding_",
@@ -192,10 +192,10 @@
           "Others": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "None": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        "hint": "Is she experiencing any side effects?",
+        "hint": "{{fp_followup_side_effects.step1.inject_side_effects.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.inject_side_effects.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -212,10 +212,10 @@
         "openmrs_entity_id": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Others:",
+        "hint": "{{fp_followup_side_effects.step1.inject_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.inject_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -232,13 +232,13 @@
         "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "values": [
-          "Severe pain inside the vagina after IUD was put in",
-          "Cramping or backaches for a few days after the IUD is put in",
-          "Spotting between periods and/or irregular periods",
-          "Heavier periods and worse menstrual cramps",
-          "IUCD explusion",
-          "Others",
-          "None"
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[0]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[1]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[2]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[3]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[4]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[5]}}",
+          "{{fp_followup_side_effects.step1.IUCD_side_effects.values[6]}}"
         ],
         "keys": [
           "Severe_pain_inside_the_vagina_after_IUD_was_put_in",
@@ -258,10 +258,10 @@
           "Others": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "None": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        "hint": "Is she experiencing any side effects?",
+        "hint": "{{fp_followup_side_effects.step1.IUCD_side_effects.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.IUCD_side_effects.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -278,10 +278,10 @@
         "openmrs_entity_id": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Others:",
+        "hint": "{{fp_followup_side_effects.step1.IUCD_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.IUCD_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -298,11 +298,11 @@
         "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5276AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "values": [
-          "Incisional bleeding",
-          "Pus/Discharge from incision",
-          "Swollen around the incision",
-          "Others",
-          "None"
+          "{{fp_followup_side_effects.step1.sterilization_side_effects.values[0]}}",
+          "{{fp_followup_side_effects.step1.sterilization_side_effects.values[1]}}",
+          "{{fp_followup_side_effects.step1.sterilization_side_effects.values[2]}}",
+          "{{fp_followup_side_effects.step1.sterilization_side_effects.values[3]}}",
+          "{{fp_followup_side_effects.step1.sterilization_side_effects.values[4]}}"
         ],
         "keys": [
           "Incisional_bleeding",
@@ -318,10 +318,10 @@
           "Others": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "None": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        "hint": "Is she/he experiencing any side effects?",
+        "hint": "{{fp_followup_side_effects.step1.sterilization_side_effects.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.sterilization_side_effects.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -338,10 +338,10 @@
         "openmrs_entity_id": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "5276AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "edit_type": "name",
-        "hint": "Others:",
+        "hint": "{{fp_followup_side_effects.step1.sterilization_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.sterilization_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -357,33 +357,33 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "Action taken",
+        "label": "{{fp_followup_side_effects.step1.action_taken.label}}",
         "options": [
           {
             "key": "managed",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "140959AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Managed"
+            "text": "{{fp_followup_side_effects.step1.action_taken.options.managed.text}}"
           },
           {
             "key": "referred",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Referred"
+            "text": "{{fp_followup_side_effects.step1.action_taken.options.referred.text}}"
           },
           {
             "key": "no_action_taken",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "No action taken"
+            "text": "{{fp_followup_side_effects.step1.action_taken.options.no_action_taken.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "This value cannot be null"
+          "err": "{{fp_followup_side_effects.step1.action_taken.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -392,8 +392,8 @@
             }
           }
         }
-
       }
     ]
-  }
+  },
+  "properties_file_name": "fp_followup_side_effects"
 }

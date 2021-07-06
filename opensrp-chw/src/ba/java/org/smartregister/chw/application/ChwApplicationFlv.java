@@ -51,7 +51,7 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
 
     @Override
     public boolean hasMalaria() {
-        return true;
+        return false;
     }
 
     @Override
@@ -79,8 +79,18 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
     }
 
     @Override
+    public boolean hasHIV() {
+        return true;
+    }
+
+    @Override
     public boolean hasFamilyLocationRow() {
         return true;
+    }
+
+    @Override
+    public boolean hasTB() {
+     return true;
     }
 
     @Override
@@ -126,4 +136,10 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
         });
         return map;
     }
+<<<<<<< HEAD
+
+    @Override
+    public boolean showsPhysicallyDisabledView() { return false; }
+=======
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 }

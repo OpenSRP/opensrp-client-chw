@@ -59,15 +59,15 @@ public class ChildHomeVisitInteractorFlv extends DefaultChildHomeVisitInteractor
 
             String value = "";
             if ("chk_none_of_four_products".equalsIgnoreCase(diet_diversity)) {
-                value = context.getString(R.string.minimum_dietary_choice_0);
+                value = context.getString(R.string.drc_minimum_dietary_choice_0);
             } else if ("chw_only_one_of_four_products".equalsIgnoreCase(diet_diversity)) {
-                value = context.getString(R.string.minimum_dietary_choice_1);
+                value = context.getString(R.string.drc_minimum_dietary_choice_1);
             } else if ("chw_only_two_of_four_products".equalsIgnoreCase(diet_diversity)) {
-                value = context.getString(R.string.minimum_dietary_choice_2);
+                value = context.getString(R.string.drc_minimum_dietary_choice_2);
             } else if ("chw_only_three_of_four_products".equalsIgnoreCase(diet_diversity)) {
-                value = context.getString(R.string.minimum_dietary_choice_3);
+                value = context.getString(R.string.drc_minimum_dietary_choice_3);
             } else if ("chw_all_of_four_products".equalsIgnoreCase(diet_diversity)) {
-                value = context.getString(R.string.minimum_dietary_choice_4);
+                value = context.getString(R.string.drc_minimum_dietary_choice_4);
             }
             return value;
         }

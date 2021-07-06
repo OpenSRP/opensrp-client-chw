@@ -54,7 +54,7 @@
     }
   },
   "step1": {
-    "title": "Counselling",
+    "title": "{{routine_home_visit.step1.title}}",
     "fields": [
       {
         "key": "counselling_1m5yrs",
@@ -62,7 +62,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "counselling",
         "type": "check_box",
-        "label": "Counselling provided",
+        "label": "{{routine_home_visit.step1.counselling_1m5yrs.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -71,115 +71,116 @@
         "options": [
           {
             "key": "chk_maternal_nutrition",
-            "text": "3. Maternal nutrition during breastfeeding",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_maternal_nutrition.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_hiv_aids",
-            "text": "5. HIV/AIDS general information",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_hiv_aids.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_pmtc_for_mother",
-            "text": "6. PMTCT for the mother",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_pmtc_for_mother.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_malaria_prevention",
-            "text": "7. Malaria prevention",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_malaria_prevention.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_hiv_exposed_infant",
-            "text": "15. Follow-up for the HIV-exposed infant",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_hiv_exposed_infant.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_breast_feeding",
-            "text": "16. Breastfeeding",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_breast_feeding.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_birth_registration",
-            "text": "19. Birth registration",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_birth_registration.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_complementary_feeding",
-            "text": "20. Complementary feeding",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_complementary_feeding.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_growth_and_dev",
-            "text": "21. Growth and development",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_growth_and_dev.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_immunization",
-            "text": "22. Immunisation",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_immunization.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_newborn_danger",
-            "text": "23. Newborn danger signs",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_newborn_danger.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_infection",
-            "text": "24. Infection prevention and control",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_infection.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_prevention_of_accidents",
-            "text": "25. Prevention of accidents",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_prevention_of_accidents.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_gender_issues",
-            "text": "26. Gender issues",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_gender_issues.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{routine_home_visit.step1.counselling_1m5yrs.options.chk_none.text}}",
             "value": false,
-            "openmrs_entity": "concept",
+            "openmrs_entity": "",
             "openmrs_entity_id": ""
           }
         ],
         "v_required": {
           "value": true,
-          "err": "Please specify any other symptoms or select none"
+          "err": "{{routine_home_visit.step1.counselling_1m5yrs.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "routine_home_visit"
 }

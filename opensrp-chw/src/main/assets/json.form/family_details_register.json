@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Family Details",
+    "title": "{{family_details_register.step1.title}}",
     "fields": [
       {
         "key": "fam_name",
@@ -60,15 +60,15 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "first_name",
         "type": "edit_text",
-        "hint": "Family name",
+        "hint": "{{family_details_register.step1.fam_name.hint}}",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the family name"
+          "err": "{{family_details_register.step1.fam_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{family_details_register.step1.fam_name.v_regex.err}}"
         }
       },
       {
@@ -79,11 +79,11 @@
         "hidden": "true",
         "type": "barcode",
         "barcode_type": "qrcode",
-        "hint": "ID *",
-        "scanButtonText": "Scan QR Code",
+        "hint": "{{family_details_register.step1.unique_id.hint}}",
+        "scanButtonText": "{{family_details_register.step1.unique_id.scanButtonText}}",
         "v_numeric": {
           "value": "true",
-          "err": "Please enter a valid ID"
+          "err": "{{family_details_register.step1.unique_id.v_numeric.err}}"
         }
       },
       {
@@ -92,10 +92,10 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "cityVillage",
         "type": "edit_text",
-        "hint": "Village/Town",
+        "hint": "{{family_details_register.step1.village_town.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the village or town"
+          "err": "{{family_details_register.step1.village_town.v_required.err}}"
         }
       },
       {
@@ -104,10 +104,10 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "commune",
         "type": "edit_text",
-        "hint": "Quarter",
+        "hint": "{{family_details_register.step1.quarter_clan.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter the quarter or clan"
+          "err": "{{family_details_register.step1.quarter_clan.v_required.err}}"
         }
       },
       {
@@ -116,7 +116,7 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "street",
         "type": "edit_text",
-        "hint": "Street"
+        "hint": "{{family_details_register.step1.street.hint}}"
       },
       {
         "key": "landmark",
@@ -124,7 +124,7 @@
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "landmark",
         "type": "edit_text",
-        "hint": "Landmark"
+        "hint": "{{family_details_register.step1.landmark.hint}}"
       },
       {
         "key": "gps",
@@ -141,8 +141,21 @@
         "openmrs_entity_id": "fam_source_income",
         "openmrs_data_type": "",
         "type": "spinner",
-        "hint": "Family source of income",
+        "hint": "{{family_details_register.step1.fam_source_income.hint}}",
         "values": [
+          "{{family_details_register.step1.fam_source_income.values[0]}}",
+          "{{family_details_register.step1.fam_source_income.values[1]}}",
+          "{{family_details_register.step1.fam_source_income.values[2]}}",
+          "{{family_details_register.step1.fam_source_income.values[3]}}",
+          "{{family_details_register.step1.fam_source_income.values[4]}}",
+          "{{family_details_register.step1.fam_source_income.values[5]}}",
+          "{{family_details_register.step1.fam_source_income.values[6]}}",
+          "{{family_details_register.step1.fam_source_income.values[7]}}",
+          "{{family_details_register.step1.fam_source_income.values[8]}}",
+          "{{family_details_register.step1.fam_source_income.values[9]}}",
+          "{{family_details_register.step1.fam_source_income.values[10]}}"
+        ],
+        "keys": [
           "Petty trade",
           "Agriculture, hunting and fishing",
           "Exploitation of mines and quarries",
@@ -156,19 +169,20 @@
           "Other"
         ],
         "openmrs_choice_ids": {
-          "Petty trade": "1539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Agriculture, hunting and fishing": "165411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Exploitation of mines and quarries": "165412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Manufacturing industry": "165407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Petit commerce": "1539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Agriculture, chasse et pêche": "165411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "L\u0027exploitation des mines et carrières": "165412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "l\u0027industrie manufacturière": "165407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "Construction": "165408AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Electricity, gas and water": "165409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Commercial, hotels and restaurants": "165410AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Transport, storage and communications": "165413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Financial institutions": "165414AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Communication, social and personal services": "165415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          "l\u0027électricité, gas naturel et eau": "165409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Commerciale, hôtels et restaurants": "165410AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Transport, entrêposage et communications": "165413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Institutions financières": "165414AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Communications, services sociaux et personnelles": "165415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Autre": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "family_details_register"
 }

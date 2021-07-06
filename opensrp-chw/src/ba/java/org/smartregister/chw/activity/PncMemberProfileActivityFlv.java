@@ -16,6 +16,8 @@ public class PncMemberProfileActivityFlv implements PncMemberProfileActivity.Fla
         } else {
             menu.findItem(R.id.action_fp_initiation_pnc).setVisible(true);
         }
+        UtilsFlv.updateHivMenuItems(baseEntityId, menu);
+        UtilsFlv.updateTbMenuItems(baseEntityId, menu);
         return true;
     }
 }

@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Delivery kit received",
+    "title": "{{anc_woman_delivery_kit_received.step1.title}}",
     "fields": [
       {
         "key": "delivery_kit",
@@ -57,8 +57,12 @@
         "openmrs_data_type": "select one",
         "type": "spinner",
         "image": "delivery_kit_received",
-        "hint": "Delivery kit received?",
+        "hint": "{{anc_woman_delivery_kit_received.step1.delivery_kit.hint}}",
         "values": [
+          "{{anc_woman_delivery_kit_received.step1.delivery_kit.values[0]}}",
+          "{{anc_woman_delivery_kit_received.step1.delivery_kit.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -68,5 +72,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_woman_delivery_kit_received"
 }

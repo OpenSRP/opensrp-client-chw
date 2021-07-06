@@ -1,7 +1,7 @@
 indicators:
   - key: "anc_report_indicator_1"
     description: "COUNT of {wra} in the app"
-    indicatorQuery: "SELECT count (*) FROM  ec_family_member   inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id WHERE ec_family_member.is_closed == '0' AND entity_type = 'ec_family_member' AND gender = 'Female' AND dod IS NULL AND cast(strftime('%Y', 'now') - strftime('%Y', dob) as int)  >= 10 AND cast(strftime('%Y', 'now') - strftime('%Y', dob) as int) <= 49;"
+    indicatorQuery: "SELECT count(*) FROM  ec_family_member f inner join ec_family  on ec_family.base_entity_id = f.relational_id  WHERE f.is_closed == '0' AND f.entity_type = 'ec_family_member'  AND gender = 'Female' AND dod IS NULL AND cast(strftime('%Y', 'now') - strftime('%Y', dob) as int)  >= 10 AND cast(strftime('%Y', 'now') - strftime('%Y', dob) as int) <= 49;"
 
   - key: "anc_report_indicator_2"
     description: "COUNT of all ANC women who are registered in the ANC register"
@@ -17,11 +17,11 @@ indicators:
 
   - key: "anc_report_indicator_4_1"
     description: "COUNT of ANC women who are currently not due or due for an ANC health facility visit."
-    indicatorQuery: "SELECT count(DISTINCT ec_anc_register.base_entity_id) FROM ec_anc_register inner join ec_family_member  on ec_family_member.base_entity_id = ec_anc_register.base_entity_id  inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id  where ec_family_member.date_removed is null  and ec_anc_register.is_closed is 0 AND  ec_anc_register.base_entity_id IN (SELECT  ec_anc_register.base_entity_id FROM visits INNER JOIN ec_anc_register ON visits.base_entity_id = ec_anc_register.base_entity_id WHERE visit_id IN (select visit_id from (select max(details) m_details , visit_id from visit_details where visit_key = 'anc_hf_next_visit_date' group by visit_id) x where x.m_details > date()) AND ec_anc_register.is_closed = '0' AND visits.visit_type = 'ANC Home Visit')"
+    indicatorQuery: "SELECT count(DISTINCT ec_anc_register.base_entity_id) FROM ec_anc_register inner join ec_family_member  on ec_family_member.base_entity_id = ec_anc_register.base_entity_id inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id where ec_family_member.date_removed is null  and ec_anc_register.is_closed is 0 AND  ec_anc_register.base_entity_id  IN (SELECT  ec_anc_register.base_entity_id FROM visits INNER JOIN ec_pregnancy_outcome ON visits.base_entity_id = ec_anc_register.base_entity_id WHERE  ec_pregnancy_outcome.is_closed = '0' AND visits.visit_type = 'ANC Home Visit');"
 
   - key: "anc_report_indicator_4_2"
     description: "COUNT of ANC women who are currently overdue for an ANC health facility visit."
-    indicatorQuery: "SELECT count(DISTINCT ec_anc_register.base_entity_id) FROM ec_anc_register inner join ec_family_member  on ec_family_member.base_entity_id = ec_anc_register.base_entity_id  inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id  where ec_family_member.date_removed is null  and ec_anc_register.is_closed is 0 AND  ec_anc_register.base_entity_id NOT IN (SELECT  ec_anc_register.base_entity_id FROM visits INNER JOIN ec_anc_register ON visits.base_entity_id = ec_anc_register.base_entity_id WHERE visit_id IN (select visit_id from (select max(details) m_details , visit_id from visit_details where visit_key = 'anc_hf_next_visit_date' group by visit_id) x where x.m_details > date()) AND ec_anc_register.is_closed = '0' AND visits.visit_type = 'ANC Home Visit')"
+    indicatorQuery: "SELECT count(DISTINCT ec_anc_register.base_entity_id) FROM ec_anc_register inner join ec_family_member  on ec_family_member.base_entity_id = ec_anc_register.base_entity_id inner join ec_family  on ec_family.base_entity_id = ec_family_member.relational_id where ec_family_member.date_removed is null  and ec_anc_register.is_closed is 0 AND  ec_anc_register.base_entity_id NOT IN (SELECT  ec_anc_register.base_entity_id FROM visits INNER JOIN ec_pregnancy_outcome ON visits.base_entity_id = ec_anc_register.base_entity_id WHERE  ec_pregnancy_outcome.is_closed = '0' AND visits.visit_type = 'ANC Home Visit');"
 
   - key: "anc_report_indicator_5_1"
     description: "Count of ANC women who had an HIV test done at least once during their pregnancy (selected {tests_done}, 'HIV test' during at least one ANC home visit)"

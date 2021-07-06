@@ -70,4 +70,18 @@ public class AncHomeVisitInteractorFlvTest extends BaseHomeVisitInteractorFlvTes
 
         Mockito.verify(actionList).put(Mockito.anyString(), Mockito.any(BaseAncHomeVisitAction.class));
     }
+
+    @Test
+    public void testEvaluateAncCard() {
+        ReflectionHelpers.callInstanceMethod(interactor, "evaluateANCCard");
+
+        Mockito.verify(actionList).put(Mockito.anyString(), Mockito.any(BaseAncHomeVisitAction.class));
+    }
+
+    @Test
+    public void testEvaluateDangerSigns() {
+        ReflectionHelpers.callInstanceMethod(interactor, "evaluateDangerSigns");
+
+        Mockito.verify(actionList).put(Mockito.anyString(), Mockito.any(BaseAncHomeVisitAction.class));
+    }
 }

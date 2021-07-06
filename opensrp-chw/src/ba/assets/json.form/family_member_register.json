@@ -52,15 +52,15 @@
     }
   },
   "step1": {
-    "title": "Add Family Member",
+    "title": "{{family_member_register.step1.title}}",
     "fields": [
       {
         "key": "photo",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "choose_image",
-        "uploadButtonText": "Take a picture of the person"
+        "uploadButtonText": "{{family_member_register.step1.photo.uploadButtonText}}"
       },
       {
         "key": "unique_id",
@@ -69,32 +69,32 @@
         "openmrs_entity_id": "opensrp_id",
         "type": "barcode",
         "barcode_type": "qrcode",
-        "hint": "Boresha Afya ID",
-        "scanButtonText": "Scan QR Code",
+        "hint": "{{family_member_register.step1.unique_id.hint}}",
+        "scanButtonText": "{{family_member_register.step1.unique_id.scanButtonText}}",
         "v_numeric": {
           "value": "true",
-          "err": "Please enter a valid ID"
+          "err": "{{family_member_register.step1.unique_id.v_numeric.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the UNIQUE ID"
+          "err": "{{family_member_register.step1.unique_id.v_required.err}}"
         }
       },
       {
         "key": "surname",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Surname",
+        "hint": "{{family_member_register.step1.surname.hint}}",
         "edit_type": "name",
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{family_member_register.step1.surname.v_regex.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "{{family_member_register.step1.surname.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -107,18 +107,18 @@
       {
         "key": "same_as_fam_name",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_data_type": "text",
         "type": "check_box",
-        "label": "",
+        "label": "{{family_member_register.step1.same_as_fam_name.label}}",
         "exclusive": [
           "none"
         ],
         "options": [
           {
             "key": "same_as_fam_name",
-            "text": "Surname same as family name",
+            "text": "{{family_member_register.step1.same_as_fam_name.options.same_as_fam_name.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -127,7 +127,7 @@
       {
         "key": "fam_name",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "label",
         "hidden": "true"
@@ -138,7 +138,7 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "last_name",
         "type": "hidden",
-        "hint": "Surname as Family name",
+        "hint": "{{family_member_register.step1.surname_calculation.hint}}",
         "calculation": {
           "rules-engine": {
             "ex-rules": {
@@ -153,15 +153,15 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "first_name",
         "type": "edit_text",
-        "hint": "First name",
+        "hint": "{{family_member_register.step1.first_name.hint}}",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the first name"
+          "err": "{{family_member_register.step1.first_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{family_member_register.step1.first_name.v_regex.err}}"
         }
       },
       {
@@ -170,15 +170,15 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "middle_name",
         "type": "edit_text",
-        "hint": "Middle name",
+        "hint": "{{family_member_register.step1.middle_name.hint}}",
         "edit_type": "name",
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{family_member_register.step1.middle_name.v_regex.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the middle name"
+          "err": "{{family_member_register.step1.middle_name.v_required.err}}"
         }
       },
       {
@@ -187,16 +187,16 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "birthdate",
         "type": "date_picker",
-        "hint": "Date of birth (DOB)",
+        "hint": "{{family_member_register.step1.dob.hint}}",
         "expanded": false,
         "duration": {
-          "label": "Age"
+          "label": "{{family_member_register.step1.dob.duration.label}}"
         },
         "min_date": "today-120y",
         "max_date": "today-5y",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of birth"
+          "err": "{{family_member_register.step1.dob.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -209,7 +209,7 @@
       {
         "key": "age_calculated",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "hidden",
         "calculation": {
@@ -226,11 +226,11 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "birthdateApprox",
         "type": "check_box",
-        "label": "",
+        "label": "{{family_member_register.step1.dob_unknown.label}}",
         "options": [
           {
             "key": "dob_unknown",
-            "text": "DOB unknown?",
+            "text": "{{family_member_register.step1.dob_unknown.options.dob_unknown.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -242,22 +242,22 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "age",
         "type": "edit_text",
-        "hint": "Age",
+        "hint": "{{family_member_register.step1.age.hint}}",
         "v_numeric_integer": {
           "value": "true",
-          "err": "Must be a rounded number"
+          "err": "{{family_member_register.step1.age.v_numeric_integer.err}}"
         },
         "v_numeric": {
           "value": "true",
-          "err": "Number must begin with 0 and must be a total of 10 digits in length"
+          "err": "{{family_member_register.step1.age.v_numeric.err}}"
         },
         "v_min": {
           "value": "5",
-          "err": "Age must be equal or greater than 5"
+          "err": "{{family_member_register.step1.age.v_min.err}}"
         },
         "v_max": {
           "value": "120",
-          "err": "Age must be equal or less than 120"
+          "err": "{{family_member_register.step1.age.v_max.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -268,7 +268,7 @@
         },
         "v_required": {
           "value": true,
-          "err": "Please enter the age"
+          "err": "{{family_member_register.step1.age.v_required.err}}"
         }
       },
       {
@@ -277,7 +277,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "id_avail",
         "type": "check_box",
-        "label": "Do have any of the following IDs?",
+        "label": "{{family_member_register.step1.id_avail.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -286,35 +286,35 @@
         "options": [
           {
             "key": "chk_national_id",
-            "text": "National ID",
+            "text": "{{family_member_register.step1.id_avail.options.chk_national_id.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "chk_national_id"
           },
           {
             "key": "chk_voters_id",
-            "text": "Voter's registration ID",
+            "text": "{{family_member_register.step1.id_avail.options.chk_voters_id.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "chk_voters_id"
           },
           {
             "key": "chk_drivers_license",
-            "text": "Driver's license",
+            "text": "{{family_member_register.step1.id_avail.options.chk_drivers_license.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "chk_drivers_license"
           },
           {
             "key": "chk_passport",
-            "text": "Passport",
+            "text": "{{family_member_register.step1.id_avail.options.chk_passport.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "chk_passport"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{family_member_register.step1.id_avail.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "chk_none"
@@ -334,7 +334,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "National_ID",
         "type": "edit_text",
-        "hint": "National ID number",
+        "hint": "{{family_member_register.step1.national_id.hint}}",
         "edit_type": "name",
         "relevance": {
           "step1:id_avail": {
@@ -354,7 +354,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Voter_Registration_Number",
         "type": "edit_text",
-        "hint": "Voter's registration number",
+        "hint": "{{family_member_register.step1.voter_id.hint}}",
         "edit_type": "name",
         "relevance": {
           "step1:id_avail": {
@@ -374,7 +374,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Driver_License_Number",
         "type": "edit_text",
-        "hint": "Driver's license number",
+        "hint": "{{family_member_register.step1.driver_license.hint}}",
         "edit_type": "name",
         "relevance": {
           "step1:id_avail": {
@@ -394,7 +394,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Passport_Number",
         "type": "edit_text",
-        "hint": "Passport number",
+        "hint": "{{family_member_register.step1.passport.hint}}",
         "edit_type": "name",
         "relevance": {
           "step1:id_avail": {
@@ -414,21 +414,21 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Health_Insurance_Type",
         "type": "spinner",
-        "hint": "Health insurance provider",
+        "hint": "{{family_member_register.step1.insurance_provider.hint}}",
         "values": [
-          "Community Health Fund (CHF)",
-          "iCHF",
-          "National Social Security Fund - Social Health Insurance Benefit (SHIB)",
-          "Tiba Kwa Kadi (TIKA)",
-          "AAR Healthcare",
-          "Strategies Insurance",
-          "Milvik Tanzania Ltd (BIMA Mkononi)",
-          "Britam Insurance Tanzania",
-          "Jubilee Insurance",
-          "Resolutions Insurance",
-          "Reliance Insurance",
-          "Other",
-          "None"
+          "{{family_member_register.step1.insurance_provider.values[0]}}",
+          "{{family_member_register.step1.insurance_provider.values[1]}}",
+          "{{family_member_register.step1.insurance_provider.values[2]}}",
+          "{{family_member_register.step1.insurance_provider.values[3]}}",
+          "{{family_member_register.step1.insurance_provider.values[4]}}",
+          "{{family_member_register.step1.insurance_provider.values[5]}}",
+          "{{family_member_register.step1.insurance_provider.values[6]}}",
+          "{{family_member_register.step1.insurance_provider.values[7]}}",
+          "{{family_member_register.step1.insurance_provider.values[8]}}",
+          "{{family_member_register.step1.insurance_provider.values[9]}}",
+          "{{family_member_register.step1.insurance_provider.values[10]}}",
+          "{{family_member_register.step1.insurance_provider.values[11]}}",
+          "{{family_member_register.step1.insurance_provider.values[12]}}"
         ],
         "keys": [
           "Community Health Fund (CHF)",
@@ -462,7 +462,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the insurance provider"
+          "err": "{{family_member_register.step1.insurance_provider.v_required.err}}"
         }
       },
       {
@@ -471,10 +471,10 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Other_Health_Insurance_Type",
         "type": "edit_text",
-        "hint": "Other health insurance provider",
+        "hint": "{{family_member_register.step1.insurance_provider_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please specify the insurance provider"
+          "err": "{{family_member_register.step1.insurance_provider_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -490,10 +490,10 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Health_Insurance_Number",
         "type": "edit_text",
-        "hint": "Health insurance provider number",
+        "hint": "{{family_member_register.step1.insurance_provider_number.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please add the health insurance provider iD Number"
+          "err": "{{family_member_register.step1.insurance_provider_number.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -509,10 +509,10 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "gender",
         "type": "spinner",
-        "hint": "Sex",
+        "hint": "{{family_member_register.step1.sex.hint}}",
         "values": [
-          "Male",
-          "Female"
+          "{{family_member_register.step1.sex.values[0]}}",
+          "{{family_member_register.step1.sex.values[1]}}"
         ],
         "keys": [
           "Male",
@@ -520,13 +520,13 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please enter the sex"
+          "err": "{{family_member_register.step1.sex.v_required.err}}"
         }
       },
       {
         "key": "wra",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "hidden",
         "calculation": {
@@ -540,7 +540,7 @@
       {
         "key": "mra",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "hidden",
         "calculation": {
@@ -557,10 +557,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Has the woman delivered in the last 1 year?",
+        "hint": "{{family_member_register.step1.preg_1yr.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{family_member_register.step1.preg_1yr.values[0]}}",
+          "{{family_member_register.step1.preg_1yr.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -572,7 +572,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select if the woman has delivered in the last 1 year"
+          "err": "{{family_member_register.step1.preg_1yr.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -588,10 +588,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "162558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Physical disabilities",
+        "hint": "{{family_member_register.step1.disabilities.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{family_member_register.step1.disabilities.values[0]}}",
+          "{{family_member_register.step1.disabilities.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -603,7 +603,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{family_member_register.step1.disabilities.v_required.err}}"
         }
       },
       {
@@ -612,10 +612,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Type of disability",
+        "hint": "{{family_member_register.step1.type_of_disability.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please enter type of disability"
+          "err": "{{family_member_register.step1.type_of_disability.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -628,13 +628,13 @@
       {
         "key": "is_primary_caregiver",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "spinner",
-        "hint": "Is primary caregiver?",
+        "hint": "{{family_member_register.step1.is_primary_caregiver.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{family_member_register.step1.is_primary_caregiver.values[0]}}",
+          "{{family_member_register.step1.is_primary_caregiver.values[1]}}"
         ],
         "keys": [
           "Yes",
@@ -642,7 +642,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{family_member_register.step1.is_primary_caregiver.v_required.err}}"
         }
       },
       {
@@ -651,18 +651,18 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Phone number",
+        "hint": "{{family_member_register.step1.phone_number.hint}}",
         "v_numeric": {
           "value": "true",
-          "err": "Number must be a total of 10 digits in length"
+          "err": "{{family_member_register.step1.phone_number.v_numeric.err}}"
         },
         "v_regex": {
           "value": "(0[0-9]{9})|\\s*",
-          "err": "Number must be 10 digits and must start with 0."
+          "err": "{{family_member_register.step1.phone_number.v_regex.err}}"
         },
         "v_required": {
           "value": false,
-          "err": "Please specify the phone number"
+          "err": "{{family_member_register.step1.phone_number.v_required.err}}"
         }
       },
       {
@@ -671,14 +671,14 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "Other phone number",
+        "hint": "{{family_member_register.step1.other_phone_number.hint}}",
         "v_numeric": {
           "value": "true",
-          "err": "Number must be a total of 10 digits in length"
+          "err": "{{family_member_register.step1.other_phone_number.v_numeric.err}}"
         },
         "v_regex": {
           "value": "(0[0-9]{9})|\\s*",
-          "err": "Number must be 10 digits and must start with 0."
+          "err": "{{family_member_register.step1.other_phone_number.v_regex.err}}"
         }
       },
       {
@@ -687,7 +687,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Occupation of the family member",
+        "label": "{{family_member_register.step1.service_provider.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -696,91 +696,91 @@
         "options": [
           {
             "key": "chk_farmer",
-            "text": "Farmer",
+            "text": "{{family_member_register.step1.service_provider.options.chk_farmer.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_cs",
-            "text": "Civil Servant",
+            "text": "{{family_member_register.step1.service_provider.options.chk_cs.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "162944AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_nurse",
-            "text": "Nurse",
+            "text": "{{family_member_register.step1.service_provider.options.chk_nurse.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_teacher",
-            "text": "Teacher",
+            "text": "{{family_member_register.step1.service_provider.options.chk_teacher.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "162946AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_th",
-            "text": "Traditional Healer",
+            "text": "{{family_member_register.step1.service_provider.options.chk_th.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1821AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_chw",
-            "text": "Community Health Worker (CHW)",
+            "text": "{{family_member_register.step1.service_provider.options.chk_chw.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_tba",
-            "text": "Traditional Birth Attendant",
+            "text": "{{family_member_register.step1.service_provider.options.chk_tba.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_chmis",
-            "text": "Community HMIS (cHMIS)",
+            "text": "{{family_member_register.step1.service_provider.options.chk_chmis.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_cbd",
-            "text": "Community Based Distributor",
+            "text": "{{family_member_register.step1.service_provider.options.chk_cbd.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1744AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_hbc",
-            "text": "Home Based Care (HBC)",
+            "text": "{{family_member_register.step1.service_provider.options.chk_hbc.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "161359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_cimmci",
-            "text": "Community IMCI",
+            "text": "{{family_member_register.step1.service_provider.options.chk_cimmci.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_other",
-            "text": "Other",
+            "text": "{{family_member_register.step1.service_provider.options.chk_other.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{family_member_register.step1.service_provider.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -788,7 +788,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{family_member_register.step1.service_provider.v_required.err}}"
         }
       },
       {
@@ -797,7 +797,7 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Community_Leader",
         "type": "check_box",
-        "label": "Any leadership role in the community?",
+        "label": "{{family_member_register.step1.leader.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -806,42 +806,42 @@
         "options": [
           {
             "key": "chk_religious",
-            "text": "Religious leader",
+            "text": "{{family_member_register.step1.leader.options.chk_religious.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Religious_Leader"
           },
           {
             "key": "chk_traditional",
-            "text": "Traditional leader",
+            "text": "{{family_member_register.step1.leader.options.chk_traditional.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Traditional_leader"
           },
           {
             "key": "chk_political",
-            "text": "Political leader",
+            "text": "{{family_member_register.step1.leader.options.chk_political.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Political_leader"
           },
           {
             "key": "chk_influential",
-            "text": "Influential leader",
+            "text": "{{family_member_register.step1.leader.options.chk_influential.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Influential_Leader"
           },
           {
             "key": "chk_other",
-            "text": "Other",
+            "text": "{{family_member_register.step1.leader.options.chk_other.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Other_Community_Leader_Type"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{family_member_register.step1.leader.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "person_attribute",
             "openmrs_entity_id": "Not_a_Community_Leader"
@@ -849,7 +849,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{family_member_register.step1.leader.v_required.err}}"
         }
       },
       {
@@ -858,11 +858,11 @@
         "openmrs_entity": "person_attribute",
         "openmrs_entity_id": "Other_Community_Leader_Type_Name",
         "type": "edit_text",
-        "hint": "Mention other role in the community",
+        "hint": "{{family_member_register.step1.leader_other.hint}}",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please specify role"
+          "err": "{{family_member_register.step1.leader_other.v_required.err}}"
         },
         "relevance": {
           "step1:leader": {
@@ -877,5 +877,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "family_member_register"
 }

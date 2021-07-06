@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Malaria Referral",
+    "title": "{{malaria_referral_form.step1.title}}",
     "fields": [
       {
         "key": "referral_problem_malaria",
@@ -60,12 +60,12 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "referral_problem_malaria",
         "type": "check_box",
-        "label": "Details of the patient's problem",
+        "label": "{{malaria_referral_form.step1.referral_problem_malaria.label}}",
         "label_text_style": "bold",
         "options": [
           {
             "key": "Fever",
-            "text": "Fever",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Fever.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -73,7 +73,7 @@
           },
           {
             "key": "Diarrhea",
-            "text": "Diarrhea",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Diarrhea.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "142412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -81,7 +81,7 @@
           },
           {
             "key": "Vomiting",
-            "text": "Vomiting",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Vomiting.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "122983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -89,7 +89,7 @@
           },
           {
             "key": "Nausea",
-            "text": "Nausea",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Nausea.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -97,7 +97,7 @@
           },
           {
             "key": "Trembling",
-            "text": "Trembling, shivering",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Trembling.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "158359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -105,7 +105,7 @@
           },
           {
             "key": "A_severe_headache_dizziness",
-            "text": "A severe headache / dizziness",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.A_severe_headache_dizziness.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -113,7 +113,7 @@
           },
           {
             "key": "Sweating",
-            "text": "Sweating",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Sweating.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "140941AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -121,7 +121,7 @@
           },
           {
             "key": "Severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -129,7 +129,7 @@
           },
           {
             "key": "Muscle_pain",
-            "text": "Muscle pain",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Muscle_pain.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "133632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -137,7 +137,7 @@
           },
           {
             "key": "Sweling_of_the_face_and_or_hands",
-            "text": "Sweling of the face and/or hands",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Sweling_of_the_face_and_or_hands.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "163894AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -145,7 +145,7 @@
           },
           {
             "key": "Difficult_in_breathing_fast_and_laboured_breathing",
-            "text": "Difficult in breathing (fast and laboured breathing)",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Difficult_in_breathing_fast_and_laboured_breathing.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -153,7 +153,7 @@
           },
           {
             "key": "Convulsions",
-            "text": "Convulsions",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Convulsions.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "113054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -161,7 +161,7 @@
           },
           {
             "key": "Very_weak",
-            "text": "Very weak",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Very_weak.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5226AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -169,7 +169,7 @@
           },
           {
             "key": "Irritable_easily_disturbed",
-            "text": "Irritable (easily disturbed)",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Irritable_easily_disturbed.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "118296AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -177,7 +177,7 @@
           },
           {
             "key": "Unconcious",
-            "text": "Unconcious",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Unconcious.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "123818AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -185,7 +185,7 @@
           },
           {
             "key": "Unusually_sleepy",
-            "text": "Unusually sleepy",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Unusually_sleepy.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "117417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -193,7 +193,7 @@
           },
           {
             "key": "Neck_stiffness",
-            "text": "Neck stiffness",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Neck_stiffness.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "112721AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -201,7 +201,7 @@
           },
           {
             "key": "Unable_to_sit_without_support",
-            "text": "Unable to sit without support",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Unable_to_sit_without_support.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "123833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -209,7 +209,7 @@
           },
           {
             "key": "Abnormal_bleeding_or_passing_of_urine_with_blood",
-            "text": "Abnormal bleeding or passing of urine with blood",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Abnormal_bleeding_or_passing_of_urine_with_blood.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -217,7 +217,7 @@
           },
           {
             "key": "Severe_anaemia_pale_palms_and_inner_eyelids",
-            "text": "Severe anaemia (pale palms and inner eyelids)",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Severe_anaemia_pale_palms_and_inner_eyelids.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "162044AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -225,7 +225,7 @@
           },
           {
             "key": "Yellowing_of_the_eyes_jaundice",
-            "text": "Yellowing of the eyes (jaundice)",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Yellowing_of_the_eyes_jaundice.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -233,7 +233,7 @@
           },
           {
             "key": "Severe_malnutrition",
-            "text": "Severe malnutrition",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Severe_malnutrition.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "163302AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -241,7 +241,7 @@
           },
           {
             "key": "Bloating",
-            "text": "Bloating",
+            "text": "{{malaria_referral_form.step1.referral_problem_malaria.options.Bloating.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -250,7 +250,7 @@
         ],
         "v_required": {
           "value": true,
-          "err": "Please specify problem associated with the client"
+          "err": "{{malaria_referral_form.step1.referral_problem_malaria.v_required.err}}"
         }
       },
       {
@@ -259,7 +259,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "service_before_malaria",
         "type": "check_box",
-        "label": "Treatment given before the referral",
+        "label": "{{malaria_referral_form.step1.service_before_malaria.label}}",
         "label_text_style": "bold",
         "is_problem": false,
         "exclusive": [
@@ -268,7 +268,7 @@
         "options": [
           {
             "key": "Rectal_artesunate",
-            "text": "Rectal artesunate",
+            "text": "{{malaria_referral_form.step1.service_before_malaria.options.Rectal_artesunate.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "71561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -276,7 +276,7 @@
           },
           {
             "key": "Panadol",
-            "text": "Panadol",
+            "text": "{{malaria_referral_form.step1.service_before_malaria.options.Panadol.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "70116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -284,7 +284,7 @@
           },
           {
             "key": "ORS",
-            "text": "ORS",
+            "text": "{{malaria_referral_form.step1.service_before_malaria.options.ORS.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "351AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -292,7 +292,7 @@
           },
           {
             "key": "Other_treatment",
-            "text": "Other treatment",
+            "text": "{{malaria_referral_form.step1.service_before_malaria.options.Other_treatment.text}}",
             "value": false,
             "ignore": true,
             "openmrs_entity": "",
@@ -301,7 +301,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{malaria_referral_form.step1.service_before_malaria.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -310,7 +310,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Treatment given before referral is required"
+          "err": "{{malaria_referral_form.step1.service_before_malaria.v_required.err}}"
         }
       },
       {
@@ -320,11 +320,11 @@
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
         "edit_type": "name",
-        "hint": "Other treatment",
+        "hint": "{{malaria_referral_form.step1.service_before_malaria_other.hint}}",
         "is_problem": false,
         "v_required": {
           "value": "true",
-          "err": "Please specify other treatment"
+          "err": "{{malaria_referral_form.step1.service_before_malaria_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -335,5 +335,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "malaria_referral_form"
 }

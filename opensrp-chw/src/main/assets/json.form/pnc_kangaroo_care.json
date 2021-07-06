@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Kangaroo Mother Care (KMC)",
+    "title": "{{pnc_kangaroo_care.step1.title}}",
     "fields": [
       {
         "key": "kangaroo",
@@ -57,8 +57,12 @@
         "openmrs_data_type": "select one",
         "type": "spinner",
         "image": "form_kangaroo",
-        "hint": "Is mother following Kangaroo Mother Care (KMC)?",
+        "hint": "{{pnc_kangaroo_care.step1.kangaroo.hint}}",
         "values": [
+          "{{pnc_kangaroo_care.step1.kangaroo.values[0]}}",
+          "{{pnc_kangaroo_care.step1.kangaroo.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -68,5 +72,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_kangaroo_care"
 }

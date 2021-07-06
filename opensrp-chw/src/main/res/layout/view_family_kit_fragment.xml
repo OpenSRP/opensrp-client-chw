@@ -28,7 +28,7 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:padding="20dp"
-                    android:text="What type of kit has the family received?"
+                    android:text="@string/hint_kit_type"
                     android:textColor="@color/text_black"
                     android:textSize="18dp" />
 
@@ -48,7 +48,8 @@
                         android:checked="false"
                         android:clickable="false"
                         android:padding="10dp"
-                        android:text="Simple Kit (ORS/ZINC and Paracetamol)"
+                        android:tag="key_simple_kit_simple"
+                        android:text="@string/simple_kit_hint"
                         android:textColor="@color/text_black"
                         android:textSize="@dimen/register_list_desc_size" />
 
@@ -59,7 +60,8 @@
                         android:checked="false"
                         android:clickable="false"
                         android:padding="10dp"
-                        android:text="Simple Kit (ORS/ZINC and Paracetamol) with micronutrients"
+                        android:tag="key_simple_kit_with_micronutrients"
+                        android:text="@string/simple_kit_with_micro_hint"
                         android:textColor="@color/text_black"
                         android:textSize="@dimen/register_list_desc_size" />
 
@@ -70,7 +72,8 @@
                         android:checked="false"
                         android:clickable="false"
                         android:padding="10dp"
-                        android:text="No kit received"
+                        android:tag="key_no_kit_received"
+                        android:text="@string/no_kit_received_hint"
                         android:textColor="@color/text_black"
                         android:textSize="@dimen/register_list_desc_size" />
                 </RadioGroup>
@@ -90,7 +93,7 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:padding="20dp"
-                    android:text="Has the kit been used?"
+                    android:text="@string/kit_been_used_hint"
                     android:textColor="@color/text_black"
                     android:textSize="18dp" />
 
@@ -111,6 +114,7 @@
                         android:checked="false"
                         android:clickable="false"
                         android:padding="10dp"
+                        android:tag="key_kit_used"
                         android:text="@string/yes"
                         android:textColor="@color/text_black"
                         android:textSize="@dimen/register_list_desc_size" />
@@ -122,6 +126,7 @@
                         android:checked="false"
                         android:clickable="false"
                         android:padding="10dp"
+                        android:tag="key_kit_not_used"
                         android:text="@string/no"
                         android:textColor="@color/text_black"
                         android:textSize="@dimen/register_list_desc_size" />

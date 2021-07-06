@@ -1,15 +1,19 @@
 package org.smartregister.chw.service;
 
 import org.joda.time.DateTime;
+import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.application.CoreChwApplication;
 import org.smartregister.chw.core.domain.Child;
+import org.smartregister.chw.core.task.RunnableTask;
 import org.smartregister.chw.core.utils.ChwServiceSchedule;
 import org.smartregister.chw.core.utils.CoreConstants;
 import org.smartregister.chw.core.utils.VaccineScheduleUtil;
 import org.smartregister.chw.dao.ChwChildDao;
+import org.smartregister.chw.schedulers.ChwScheduleTaskExecutor;
 import org.smartregister.immunization.domain.jsonmapping.VaccineGroup;
 import org.smartregister.immunization.util.VaccinatorUtils;
 
+import java.util.Date;
 import java.util.List;
 
 import timber.log.Timber;
@@ -59,6 +63,10 @@ public class ChildAlertService {
                 }*/
                 VaccineScheduleUtil.updateOfflineAlerts(child.getBaseEntityID(), new DateTime(child.getDateOfBirth()), CoreConstants.SERVICE_GROUPS.CHILD);
                 ChwServiceSchedule.updateOfflineAlerts(child.getBaseEntityID(), new DateTime(child.getDateOfBirth()), CoreConstants.SERVICE_GROUPS.CHILD);
+                if (ChwApplication.getApplicationFlavor().hasFamilyKitCheck()) {
+                    Runnable runnable = () -> ChwScheduleTaskExecutor.getInstance().execute(child.getFamilyBaseEntityID(), CoreConstants.EventType.FAMILY_KIT, new Date());
+                    org.smartregister.chw.util.Utils.startAsyncTask(new RunnableTask(runnable), null);
+                }
             } catch (Exception e) {
                 Timber.e(e);
             }

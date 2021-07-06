@@ -12,6 +12,7 @@ import org.mockito.MockitoAnnotations;
 import org.smartregister.chw.BaseUnitTest;
 import org.smartregister.chw.core.contract.CoreChildProfileContract;
 import org.smartregister.chw.interactor.ChildProfileInteractor;
+import org.smartregister.commonregistry.CommonPersonObject;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 
 import java.util.UUID;
@@ -23,6 +24,8 @@ public class ChildProfilePresenterTest extends BaseUnitTest {
     private CoreChildProfileContract.Presenter childProfilePresenter;
     @Mock
     private CoreChildProfileContract.View childProfileView;
+    @Mock
+    private CoreChildProfileContract.Flavor flavor;
     @Mock
     private CoreChildProfileContract.Model childProfileModel;
 
@@ -43,7 +46,7 @@ public class ChildProfilePresenterTest extends BaseUnitTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        childProfilePresenter = new ChildProfilePresenter(childProfileView, childProfileModel, testBaseEntityId);
+        childProfilePresenter = new ChildProfilePresenter(childProfileView, flavor, childProfileModel, testBaseEntityId);
         interactor.setpClient(personObjectClient);
         ((ChildProfilePresenter) childProfilePresenter).setInteractor(interactor);
         Mockito.doReturn(context).when(childProfileView).getContext();
@@ -80,7 +83,7 @@ public class ChildProfilePresenterTest extends BaseUnitTest {
     public void testRefreshProfileTopSection() {
 
 
-        ChildProfilePresenter profilePresenter = new ChildProfilePresenter(view, model, "12345");
+        ChildProfilePresenter profilePresenter = new ChildProfilePresenter(view, flavor, model, "12345");
         Mockito.doReturn(context).when(view).getContext();
 
         Resources resources = Mockito.mock(Resources.class);
@@ -89,8 +92,9 @@ public class ChildProfilePresenterTest extends BaseUnitTest {
         Mockito.doReturn("12345").when(resources).getString(Mockito.anyInt());
         Mockito.doReturn("String").when(context).getString(Mockito.anyInt());
         Mockito.doReturn("String").when(view).getString(Mockito.anyInt());
+        CommonPersonObject personObject = Mockito.mock(CommonPersonObject.class);
 
-        profilePresenter.refreshProfileTopSection(personObjectClient);
+        profilePresenter.refreshProfileTopSection(personObjectClient, personObject);
 
         Mockito.verify(view).setProfileName(Mockito.any());
         Mockito.verify(view).setAge(Mockito.any());

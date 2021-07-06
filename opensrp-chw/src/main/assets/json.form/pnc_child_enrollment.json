@@ -76,15 +76,15 @@
         "openmrs_entity_id": "opensrp_id",
         "type": "barcode",
         "barcode_type": "qrcode",
-        "hint": "Boresha Afya ID",
-        "scanButtonText": "Scan QR Code",
+        "hint": "{{pnc_child_enrollment.step1.unique_id.hint}}",
+        "scanButtonText": "{{pnc_child_enrollment.step1.unique_id.scanButtonText}}",
         "v_numeric": {
           "value": "true",
-          "err": "Please enter a valid ID"
+          "err": "{{pnc_child_enrollment.step1.unique_id.v_numeric.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the UNIQUE ID"
+          "err": "{{pnc_child_enrollment.step1.unique_id.v_required.err}}"
         }
       },
       {
@@ -93,15 +93,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "edit_text",
-        "hint": "Surname",
+        "hint": "{{pnc_child_enrollment.step1.surname.hint}}",
         "edit_type": "name",
         "v_regex": {
           "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{pnc_child_enrollment.step1.surname.v_regex.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "{{pnc_child_enrollment.step1.surname.v_required.err}}"
         }
       },
       {
@@ -111,14 +111,14 @@
         "openmrs_entity_id": "",
         "openmrs_data_type": "text",
         "type": "check_box",
-        "label": "",
+        "label": "{{pnc_child_enrollment.step1.same_as_fam_name.label}}",
         "exclusive": [
           "none"
         ],
         "options": [
           {
             "key": "same_as_fam_name",
-            "text": "Surname same as family name",
+            "text": "{{pnc_child_enrollment.step1.same_as_fam_name.options.same_as_fam_name.text}}",
             "text_size": "18px",
             "value": "false"
           }
@@ -130,7 +130,7 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "last_name",
         "type": "hidden",
-        "hint": "Surname as Family name"
+        "hint": "{{pnc_child_enrollment.step1.last_name.hint}}"
       },
       {
         "key": "first_name",
@@ -139,16 +139,16 @@
         "openmrs_entity_id": "first_name",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "First name",
+        "hint": "{{pnc_child_enrollment.step1.first_name.hint}}",
         "expanded": false,
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please Enter first name"
+          "err": "{{pnc_child_enrollment.step1.first_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\s\\-]*",
-          "err": "Please Enter a Valid Name"
+          "err": "{{pnc_child_enrollment.step1.first_name.v_regex.err}}"
         }
       },
       {
@@ -158,16 +158,16 @@
         "openmrs_entity_id": "middle_name",
         "openmrs_data_type": "text",
         "type": "edit_text",
-        "hint": "Middle name",
+        "hint": "{{pnc_child_enrollment.step1.middle_name.hint}}",
         "expanded": false,
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please Enter middle name"
+          "err": "{{pnc_child_enrollment.step1.middle_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "Please Enter a Valid Name"
+          "err": "{{pnc_child_enrollment.step1.middle_name.v_regex.err}}"
         }
       },
       {
@@ -176,16 +176,16 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "birthdate",
         "type": "date_picker",
-        "hint": "Date of birth (DOB)",
+        "hint": "{{pnc_child_enrollment.step1.dob.hint}}",
         "expanded": false,
         "duration": {
-          "label": "Age"
+          "label": "{{pnc_child_enrollment.step1.dob.duration.label}}"
         },
         "min_date": "today-5y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of birth"
+          "err": "{{pnc_child_enrollment.step1.dob.v_required.err}}"
         }
       },
       {
@@ -194,7 +194,7 @@
         "openmrs_entity": "person",
         "openmrs_entity_id": "gender",
         "type": "edit_text",
-        "hint": "Sex"
+        "hint": "{{pnc_child_enrollment.step1.gender.hint}}"
       },
       {
         "key": "disabilities",
@@ -202,10 +202,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159522AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Physical disabilities",
+        "hint": "{{pnc_child_enrollment.step1.disabilities.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_child_enrollment.step1.disabilities.values[0]}}",
+          "{{pnc_child_enrollment.step1.disabilities.values[1]}}"
         ],
         "openmrs_choice_ids": {
           "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -213,7 +213,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one"
+          "err": "{{pnc_child_enrollment.step1.disabilities.v_required.err}}"
         }
       },
       {
@@ -222,10 +222,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "161543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Early initiation of breastfeeding (1 hr)?",
+        "hint": "{{pnc_child_enrollment.step1.early_bf_1hr.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_child_enrollment.step1.early_bf_1hr.values[0]}}",
+          "{{pnc_child_enrollment.step1.early_bf_1hr.values[1]}}"
         ],
         "openmrs_choice_ids": {
           "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -233,7 +233,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter Early initiation of breastfeeding"
+          "err": "{{pnc_child_enrollment.step1.early_bf_1hr.v_required.err}}"
         }
       },
       {
@@ -242,10 +242,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "spinner",
-        "hint": "Is the baby low birth weight (weighs less than 2.5 kg)?",
+        "hint": "{{pnc_child_enrollment.step1.lbw.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_child_enrollment.step1.lbw.values[0]}}",
+          "{{pnc_child_enrollment.step1.lbw.values[1]}}"
         ],
         "openmrs_choice_ids": {
           "Yes": "1",
@@ -253,7 +253,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select if baby has low the weight"
+          "err": "{{pnc_child_enrollment.step1.lbw.v_required.err}}"
         }
       },
       {
@@ -263,10 +263,10 @@
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "edit_type": "name",
-        "hint": "Type of physical disabilities",
+        "hint": "{{pnc_child_enrollment.step1.type_of_disability.hint}}",
         "v_required": {
           "value": true,
-          "err": "Please enter type of physical disabilities"
+          "err": "{{pnc_child_enrollment.step1.type_of_disability.v_required.err}}"
         }
       },
       {
@@ -275,7 +275,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "essential_newborn_care",
         "type": "check_box",
-        "label": "Essential newborn care received at the health facility?",
+        "label": "{{pnc_child_enrollment.step1.essential_newborn_care.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -284,21 +284,21 @@
         "options": [
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{pnc_child_enrollment.step1.essential_newborn_care.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_chlorhexidine",
-            "text": "Chlorhexidine applied to umbilical stump",
+            "text": "{{pnc_child_enrollment.step1.essential_newborn_care.options.chk_chlorhexidine.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "73263AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_skin_contact",
-            "text": "Skin to skin contact for at least 2 hours",
+            "text": "{{pnc_child_enrollment.step1.essential_newborn_care.options.chk_skin_contact.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -306,5 +306,6 @@
         ]
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_child_enrollment"
 }

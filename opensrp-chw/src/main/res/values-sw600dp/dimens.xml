@@ -26,4 +26,8 @@
     <dimen name="call_widget_font1">30sp</dimen>
     <dimen name="call_widget_font2">26sp</dimen>
     <dimen name="call_widget_font3">22sp</dimen>
+
+    <dimen name="family_register_text_size">5sp</dimen>
+    <dimen name="family_register_image_size">22dp</dimen>
+    <dimen name="family_register_count_size">40dp</dimen>
 </resources>

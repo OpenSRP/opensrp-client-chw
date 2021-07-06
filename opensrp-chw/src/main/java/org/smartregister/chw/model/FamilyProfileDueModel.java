@@ -31,6 +31,7 @@ public class FamilyProfileDueModel extends BaseFamilyProfileDueModel {
 
     protected String[] mainColumns(String tableName) {
         return new String[]{
+                CoreConstants.TABLE_NAME.CHILD + ".entry_point",
                 CoreConstants.TABLE_NAME.FAMILY_MEMBER + ".relationalid",
                 CoreConstants.TABLE_NAME.FAMILY_MEMBER + "." + DBConstants.KEY.BASE_ENTITY_ID + " AS _id",
                 CoreConstants.TABLE_NAME.FAMILY_MEMBER + "." + DBConstants.KEY.LAST_INTERACTED_WITH,

@@ -8,6 +8,7 @@ import org.smartregister.clientandeventmodel.Event;
 import org.smartregister.dao.AbstractDao;
 import org.smartregister.sync.helper.ECSyncHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import timber.log.Timber;
@@ -57,5 +58,41 @@ public class EventDao extends AbstractDao {
             return res.get(0);
 
         return null;
+    }
+
+    public static List<org.smartregister.domain.Event> getUnprocessedEvents(String[] events) {
+
+        StringBuilder builder = new StringBuilder();
+        int size = events.length;
+        int x = 0;
+        while (x < size) {
+            builder.append("'").append(events[x]).append("'");
+
+            if (x < (size - 1))
+                builder.append(",");
+            x++;
+        }
+
+        String sql = "select event.json event_json from event " +
+                "where event.formSubmissionId not in (select form_submission_id from visits) and event.eventType in (" + builder.toString() + ") " +
+                "order by event.rowid asc ";
+
+        List<org.smartregister.domain.Event> results = new ArrayList<>();
+
+        final ECSyncHelper syncHelper = ChwApplication.getInstance().getEcSyncHelper();
+        DataMap<Void> dataMap = c -> {
+            try {
+                org.smartregister.domain.Event event = syncHelper.convert(new JSONObject(getCursorValue(c, "event_json")), org.smartregister.domain.Event.class);
+                results.add(event);
+                return null;
+            } catch (JSONException e) {
+                Timber.e(e);
+            }
+            return null;
+        };
+
+        AbstractDao.readData(sql, dataMap);
+
+        return results;
     }
 }

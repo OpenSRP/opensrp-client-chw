@@ -91,7 +91,8 @@ public class ReportDao extends AbstractDao {
                     cursor.getString(cursor.getColumnIndex(VaccineRepository.EVENT_ID)),
                     cursor.getString(cursor.getColumnIndex(VaccineRepository.FORMSUBMISSION_ID)),
                     cursor.getInt(cursor.getColumnIndex(VaccineRepository.OUT_OF_AREA)),
-                    createdAt
+                    createdAt,
+                    cursor.getInt(cursor.getColumnIndex(VaccineRepository.IS_VOIDED))
             );
 
             vaccine.setTeam(cursor.getString(cursor.getColumnIndex(VaccineRepository.TEAM)));
@@ -110,8 +111,8 @@ public class ReportDao extends AbstractDao {
         return result;
     }
 
-    protected static String cleanName(String name){
-        return name.toLowerCase().replace("_", "").replace(" ","");
+    protected static String cleanName(String name) {
+        return name.toLowerCase().replace("_", "").replace(" ", "");
     }
 
     public static List<EligibleChild> fetchLiveEligibleChildrenReport(@Nullable List<String> communityIds, Date dueDate) {
@@ -143,8 +144,8 @@ public class ReportDao extends AbstractDao {
             if (age < 2 || (age >= 9 && age <= 11 && "Female".equalsIgnoreCase(gender))) {
                 List<Vaccine> rawVaccines = allVaccines.get(baseEntityId);
                 List<Vaccine> myVaccines = new ArrayList<>();
-                if(rawVaccines != null){
-                    for(Vaccine vaccine: rawVaccines){
+                if (rawVaccines != null) {
+                    for (Vaccine vaccine : rawVaccines) {
                         vaccine.setDate(new DateTime(vaccine.getDate()).minusDays(days).toDate());
                         myVaccines.add(vaccine);
                     }
@@ -152,8 +153,8 @@ public class ReportDao extends AbstractDao {
 
                 List<Alert> raw_alerts = computeChildAlerts(age, new DateTime(dob).minusDays(days), baseEntityId, myVaccines);
                 Set<String> myGivenVaccines = new HashSet<>();
-                if(myVaccines != null){
-                    for(Vaccine vaccine : myVaccines) {
+                if (myVaccines != null) {
+                    for (Vaccine vaccine : myVaccines) {
                         myGivenVaccines.add(cleanName(vaccine.getName()));
                     }
                 }
@@ -198,7 +199,7 @@ public class ReportDao extends AbstractDao {
     }
 
     private static HashMap<String, HashMap<String, VaccineSchedule>> getVaccineSchedules(String category) {
-        String fileName = category.equalsIgnoreCase("child")?  "vaccines.json": "vaccines/child_over_5_vaccines.json";
+        String fileName = category.equalsIgnoreCase("child") ? "vaccines.json" : "vaccines/child_over_5_vaccines.json";
 
         List<VaccineGroup> vaccineGroups =
                 VaccineScheduleUtil.getVaccineGroups(CoreChwApplication.getInstance().getApplicationContext(), fileName);

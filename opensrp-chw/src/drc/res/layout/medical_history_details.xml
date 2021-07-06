@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLastVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewLastVisitTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/medical_history"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/last_visit"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewLastVisit"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/medical_text_inner"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutAncCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewAncCardTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/medical_history"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/anc_card"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewAncCard"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="ANC card received: yes"
+                    android:textColor="@color/medical_text_inner"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutDeliveryKit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewDeliveryKitTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textAllCaps="true"
+                    android:text="@string/delivery_kit"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewDeliveryKit"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Delivery kit received: yes"
+                    android:textColor="@color/medical_text_inner"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHealthFacilityVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewHealthFacilityVisitTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/medical_history"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/anc_health_facility_visits"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHealthFacilityVisitDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTTImmunization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewTTImmunizationTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/anc_tt_immunization"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTTImmunizationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutIPTp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewIPTpTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/anc_iptp_sp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutIPTpDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncHealthFacilityVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncHealthFacilityVisitTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/medical_history"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_health_facility_visit_title"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncHealthFacilityVisitDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncHomeVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncHomeVisitTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutPncHealthFacilityVisit"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_home_visit_title"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncHomeVisitDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncFamilyPlanning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncFamilyPlanningTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutPncHealthFacilityVisit"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_family_planning_title"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncFamilyPlanningDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncChildVaccine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncChildVaccineTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutPncFamilyPlanning"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_child_vaccine"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncChildVaccineDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncImmunization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncImmunizationTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutPncChildVaccine"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_immunization"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncImmunizationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPncGrowthAndNutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <org.smartregister.view.customcontrols.CustomFontTextView
+                    android:id="@+id/customFontTextViewPncGrowthAndNutritionTitle"
+                    style="@style/CustomFontTextViewStyle.ClientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayoutPncImmunization"
+                    android:background="@color/medical_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/pnc_growth_and_nutrition"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPncGrowthAndNutritionDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

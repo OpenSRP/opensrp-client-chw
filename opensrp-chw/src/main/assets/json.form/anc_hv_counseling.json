@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "ANC counseling",
+    "title": "{{anc_hv_counseling.step1.title}}",
     "fields": [
       {
         "key": "anc_counseling",
@@ -56,10 +56,14 @@
         "openmrs_entity_id": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Importance of ANC visits",
-        "label_info_text": "Every pregnancy is special. All pregnant women need at least eight antenatal care visits to help ensure a safe and healthy pregnancy. Pregnant women and their families need to be able to recognize the signs of labour and the warning signs of pregnancy complications. They need to have plans and resources for obtaining skilled care for the birth and immediate help if problems arise.",
-        "hint": "Importance of ANC visits",
+        "label_info_title": "{{anc_hv_counseling.step1.anc_counseling.label_info_title}}",
+        "label_info_text": "{{anc_hv_counseling.step1.anc_counseling.label_info_text}}",
+        "hint": "{{anc_hv_counseling.step1.anc_counseling.hint}}",
         "values": [
+          "{{anc_hv_counseling.step1.anc_counseling.values[0]}}",
+          "{{anc_hv_counseling.step1.anc_counseling.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -69,7 +73,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_counseling.step1.anc_counseling.v_required.err}}"
         }
       },
       {
@@ -78,7 +82,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Upcoming visit dates:\n\n{0}.",
+        "text": "{{anc_hv_counseling.step1.anc_counseling_toaster.text}}",
         "text_color": "#1199F9",
         "toaster_type": "info"
       },
@@ -89,10 +93,14 @@
         "openmrs_entity_id": "164108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Importance of delivering at a health facility",
-        "label_info_text": "Promote delivery at a health facility and discuss the advantages of having a skilled birth attendant.",
-        "hint": "Importance of delivering at a health facility",
+        "label_info_title": "{{anc_hv_counseling.step1.birth_hf_counseling.label_info_title}}",
+        "label_info_text": "{{anc_hv_counseling.step1.birth_hf_counseling.label_info_text}}",
+        "hint": "{{anc_hv_counseling.step1.birth_hf_counseling.hint}}",
         "values": [
+          "{{anc_hv_counseling.step1.birth_hf_counseling.values[0]}}",
+          "{{anc_hv_counseling.step1.birth_hf_counseling.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -102,7 +110,7 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_counseling.step1.birth_hf_counseling.v_required.err}}"
         }
       },
       {
@@ -112,10 +120,14 @@
         "openmrs_entity_id": "1380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Nutrition counseling",
-        "label_info_text": "The risks associated with childbearing for the mother and her baby can be greatly reduced if the woman is healthy and well-nourished before becoming pregnant. During pregnancy and while breastfeeding, all women need more nutritious meals, increased quantities of food, more rest than usual, iron and folic acid or multiple micronutrient supplements, even if they are consuming fortified foods, and iodized salt to ensure the proper mental development of their babies.",
-        "hint": "Nutrition counseling",
+        "label_info_title": "{{anc_hv_counseling.step1.nutrition_counseling.label_info_title}}",
+        "label_info_text": "{{anc_hv_counseling.step1.nutrition_counseling.label_info_text}}",
+        "hint": "{{anc_hv_counseling.step1.nutrition_counseling.hint}}",
         "values": [
+          "{{anc_hv_counseling.step1.nutrition_counseling.values[0]}}",
+          "{{anc_hv_counseling.step1.nutrition_counseling.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
@@ -125,9 +137,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{anc_hv_counseling.step1.nutrition_counseling.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_counseling"
 }

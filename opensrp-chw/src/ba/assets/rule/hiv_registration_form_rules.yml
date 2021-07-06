@@ -1,0 +1,7 @@
+---
+name: "hiv_registration_date_calculation"
+description: "calculating the hiv registration date"
+priority: 1
+condition: "true"
+actions:
+  - "hiv_registration_date_calculation = System.currentTimeMillis()"

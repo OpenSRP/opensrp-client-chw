@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THINKMD Assessment</title>
+</head>
+<script>
+    (async() => {
+        let data = await fetch("http://localhost:8085/thinkmd/fhir_update_latest.json");
+        let fhir = await data.json()
+
+        const getFhirResourcesByType = type => {
+            return fhir.entry.filter(entry => (entry.resource && entry.resource.resourceType === type))
+        }
+
+        const newContainer = (title, sub_type, id) => {
+            let div_node = document.createElement("div")
+            div_node.className = "container"
+            document.getElementById("thinkmd-encounter").appendChild(div_node)
+
+            let h2_node = document.createElement("h2")
+            h2_node.innerText = title
+            div_node.appendChild(h2_node)
+
+            let sub_node = document.createElement(sub_type)
+            sub_node.setAttribute("id", id)
+            div_node.appendChild(sub_node)
+
+            return sub_node
+        }
+
+        const formatString = (s) => {
+            if (typeof s !== 'string') return ''
+            s = s.charAt(0).toUpperCase() + s.slice(1)
+            return s.split('_').join(' ')
+        }
+        
+        const SEVERITIES = ['severe', 'moderate', 'mild', 'inconclusive', 'possible', 'none', 'not_assessed']
+        
+        // Get start date from the encounter resource: period.start
+        let encounterResource = getFhirResourcesByType("Encounter")[0]
+        if (encounterResource) {
+            try {
+                let date = new Date(encounterResource.resource.period.start)
+                let dateElement = document.createElement("p")
+                dateElement.setAttribute("id", "encounter-date")
+                dateElement.innerHTML = date.toDateString()
+                document.getElementById("header").appendChild(dateElement)
+            }
+            catch (e) {
+                console.log("no encounter period found")
+            }
+        }
+
+        // Parse Conditions
+        let conditionResources = getFhirResourcesByType("Condition")
+        let conditions = conditionResources.reduce((acc,item) => {
+            try {
+                // placeholder element to extract the html spans
+                let el = document.createElement("toAdd")
+                el.innerHTML = item.resource.text.div
+                let severity = el.children[0].children[2].innerText
+                let cond = el.children[0].children[1].innerText
+                acc.push([severity, cond])
+            }
+            catch (e) {
+                console.log(`error for ${item.resource.id}`)
+            }
+            return acc
+        }, [])
+        
+        conditions.sort((a,b) => SEVERITIES.indexOf(a[0]) - SEVERITIES.indexOf(b[0]))
+        
+        conditions.forEach(condition => {
+                let node = document.createElement("li")
+                let sev_node = document.createElement("span")
+                sev_node.innerText = formatString(condition[0])
+                sev_node.className = `severity-${condition[0]}`
+                node.appendChild(sev_node)
+
+                let cond_node = document.createElement("span")
+                cond_node.innerText = ' ' + formatString(condition[1])
+                node.appendChild(cond_node)
+
+                document.getElementById("Condition").appendChild(node)
+        })
+
+        // Parse CarePlans
+
+        let careplans = getFhirResourcesByType("CarePlan")
+        let careItems = careplans.reduce((acc, item) => {
+            if (item.resource.activity) {
+                item.resource.activity.forEach(activity => {
+                    if (activity.detail && activity.detail.kind === "Task") {
+                        /*
+                        some careplan items may not have descriptions
+                        ors_by_mouth is one, because it is technically a med request, but is listed as a care item as well
+                        */
+                        if (activity.detail.description) {
+                            acc.push(activity.detail.description)
+                        }
+                        else console.log("no description of task: ", activity.detail)
+                    }
+
+                })
+            }
+            return acc
+        }, [])
+
+        if (careItems.length > 0) {
+            careItems = [...new Set(careItems)]
+
+            let ul_node = newContainer("Careplan", "ul", "CarePlan")
+
+            careItems.forEach(item => {
+                let li_node = document.createElement("li")
+                li_node.innerHTML = item
+                ul_node.appendChild(li_node)
+            })
+        }
+
+        // Parse Medication Requests
+        let meds = getFhirResourcesByType("MedicationRequest")
+        if (meds.length > 0) {
+
+            let ul_node = newContainer("Treatments", "ul", "MedicationRequest")
+
+            meds.forEach(item => {
+                try {
+                    let li_node = document.createElement("li")
+                    let name_node = document.createElement("p")
+                    name_node.innerText = item.resource.medicationCodeableConcept.text
+                    name_node.className = "med-title"
+                    li_node.appendChild(name_node)
+
+                    let form_node = document.createElement("p")
+                    form_node.innerHTML = item.resource.dosageInstruction[0].text
+                    li_node.appendChild(form_node)
+
+                    ul_node.appendChild(li_node)
+
+                }
+                catch (e) {
+                    console.log(`error with medicationRequest: ${item.resource.id}`, e)
+                }
+            })
+
+        }
+        
+        // Parse observations
+        let obs_node = newContainer("Observations", "table", "Observation")
+        
+        let observations = getFhirResourcesByType("Observation")
+        observations.forEach(item => {
+            try {
+                let el = document.createElement("toAdd")
+                el.innerHTML = item.resource.text.div
+                let value = el.children[0].children[2].innerText
+                let name = el.children[0].children[1].innerText
+
+                let node = document.createElement("tr")
+                let name_node = document.createElement("td")
+                name_node.innerText = formatString(name)
+                node.appendChild(name_node)
+
+                let value_node = document.createElement("td")
+                value_node.innerText = ' ' + formatString(value)
+                node.appendChild(value_node)
+
+                obs_node.appendChild(node)
+            }
+            catch (e) {
+                console.log(`no div info for ${item.resource.id}`)
+            }
+        })
+
+    })()
+</script>
+
+<body>
+    <div id="thinkmd-encounter">
+        <div id="header">
+            <h1 id="title">THINKMD Assessment</h1>
+        </div>
+        <div class="container">
+            <h2>Conditions</h2>
+            <ul id="Condition"></ul>
+        </div>
+    </div>
+</body>
+
+<style>
+    #thinkmd-encounter {
+        font-family: Roboto, sans-serif;
+    }
+
+    #header {
+        text-align: center;
+        background-color: #4b91ac;
+        color: white;
+        padding: 3px 3px;
+    }
+
+    table {
+        margin: auto;
+        width: 90%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 8px 15px;
+    }
+
+    td:first-child,
+    #CarePlan {
+        color: rgba(0, 0, 0, .6);
+    }
+
+    tr:nth-child(odd) {
+        background-color: #e0f7fa;
+    }
+
+    .container {
+        width: 95%;
+        margin: 5px auto;
+        padding: 5px 8px;
+        border-radius: 4px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    }
+
+    .severity-moderate {
+        color: #ffc300;
+    }
+
+    .severity-severe {
+        color: #db322d;
+    }
+
+    .severity-mild {
+        color: #83d4a3;
+    }
+
+    .med-title {
+        color: rgba(0, 0, 0, .8);
+        background-color: #e0f7fa;
+        padding: 5px;
+    }
+    
+    #MedicationRequest>li>p:nth-child(2) {
+        color: rgba(0, 0, 0, .6);
+        margin: 0 10px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        color: rgba(0, 0, 0, .6);
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+</style>
+
+</html>

@@ -55,10 +55,7 @@ public class FamilyProfileActivityTest {
         CoreLibrary.init(context);
 
         //Auto login by default
-        String password = "pwd";
         context.session().start(context.session().lengthInMilliseconds());
-        context.configuration().getDrishtiApplication().setPassword(password);
-        context.session().setPassword(password);
 
         MockitoAnnotations.initMocks(this);
         Intent testIntent = new Intent();

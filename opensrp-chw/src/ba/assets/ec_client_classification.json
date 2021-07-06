@@ -297,6 +297,85 @@
             "creates_case": [
               "ec_not_yet_done_referral"
             ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Hiv Registration",
+            "creates_case": [
+              "ec_hiv_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Tb Registration",
+            "creates_case": [
+              "ec_tb_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "TB Case Closure",
+            "creates_case": [
+              "ec_tb_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "HIV Community Followup",
+            "creates_case": [
+              "ec_hiv_community_followup"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "TB Community Followup",
+            "creates_case": [
+              "ec_tb_community_followup"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "HIV Community Followup Feedback",
+            "creates_case": [
+              "ec_hiv_community_feedback"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "TB Community Followup Feedback",
+            "creates_case": [
+              "ec_tb_community_feedback"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "HIV Outcome",
+            "creates_case": [
+              "ec_hiv_outcome",
+              "ec_hiv_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "TB Outcome",
+            "creates_case": [
+              "ec_tb_outcome",
+              "ec_tb_register"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "HIV Notification Dismissal",
+            "creates_case": [
+              "ec_hiv_outcome"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "TB Notification Dismissal",
+            "creates_case": [
+              "ec_tb_outcome"
+            ]
           }
         ]
       }

@@ -148,7 +148,7 @@ public class DefaultBaseHomeVisitImmunizationFragment extends BaseHomeVisitFragm
             View vaccinationName = inflater.inflate(R.layout.custom_vaccine_name_check, null);
             TextView vaccineView = vaccinationName.findViewById(R.id.vaccine);
             CheckBox checkBox = vaccinationName.findViewById(R.id.select);
-            setCheckBoxState(checkBox, false);
+            setCheckBoxState(checkBox, true);
             VaccineRepo.Vaccine vaccine = vaccineWrapper.getVaccine();
             final VaccineView view = new VaccineView(vaccineWrapper.getName(), null, checkBox);
 

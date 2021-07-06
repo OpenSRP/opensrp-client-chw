@@ -77,18 +77,18 @@ public class AncHomeVisitInteractorFlv extends DefaultAncHomeVisitInteractorFlv 
     }
 
     protected void evaluateDeliveryKit() throws BaseAncHomeVisitAction.ValidationException {
-        if (memberObject.getDeliveryKit() != null && memberObject.getDeliveryKit().equalsIgnoreCase("Yes")) {
+        if (memberObject.getDeliveryKit() != null && memberObject.getDeliveryKit().equalsIgnoreCase("Yes") && !editMode) {
             return;
         }
 
-        BaseAncHomeVisitAction deliveryKitAction = getBuilder(context.getString(R.string.anc_woman_delivery_kit_received))
+        BaseAncHomeVisitAction deliveryKitAction = getBuilder(context.getString(R.string.anc_home_visit_delivery_kit_received))
                 .withOptional(false)
                 .withDetails(details)
                 .withHelper(new DeliveryKitAction())
                 .withDestinationFragment(BaseAncHomeVisitFragment.getInstance(view, Constants.AncHomeVisitUtil.getDeliveryKitReceived(), null, details, null))
                 .build();
 
-        actionList.put(context.getString(R.string.anc_woman_delivery_kit_received), deliveryKitAction);
+        actionList.put(context.getString(R.string.anc_home_visit_delivery_kit_received), deliveryKitAction);
 
     }
 

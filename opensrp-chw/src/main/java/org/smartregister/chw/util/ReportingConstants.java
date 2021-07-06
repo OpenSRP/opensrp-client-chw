@@ -26,6 +26,8 @@ public interface ReportingConstants {
         String COUNT_POSTPARTUM_FP_METHOD_IMPLANT = "pnc_report_indicator_8_7";
         String COUNT_POSTPARTUM_FP_METHOD_OTHER = "pnc_report_indicator_8_8";
         String COUNT_DECEASED_NEWBORNS_0_28 = "pnc_report_indicator_9_1";
+        String COUNT_WOMAN_PNC_VISIT_DONE = "pnc_report_indicator_10_1";
+        String COUNT_WOMAN_PNC_VISIT_NOT_DONE = "pnc_report_indicator_10_2";
     }
 
     interface AncIndicatorKeys {

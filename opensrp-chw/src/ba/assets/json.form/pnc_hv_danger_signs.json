@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "PNC Danger Signs",
+    "title": "{{pnc_hv_danger_signs.step1.title}}",
     "fields": [
       {
         "key": "danger_signs_present",
@@ -55,7 +55,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "check_box",
-        "label": "Does the mother have any danger signs?",
+        "label": "{{pnc_hv_danger_signs.step1.danger_signs_present.label}}",
         "label_text_style": "normal",
         "text_color": "#C0C0C0",
         "exclusive": [
@@ -64,70 +64,70 @@
         "options": [
           {
             "key": "chk_fever",
-            "text": "Fever",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_fever.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_bleeding_vaginally",
-            "text": "Bleeding vaginally",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_bleeding_vaginally.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "150802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_server_headache",
-            "text": "Severe headache",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_server_headache.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_convulsions",
-            "text": "Convulsions",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_convulsions.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "164483AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_difficulty_breathing",
-            "text": "Difficulty breathing",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_difficulty_breathing.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "142373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_severe_abdominal_pain",
-            "text": "Severe abdominal pain",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_severe_abdominal_pain.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_swelling",
-            "text": "Swelling of the face and/or hands",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_swelling.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_vaginal_discharge",
-            "text": "Discoloured or watery, liquid vaginal discharge with a bad smell",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_vaginal_discharge.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "123395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_unusual_movement",
-            "text": "No movement / unusual movement for a child in the womb",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_unusual_movement.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "113377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "chk_none",
-            "text": "None",
+            "text": "{{pnc_hv_danger_signs.step1.danger_signs_present.options.chk_none.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -135,7 +135,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please pick at least one"
+          "err": "{{pnc_hv_danger_signs.step1.danger_signs_present.v_required.err}}"
         }
       },
       {
@@ -144,7 +144,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "Danger sign! \nRefer immediately to health facility.",
+        "text": "{{pnc_hv_danger_signs.step1.danger_signs_present_toaster.text}}",
         "text_color": "#CF0800",
         "toaster_type": "problem",
         "relevance": {
@@ -174,12 +174,12 @@
         "openmrs_entity_id": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Did the mother receive counselling",
-        "label_info_text": "Did the mother receive counselling on danger signs at the health facility recently?",
-        "hint": "Did the mother receive counselling on danger signs at the health facility recently?",
+        "label_info_title": "{{pnc_hv_danger_signs.step1.danger_signs_counseling.label_info_title}}",
+        "label_info_text": "{{pnc_hv_danger_signs.step1.danger_signs_counseling.label_info_text}}",
+        "hint": "{{pnc_hv_danger_signs.step1.danger_signs_counseling.hint}}",
         "values": [
-          "Yes",
-          "No"
+          "{{pnc_hv_danger_signs.step1.danger_signs_counseling.values[0]}}",
+          "{{pnc_hv_danger_signs.step1.danger_signs_counseling.values[1]}}"
         ],
         "openmrs_choice_ids": {
           "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -187,9 +187,10 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please select one option"
+          "err": "{{pnc_hv_danger_signs.step1.danger_signs_counseling.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "pnc_hv_danger_signs"
 }

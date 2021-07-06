@@ -136,6 +136,13 @@
             "creates_case": [
               "ec_pregnancy_outcome"
             ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Update ANC Registration",
+            "creates_case": [
+              "ec_anc_register"
+            ]
           }
         ]
       }

@@ -4,49 +4,21 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Triple;
 import org.smartregister.chw.activity.AllClientsMemberProfileActivity;
 import org.smartregister.chw.anc.util.NCUtils;
-import org.smartregister.chw.contract.AllClientsMemberContract;
+import org.smartregister.chw.core.activity.CoreAllClientsMemberProfileActivity;
 import org.smartregister.chw.core.application.CoreChwApplication;
+import org.smartregister.chw.core.presenter.CoreAllClientsMemberPresenter;
 import org.smartregister.chw.dao.FamilyDao;
-import org.smartregister.chw.interactor.AllClientsMemberInteractor;
-import org.smartregister.chw.model.AllClientsMemberModel;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
-import org.smartregister.family.contract.FamilyOtherMemberContract;
-import org.smartregister.family.contract.FamilyProfileContract;
-import org.smartregister.family.domain.FamilyEventClient;
 import org.smartregister.family.util.DBConstants;
 import org.smartregister.family.util.Utils;
 
-import java.lang.ref.WeakReference;
 import java.text.MessageFormat;
 
 import static org.smartregister.chw.util.Utils.getClientName;
 
-public class AllClientsMemberPresenter implements AllClientsMemberContract.Presenter, FamilyProfileContract.InteractorCallBack, FamilyOtherMemberContract.InteractorCallBack {
-
-    private AllClientsMemberContract.Interactor interactor;
-
-    private WeakReference<AllClientsMemberContract.View> view;
-    private String baseEntityId;
-
-    public AllClientsMemberPresenter(AllClientsMemberProfileActivity allClientsMemberProfileActivity, String baseEntityId) {
-        this.baseEntityId = baseEntityId;
-        interactor = new AllClientsMemberInteractor();
-        view = new WeakReference<>(allClientsMemberProfileActivity);
-    }
-
-    @Override
-    public void updateLocationInfo(String jsonString, String familyBaseEntityId) {
-        interactor.updateLocationInfo(jsonString, new AllClientsMemberModel().processJsonForm(jsonString, familyBaseEntityId), this);
-    }
-
-    @Override
-    public AllClientsMemberContract.View getView() {
-        return view.get();
-    }
-
-    @Override
-    public void startFormForEdit(CommonPersonObjectClient client) {
-        //Overridden: Not Needed
+public class AllClientsMemberPresenter extends CoreAllClientsMemberPresenter {
+    public AllClientsMemberPresenter(CoreAllClientsMemberProfileActivity allClientsMemberProfileActivity, String baseEntityId) {
+        super(allClientsMemberProfileActivity, baseEntityId);
     }
 
     @Override
@@ -84,22 +56,5 @@ public class AllClientsMemberPresenter implements AllClientsMemberContract.Prese
     @Override
     public void onNoUniqueId() {
         //Overridden: Not Needed
-    }
-
-    @Override
-    public void onRegistrationSaved(boolean editMode, boolean isSaved, FamilyEventClient familyEventClient) {
-        AllClientsMemberProfileActivity view = (AllClientsMemberProfileActivity) getView();
-        if (editMode) {
-            view.hideProgressDialog();
-
-            refreshProfileView();
-
-            view.refreshList();
-        }
-    }
-
-    @Override
-    public void refreshProfileView() {
-        interactor.updateProfileInfo(baseEntityId, this);
     }
 }

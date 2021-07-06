@@ -13,8 +13,8 @@ import java.util.List;
 
 public class AboveFiveChildProfilePresenter extends ChildProfilePresenter {
 
-    public AboveFiveChildProfilePresenter(CoreChildProfileContract.View childView, CoreChildProfileContract.Model model, String childBaseEntityId) {
-        super(childView, model, childBaseEntityId);
+    public AboveFiveChildProfilePresenter(CoreChildProfileContract.View childView, CoreChildProfileContract.Flavor flavor, CoreChildProfileContract.Model model, String childBaseEntityId) {
+        super(childView, flavor, model, childBaseEntityId);
         setView(new WeakReference<>(childView));
         setInteractor(new ChildProfileInteractor());
         getInteractor().setChildBaseEntityId(childBaseEntityId);

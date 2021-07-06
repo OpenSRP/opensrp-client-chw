@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.chw.core.form_data.NativeFormsDataLoader;
 import org.smartregister.chw.core.utils.CoreConstants;
+import org.smartregister.chw.dao.ChwANCDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +36,12 @@ public class AncMemberDataLoader extends NativeFormsDataLoader {
     public String getValue(Context context, String baseEntityID, JSONObject jsonObject, Map<String, Map<String, Object>> dbData) throws JSONException {
         String key = jsonObject.getString(JsonFormConstants.KEY);
 
-        if ("last_menstrual_period".equalsIgnoreCase(key) || "delivery_method".equalsIgnoreCase(key))
+        if ("delivery_method".equalsIgnoreCase(key))
             jsonObject.put(JsonFormConstants.READ_ONLY, true);
+        if ("last_menstrual_period".equalsIgnoreCase(key)) {
+            String date = ChwANCDao.getLastContactDate(baseEntityID);
+            jsonObject.put(JsonFormConstants.MAX_DATE, date);
+        }
 
         return super.getValue(context, baseEntityID, jsonObject, dbData);
     }

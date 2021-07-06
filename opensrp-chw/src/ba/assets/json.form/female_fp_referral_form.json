@@ -52,7 +52,7 @@
     }
   },
   "step1": {
-    "title": "Family Planning Referral",
+    "title": "{{female_fp_referral_form.step1.title}}",
     "fields": [
       {
         "key": "fp_method_accepted_referral",
@@ -60,7 +60,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "label": "FP method chosen requiring a referral",
+        "label": "{{female_fp_referral_form.step1.fp_method_accepted_referral.label}}",
         "label_text_style": "bold",
         "options": [
           {
@@ -68,103 +68,103 @@
             "openmrs_entity": "",
             "openmrs_entity_id": "164813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Male condom"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Male_condom.text}}"
           },
           {
             "key": "Female_condom",
             "openmrs_entity": "",
             "openmrs_entity_id": "164814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Female condom"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Female_condom.text}}"
           },
           {
             "key": "COC",
             "openmrs_entity": "",
             "openmrs_entity_id": "159783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "COC"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.COC.text}}"
           },
           {
             "key": "POP",
             "openmrs_entity": "",
             "openmrs_entity_id": "159784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "POP"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.POP.text}}"
           },
           {
             "key": "Standard_day_method",
             "openmrs_entity": "",
             "openmrs_entity_id": "5277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Standard day method"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Standard_day_method.text}}"
           },
           {
             "key": "Emergency_contraceptive",
             "openmrs_entity": "",
             "openmrs_entity_id": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Emergency contraceptive"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Emergency_contraceptive.text}}"
           },
           {
             "key": "Injectable",
             "openmrs_entity": "",
             "openmrs_entity_id": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Injectable"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Injectable.text}}"
           },
           {
             "key": "IUCD",
             "openmrs_entity": "",
             "openmrs_entity_id": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "IUCD"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.IUCD.text}}"
           },
           {
             "key": "Implanon_NXT",
             "openmrs_entity": "",
             "openmrs_entity_id": "76022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Implanon - NXT"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Implanon_NXT.text}}"
           },
           {
             "key": "Jadelle",
             "openmrs_entity": "",
             "openmrs_entity_id": "1873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Jadelle"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Jadelle.text}}"
           },
           {
             "key": "Female_sterilization",
             "openmrs_entity": "",
             "openmrs_entity_id": "5276AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Female sterilization"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Female_sterilization.text}}"
           },
           {
             "key": "Male_sterilization",
             "openmrs_entity": "",
             "openmrs_entity_id": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Male sterilization"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Male_sterilization.text}}"
           },
           {
             "key": "None",
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "None"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.None.text}}"
           },
           {
             "key": "Not_applicable",
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": "",
-            "text": "Not applicable"
+            "text": "{{female_fp_referral_form.step1.fp_method_accepted_referral.options.Not_applicable.text}}"
           }
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a family planning method"
+          "err": "{{female_fp_referral_form.step1.fp_method_accepted_referral.v_required.err}}"
         }
       },
       {
@@ -173,7 +173,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Family planning side-effects",
+        "label": "{{female_fp_referral_form.step1.side_effects_sterialization.label}}",
         "label_text_style": "bold",
         "exclusive": [
           "None",
@@ -182,7 +182,7 @@
         "options": [
           {
             "key": "Incisional_bleeding",
-            "text": "Incisional bleeding",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.Incisional_bleeding.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "147241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -190,7 +190,7 @@
           },
           {
             "key": "Pus_Discharge_from_incision",
-            "text": "Pus/Discharge from incision",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.Pus_Discharge_from_incision.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164495AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -198,7 +198,7 @@
           },
           {
             "key": "Swollen_around_the_incision",
-            "text": "Swollen around the incision",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.Swollen_around_the_incision.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159012AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -206,7 +206,7 @@
           },
           {
             "key": "Others",
-            "text": "Others",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.Others.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -214,7 +214,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -222,7 +222,7 @@
           },
           {
             "key": "Not_applicable",
-            "text": "Not applicable",
+            "text": "{{female_fp_referral_form.step1.side_effects_sterialization.options.Not_applicable.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -231,7 +231,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a value"
+          "err": "{{female_fp_referral_form.step1.side_effects_sterialization.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -247,12 +247,12 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Family planning side-effects",
+        "label": "{{female_fp_referral_form.step1.side_effects_iucd.label}}",
         "label_text_style": "bold",
         "options": [
           {
             "key": "Severe_pain_inside_the_vagina_after_IUD_was_put_in",
-            "text": "Severe pain inside the vagina after IUD was put in",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Severe_pain_inside_the_vagina_after_IUD_was_put_in.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "123385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -260,7 +260,7 @@
           },
           {
             "key": "Cramping_or_backaches_for_a_few_days_after_the_IUD_is_put_in",
-            "text": "Cramping or backaches for a few days after the IUD is put in",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Cramping_or_backaches_for_a_few_days_after_the_IUD_is_put_in.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "148031AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -268,7 +268,7 @@
           },
           {
             "key": "Spotting_between_periods_and_or_irregular_periods",
-            "text": "Spotting between periods and/or irregular periods",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Spotting_between_periods_and_or_irregular_periods.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "116616AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -276,7 +276,7 @@
           },
           {
             "key": "Heavier_periods_and_worse_menstrual_cramps",
-            "text": "Heavier periods and worse menstrual cramps",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Heavier_periods_and_worse_menstrual_cramps.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "156197AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -284,7 +284,7 @@
           },
           {
             "key": "IUCD_explusion",
-            "text": "IUCD explusion",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.IUCD_explusion.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "157401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -292,7 +292,7 @@
           },
           {
             "key": "Others",
-            "text": "Others",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Others.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -300,7 +300,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -308,7 +308,7 @@
           },
           {
             "key": "Not_applicable",
-            "text": "Not applicable",
+            "text": "{{female_fp_referral_form.step1.side_effects_iucd.options.Not_applicable.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -317,7 +317,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a value"
+          "err": "{{female_fp_referral_form.step1.side_effects_iucd.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -333,12 +333,12 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Family planning side-effects",
+        "label": "{{female_fp_referral_form.step1.side_effects_implant.label}}",
         "label_text_style": "bold",
         "options": [
           {
             "key": "Insertion_site_infected_pus_discharge",
-            "text": "Insertion site infected - pus/discharge",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Insertion_site_infected_pus_discharge.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164495AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -346,7 +346,7 @@
           },
           {
             "key": "Insertion_site_swollen",
-            "text": "Insertion site swollen",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Insertion_site_swollen.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "159012AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -354,7 +354,7 @@
           },
           {
             "key": "Implant_expulsion",
-            "text": "Implant expulsion",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Implant_expulsion.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "144458AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -362,7 +362,7 @@
           },
           {
             "key": "Heavy_bleeding",
-            "text": "Heavy bleeding",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Heavy_bleeding.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "136756AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -370,7 +370,7 @@
           },
           {
             "key": "Others",
-            "text": "Others",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Others.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -378,7 +378,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -386,7 +386,7 @@
           },
           {
             "key": "Not_applicable",
-            "text": "Not applicable",
+            "text": "{{female_fp_referral_form.step1.side_effects_implant.options.Not_applicable.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -395,7 +395,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a value"
+          "err": "{{female_fp_referral_form.step1.side_effects_implant.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -411,12 +411,12 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "openmrs_entity_parent": "",
-        "label": "Family planning side-effects",
+        "label": "{{female_fp_referral_form.step1.side_effects_inject_pills.label}}",
         "label_text_style": "bold",
         "options": [
           {
             "key": "Heavy_bleeding_",
-            "text": "Heavy bleeding",
+            "text": "{{female_fp_referral_form.step1.side_effects_inject_pills.options.Heavy_bleeding_.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "136756AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -424,7 +424,7 @@
           },
           {
             "key": "Irregular_periods",
-            "text": "Irregular periods",
+            "text": "{{female_fp_referral_form.step1.side_effects_inject_pills.options.Irregular_periods.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "116616AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -432,7 +432,7 @@
           },
           {
             "key": "Others",
-            "text": "Others",
+            "text": "{{female_fp_referral_form.step1.side_effects_inject_pills.options.Others.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -440,7 +440,7 @@
           },
           {
             "key": "None",
-            "text": "None",
+            "text": "{{female_fp_referral_form.step1.side_effects_inject_pills.options.None.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "164369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -448,7 +448,7 @@
           },
           {
             "key": "Not_applicable",
-            "text": "Not applicable",
+            "text": "{{female_fp_referral_form.step1.side_effects_inject_pills.options.Not_applicable.text}}",
             "value": false,
             "openmrs_entity": "",
             "openmrs_entity_id": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -457,7 +457,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please select a value"
+          "err": "{{female_fp_referral_form.step1.side_effects_inject_pills.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -488,10 +488,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity_parent": "",
-        "hint": "Other side effects",
+        "hint": "{{female_fp_referral_form.step1.fp_side_effects_other.hint}}",
         "v_required": {
           "value": "true",
-          "err": "Please specify other side effects"
+          "err": "{{female_fp_referral_form.step1.fp_side_effects_other.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -500,7 +500,8 @@
             }
           }
         }
-      },{
+      },
+      {
         "key": "referral_date_fp",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -531,5 +532,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "female_fp_referral_form"
 }

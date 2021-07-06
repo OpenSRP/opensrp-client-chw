@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Deworming {0} dose",
+    "title": "{{child_hv_deworming.step1.title}}",
     "fields": [
       {
         "key": "deworming{0}_date",
@@ -56,14 +56,15 @@
         "openmrs_entity_id": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
         "image": "ic_form_deworming",
-        "hint": "When was Deworming {0} dose given?",
+        "hint": "{{child_hv_deworming.step1.deworming{0}_date.hint}}",
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date deworming a was given"
+          "err": "{{child_hv_deworming.step1.deworming{0}_date.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "child_hv_deworming"
 }

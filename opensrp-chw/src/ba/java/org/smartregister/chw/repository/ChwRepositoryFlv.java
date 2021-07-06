@@ -96,12 +96,26 @@ public class ChwRepositoryFlv {
                 case 21:
                     upgradeToVersion21(db);
                     break;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                case 22:
+                    upgradeToVersion22(db);
+=======
                 case 22:
                     upgradeToVersion22(db);
                     break;
                 case 23:
                     upgradeToVersion23(db);
                     break;
+                case 21:
+                    upgradeToVersion24(db);
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
+                    break;
+                case 23:
+                    upgradeToVersion23(context, db);
+                    break;
+>>>>>>> 69df23d8fe897da2e4190cddc9d9437ea1942817
                 default:
                     break;
             }
@@ -122,8 +136,6 @@ public class ChwRepositoryFlv {
 
 //            EventClientRepository.createTable(db, EventClientRepository.Table.path_reports, EventClientRepository.report_column.values());
             db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_HIA2_STATUS_COL);
-
-            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
 
         } catch (Exception e) {
             Timber.e(e, "upgradeToVersion2 ");
@@ -336,6 +348,28 @@ public class ChwRepositoryFlv {
 
     private static void upgradeToVersion21(SQLiteDatabase db) {
         try {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            DatabaseMigrationUtils.createAddedECTables(db,
+                    new HashSet<>(Arrays.asList("ec_hiv_register", "ec_hiv_community_followup", "ec_hiv_community_feedback", "ec_tb_register", "ec_tb_community_followup", "ec_tb_community_feedback", "ec_hiv_outcome", "ec_tb_outcome")),
+                    ChwApplication.createCommonFtsObject());
+=======
+            db.execSQL("ALTER TABLE ec_family ADD COLUMN event_date VARCHAR; ");
+            // add missing columns
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion21 ");
+        }
+
+        try {
+            db.execSQL("UPDATE ec_family SET event_date = (select min(eventDate) from event where event.baseEntityId = ec_family.base_entity_id and event.eventType = 'Family Registration') where event_date is null;");
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion21 ");
+        }
+
+    }
+<<<<<<< HEAD
+=======
             db.execSQL("ALTER TABLE ec_family ADD COLUMN event_date VARCHAR; ");
             // add missing columns
         } catch (Exception e) {
@@ -349,6 +383,8 @@ public class ChwRepositoryFlv {
         }
 
     }
+=======
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 
     private static void upgradeToVersion22(SQLiteDatabase db) {
         try {
@@ -362,6 +398,20 @@ public class ChwRepositoryFlv {
         }
     }
 
+<<<<<<< HEAD
+    private static void upgradeToVersion23(Context context, SQLiteDatabase db) {
+        try {
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL);
+            db.execSQL(VaccineRepository.UPDATE_TABLE_ADD_IS_VOIDED_COL_INDEX);
+
+            IMDatabaseUtils.accessAssetsAndFillDataBaseForVaccineTypes(context, db);
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+    }
+
+>>>>>>> 69df23d8fe897da2e4190cddc9d9437ea1942817
+=======
     private static void upgradeToVersion23(SQLiteDatabase db) {
         try {
             db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
@@ -371,4 +421,15 @@ public class ChwRepositoryFlv {
         }
     }
 
+
+    private static void upgradeToVersion24(SQLiteDatabase db) {
+        try {
+            DatabaseMigrationUtils.createAddedECTables(db,
+                    new HashSet<>(Arrays.asList("ec_hiv_register", "ec_hiv_community_followup", "ec_hiv_community_feedback", "ec_tb_register", "ec_tb_community_followup", "ec_tb_community_feedback", "ec_hiv_outcome", "ec_tb_outcome")),
+                    ChwApplication.createCommonFtsObject());
+        } catch (Exception e) {
+            Timber.e(e, "upgradeToVersion24");
+        }
+    }
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 }

@@ -2,7 +2,7 @@ package org.smartregister.chw.domain;
 
 import org.smartregister.chw.contract.GuideBooksFragmentContract;
 
-public class GuideBooksFragmentVideo implements GuideBooksFragmentContract.Video {
+public class GuideBooksFragmentVideo implements GuideBooksFragmentContract.RemoteFile {
 
     private String videoID;
     private String title;

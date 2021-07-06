@@ -15,6 +15,7 @@ import org.jeasy.rules.api.Rules;
 import org.smartregister.chw.R;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.dao.AncDao;
+import org.smartregister.chw.core.dao.ChildDao;
 import org.smartregister.chw.core.dao.PNCDao;
 import org.smartregister.chw.core.model.ChildVisit;
 import org.smartregister.chw.core.utils.ChildDBConstants;
@@ -143,6 +144,20 @@ public class ChwMemberRegisterProvider extends FamilyMemberRegisterProvider {
 
         updateDueColumn(viewHolder, baseEntityId);
 
+    }
+
+    @Override
+    protected void populateIdentifierColumn(CommonPersonObjectClient pc, RegisterViewHolder viewHolder) {
+        super.populateIdentifierColumn(pc, viewHolder);
+        String baseEntityId = pc.getCaseId();
+        if (ChwApplication.getApplicationFlavor().showsPhysicallyDisabledView()) {
+            boolean isPhysicallyChallenged = ChildDao.isPhysicallyChallenged(baseEntityId);
+            if (isPhysicallyChallenged) {
+                viewHolder.physicallyChallenged.setVisibility(View.VISIBLE);
+            } else {
+                viewHolder.physicallyChallenged.setVisibility(View.GONE);
+            }
+        }
     }
 
     private void attachPatientOnclickListener(View view, SmartRegisterClient client) {

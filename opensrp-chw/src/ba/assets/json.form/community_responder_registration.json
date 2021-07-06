@@ -50,12 +50,12 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Community Responder details",
+    "title": "{{community_responder_registration.step1.title}}",
     "fields": [
       {
         "key": "responder_label",
         "type": "label",
-        "text": "Add community responder Details",
+        "text": "{{community_responder_registration.step1.responder_label.text}}",
         "left_padding": "20dp",
         "right_padding": "20dp",
         "text_size": "7sp",
@@ -67,15 +67,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "responder_name",
         "type": "edit_text",
-        "hint": "Full name",
+        "hint": "{{community_responder_registration.step1.responder_name.hint}}",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter responder's full name"
+          "err": "{{community_responder_registration.step1.responder_name.v_required.err}}"
         },
         "v_regex": {
           "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
-          "err": "Please enter a valid name"
+          "err": "{{community_responder_registration.step1.responder_name.v_regex.err}}"
         }
       },
       {
@@ -84,18 +84,18 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "responder_phone_number",
         "type": "edit_text",
-        "hint": "Phone number",
+        "hint": "{{community_responder_registration.step1.responder_phone_number.hint}}",
         "v_numeric": {
           "value": "true",
-          "err": "Number must be a total of 10 digits in length"
+          "err": "{{community_responder_registration.step1.responder_phone_number.v_numeric.err}}"
         },
         "v_regex": {
           "value": "(0[0-9]{9})|\\s*",
-          "err": "Number must be 10 digits and must start with 0."
+          "err": "{{community_responder_registration.step1.responder_phone_number.v_regex.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter responder's phone number"
+          "err": "{{community_responder_registration.step1.responder_phone_number.v_required.err}}"
         }
       },
       {
@@ -104,9 +104,10 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "responder_gps",
         "openmrs_data_type": "text",
-        "hint": "normal location",
+        "hint": "{{community_responder_registration.step1.responder_gps.hint}}",
         "type": "gps"
       }
     ]
-  }
+  },
+  "properties_file_name": "community_responder_registration"
 }

@@ -1,0 +1,8 @@
+---
+name: "hiv_community_followup_visit_date_calculation"
+description: "calculating the hiv followup visit date"
+priority: 1
+condition: "true"
+actions:
+  - "hiv_community_followup_visit_date_calculation = System.currentTimeMillis()"
+

@@ -1,0 +1,144 @@
+{
+  "form": "HIV Community Followup Feedback",
+  "count": "1",
+  "encounter_type": "HIV Community Followup Feedback",
+  "entity_id": "",
+  "relational_id": "",
+  "rules_file": "rule/hiv_community_followup_feedback_rules.yml",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "steps": [
+    {
+      "title": "Fomu ya mrejesho wa ufwatiliaji wa mteja wenye HIV",
+      "fields": [
+        {
+          "name": "followup_status",
+          "type": "spinner",
+          "properties": {
+            "text": "Followup Feedback"
+          },
+          "meta_data": {
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "followup_status",
+            "openmrs_entity_parent": ""
+          },
+          "options": [
+            {
+              "name": "continuing_with_services",
+              "text": "Anaendelea na Huduma.",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "continuing_with_services",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "deceased",
+              "text": "Amefariki",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "deceased",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_not_found",
+              "text": "Hapatikani",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_not_found",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_relocated_to_another_location",
+              "text": "Amehamishiwa mahali pengine",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_relocated_to_another_location",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_has_moved",
+              "text": "Amehama",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_has_moved",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_has_absconded",
+              "text": "Amejitoa",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_has_absconded",
+                "openmrs_entity_parent": ""
+              }
+            },
+            {
+              "name": "client_continues_with_clinic_from_elsewhere",
+              "text": "Anaendelea na huduma akitokea mahali pengine",
+              "meta_data": {
+                "openmrs_entity": "concept",
+                "openmrs_entity_id": "client_continues_with_clinic_from_elsewhere",
+                "openmrs_entity_parent": ""
+              }
+            }
+          ],
+          "required_status": "yes:Please select followup feedback",
+          "dependent_calculations": [
+            "hiv_community_followup_visit_date"
+          ]
+        }
+      ]
+    }
+  ]
+}

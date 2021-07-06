@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "Early childhood development (ECD)",
+    "title": "{{early_childhood_development.step1.title}}",
     "fields": [
       {
         "key": "date_pass",
@@ -64,17 +64,17 @@
         "openmrs_entity_id": "1802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Does the child show any warning signs, indicating a potential developmental delay?",
-        "label_info_text": "The different warning signs per age group are:  \n● 0-1 month: the baby shows little movement of arms and legs or little or no reaction to loud sounds or bright lights  \n● 0-6 months: the child shows little or no response to sounds, familiar faces or breast, or shows stiffness or difficulty moving limbs\n● 6-12 months: the child does not look at objects that move or shows listlessness and lack of response to the caregiver\n● 12-24 months: the child has difficulty to keep balance while walking or has injuries or unexplained changes in behavior\n● 24-36 months: the child shows loss of interest in playing, frequently falls and has difficulties in manipulating small objects\n● 36-59 months: the child shows excessive aggression or shyness with friends and family or has trouble communicating needs, thoughts and emotions",
-        "hint": "Does the child show any warning signs, indicating a potential developmental delay?",
+        "label_info_title": "{{early_childhood_development.step1.develop_warning_signs.label_info_title}}",
+        "label_info_text": "{{early_childhood_development.step1.develop_warning_signs.label_info_text}}",
+        "hint": "{{early_childhood_development.step1.develop_warning_signs.hint}}",
         "values": [
+          "{{early_childhood_development.step1.develop_warning_signs.values[0]}}",
+          "{{early_childhood_development.step1.develop_warning_signs.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
-        ],
-        "v_required": {
-          "value": "true",
-          "err": "Please select action"
-        }
+        ]
       },
       {
         "key": "stim_skills",
@@ -83,17 +83,79 @@
         "openmrs_entity_id": "1802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "label_info_title": "Does the caregiver show attitudes and knowledge on stimulation and nurturing care?",
-        "label_info_text": "Specific attitudes and knowledge on stimulation and nurturing care per age group are:  \n     ● 0-1 week: the caregiver engages in skin to skin contact, looks into baby’s eyes and communicates to the child\n     ● 0-6 months: the caregiver moves colorful things for the child to see, smiles, talks and copies the child's sounds and gestures\n     ● 6-9 months: the caregiver gives clean and safe household things to play with, responds to the child's sounds and calls the child's name to see if the child responds\n     ● 9-12 months: the caregiver hides toys (peek-a-boo) and tells the child names of things and people\n     ● 12-24 months: the caregiver gives the child things to stack up and asks the child simple questions\n     ● 2 years and older: the caregiver makes simple toys for the child, teaches stories, songs and games to the child",
-        "hint": "Does the caregiver show attitudes and knowledge on stimulation and nurturing care?",
+        "label_info_title": "{{early_childhood_development.step1.stim_skills.label_info_title}}",
+        "dynamic_label_info": [
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[0].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[0].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[0].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[1].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[1].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[1].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[2].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[2].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[2].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[3].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[3].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[3].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[4].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[4].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[4].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[5].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[5].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[5].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[6].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[6].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[6].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[7].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[7].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[7].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[8].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[8].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[8].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[9].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[9].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[9].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[10].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[10].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[10].dynamic_label_image_src}}"
+          },
+          {
+            "dynamic_label_title": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[11].dynamic_label_title}}",
+            "dynamic_label_text": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[11].dynamic_label_text}}",
+            "dynamic_label_image_src": "{{early_childhood_development.step1.stim_skills.dynamic_label_info[11].dynamic_label_image_src}}"
+          }
+        ],
+        "hint": "{{early_childhood_development.step1.stim_skills.hint}}",
+        "label_is_dynamic": true,
         "values": [
+          "{{early_childhood_development.step1.stim_skills.values[0]}}",
+          "{{early_childhood_development.step1.stim_skills.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
-        ],
-        "v_required": {
-          "value": "true",
-          "err": "Please select action"
-        }
+        ]
       },
       {
         "key": "early_learning",
@@ -102,15 +164,15 @@
         "openmrs_entity_id": "1802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
-        "hint": "Is the child regularly attending an early learning program (formal or not formal)?",
+        "hint": "{{early_childhood_development.step1.early_learning.hint}}",
         "values": [
+          "{{early_childhood_development.step1.early_learning.values[0]}}",
+          "{{early_childhood_development.step1.early_learning.values[1]}}"
+        ],
+        "keys": [
           "Yes",
           "No"
         ],
-        "v_required": {
-          "value": "true",
-          "err": "Please select action"
-        },
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -120,5 +182,6 @@
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "early_childhood_development"
 }

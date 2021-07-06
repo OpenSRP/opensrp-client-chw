@@ -1,6 +1,7 @@
 package org.smartregister.chw.application;
 
 public class ChwApplicationFlv extends DefaultChwApplicationFlv {
+
     @Override
     public boolean hasANC() {
         return false;
@@ -97,6 +98,12 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
     }
 
     @Override
+    public boolean useThinkMd() {
+        return true;
+    }
+
+    @Override
+
     public boolean splitUpcomingServicesView() {
         return true;
     }
@@ -156,4 +163,7 @@ public class ChwApplicationFlv extends DefaultChwApplicationFlv {
     public  boolean showIconsForChildrenUnderTwoAndGirlsAgeNineToEleven(){
         return true;
     }
+
+    @Override
+    public boolean showsPhysicallyDisabledView() { return false; }
 }

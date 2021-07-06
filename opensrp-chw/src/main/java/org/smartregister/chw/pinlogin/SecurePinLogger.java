@@ -165,9 +165,9 @@ public class SecurePinLogger implements PinLogger {
 
                 String userName = getLoggedInUserName();
                 String password = preferences.getString(SecureConstants.PASSWORD, null);
-                boolean isAuthenticated = getUserService().isUserInValidGroup(userName, password);
+                boolean isAuthenticated = false; // getUserService().isUserInValidGroup(userName, password);
                 if (isAuthenticated) {
-                    getUserService().localLogin(userName, password);
+                    //getUserService().localLogin(userName, password);
                 }
 
                 application.getAppExecutors().mainThread().execute(() -> {

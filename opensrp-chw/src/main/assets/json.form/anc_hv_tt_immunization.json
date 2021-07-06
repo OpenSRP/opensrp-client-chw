@@ -47,7 +47,7 @@
     "encounter_location": ""
   },
   "step1": {
-    "title": "TT {0} immunization",
+    "title": "{{anc_hv_tt_immunization.step1.title}}",
     "fields": [
       {
         "key": "tt{0}_date",
@@ -56,14 +56,15 @@
         "openmrs_entity_id": "1418AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "date_picker",
         "image": "form_immunization",
-        "hint": "When was TT {0} immunization done?",
+        "hint": "{{anc_hv_tt_immunization.step1.tt{0}_date.hint}}",
         "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
-          "err": "Please enter the date of immunization"
+          "err": "{{anc_hv_tt_immunization.step1.tt{0}_date.v_required.err}}"
         }
       }
     ]
-  }
+  },
+  "properties_file_name": "anc_hv_tt_immunization"
 }

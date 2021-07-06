@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
@@ -15,6 +16,7 @@ import org.smartregister.chw.activity.FamilyRegisterActivity;
 import org.smartregister.chw.activity.LoginActivity;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.adapter.NavigationAdapter;
+import org.smartregister.chw.core.adapter.NavigationAdapterHost;
 import org.smartregister.chw.core.model.NavigationOption;
 import org.smartregister.chw.util.Constants;
 
@@ -57,7 +59,7 @@ public class NavigationAdapterTest {
 
         Map<String, Class> registeredActivities = new HashMap<>();
         registeredActivities.put(Constants.REGISTERED_ACTIVITIES.FAMILY_REGISTER_ACTIVITY, FamilyRegisterActivity.class);
-        NavigationAdapter adapter = new NavigationAdapter(Arrays.asList(model1, model2), activity, registeredActivities);
+        NavigationAdapter adapter = new NavigationAdapter(Arrays.asList(model1, model2), activity, registeredActivities, Mockito.mock(NavigationAdapterHost.class));
 
         Assert.assertEquals(adapter.getItemCount(), 2);
     }

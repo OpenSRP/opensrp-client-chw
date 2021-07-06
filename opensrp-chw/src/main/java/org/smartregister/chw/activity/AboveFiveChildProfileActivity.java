@@ -12,6 +12,7 @@ import org.smartregister.chw.BuildConfig;
 import org.smartregister.chw.R;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.activity.CoreAboveFiveChildProfileActivity;
+import org.smartregister.chw.core.contract.CoreChildProfileContract;
 import org.smartregister.chw.core.model.CoreChildProfileModel;
 import org.smartregister.chw.core.utils.CoreConstants;
 import org.smartregister.chw.custom_view.FamilyMemberFloatingMenu;
@@ -26,7 +27,7 @@ import java.util.List;
 
 import static org.smartregister.chw.util.Constants.MALARIA_REFERRAL_FORM;
 
-public class AboveFiveChildProfileActivity extends CoreAboveFiveChildProfileActivity {
+public class AboveFiveChildProfileActivity extends CoreAboveFiveChildProfileActivity implements CoreChildProfileContract.Flavor {
     public FamilyMemberFloatingMenu familyFloatingMenu;
     private List<ReferralTypeModel> referralTypeModels = new ArrayList<>();
     private ChildProfileActivity.Flavor flavor = new ChildProfileActivityFlv();
@@ -68,7 +69,7 @@ public class AboveFiveChildProfileActivity extends CoreAboveFiveChildProfileActi
             familyName = "";
         }
 
-        presenter = new AboveFiveChildProfilePresenter(this, new CoreChildProfileModel(familyName), childBaseEntityId);
+        presenter = new AboveFiveChildProfilePresenter(this, this, new CoreChildProfileModel(familyName), childBaseEntityId);
     }
 
     @Override
@@ -159,4 +160,12 @@ public class AboveFiveChildProfileActivity extends CoreAboveFiveChildProfileActi
         }
     }
 
+    @Override
+    public void togglePhysicallyDisabled(boolean show) {
+        if (show) {
+            physicallyChallenged.setVisibility(View.VISIBLE);
+        } else {
+            physicallyChallenged.setVisibility(View.GONE);
+        }
+    }
 }

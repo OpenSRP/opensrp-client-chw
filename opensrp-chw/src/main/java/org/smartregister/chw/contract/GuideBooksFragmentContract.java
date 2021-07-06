@@ -14,21 +14,21 @@ public interface GuideBooksFragmentContract {
 
         Presenter getPresenter();
 
-        void onDataReceived(List<Video> videos);
+        void onDataReceived(List<RemoteFile> videos);
 
         @Nullable
         Context getViewContext();
 
         void displayLoadingState(boolean state);
 
-        void playVideo(Video video);
+        void openFile(RemoteFile remoteFile);
 
-        void downloadVideo(DownloadListener downloadListener, Video video);
+        void downloadFile(DownloadListener downloadListener, RemoteFile video);
     }
 
     interface Presenter {
 
-        void initialize();
+        void initialize(String fileName, String directory);
 
         @Nullable View getView();
 
@@ -43,16 +43,16 @@ public interface GuideBooksFragmentContract {
 
     interface Interactor {
 
-        void getVideos(Context context, InteractorCallBack callBack);
+        void getFiles(Context context, String fileName, String directory, InteractorCallBack callBack);
 
     }
 
     interface InteractorCallBack {
 
-        void onDataFetched(List<Video> videos);
+        void onDataFetched(List<RemoteFile> videos);
     }
 
-    interface Video {
+    interface RemoteFile {
 
         String getID();
 

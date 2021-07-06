@@ -54,7 +54,7 @@
     <string name="profile_activity_not_visited">Marked not visited on %s</string>
 
     <string name="cancel">CANCEL</string>
-    <string name="submit">SUBMIT</string>
+    <string name="submit">SAVE</string>
 
     <string name="dose_not_given">DOSE NOT GIVEN</string>
     <string name="has_birt_cert">Has birth certificate?</string>
@@ -292,6 +292,8 @@
     <string name="pnc_indicator_7">Newborns with no danger signs in their last PNC home visit</string>
     <string name="pnc_indicator_8">Postpartum women\'s chosen family planning methods (last 6 months)</string>
     <string name="pnc_indicator_9">Newborns (0&#8211;28 days) who died in the last year</string>
+    <string name="pnc_indicator_10">Women up to date with their PNC health facility visits</string>
+    <string name="physically_challenged">PHYSICALLY CHALLENGED</string>
 
     <string name="maternal_deaths_slice_label">Maternal deaths</string>
     <string name="other_wra_deaths_slice_label">Other WRA deaths</string>
@@ -378,6 +380,7 @@
     <string name="sick_visit">Sick Visit</string>
     <string name="reports">Reports</string>
 
+
     <string name="eligible_children">Eligible Children</string>
     <string name="doses_needed">Doses Needed</string>
     <string name="community_activity">My Community Activity</string>
@@ -388,29 +391,61 @@
     <string name="enter_pin_for_user">Enter pin for %s</string>
     <string name="use_4_digit_pin_number_promt">You can use a 4 digit pin number to make logging in faster</string>
 
-    <!-- All Clients -->
-    <string name="add_client">Add client</string>
-
     <!--    Unified Referral Forms-->
     <string name="hiv_referral">Clinic of Treatment and Care</string>
     <string name="tb_referral">Clinic Of Tuberculosis Treatment</string>
     <string name="gbv_referral">Gender Based Violence Referral</string>
     <string name="child_gbv_referral">Child Gender Based Violence Referral</string>
-    <string name="client_registration" >Client Registration</string>
     <string name="error_opening_profile">Error opening client profile</string>
     <string name="location_details">Location Details</string>
-    <string name="update_client_registration" >Update Client Details</string>
+    <string name="client_registration">Client Registration</string>
+    <string name="update_client_registration">Update Client Details</string>
 
     <!---Anc Home Visit Strings -->
     <string name="anc_home_visit_pregnancy_risk">Pregnancy risk</string>
     <string name="loading_content">Loading content</string>
 
+    <!--    thindmd integration-->
+    <string name="thinkmd_assessment_saved">ThinkMD health assessment saved</string>
     <string name="ten_digits_validation">Number must be 10 digits</string>
     <string name="select_cha">Select CHAs</string>
     <string name="select_options">Select options</string>
+    <string name="update">Update</string>
 
     <!--Child Profile Strings -->
     <string name="family_has_nothing_else_due">Family has nothing else due</string>
+<<<<<<< HEAD
+    <string name="hint_kit_type">What type of kit has the family received?</string>
+    <string name="simple_kit_hint">Simple Kit (ORS/ZINC and Paracetamol)</string>
+    <string name="simple_kit_with_micro_hint">Simple Kit (ORS/ZINC and Paracetamol) with micronutrients</string>
+    <string name="no_kit_received_hint">No kit received</string>
+    <string name="kit_been_used_hint">Has the kit been used?</string>
+    <string name="family_kit">Family Kit</string>
+
+    <string name="drc_minimum_dietary_choice_0">0 - None of the 4 products</string>
+    <string name="drc_minimum_dietary_choice_1">1 - Only 1 of the 4 products</string>
+    <string name="drc_minimum_dietary_choice_2">2 - Only 2 of the 4 products</string>
+    <string name="drc_minimum_dietary_choice_3">3 - Only 3 of the 4 products</string>
+    <string name="drc_minimum_dietary_choice_4">4 - All 4 of the products</string>
+
+    <string name="anc_home_visit_delivery_kit_received">Delivery kit received</string>
+    <string name="delivery_kit">Delivery kit</string>
+    <string name="select_one_option">Please select one option</string>
+    <string name="family_profile_title">%1$s Family</string>
+    <string name="family_profile_title_with_firstname">%1$s %2$s Family</string>
+    <string name="created">Created: %s</string>
+    <string name="export_database">Export Database</string>
+    <string name="export_db_notification">Exporting Database</string>
+    <string name="export_db_done_notification">Exporting Database Complete</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="counseling">Counseling</string>
+    <string name="reset_pin_login">Reset Pin Login</string>
+    <string name="birth_certificate_num_error_msg">Birth certificate number must be unique and cannot exceed 15 digits.</string>
+    
+    <string name="unauthorized_group">This account is not allowed to access this device</string>
+
+=======
 
     <string name="created">Created: %s</string>
+>>>>>>> 939cab83bf354adff709f1c84ad320faf058d44c
 </resources>
