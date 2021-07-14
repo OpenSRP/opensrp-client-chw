@@ -1,0 +1,456 @@
+[
+  {
+    "type": "Vitamin A",
+    "service_logic": "",
+    "service_group": "child",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "86339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "13",
+        "name": "Vitamin A1",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "14",
+        "name": "Vitamin A2",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A1",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "15",
+        "name": "Vitamin A3",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A2",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "16",
+        "name": "Vitamin A4",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A3",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "17",
+        "name": "Vitamin A5",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A4",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "18",
+        "name": "Vitamin A6",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A5",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "19",
+        "name": "Vitamin A7",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A6",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "20",
+        "name": "Vitamin A8",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A7",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "21",
+        "name": "Vitamin A9",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A8",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "Deworming",
+    "service_logic": "",
+    "service_group": "child",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "159922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "22",
+        "name": "Deworming 1",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+1y"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "23",
+        "name": "Deworming 2",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 1",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "24",
+        "name": "Deworming 3",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 2",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "25",
+        "name": "Deworming 4",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 3",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "26",
+        "name": "Deworming 5",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 4",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "27",
+        "name": "Deworming 6",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 5",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "28",
+        "name": "Deworming 7",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 6",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "29",
+        "name": "Deworming 8",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 7",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "IPTp-SP",
+    "service_logic": "",
+    "service_group": "woman",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "159922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "30",
+        "name": "IPTp-SP dose 1",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+91d"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "31",
+        "name": "IPTp-SP dose 2",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "IPTp-SP dose 1",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "32",
+        "name": "IPTp-SP dose 3",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "IPTp-SP dose 2",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "MNP",
+    "service_logic": "",
+    "service_group": "child",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "165417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "7",
+        "name": "MNP1",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "8",
+        "name": "MNP2",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 1",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "9",
+        "name": "MNP3",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 2",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "10",
+        "name": "MNP4",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 3",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "11",
+        "name": "MNP5",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 4",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "12",
+        "name": "MNP6",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 5",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      }
+    ]
+  }
+]

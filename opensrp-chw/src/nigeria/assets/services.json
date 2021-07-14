@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Recurring Services",
+    "id": "Recurring_Services",
+    "services": [
+      {
+        "type": "Vitamin A"
+      },
+      {
+        "type": "Deworming"
+      },
+      {
+        "type": "IPTp-SP"
+      },
+      {
+        "type": "MNP"
+      }
+    ]
+  }
+]

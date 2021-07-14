@@ -41,6 +41,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="updating">Updating....</string>
     <string name="birth_certification">Birth certification</string>
+    <string name="disability">Disability</string>
     <string name="observations_illness_episodes"><![CDATA[Observations & Illness - <i>optional</i>]]></string>
     <string name="observations_illness_episodes_medical"><![CDATA[Observations & Illness Episodes]]></string>
     <string name="home_visit_suffix"> &#183; Home Visit</string>

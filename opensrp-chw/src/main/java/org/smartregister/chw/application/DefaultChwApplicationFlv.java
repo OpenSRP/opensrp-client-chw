@@ -299,4 +299,9 @@ public abstract class DefaultChwApplicationFlv implements ChwApplication.Flavor 
     public boolean showsPhysicallyDisabledView() {
         return true;
     }
+
+    @Override
+    public boolean launchWashCheckOnNativeForm() {
+        return false;
+    }
 }

@@ -1,0 +1,518 @@
+{
+  "count": "2",
+  "encounter_type": "Family Registration",
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "{{family_register.step1.title}}",
+    "fields": [
+      {
+        "key": "fam_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "first_name",
+        "type": "edit_text",
+        "hint": "{{family_register.step1.fam_name.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step1.fam_name.v_required.err}}"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
+          "err": "{{family_register.step1.fam_name.v_regex.err}}"
+        }
+      },
+      {
+        "key": "unique_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_identifier",
+        "openmrs_entity_id": "opensrp_id",
+        "type": "barcode",
+        "hint": "{{family_register.step1.unique_id.hint}}",
+        "scanButtonText": "{{family_register.step1.unique_id.scanButtonText}}",
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step1.unique_id.v_numeric.err}}"
+        },
+        "hidden": "true",
+        "barcode_type": "qrcode"
+      },
+      {
+        "key": "village_town",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "cityVillage",
+        "type": "edit_text",
+        "hint": "{{family_register.step1.village_town.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step1.village_town.v_required.err}}"
+        }
+      },
+      {
+        "key": "quarter_clan",
+        "type": "edit_text",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "commune",
+        "hint": "{{family_register.step1.quarter_clan.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step1.quarter_clan.v_required.err}}"
+        }
+      },
+      {
+        "key": "street",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "street",
+        "type": "edit_text",
+        "hint": "{{family_register.step1.street.hint}}"
+      },
+      {
+        "key": "landmark",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "landmark",
+        "type": "edit_text",
+        "hint": "{{family_register.step1.landmark.hint}}"
+      },
+      {
+        "key": "gps",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "163277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "gps",
+        "openmrs_data_type": "text"
+      },
+      {
+        "key": "spacer",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "spacer",
+        "spacer_height": "15dp"
+      },
+      {
+        "key": "fam_source_income",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "fam_source_income",
+        "hint": "{{family_register.step1.fam_source_income.hint}}",
+        "type": "spinner",
+        "openmrs_data_type": "",
+        "values": [
+          "{{family_register.step1.fam_source_income.values[0]}}",
+          "{{family_register.step1.fam_source_income.values[1]}}",
+          "{{family_register.step1.fam_source_income.values[2]}}",
+          "{{family_register.step1.fam_source_income.values[3]}}",
+          "{{family_register.step1.fam_source_income.values[4]}}",
+          "{{family_register.step1.fam_source_income.values[5]}}",
+          "{{family_register.step1.fam_source_income.values[6]}}",
+          "{{family_register.step1.fam_source_income.values[7]}}",
+          "{{family_register.step1.fam_source_income.values[8]}}",
+          "{{family_register.step1.fam_source_income.values[9]}}",
+          "{{family_register.step1.fam_source_income.values[10]}}"
+        ],
+        "keys": [
+          "Petty trade",
+          "Agriculture, hunting and fishing",
+          "Exploitation of mines and quarries",
+          "Manufacturing industry",
+          "Construction",
+          "Electricity, gas and water",
+          "Commercial, hotels and restaurants",
+          "Transport, storage and communications",
+          "Financial institutions",
+          "Communication, social and personal services",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Petty trade": "1539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Agriculture, hunting and fishing": "165411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Exploitation of mines and quarries": "165412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Manufacturing industry": "165407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Construction": "165408AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Electricity, gas and water": "165409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Commercial, hotels and restaurants": "165410AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Transport, storage and communications": "165413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Financial institutions": "165414AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Communication, social and personal services": "165415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      }
+    ],
+    "next": "step2"
+  },
+  "validate_on_submit": true,
+  "show_errors_on_submit": false,
+  "step2": {
+    "title": "{{family_register.step2.title}}",
+    "fields": [
+      {
+        "key": "photo",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "choose_image",
+        "uploadButtonText": "{{family_register.step2.photo.uploadButtonText}}"
+      },
+      {
+        "key": "unique_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_identifier",
+        "openmrs_entity_id": "opensrp_id",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.unique_id.hint}}",
+        "value": "0",
+        "read_only": "true",
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step2.unique_id.v_numeric.err}}"
+        },
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.unique_id.v_required.err}}"
+        }
+      },
+      {
+        "key": "national_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "163084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "label_info_text": "{{family_register.step2.national_id.label_info_text}}",
+        "label_info_title": "{{family_register.step2.national_id.label_info_title}}",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.national_id.hint}}",
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step2.national_id.v_numeric.err}}"
+        }
+      },
+      {
+        "key": "surname",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.surname.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.surname.v_required.err}}"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
+          "err": "{{family_register.step2.surname.v_regex.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "family-register-relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "same_as_fam_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "check_box",
+        "label": "{{family_register.step2.same_as_fam_name.label}}",
+        "options": [
+          {
+            "key": "same_as_fam_name",
+            "text": "{{family_register.step2.same_as_fam_name.options.same_as_fam_name.text}}",
+            "text_size": "18px",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "key": "surname_calculation",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "last_name",
+        "type": "edit_text",
+        "hidden": true,
+        "hint": "{{family_register.step2.surname_calculation.hint}}",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "family-register-calculation.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "first_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "first_name",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.first_name.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.first_name.v_required.err}}"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
+          "err": "{{family_register.step2.first_name.v_regex.err}}"
+        }
+      },
+      {
+        "key": "middle_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "middle_name",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.middle_name.hint}}",
+        "edit_type": "name",
+        "v_regex": {
+          "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
+          "err": "{{family_register.step2.middle_name.v_regex.err}}"
+        }
+      },
+      {
+        "key": "dob",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "birthdate",
+        "type": "date_picker",
+        "hint": "{{family_register.step2.dob.hint}}",
+        "expanded": false,
+        "duration": {
+          "label": "{{family_register.step2.dob.duration.label}}"
+        },
+        "min_date": "today-120y",
+        "max_date": "today-15y",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.dob.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "family-register-relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "dob_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "birthdateApprox",
+        "type": "check_box",
+        "label": "{{family_register.step2.dob_unknown.label}}",
+        "options": [
+          {
+            "key": "dob_unknown",
+            "text": "{{family_register.step2.dob_unknown.options.dob_unknown.text}}",
+            "text_size": "18px",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "key": "age",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "age_entered",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.age.hint}}",
+        "v_numeric_integer": {
+          "value": "true",
+          "err": "{{family_register.step2.age.v_numeric_integer.err}}"
+        },
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step2.age.v_numeric.err}}"
+        },
+        "v_min": {
+          "value": "15",
+          "err": "{{family_register.step2.age.v_min.err}}"
+        },
+        "v_max": {
+          "value": "120",
+          "err": "{{family_register.step2.age.v_max.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "family-register-relevance.yml"
+            }
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{family_register.step2.age.v_required.err}}"
+        }
+      },
+      {
+        "key": "sex",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "gender",
+        "type": "spinner",
+        "hint": "{{family_register.step2.sex.hint}}",
+        "values": [
+          "{{family_register.step2.sex.values[0]}}",
+          "{{family_register.step2.sex.values[1]}}"
+        ],
+        "keys": [
+          "Male",
+          "Female"
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.sex.v_required.err}}"
+        }
+      },
+      {
+        "key": "phone_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.phone_number.hint}}",
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step2.phone_number.v_numeric.err}}"
+        },
+        "v_required": {
+          "value": false,
+          "err": "{{family_register.step2.phone_number.v_required.err}}"
+        },
+        "v_regex": {
+          "value": "(0[0-9]{10})|\\s*",
+          "err": "{{family_register.step2.phone_number.v_regex.err}}"
+        },
+        "value": "0"
+      },
+      {
+        "key": "other_phone_number",
+        "openmrs_entity_parent": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "edit_text",
+        "hint": "{{family_register.step2.other_phone_number.hint}}",
+        "v_numeric": {
+          "value": "true",
+          "err": "{{family_register.step2.other_phone_number.v_numeric.err}}"
+        },
+        "v_regex": {
+          "value": "(0[0-9]{10})|\\s*",
+          "err": "{{family_register.step2.other_phone_number.v_regex.err}}"
+        }
+      },
+      {
+        "key": "highest_edu_level",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{family_register.step2.highest_edu_level.hint}}",
+        "values": [
+          "{{family_register.step2.highest_edu_level.values[0]}}",
+          "{{family_register.step2.highest_edu_level.values[1]}}",
+          "{{family_register.step2.highest_edu_level.values[2]}}",
+          "{{family_register.step2.highest_edu_level.values[3]}}",
+          "{{family_register.step2.highest_edu_level.values[4]}}"
+        ],
+        "keys": [
+          "None",
+          "Literacy",
+          "Primary",
+          "Secondary",
+          "University"
+        ],
+        "openmrs_choice_ids": {
+          "None": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Literacy": "",
+          "Primary": "1713AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Secondary": "1714AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "University": "159785AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      },
+      {
+        "key": "marital_status",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{family_register.step2.marital_status.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_register.step2.marital_status.v_required.err}}"
+        },
+        "values": [
+          "{{family_register.step2.marital_status.values[0]}}",
+          "{{family_register.step2.marital_status.values[1]}}",
+          "{{family_register.step2.marital_status.values[2]}}",
+          "{{family_register.step2.marital_status.values[3]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Married": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Co-habiting": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Single": "5615AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Widowed": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      }
+    ]
+  },
+  "properties_file_name": "family_register"
+}

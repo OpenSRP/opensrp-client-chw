@@ -614,6 +614,8 @@ public class ChwApplication extends CoreChwApplication implements SyncStatusBroa
         Map<String, String[]> getFTSSearchMap();
 
         Map<String, String[]> getFTSSortMap();
+
+        boolean launchWashCheckOnNativeForm();
     }
 
 }

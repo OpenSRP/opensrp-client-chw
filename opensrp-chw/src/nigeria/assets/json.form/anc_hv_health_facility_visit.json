@@ -1,0 +1,238 @@
+{
+  "count": "1",
+  "encounter_type": "Home Visit - ANC 1 health facility visit",
+  "entity_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": ""
+  },
+  "step1": {
+    "title": "{{anc_hv_health_facility_visit.step1.title}}",
+    "fields": [
+      {
+        "key": "anc_hf_visit",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "label_info_title": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.label_info_title}}",
+        "label_info_text": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.label_info_text}}",
+        "type": "spinner",
+        "hint": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.hint}}",
+        "values": [
+          "{{anc_hv_health_facility_visit.step1.anc_hf_visit.values[0]}}",
+          "{{anc_hv_health_facility_visit.step1.anc_hf_visit.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.anc_hf_visit.v_required.err}}"
+        }
+      },
+      {
+        "key": "anc_hf_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "159590AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "label_info_title": "Date de la visite",
+        "label_info_text": "La date de la dernière visite CPN de la femme visitée à la structure de santé.",
+        "type": "date_picker",
+        "label": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.label}}",
+        "hint": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.hint}}",
+        "expanded": false,
+        "min_date": "today-10y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.anc_hf_visit_date.v_required.err}}"
+        },
+        "relevance": {
+          "step1:anc_hf_visit": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "weight",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "edit_text",
+        "label_info_title": "{{anc_hv_health_facility_visit.step1.weight.label_info_title}}",
+        "label_info_text": "{{anc_hv_health_facility_visit.step1.weight.label_info_text}}",
+        "edit_type": "number",
+        "hint": "{{anc_hv_health_facility_visit.step1.weight.hint}}",
+        "v_required": {
+          "value": "false",
+          "err": "{{anc_hv_health_facility_visit.step1.weight.v_required.err}}"
+        },
+        "v_numeric": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.weight.v_numeric.err}}"
+        },
+        "v_min": {
+          "value": "30",
+          "err": "{{anc_hv_health_facility_visit.step1.weight.v_min.err}}"
+        },
+        "v_max": {
+          "value": "200",
+          "err": "{{anc_hv_health_facility_visit.step1.weight.v_max.err}}"
+        },
+        "relevance": {
+          "step1:anc_hf_visit": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "anc_hf_next_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "anc_hf_next_visit_date",
+        "type": "spacer"
+      },
+      {
+        "key": "ifa_received",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "104677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "spinner",
+        "label_info_title": "{{anc_hv_health_facility_visit.step1.ifa_received.label_info_title}}",
+        "label_info_text": "{{anc_hv_health_facility_visit.step1.ifa_received.label_info_text}}",
+        "hint": "{{anc_hv_health_facility_visit.step1.ifa_received.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.ifa_received.v_required.err}}"
+        },
+        "v_numeric": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.ifa_received.v_numeric.err}}"
+        },
+        "values": [
+          "{{anc_hv_health_facility_visit.step1.ifa_received.values[0]}}",
+          "{{anc_hv_health_facility_visit.step1.ifa_received.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:anc_hf_visit": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "tests_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "check_box",
+        "label": "{{anc_hv_health_facility_visit.step1.tests_done.label}}",
+        "label_text_style": "normal",
+        "text_color": "#C0C0C0",
+        "exclusive": [
+          "chk_none"
+        ],
+        "options": [
+          {
+            "key": "chk_none",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_none.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "chk_urine",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_urine.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "161156AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "chk_hiv",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_hiv.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "chk_syphilis",
+            "text": "{{anc_hv_health_facility_visit.step1.tests_done.options.chk_syphilis.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_hv_health_facility_visit.step1.tests_done.v_required.err}}"
+        },
+        "relevance": {
+          "step1:anc_hf_visit": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "confirmed_visits",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "confirmed_visits",
+        "type": "spacer",
+        "read_only": "true",
+        "hidden": "true",
+        "value": "0"
+      }
+    ]
+  },
+  "properties_file_name": "anc_hv_health_facility_visit"
+}

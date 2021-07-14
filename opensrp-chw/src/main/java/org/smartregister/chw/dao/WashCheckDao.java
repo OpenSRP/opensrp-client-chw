@@ -18,6 +18,15 @@ import static org.mvel2.DataConversion.convert;
 
 public class WashCheckDao extends AbstractDao {
 
+    public static List<String> getLastWashCheckVisitId(String familyBaseEntityID) {
+        String sql = "SELECT visit_id FROM visits WHERE visit_type = 'WASH check' AND " +
+                "base_entity_id = '" + familyBaseEntityID + "' order by created_at ASC";
+
+        DataMap<String> dataMap = c -> getCursorValue(c, "visit_id");
+
+        return AbstractDao.readData(sql, dataMap);
+    }
+
     public static long getLastWashCheckDate(String familyBaseEntityID) {
         String sql = "select CASE WHEN created_at <= visit_date THEN created_at ELSE visit_date END wash_check_date from visits where visit_type = 'WASH check' and " +
                 "base_entity_id = '" + familyBaseEntityID + "' order by created_at desc limit 1";

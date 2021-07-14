@@ -1,0 +1,284 @@
+{
+  "count": "1",
+  "encounter_type": "Disability",
+  "entity_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": ""
+  },
+  "step1": {
+    "title": "{{child_disability.step1.title}}",
+    "fields": [
+      {
+        "key": "any_disability",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "anyDisability",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.any_disability.hint}}",
+        "values": [
+          "{{child_disability.step1.any_disability.values[0]}}",
+          "{{child_disability.step1.any_disability.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.any_disability.v_required.err}}"
+        }
+      },
+      {
+        "key": "visually_impaired",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "visuallyImpaired",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.visually_impaired.hint}}",
+        "values": [
+          "{{child_disability.step1.visually_impaired.values[0]}}",
+          "{{child_disability.step1.visually_impaired.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:any_disability": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.visually_impaired.v_required.err}}"
+        }
+      },
+      {
+        "key": "disability_impact_visually_impaired",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "disabilityImpactVisuallyImpaired",
+        "openmrs_data_type": "select one",
+        "hint": "{{child_disability.step1.disability_impact_visually_impaired.hint}}",
+        "type": "spinner",
+        "values": [
+          "{{child_disability.step1.disability_impact_visually_impaired.values[0]}}",
+          "{{child_disability.step1.disability_impact_visually_impaired.values[1]}}",
+          "{{child_disability.step1.disability_impact_visually_impaired.values[2]}}",
+          "{{child_disability.step1.disability_impact_visually_impaired.values[3]}}"
+        ],
+        "relevance": {
+          "step1:visually_impaired": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.disability_impact_visually_impaired.v_required.err}}"
+        }
+      },
+      {
+        "key": "hearing_impaired",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "hearingImpaired",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.hearing_impaired.hint}}",
+        "values": [
+          "{{child_disability.step1.hearing_impaired.values[0]}}",
+          "{{child_disability.step1.hearing_impaired.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:any_disability": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.hearing_impaired.v_required.err}}"
+        }
+      },
+      {
+        "key": "disability_impact_hearing",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "disabilityImpactHearing",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.disability_impact_hearing.hint}}",
+        "values": [
+          "{{child_disability.step1.disability_impact_hearing.values[0]}}",
+          "{{child_disability.step1.disability_impact_hearing.values[1]}}",
+          "{{child_disability.step1.disability_impact_hearing.values[2]}}",
+          "{{child_disability.step1.disability_impact_hearing.values[3]}}"
+        ],
+        "relevance": {
+          "step1:hearing_impaired": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.disability_impact_hearing.v_required.err}}"
+        }
+      },
+      {
+        "key": "difficulty_walking",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "difficultyWalking",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.difficulty_walking.hint}}",
+        "values": [
+          "{{child_disability.step1.difficulty_walking.values[0]}}",
+          "{{child_disability.step1.difficulty_walking.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:any_disability": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.difficulty_walking.v_required.err}}"
+        }
+      },
+      {
+        "key": "disability_impact_walking",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "disabilityImpactWalking",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.disability_impact_walking.hint}}",
+        "values": [
+          "{{child_disability.step1.disability_impact_walking.values[0]}}",
+          "{{child_disability.step1.disability_impact_walking.values[1]}}",
+          "{{child_disability.step1.disability_impact_walking.values[2]}}",
+          "{{child_disability.step1.disability_impact_walking.values[3]}}"
+        ],
+        "relevance": {
+          "step1:difficulty_walking": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.disability_impact_walking.v_required.err}}"
+        }
+      },
+      {
+        "key": "learning_disability",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "learningDisability",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.learning_disability.hint}}",
+        "values": [
+          "{{child_disability.step1.learning_disability.values[0]}}",
+          "{{child_disability.step1.learning_disability.values[1]}}"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:any_disability": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.learning_disability.v_required.err}}"
+        }
+      },
+      {
+        "key": "disability_impact_learning",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "disabilityImpactLearning",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{child_disability.step1.disability_impact_learning.hint}}",
+        "values": [
+          "{{child_disability.step1.disability_impact_learning.values[0]}}",
+          "{{child_disability.step1.disability_impact_learning.values[1]}}",
+          "{{child_disability.step1.disability_impact_learning.values[2]}}",
+          "{{child_disability.step1.disability_impact_learning.values[3]}}"
+        ],
+        "relevance": {
+          "step1:learning_disability": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{child_disability.step1.disability_impact_learning.v_required.err}}"
+        }
+      }
+    ]
+  },
+  "properties_file_name": "child_disability"
+}

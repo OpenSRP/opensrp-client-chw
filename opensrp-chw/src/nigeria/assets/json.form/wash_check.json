@@ -1,0 +1,347 @@
+{
+  "count": "1",
+  "encounter_type": "WASH check",
+  "entity_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": ""
+  },
+  "step1": {
+    "title": "{{wash_check.step1.title}}",
+    "fields": [
+      {
+        "key": "handwash_facility",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "164863AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{wash_check.step1.handwash_facility.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.handwash_facility.label_info_text}}",
+        "hint": "{{wash_check.step1.handwash_facility.hint}}",
+        "values": [
+          "{{wash_check.step1.handwash_facility.values[0]}}",
+          "{{wash_check.step1.handwash_facility.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{wash_check.step1.handwash_facility.v_required.err}}"
+        }
+      },
+      {
+        "key": "handwash_soap",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{wash_check.step1.handwash_soap.label_info_title}}",
+        "hint": "{{wash_check.step1.handwash_soap.hint}}",
+        "label_info_text": "{{wash_check.step1.handwash_soap.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.handwash_soap.values[0]}}",
+          "{{wash_check.step1.handwash_soap.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:handwash_facility": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "clean_drinking_water",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{wash_check.step1.clean_drinking_water.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.clean_drinking_water.label_info_text}}",
+        "hint": "{{wash_check.step1.clean_drinking_water.hint}}",
+        "values": [
+          "{{wash_check.step1.clean_drinking_water.values[0]}}",
+          "{{wash_check.step1.clean_drinking_water.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{wash_check.step1.clean_drinking_water.v_required.err}}"
+        }
+      },
+      {
+        "key": "drinking_water_source",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{wash_check.step1.drinking_water_source.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.drinking_water_source.label_info_text}}",
+        "hint": "{{wash_check.step1.drinking_water_source.hint}}",
+        "values": [
+          "{{wash_check.step1.drinking_water_source.values[0]}}",
+          "{{wash_check.step1.drinking_water_source.values[1]}}",
+          "{{wash_check.step1.drinking_water_source.values[2]}}",
+          "{{wash_check.step1.drinking_water_source.values[3]}}",
+          "{{wash_check.step1.drinking_water_source.values[4]}}",
+          "{{wash_check.step1.drinking_water_source.values[5]}}"
+        ],
+        "keys": [
+          "Piped Water through tap",
+          "Protected Dug Well",
+          "Unprotected Well",
+          "Rainwater harvesting",
+          "Open surface water (River, Dam, Lake, Pond, Stream, Canal",
+          "OTHER ( SPECIFY)"
+        ],
+        "relevance": {
+          "step1:clean_drinking_water": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "water_source_location",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{wash_check.step1.water_source_location.hint}}",
+        "label_info_title": "{{wash_check.step1.water_source_location.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.water_source_location.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.water_source_location.values[0]}}",
+          "{{wash_check.step1.water_source_location.values[1]}}",
+          "{{wash_check.step1.water_source_location.values[2]}}"
+        ],
+        "keys": [
+          "In Own house/dwelling",
+          "From Neighbour house",
+          "COMMUNITY/PUBLIC SOURCE"
+        ],
+        "relevance": {
+          "step1:clean_drinking_water": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "drinking_water_safety",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{wash_check.step1.drinking_water_safety.hint}}",
+        "label_info_title": "{{wash_check.step1.drinking_water_safety.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.drinking_water_safety.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.drinking_water_safety.values[0]}}",
+          "{{wash_check.step1.drinking_water_safety.values[1]}}",
+          "{{wash_check.step1.drinking_water_safety.values[2]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No",
+          "DK"
+        ],
+        "relevance": {
+          "step1:clean_drinking_water": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "hygienic_latrine",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "label_info_title": "{{wash_check.step1.hygienic_latrine.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.hygienic_latrine.label_info_text}}",
+        "hint": "{{wash_check.step1.hygienic_latrine.hint}}",
+        "values": [
+          "{{wash_check.step1.hygienic_latrine.values[0]}}",
+          "{{wash_check.step1.hygienic_latrine.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{wash_check.step1.hygienic_latrine.v_required.err}}"
+        }
+      },
+      {
+        "key": "type_of_toilet",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{wash_check.step1.type_of_toilet.hint}}",
+        "label_info_title": "{{wash_check.step1.type_of_toilet.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.type_of_toilet.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.type_of_toilet.values[0]}}",
+          "{{wash_check.step1.type_of_toilet.values[1]}}",
+          "{{wash_check.step1.type_of_toilet.values[2]}}",
+          "{{wash_check.step1.type_of_toilet.values[3]}}",
+          "{{wash_check.step1.type_of_toilet.values[4]}}",
+          "{{wash_check.step1.type_of_toilet.values[5]}}",
+          "{{wash_check.step1.type_of_toilet.values[6]}}",
+          "{{wash_check.step1.type_of_toilet.values[7]}}",
+          "{{wash_check.step1.type_of_toilet.values[8]}}"
+        ],
+        "keys": [
+          "Pour Latrine flush to Pit",
+          "Pour Latrine flush to Septic Tank/Sewer",
+          "Pour Latrine flush To Open Drain",
+          "Pit Latrine with Slab",
+          "Pit Latrine Without Slab /",
+          "No Facility / Bush / Field",
+          "Other (Specify)",
+          "Open Drain",
+          "DK"
+        ],
+        "relevance": {
+          "step1:hygienic_latrine": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "toilet_location",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{wash_check.step1.toilet_location.hint}}",
+        "label_info_title": "{{wash_check.step1.toilet_location.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.toilet_location.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.toilet_location.values[0]}}",
+          "{{wash_check.step1.toilet_location.values[1]}}",
+          "{{wash_check.step1.toilet_location.values[2]}}"
+        ],
+        "keys": [
+          "In Own Dwelling/house",
+          "At Neighbor house",
+          "Community Toilet"
+        ],
+        "relevance": {
+          "step1:hygienic_latrine": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      },
+      {
+        "key": "toilet_safe_disability",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{wash_check.step1.toilet_safe_disability.hint}}",
+        "label_info_title": "{{wash_check.step1.toilet_safe_disability.label_info_title}}",
+        "label_info_text": "{{wash_check.step1.toilet_safe_disability.label_info_text}}",
+        "values": [
+          "{{wash_check.step1.toilet_safe_disability.values[0]}}",
+          "{{wash_check.step1.toilet_safe_disability.values[1]}}"
+        ],
+        "keys": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:hygienic_latrine": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
+      }
+    ]
+  },
+  "properties_file_name": "wash_check"
+}

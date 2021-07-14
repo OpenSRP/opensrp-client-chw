@@ -1,0 +1,7 @@
+---
+name: step1_disability_impact
+description: disability_impact relevance
+priority: 1
+condition: "step1_visually_impaired == 'Yes' || step1_hearing_impaired == 'Yes' || step1_difficulty_walking == 'Yes' || step1_learning_disability == 'Yes'"
+actions:
+  - "isRelevant = true"

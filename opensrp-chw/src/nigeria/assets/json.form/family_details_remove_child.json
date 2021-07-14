@@ -1,0 +1,213 @@
+{
+  "count": "1",
+  "encounter_type": "Remove Child Under 5",
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "{{family_details_remove_child.step1.title}}",
+    "fields": [
+      {
+        "key": "spacer",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "spacer",
+        "spacer_height": "10sp"
+      },
+      {
+        "key": "details",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "{{family_details_remove_child.step1.details.text}}",
+        "text_size": "25px"
+      },
+      {
+        "key": "divider1",
+        "type": "h_line",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": ""
+      },
+      {
+        "key": "spacer",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "spacer",
+        "spacer_height": "15dp"
+      },
+      {
+        "key": "remove_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{family_details_remove_child.step1.remove_reason.hint}}",
+        "values": [
+          "{{family_details_remove_child.step1.remove_reason.values[0]}}",
+          "{{family_details_remove_child.step1.remove_reason.values[1]}}",
+          "{{family_details_remove_child.step1.remove_reason.values[2]}}"
+        ],
+        "keys": [
+          "Died",
+          "Moved away",
+          "Other"
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "{{family_details_remove_child.step1.remove_reason.v_required.err}}"
+        },
+        "openmrs_choice_ids": {
+          "Died": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Moved away": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      },
+      {
+        "key": "dob",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "spacer",
+        "expanded": false,
+        "read_only": "true",
+        "hidden": "false"
+      },
+      {
+        "key": "date_moved",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "type": "date_picker",
+        "label": "{{family_details_remove_child.step1.date_moved.label}}",
+        "hint": "{{family_details_remove_child.step1.date_moved.hint}}",
+        "expanded": false,
+        "min_date": "",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_details_remove_child.step1.date_moved.v_required.err}}"
+        },
+        "constraints": [
+          {
+            "type": "date",
+            "ex": "greaterThanEqualTo(., step1:dob)",
+            "err": "{{family_details_remove_child.step1.date_moved.constraints.err}}"
+          }
+        ],
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Moved away\")"
+          }
+        }
+      },
+      {
+        "key": "date_died",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "type": "date_picker",
+        "label": "{{family_details_remove_child.step1.date_died.label}}",
+        "hint": "{{family_details_remove_child.step1.date_died.hint}}",
+        "expanded": false,
+        "min_date": "",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "{{family_details_remove_child.step1.date_died.v_required.err}}"
+        },
+        "constraints": [
+          {
+            "type": "date",
+            "ex": "greaterThanEqualTo(., step1:dob)",
+            "err": "{{family_details_remove_child.step1.date_died.constraints.err}}"
+          }
+        ],
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "age_at_death",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "{{family_details_remove_child.step1.age_at_death.label}}",
+        "hint": "{{family_details_remove_child.step1.age_at_death.hint}}",
+        "type": "edit_text",
+        "read_only": "true",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "child_remove_calculation.yml"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "properties_file_name": "family_details_remove_child"
+}
