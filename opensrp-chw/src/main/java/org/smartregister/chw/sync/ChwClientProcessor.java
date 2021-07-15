@@ -12,6 +12,7 @@ import org.smartregister.domain.Event;
 import org.smartregister.domain.db.EventClient;
 import org.smartregister.domain.jsonmapping.ClientClassification;
 import org.smartregister.domain.jsonmapping.Table;
+import org.smartregister.receiver.SyncStatusBroadcastReceiver;
 import org.smartregister.sync.ClientProcessorForJava;
 
 public class ChwClientProcessor extends CoreClientProcessor {
@@ -38,7 +39,9 @@ public class ChwClientProcessor extends CoreClientProcessor {
                 case CoreConstants.EventType.REMOVE_MEMBER:
                     ChwApplication.getInstance().getScheduleRepository().deleteSchedulesByEntityID(baseEntityID);
                 case CoreConstants.EventType.REMOVE_CHILD:
-                    ChwApplication.getInstance().getScheduleRepository().deleteSchedulesByEntityID(baseEntityID);
+                    if (!SyncStatusBroadcastReceiver.getInstance().isSyncing()) {
+                        ChwApplication.getInstance().getScheduleRepository().deleteSchedulesByEntityID(baseEntityID);
+                    }
                     break;
                 default:
                     break;
@@ -53,11 +56,15 @@ public class ChwClientProcessor extends CoreClientProcessor {
                 case CoreConstants.EventType.CHILD_VISIT_NOT_DONE:
                 case CoreConstants.EventType.CHILD_REGISTRATION:
                 case CoreConstants.EventType.UPDATE_CHILD_REGISTRATION:
-                    ChildAlertService.updateAlerts(baseEntityID);
+                    if (!SyncStatusBroadcastReceiver.getInstance().isSyncing()) {
+                        ChildAlertService.updateAlerts(baseEntityID);
+                    }
                 default:
                     break;
             }
         }
-        ChwScheduleTaskExecutor.getInstance().execute(event.getBaseEntityId(), event.getEventType(), event.getEventDate().toDate());
+        if (!SyncStatusBroadcastReceiver.getInstance().isSyncing()) {
+            ChwScheduleTaskExecutor.getInstance().execute(event.getBaseEntityId(), event.getEventType(), event.getEventDate().toDate());
+        }
     }
 }

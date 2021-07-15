@@ -47,6 +47,9 @@ public class AncHomeVisitActivity extends BaseAncHomeVisitActivity {
         Runnable runnable = () -> ChwScheduleTaskExecutor.getInstance().execute(memberObject.getBaseEntityId(), CoreConstants.EventType.ANC_HOME_VISIT, new Date());
         org.smartregister.chw.util.Utils.startAsyncTask(new RunnableTask(runnable), null);
         super.submittedAndClose();
+        Intent intent = new Intent(this, AncRegisterActivity.class);
+        startActivity(intent);
+
     }
 
     @Override

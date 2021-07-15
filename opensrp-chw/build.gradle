@@ -174,8 +174,8 @@ android {
         ba {
             dimension = 'baseDimension'
             applicationIdSuffix ".ba"
-            versionCode 9
-            versionName "1.0.9"
+            versionCode 10
+            versionName "1.1.1"
             buildConfigField "String", 'opensrp_url', '"https://boresha-afya.smartregister.org/opensrp/"'
             buildConfigField "String", 'guidebooks_url', '"https://opensrp.s3.amazonaws.com/media/ba/"'
             buildConfigField "String", 'opensrp_url_debug', '"https://boresha-afya-stage.smartregister.org/opensrp/"'
@@ -302,6 +302,18 @@ dependencies {
         exclude group: 'androidx.constraintlayout', module: 'constraintlayout'
         exclude group: 'com.google.guava', module: 'guava'
         exclude group: 'com.rengwuxian.materialedittext', module: 'library'
+        exclude group: 'org.smartregister', module: 'opensrp-client-native-form'
+    }
+
+    api('org.smartregister:opensrp-client-native-form:2.0.8-SNAPSHOT@aar') {
+        transitive = true
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'cardview-v7'
+        exclude group: 'com.android.support', module: 'support-media-compat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'io.ona.rdt-capture', module: 'lib'
+        exclude group: 'com.google.guava', module: 'guava'
     }
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:5.1.0'
     implementation('io.ona.kujaku:library:0.9.0') {
