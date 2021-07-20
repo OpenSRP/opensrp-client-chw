@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.smartregister.chw.core.contract.CoreChildRegisterFragmentContract;
 import org.smartregister.chw.core.utils.ChildDBConstants;
 import org.smartregister.chw.core.utils.CoreConstants;
+import org.smartregister.chw.model.CoreDeadClientsFragmentModel;
 import org.smartregister.configurableviews.model.Field;
 import org.smartregister.configurableviews.model.RegisterConfiguration;
 import org.smartregister.configurableviews.model.View;
@@ -24,7 +25,7 @@ public class CoreDeadClientsFragmentPresenter implements CoreChildRegisterFragme
     private RegisterConfiguration config;
     private String viewConfigurationIdentifier;
 
-    public CoreDeadClientsFragmentPresenter(CoreChildRegisterFragmentContract.View view, CoreChildRegisterFragmentContract.Model model, String viewConfigurationIdentifier) {
+    public CoreDeadClientsFragmentPresenter(CoreChildRegisterFragmentContract.View view, CoreDeadClientsFragmentModel model, String viewConfigurationIdentifier) {
         this.viewReference = new WeakReference<>(view);
         this.model = model;
         this.viewConfigurationIdentifier = viewConfigurationIdentifier;
@@ -40,7 +41,7 @@ public class CoreDeadClientsFragmentPresenter implements CoreChildRegisterFragme
         ViewConfiguration viewConfiguration = model.getViewConfiguration(viewConfigurationIdentifier);
         if (viewConfiguration != null) {
             config = (RegisterConfiguration) viewConfiguration.getMetadata();
-            setVisibleColumns(model.getRegisterActiveColumns(viewConfigurationIdentifier));
+            visibleColumns = model.getRegisterActiveColumns(viewConfigurationIdentifier);
         }
 
         if (config.getSearchBarText() != null && getView() != null) {
@@ -68,10 +69,6 @@ public class CoreDeadClientsFragmentPresenter implements CoreChildRegisterFragme
     @Override
     public void searchGlobally(String uniqueId) {
         // TODO implement search global
-    }
-
-    private void setVisibleColumns(Set<View> visibleColumns) {
-        this.visibleColumns = visibleColumns;
     }
 
     protected CoreChildRegisterFragmentContract.View getView() {

@@ -304,7 +304,7 @@
       {
         "key": "has_death_certificate",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
+        "openmrs_entity": "concept",received_death_certificate
         "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",

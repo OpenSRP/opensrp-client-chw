@@ -1,6 +1,5 @@
 package org.smartregister.chw.fragment;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +9,7 @@ import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 import org.apache.commons.lang3.StringUtils;
 import org.smartregister.chw.R;
-import org.smartregister.chw.activity.CoreDeadClientsActivity;
-import org.smartregister.chw.core.activity.CoreChildProfileActivity;
+import org.smartregister.chw.activity.OutOfAreaChildActivity;
 import org.smartregister.chw.core.contract.CoreChildRegisterFragmentContract;
 import org.smartregister.chw.core.custom_views.NavigationMenu;
 import org.smartregister.chw.core.fragment.BaseChwRegisterFragment;
@@ -84,7 +82,7 @@ public class CoreDeadClientsFragment extends BaseChwRegisterFragment implements 
 
     @Override
     protected void startRegistration() {
-        ((CoreDeadClientsActivity) getActivity()).startFormActivity(CoreConstants.JSON_FORM.getChildRegister(), null, "");
+        ((OutOfAreaChildActivity) getActivity()).startFormActivity(CoreConstants.JSON_FORM.getChildRegister(), null, "");
     }
 
     @Override
@@ -151,13 +149,13 @@ public class CoreDeadClientsFragment extends BaseChwRegisterFragment implements 
 
     public void goToChildDetailActivity(CommonPersonObjectClient patient,
                                         boolean launchDialog) {
-        if (launchDialog) {
+        /*if (launchDialog) {
             Timber.i(patient.name);
         }
 
         Intent intent = new Intent(getActivity(), CoreChildProfileActivity.class);
         intent.putExtra(org.smartregister.family.util.Constants.INTENT_KEY.BASE_ENTITY_ID, patient.getCaseId());
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     public void toggleFilterSelection(View dueOnlyLayout) {

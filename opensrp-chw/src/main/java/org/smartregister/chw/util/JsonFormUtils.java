@@ -1,6 +1,7 @@
 package org.smartregister.chw.util;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.Pair;
 
 import com.vijay.jsonwizard.constants.JsonFormConstants;
@@ -131,6 +132,75 @@ public class JsonFormUtils extends CoreJsonFormUtils {
                 baseClient.setAddresses(getAddressFromClientJson(clientjson));
             }
 
+
+            return Pair.create(baseClient, baseEvent);
+        } catch (Exception e) {
+            Timber.e(e);
+            return null;
+        }
+    }
+
+    public static Pair<Client, Event> processOutOfAreaChildRegistrationForm(AllSharedPreferences allSharedPreferences, String jsonString) {
+
+        try {
+            Triple<Boolean, JSONObject, JSONArray> registrationFormParams = validateParameters(jsonString);
+
+            if (!registrationFormParams.getLeft()) {
+                return null;
+            }
+
+            JSONObject jsonForm = registrationFormParams.getMiddle();
+            JSONArray fields = registrationFormParams.getRight();
+
+            String entityId = getString(jsonForm, ENTITY_ID);
+            if (StringUtils.isBlank(entityId)) {
+                entityId = generateRandomUUIDString();
+            }
+
+            lastInteractedWith(fields);
+            dobUnknownUpdateFromAge(fields);
+
+            Client baseClient = org.smartregister.util.JsonFormUtils.createBaseClient(fields, formTag(allSharedPreferences), entityId);
+
+            Event baseEvent = org.smartregister.util.JsonFormUtils.createEvent(fields, getJSONObject(jsonForm, METADATA), formTag(allSharedPreferences), entityId, getString(jsonForm, ENCOUNTER_TYPE), "ec_out_of_area_child");
+            tagSyncMetadata(allSharedPreferences, baseEvent);
+
+            if (baseClient != null || baseEvent != null) {
+                String imageLocation = org.smartregister.family.util.JsonFormUtils.getFieldValue(jsonString, Constants.KEY.PHOTO);
+                org.smartregister.family.util.JsonFormUtils.saveImage(baseEvent.getProviderId(), baseClient.getBaseEntityId(), imageLocation);
+            }
+
+            return Pair.create(baseClient, baseEvent);
+        } catch (Exception e) {
+            Timber.e(e);
+            return null;
+        }
+    }
+
+    public static Pair<Client, Event> processOutOfAreaDeathRegistrationForm(AllSharedPreferences allSharedPreferences, String jsonString) {
+
+        try {
+            Triple<Boolean, JSONObject, JSONArray> registrationFormParams = validateParameters(jsonString);
+
+            if (!registrationFormParams.getLeft()) {
+                return null;
+            }
+
+            JSONObject jsonForm = registrationFormParams.getMiddle();
+            JSONArray fields = registrationFormParams.getRight();
+
+            String entityId = getString(jsonForm, ENTITY_ID);
+            if (StringUtils.isBlank(entityId)) {
+                entityId = generateRandomUUIDString();
+            }
+
+            lastInteractedWith(fields);
+            dobUnknownUpdateFromAge(fields);
+
+            Client baseClient = org.smartregister.util.JsonFormUtils.createBaseClient(fields, formTag(allSharedPreferences), entityId);
+
+            Event baseEvent = org.smartregister.util.JsonFormUtils.createEvent(fields, getJSONObject(jsonForm, METADATA), formTag(allSharedPreferences), entityId, getString(jsonForm, ENCOUNTER_TYPE), "ec_out_of_area_death");
+            tagSyncMetadata(allSharedPreferences, baseEvent);
 
             return Pair.create(baseClient, baseEvent);
         } catch (Exception e) {

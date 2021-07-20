@@ -34,7 +34,7 @@ public class DeadClientsFragment extends CoreDeadClientsFragment {
 
     @Override
     public void goToChildDetailActivity(CommonPersonObjectClient patient, boolean launchDialog) {
-        if (launchDialog) {
+        /*if (launchDialog) {
             Timber.i(patient.name);
         }
         MemberObject memberObject = new MemberObject(patient);
@@ -44,7 +44,7 @@ public class DeadClientsFragment extends CoreDeadClientsFragment {
             memberObject.setFamilyName("test family");
             e.printStackTrace();
         }
-        ChildProfileActivity.startMe(getActivity(), memberObject, ChildProfileActivity.class);
+        ChildProfileActivity.startMe(getActivity(), memberObject, ChildProfileActivity.class);*/
     }
 
     @Override

@@ -4,6 +4,8 @@
     <string name="nav_logo" tools:ignore="MissingTranslation">CRVS App</string>
     <string name="dead_clients" tools:ignore="MissingTranslation">Dead Clients</string>
     <string name="birth_certification">Birth certification</string>
+    <string name="out_of_area_registration" tools:ignore="MissingTranslation">Out of area registration</string>
+    <string name="out_of_area_death" tools:ignore="MissingTranslation">Out of area death</string>
     <string name="birth_notification" tools:ignore="MissingTranslation">Birth Notification</string>
     <string name="death_certification" tools:ignore="MissingTranslation">Death certification</string>
     <string name="certificate_received" tools:ignore="MissingTranslation">Certificate received</string>

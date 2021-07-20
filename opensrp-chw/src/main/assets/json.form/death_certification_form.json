@@ -63,10 +63,10 @@
         "spacer_height": "15dp"
       },
       {
-        "key": "has_death_certificate",
+        "key": "received_death_certificate",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "receivedDeathCertificate",
         "openmrs_data_type": "select one",
         "type": "spinner",
         "hint": "Did the family received a death certificate?",
@@ -83,7 +83,7 @@
         "key": "death_certificate_issue_date",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "deathCertificateIssueDate",
         "openmrs_data_type": "text",
         "type": "date_picker",
         "label": "Death certificate issuance date",
@@ -92,7 +92,7 @@
         "min_date": "",
         "max_date": "today",
         "relevance": {
-          "step1:has_death_certificate": {
+          "step1:received_death_certificate": {
             "type": "string",
             "ex": "equalTo(., \"Yes\")"
           }
@@ -119,7 +119,7 @@
           "err": "Number must be 15 digits or Less."
         },
         "relevance": {
-          "step1:has_death_certificate": {
+          "step1:received_death_certificate": {
             "type": "string",
             "ex": "equalTo(., \"Yes\")"
           }
@@ -133,7 +133,7 @@
         "text": "Instruct the family to have the death registered at County Health.",
         "type": "label",
         "relevance": {
-          "step1:has_death_certificate": {
+          "step1:received_death_certificate": {
             "type": "string",
             "ex": "equalTo(., \"No\")"
           }

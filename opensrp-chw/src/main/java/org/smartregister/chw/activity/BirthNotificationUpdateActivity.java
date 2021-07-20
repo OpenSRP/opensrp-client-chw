@@ -3,8 +3,11 @@ package org.smartregister.chw.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mapbox.mapboxsdk.log.Logger;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.smartregister.chw.application.ChwApplication;
@@ -24,9 +27,15 @@ import org.smartregister.family.util.DBConstants;
 import org.smartregister.family.util.JsonFormUtils;
 import org.smartregister.helper.BottomNavigationHelper;
 import org.smartregister.view.fragment.BaseRegisterFragment;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 import timber.log.Timber;
+
 import static org.smartregister.chw.core.utils.FormUtils.getFormUtils;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERTIFICATE_ISSUE_DATE;
@@ -35,6 +44,11 @@ import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT_NUM;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_FORM;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_NOTIFICATION;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_REGISTRATION;
+import static org.smartregister.chw.util.CrvsConstants.DOB;
+import static org.smartregister.chw.util.CrvsConstants.MIN_DATE;
+import static org.smartregister.chw.util.CrvsConstants.NO;
+import static org.smartregister.chw.util.CrvsConstants.YES;
+import static org.smartregister.chw.util.DateUtils.changeDateFormat;
 
 public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity {
 
@@ -70,7 +84,7 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
             String birth_cert_num = getIntent().getStringExtra(BIRTH_CERT_NUM);
             String birth_notification = getIntent().getStringExtra(BIRTH_NOTIFICATION);
             String birth_registration = getIntent().getStringExtra(BIRTH_REGISTRATION);
-            if (birth_cert==null){
+            if (birth_cert == null) {
                 birth_cert = "";
             }
 
@@ -81,6 +95,15 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
             valueMap.put(BIRTH_CERT_NUM, birth_cert_num);
             valueMap.put(BIRTH_NOTIFICATION, birth_notification);
             valueMap.put(BIRTH_REGISTRATION, birth_registration);
+            try {
+                JSONObject stepOne = formJsonObject.getJSONObject(JsonFormUtils.STEP1);
+                JSONArray jsonArray = stepOne.getJSONArray(JsonFormUtils.FIELDS);
+                JSONObject min_date = CoreJsonFormUtils.getFieldJSONObject(jsonArray, BIRTH_CERTIFICATE_ISSUE_DATE);
+                assert min_date != null;
+                min_date.put(MIN_DATE, changeDateFormat(Objects.requireNonNull(getIntent().getStringExtra(DOB))));
+            } catch (Exception e) {
+                Timber.e(e);
+            }
             CoreJsonFormUtils.populateJsonForm(formJsonObject, valueMap);
             JsonFormUtilsFlv.startFormActivity(BirthNotificationUpdateActivity.this, formJsonObject, BIRTH_FORM);
 
@@ -123,7 +146,7 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
         }
     }
 
-    private void updateBirthCertificate(AllCommonsRepository allCommonsRepository, String jsonString){
+    private void updateBirthCertificate(AllCommonsRepository allCommonsRepository, String jsonString) {
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
             JSONObject stepOne = jsonObject.getJSONObject("step1");
@@ -138,21 +161,32 @@ public class BirthNotificationUpdateActivity extends CoreFamilyRegisterActivity 
             String certificate = birth_certification.getString("value");
 
             String tableName = "ec_child";
-            if (certificate.equals("Yes")){
+            if (certificate.equals("Yes")) {
                 String dateOfBirthCertificate = objBirthCertificate.getString("value");
                 String birthCertNum = objBirthCertificateNum.getString("value");
                 String sql = "UPDATE ec_child SET birth_cert = ?, birth_cert_issue_date = ?, birth_cert_num = ? WHERE id = ?";
                 String[] selectionArgs = {certificate, dateOfBirthCertificate, birthCertNum, getIntent().getStringExtra(DBConstants.KEY.BASE_ENTITY_ID).toLowerCase()};
                 allCommonsRepository.customQuery(sql, selectionArgs, tableName);
-            }else {
-                String registration = birth_registration.getString("value");
-                if (registration.equals("Yes")){
-                    String sql = "UPDATE ec_child SET birth_cert = ?, birth_registration = ? WHERE id = ?";
-
-                    String[] selectionArgs = {certificate, "Yes", getIntent().getStringExtra(DBConstants.KEY.BASE_ENTITY_ID).toLowerCase()};
+            } else {
+                String registration = "";
+                try{
+                    registration = birth_registration.getString("value");
+                }catch (Exception e){
+                    registration = "No";
+                    e.printStackTrace();
+                }
+                if (registration.equals("Yes")) {
+                    String sql = "UPDATE ec_child SET birth_cert = ?, birth_registration = ?, birth_notification = ? WHERE id = ?";
+                    String[] selectionArgs = {certificate, "Yes", "No", getIntent().getStringExtra(DBConstants.KEY.BASE_ENTITY_ID).toLowerCase()};
                     allCommonsRepository.customQuery(sql, selectionArgs, tableName);
-                }else {
-                    String notification = birth_notification.getString("value");
+                } else {
+                    String notification = "";
+                    try{
+                        notification = birth_notification.getString("value");
+                    }catch (Exception e){
+                        notification = "No";
+                        e.printStackTrace();
+                    }
                     String sql = "UPDATE ec_child SET birth_cert = ?, birth_registration = ?, birth_notification = ? WHERE id = ?";
                     String[] selectionArgs = {certificate, "No", notification, getIntent().getStringExtra(DBConstants.KEY.BASE_ENTITY_ID).toLowerCase()};
                     allCommonsRepository.customQuery(sql, selectionArgs, tableName);

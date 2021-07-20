@@ -3,19 +3,26 @@ package org.smartregister.chw.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.smartregister.chw.BuildConfig;
 import org.smartregister.chw.application.ChwApplication;
+import org.smartregister.chw.application.ChwApplicationFlv;
 import org.smartregister.chw.core.activity.CoreFamilyRegisterActivity;
 import org.smartregister.chw.core.custom_views.NavigationMenu;
+import org.smartregister.chw.core.utils.CoreConstants;
+import org.smartregister.chw.custom_view.NavigationMenuFlv;
 import org.smartregister.chw.fragment.FamilyRegisterFragment;
 import org.smartregister.chw.listener.ChwBottomNavigationListener;
+import org.smartregister.chw.model.NavigationModelFlv;
 import org.smartregister.chw.util.Constants;
 import org.smartregister.chw.util.Utils;
 import org.smartregister.helper.BottomNavigationHelper;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import timber.log.Timber;

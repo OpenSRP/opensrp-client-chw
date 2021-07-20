@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 import com.vijay.jsonwizard.domain.Form;
 import org.apache.commons.lang3.StringUtils;
@@ -27,6 +28,7 @@ import org.smartregister.commonregistry.CommonRepository;
 import org.smartregister.family.util.Constants;
 import org.smartregister.family.util.DBConstants;
 import org.smartregister.family.util.Utils;
+
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Map;
@@ -37,6 +39,7 @@ import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERTIFICATE_ISSUE_D
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_CERT_NUM;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_NOTIFICATION;
 import static org.smartregister.chw.util.CrvsConstants.BIRTH_REGISTRATION;
+import static org.smartregister.chw.util.CrvsConstants.DOB;
 import static org.smartregister.chw.util.CrvsConstants.YES;
 
 public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, Void> {
@@ -103,6 +106,7 @@ public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, 
             String birth_cert = Utils.getValue(commonPersonObject.getColumnmaps(), BIRTH_CERT, true);
             String birth_notification = Utils.getValue(commonPersonObject.getColumnmaps(), BIRTH_NOTIFICATION, true);
             String birth_registration = Utils.getValue(pc.getColumnmaps(), BIRTH_REGISTRATION, true);
+            String dob = Utils.getValue(pc.getColumnmaps(), "dob", true);
             try {
                 if (birth_cert.trim().equalsIgnoreCase(YES)) {
                     setReceivedButtonColor(context, viewHolder.dueButton);
@@ -132,6 +136,7 @@ public class UpdateBirthNotificationLastAsyncTask extends AsyncTask<Void, Void, 
                     intent.putExtra(BIRTH_CERT_NUM, birth_cert_num);
                     intent.putExtra(BIRTH_NOTIFICATION, birth_notification);
                     intent.putExtra(BIRTH_REGISTRATION, birth_registration);
+                    intent.putExtra(DOB, dob);
                     context.startActivity(intent);
 
                 }

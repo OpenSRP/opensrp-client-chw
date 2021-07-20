@@ -1,5 +1,7 @@
 package org.smartregister.chw.dao;
 
+import android.util.Log;
+
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.apache.commons.lang3.StringUtils;

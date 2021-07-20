@@ -111,6 +111,7 @@
         }
       ]
     },
+
     {
       "name": "ec_family_member",
       "columns": [
@@ -251,6 +252,22 @@
           "type": "Client",
           "json_mapping": {
             "field": "attributes.dateRemoved"
+          }
+        },
+        {
+          "column_name": "received_death_certificate",
+          "type": "Client",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "received_death_certificate"
+          }
+        },
+        {
+          "column_name": "death_certificate_issue_date",
+          "type": "Client",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "deathCertificateIssueDate"
           }
         }
       ]
@@ -467,9 +484,464 @@
             "field": "obs.fieldCode",
             "formSubmissionField": "vaccine_card"
           }
+        },
+        {
+          "column_name": "received_death_certificate",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "receivedDeathCertificate"
+          }
+        },
+        {
+          "column_name": "death_certificate_issue_date",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "deathCertificateIssueDate"
+          }
+        },
+        {
+          "column_name": "birth_registration",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "birthRegistration"
+          }
         }
       ]
     },
+
+    {
+      "name": "ec_out_of_area_child",
+      "columns": [
+        {
+          "column_name": "base_entity_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "baseEntityId"
+          }
+        },
+        {
+          "column_name": "unique_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "identifiers.opensrp_id"
+          }
+        },
+        {
+          "column_name": "surname",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "surname"
+          }
+        },
+        {
+          "column_name": "first_name",
+          "type": "Client",
+          "json_mapping": {
+            "field": "firstName"
+          }
+        },
+        {
+          "column_name": "middle_name",
+          "type": "Client",
+          "json_mapping": {
+            "field": "middleName"
+          }
+        },
+        {
+          "column_name": "dob",
+          "type": "Client",
+          "json_mapping": {
+            "field": "birthdate"
+          }
+        },
+        {
+          "column_name": "dob_unknown",
+          "type": "Client",
+          "json_mapping": {
+            "field": "birthdateApprox"
+          }
+        },
+        {
+          "column_name": "gender",
+          "type": "Client",
+          "json_mapping": {
+            "field": "gender"
+          }
+        },
+        {
+          "column_name": "mother_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "motherName"
+          }
+        },
+        {
+          "column_name": "mother_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "motherId"
+          }
+        },
+        {
+          "column_name": "mother_usual_residence",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "motherUsualResidence"
+          }
+        },
+        {
+          "column_name": "mother_birth_place",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "motherBirthPlace"
+          }
+        },
+        {
+          "column_name": "father_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "fatherName"
+          }
+        },
+        {
+          "column_name": "father_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "fatherId"
+          }
+        },
+        {
+          "column_name": "father_birth_place",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "fatherBirthPlace"
+          }
+        },
+        {
+          "column_name": "father_dob_entered",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "fatherBirthDate"
+          }
+        },
+        {
+          "column_name": "mother_marital_status",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "mother_dob_entered",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "motherBirthDate"
+          }
+        },
+        {
+          "column_name": "birth_place_type",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "birth_place_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "birthPlaceName"
+          }
+        },
+        {
+          "column_name": "mother_highest_edu_level",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "father_marital_status",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "father_highest_edu_level",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "last_interacted_with",
+          "type": "Event",
+          "json_mapping": {
+            "field": "version"
+          }
+        },
+        {
+          "column_name": "date_created",
+          "type": "Client",
+          "json_mapping": {
+            "field": "dateCreated"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "ec_out_of_area_death",
+      "columns": [
+        {
+          "column_name": "base_entity_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "baseEntityId"
+          }
+        },
+        {
+          "column_name": "unique_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "identifiers.opensrp_id"
+          }
+        },
+        {
+          "column_name": "name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "name"
+          }
+        },
+        {
+          "column_name": "national_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "National_ID"
+          }
+        },
+        {
+          "column_name": "dob",
+          "type": "Client",
+          "json_mapping": {
+            "field": "birthdate"
+          }
+        },
+        {
+          "column_name": "age_calculated",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "ageCalculated"
+          }
+        },
+        {
+          "column_name": "dob_calculated",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "dob_calculated"
+          }
+        },
+        {
+          "column_name": "dob_unknown",
+          "type": "Client",
+          "json_mapping": {
+            "field": "birthdateApprox"
+          }
+        },
+        {
+          "column_name": "dob_estimated",
+          "type": "Client",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "dob_estimated"
+          }
+        },
+        {
+          "column_name": "remove_reason",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "date_died",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "death_place",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "deathPlace"
+          }
+        },
+        {
+          "column_name": "nationality",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "nationality"
+          }
+        },
+        {
+          "column_name": "marital_status",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "maritalStatus"
+          }
+        },
+        {
+          "column_name": "informant_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "informantName"
+          }
+        },
+        {
+          "column_name": "informant_relationship",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "informantRelationship"
+          }
+        },
+        {
+          "column_name": "informant_address",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "informantAddress"
+          }
+        },
+        {
+          "column_name": "informant_phone",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "informantPhone"
+          }
+        },
+        {
+          "column_name": "official_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "officialName"
+          }
+        },
+        {
+          "column_name": "official_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "officialId"
+          }
+        },
+        {
+          "column_name": "official_position",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "officialPosition"
+          }
+        },
+        {
+          "column_name": "physician_name",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "physicianName"
+          }
+        },
+        {
+          "column_name": "physician_position",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "physicianPosition"
+          }
+        },
+        {
+          "column_name": "death_cause",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "deathCause"
+          }
+        },
+        {
+          "column_name": "death_manner",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "deathManner"
+          }
+        },
+        {
+          "column_name": "official_address",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "officialAddress"
+          }
+        },
+        {
+          "column_name": "official_number",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "officialNumber"
+          }
+        },
+        {
+          "column_name": "last_interacted_with",
+          "type": "Event",
+          "json_mapping": {
+            "field": "version"
+          }
+        },
+        {
+          "column_name": "date_created",
+          "type": "Client",
+          "json_mapping": {
+            "field": "dateCreated"
+          }
+        }
+      ]
+    },
+
+
     {
       "name": "ec_child_activity",
       "columns": [

@@ -1,5 +1,7 @@
 package org.smartregister.chw.fragment;
 
+import android.util.Log;
+
 import org.smartregister.chw.R;
 import org.smartregister.chw.activity.ChildHomeVisitActivity;
 import org.smartregister.chw.activity.ChildProfileActivity;
@@ -22,21 +24,22 @@ public class BirthNotificationRegisterFragment extends CoreBirthNotificationFrag
     @Override
     protected void onViewClicked(android.view.View view) {
         super.onViewClicked(view);
-        if (view.getTag() instanceof CommonPersonObjectClient
+        /*if (view.getTag() instanceof CommonPersonObjectClient
                 && view.getTag(R.id.VIEW_ID) == CLICK_VIEW_DOSAGE_STATUS) {
             CommonPersonObjectClient client = (CommonPersonObjectClient) view.getTag();
             ChildHomeVisitActivity.startMe(getActivity(), new MemberObject(client), false, ChildHomeVisitActivity.class);
-        }
+        }*/
+        Log.d("nothing", "do nothing");
     }
 
     @Override
     public void goToChildDetailActivity(CommonPersonObjectClient patient, boolean launchDialog) {
-        if (launchDialog) {
+        /*if (launchDialog) {
             Timber.i(patient.name);
         }
         MemberObject memberObject = new MemberObject(patient);
         memberObject.setFamilyName(Utils.getValue(patient.getColumnmaps(), FAMILY_LAST_NAME, false));
-        ChildProfileActivity.startMe(getActivity(), memberObject, ChildProfileActivity.class);
+        ChildProfileActivity.startMe(getActivity(), memberObject, ChildProfileActivity.class);*/
     }
 
     @Override

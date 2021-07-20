@@ -63,10 +63,10 @@
         "text": "Death Certificate"
       },
       {
-        "key": "has_death_certificate",
+        "key": "received_death_certificate",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "receivedDeathCertificate",
         "openmrs_data_type": "select one",
         "type": "spinner",
         "hint": "Does the family of the decedent have a death certificate (Y/N)?",
@@ -87,7 +87,7 @@
         "key": "death_certificate_issue_date",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "164133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "deathCertificateIssueDate",
         "openmrs_data_type": "text",
         "type": "date_picker",
         "label": "Death certificate issuance date (if certificate received)",
@@ -100,7 +100,7 @@
           "err": "Required issue date"
         },
         "relevance": {
-          "step1:has_death_certificate": {
+          "step1:received_death_certificate": {
             "type": "string",
             "ex": "equalTo(., \"Yes\")"
           }
@@ -119,7 +119,7 @@
           "err": "Please enter a valid number"
         },
         "relevance": {
-          "step1:has_death_certificate": {
+          "step1:received_death_certificate": {
             "type": "string",
             "ex": "equalTo(., \"Yes\")"
           }
@@ -140,6 +140,12 @@
         "openmrs_choice_ids": {
           "Yes": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "No": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"No\")"
+          }
         }
       },
       {
@@ -148,7 +154,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "text": "Ask to see the death notification and instruct the family member to register the death at CRO. (if death notification done)",
-        "type": "label"
+        "type": "label",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "instruct_family_member",
@@ -156,7 +168,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "text": "Instruct the family member to have the death registered at CRO. (if birth notification not done)",
-        "type": "label"
+        "type": "label",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "informant_fields",
@@ -164,7 +182,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "Informant Details"
+        "text": "Informant Details",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "informant_name",
@@ -173,7 +197,13 @@
         "openmrs_entity_id": "",
         "label": "Name",
         "hint": "Name",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "informant_relationship",
@@ -192,6 +222,12 @@
           "Sibling": "sibling_id_openmrs",
           "Parent": "parent_id_openmrs",
           "Other": "other_id_openmrs"
+        },
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
         }
       },
       {
@@ -201,7 +237,13 @@
         "openmrs_entity_id": "",
         "label": "Address",
         "hint": "Address",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "informant_phone",
@@ -214,6 +256,12 @@
         "v_numeric": {
           "value": "true",
           "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
         }
       },
       {
@@ -222,7 +270,13 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
         "type": "label",
-        "text": "Official Details"
+        "text": "Official Details",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "official_name",
@@ -231,7 +285,13 @@
         "openmrs_entity_id": "",
         "label": "Full Name",
         "hint": "Full Name",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "official_ID",
@@ -240,7 +300,13 @@
         "openmrs_entity_id": "",
         "label": "Personal ID number",
         "hint": "Personal ID number",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "official_position",
@@ -249,7 +315,13 @@
         "openmrs_entity_id": "",
         "label": "Official position",
         "hint": "Official position",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "physician_name",
@@ -258,7 +330,13 @@
         "openmrs_entity_id": "",
         "label": "Name of physician signing MCCD",
         "hint": "Name of physician signing MCCD",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "physician_position",
@@ -267,7 +345,13 @@
         "openmrs_entity_id": "",
         "label": "Position of physician signing MCCD",
         "hint": "Position of physician signing MCCD",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "death_cause",
@@ -276,7 +360,13 @@
         "openmrs_entity_id": "",
         "label": "Cause of death",
         "hint": "Cause of death",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "death_manner",
@@ -285,7 +375,13 @@
         "openmrs_entity_id": "",
         "label": "Manner of death",
         "hint": "Manner of death",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "official_address",
@@ -294,7 +390,13 @@
         "openmrs_entity_id": "",
         "label": "Address of official",
         "hint": "Address of official",
-        "type": "edit_text"
+        "type": "edit_text",
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
+        }
       },
       {
         "key": "official_number",
@@ -307,6 +409,12 @@
         "v_numeric": {
           "value": "true",
           "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:received_death_certificate": {
+            "type": "string",
+            "ex": "equalTo(., \"Yes\")"
+          }
         }
       }
     ]

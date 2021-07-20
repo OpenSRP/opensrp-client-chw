@@ -71,6 +71,34 @@
         }
       },
       {
+        "key": "birth_registration",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "birthRegistration",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Does the birth registration done?",
+        "values": [
+          "Yes",
+          "No"
+        ],
+        "openmrs_choice_ids": {
+          "Yes": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "No": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "v_required": {
+          "value": true,
+          "err": "Please select option"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "birth_certification_intro_relevance_rule.yml"
+            }
+          }
+        }
+      },
+      {
         "key": "birth_cert_issue_date",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",

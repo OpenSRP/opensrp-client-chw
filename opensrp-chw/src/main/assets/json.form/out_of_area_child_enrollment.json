@@ -1,6 +1,6 @@
 {
   "count": "1",
-  "encounter_type": "Child Registration",
+  "encounter_type": "Out Of Area Child Registration",
   "entity_id": "",
   "relational_id": "",
   "metadata": {
@@ -63,13 +63,14 @@
         "uploadButtonText": "Take a picture of the child"
       },
       {
-        "key": "opensrp_id",
+        "key": "unique_id",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_identifier",
         "openmrs_entity_id": "opensrp_id",
+        "hidden": "false",
         "type": "edit_text",
-        "hint": "ID: {opensrp_id}",
-        "read_only": "false",
+        "hint": "ID *",
+        "read_only": "true",
         "value": "0",
         "v_numeric": {
           "value": "true",
@@ -77,14 +78,16 @@
         },
         "v_required": {
           "value": "true",
-          "err": "Please enter the Child's OpenSRP ID"
+          "err": "Please enter the Child's OpenMRS ID"
         }
       },
       {
         "key": "surname",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "surname",
+        "openmrs_data_type": "text",
+        "look_up": "true",
         "type": "edit_text",
         "hint": "Surname",
         "edit_type": "name",
@@ -258,7 +261,7 @@
         "key": "birth_place_name",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "birthPlaceName",
         "type": "edit_text",
         "hint": "Name of birth place",
         "edit_type": "name",
@@ -271,9 +274,11 @@
         "key": "mother_name",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "motherName",
+        "openmrs_data_type": "text",
         "type": "edit_text",
         "hint": "Mother's name",
+        "look_up": "true",
         "edit_type": "name",
         "v_required": {
           "value": "true",
@@ -284,7 +289,7 @@
         "key": "mother_id",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "motherId",
         "type": "edit_text",
         "hint": "Mother's national ID number",
         "edit_type": "name"
@@ -292,15 +297,15 @@
       {
         "key": "mother_dob_entered",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "person",
-        "openmrs_entity_id": "birthdate",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "motherBirthDate",
         "type": "date_picker",
         "hint": "Mother's date of birth (DOB)",
         "expanded": false,
         "duration": {
           "label": "Age"
         },
-        "min_date": "today-5y",
+        "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
@@ -314,7 +319,6 @@
           }
         }
       },
-
       {
         "key": "mother_dob_unknown",
         "openmrs_entity_parent": "",
@@ -419,33 +423,33 @@
         "key": "mother_usual_residence",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "motherUsualResidence",
         "type": "edit_text",
         "hint": "Mother's place of usual residence",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "Please enter usual residence"
         }
       },
       {
         "key": "mother_birth_place",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "motherBirthPlace",
         "type": "edit_text",
         "hint": "Mother's place of birth",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "Please enter birth place"
         }
       },
       {
         "key": "father_name",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "fatherName",
         "type": "edit_text",
         "hint": "Father's name",
         "edit_type": "name",
@@ -458,27 +462,27 @@
         "key": "father_id",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "fatherId",
         "type": "edit_text",
         "hint": "Father's national ID number",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "Please enter father id"
         }
       },
       {
         "key": "father_dob_entered",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "person",
-        "openmrs_entity_id": "birthdate",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "fatherBirthDate",
         "type": "date_picker",
         "hint": "Father's date of birth (DOB)",
         "expanded": false,
         "duration": {
           "label": "Age"
         },
-        "min_date": "today-5y",
+        "min_date": "today-120y",
         "max_date": "today",
         "v_required": {
           "value": "true",
@@ -542,7 +546,7 @@
         "key": "father_marital_status",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
         "hint": "Father's marital status",
@@ -573,7 +577,7 @@
         "key": "father_highest_edu_level",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select one",
         "type": "spinner",
         "hint": "Father's highest education level",
@@ -596,13 +600,15 @@
         "key": "father_birth_place",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
+        "openmrs_entity_id": "fatherBirthPlace",
+        "openmrs_data_type": "text",
         "type": "edit_text",
         "hint": "Father's place of birth",
+        "look_up": "true",
         "edit_type": "name",
         "v_required": {
           "value": "true",
-          "err": "Please enter the surname"
+          "err": "Please enter the birth place"
         }
       }
     ]

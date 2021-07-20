@@ -1,0 +1,629 @@
+{
+  "count": "1",
+  "encounter_type": "Out Of Area Death Registration",
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "Add Child Under N - Out of Area Death",
+    "fields": [
+      {
+        "key": "unique_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_identifier",
+        "openmrs_entity_id": "opensrp_id",
+        "hidden": "false",
+        "type": "edit_text",
+        "hint": "ID *",
+        "read_only": "true",
+        "value": "0",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid ID"
+        },
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the Child's OpenMRS ID"
+        }
+      },
+      {
+        "key": "name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "name",
+        "type": "edit_text",
+        "hint": "Name",
+        "edit_type": "name",
+        "v_regex": {
+          "value": "[A-Za-z\\u00C0-\\u017F\\s\\u00C0-\\u017F\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the name"
+        }
+      },
+      {
+        "key": "national_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "National_ID",
+        "type": "edit_text",
+        "hint": "National ID number",
+        "edit_type": "name"
+      },
+      {
+        "key": "dob",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "birthdate",
+        "type": "date_picker",
+        "hint": "Date of birth (DOB)",
+        "expanded": false,
+        "duration": {
+          "label": "Age"
+        },
+        "min_date": "today-120y",
+        "max_date": "today-5y",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the date of birth"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "dob_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person",
+        "openmrs_entity_id": "birthdateApprox",
+        "hidden": "false",
+        "type": "check_box",
+        "label": "",
+        "options": [
+          {
+            "key": "dob_unknown",
+            "text": "DOB unknown?",
+            "text_size": "18px",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "key": "age_calculated",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "ageCalculated",
+        "type": "hidden",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "age",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "age",
+        "type": "edit_text",
+        "hint": "Age",
+        "v_numeric": {
+          "value": "true",
+          "err": "Number must begin with 0 and must be a total of 10 digits in length"
+        },
+        "v_min": {
+          "value": "5",
+          "err": "Age must be equal or greater than 5"
+        },
+        "v_max": {
+          "value": "120",
+          "err": "Age must be equal or less than 120"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        },
+        "v_required": {
+          "value": true,
+          "err": "Please enter the age"
+        }
+      },
+      {
+        "key": "dob_calculated",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "hidden",
+        "value": "",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "dob_estimated",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "check_box",
+        "label": "",
+        "options": [
+          {
+            "key": "dob_estimated",
+            "text": "DOB is estimated",
+            "text_size": "18px",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "key": "remove_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160417AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Reason",
+        "values": [
+          "Died",
+          "Moved away",
+          "Other"
+        ],
+        "keys": [
+          "Died",
+          "Moved away",
+          "Other"
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the child's record."
+        },
+        "openmrs_choice_ids": {
+          "Died": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Moved away": "160415AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "Other": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      },
+      {
+        "key": "date_died",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "text",
+        "type": "date_picker",
+        "label": "Date of death",
+        "hint": "Date of death",
+        "expanded": false,
+        "min_date": "today-80y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Enter the date of death"
+        },
+        "constraints": [
+          {
+            "type": "date",
+            "ex": "greaterThanEqualTo(., step1:dob)",
+            "err": "Date of death can't occur before date of birth"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "age_at_death",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "Age at death",
+        "hint": "Age at death",
+        "type": "edit_text",
+        "read_only": "true",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "out_of_area_death_form_relevance.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "death_place",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "deathPlace",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Place of occurrence of death (if known)",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Home",
+          "Place of work",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Home": "home_id_openmrs",
+          "Place of work": "place_of_work_id_openmrs",
+          "Other": "other_id_openmrs"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "nationality",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "nationality",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Nationality (citizenship)",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Togo",
+          "DRC",
+          "Guinea",
+          "Liberia",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Togo": "togo_id_openmrs",
+          "DRC": "drc_id_openmrs",
+          "Guinea": "guinea_id_openmrs",
+          "Liberia": "liberia_id_openmrs",
+          "Other": "other_id_openmrs"
+        }
+      },
+      {
+        "key": "marital_status",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "maritalStatus",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Marital Status",
+        "v_required": {
+          "value": "true",
+          "err": "Select the reason for removing the family member's record"
+        },
+        "values": [
+          "Co-Habiting",
+          "Divorced",
+          "Married",
+          "Single",
+          "Widowed"
+        ],
+        "openmrs_choice_ids": {
+          "Co-Habiting": "co_habiting_id_openmrs",
+          "Divorced": "divorced_id_openmrs",
+          "Married": "married_id_openmrs",
+          "Single": "single_id_openmrs",
+          "Widowed": "widowed_id_openmrs"
+        }
+      },
+      {
+        "key": "informant_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Informant Details",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "informantName",
+        "label": "Name",
+        "hint": "Name",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_relationship",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "informantRelationship",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "Relationship to decedent",
+        "values": [
+          "Sibling",
+          "Parent",
+          "Other"
+        ],
+        "openmrs_choice_ids": {
+          "Sibling": "sibling_id_openmrs",
+          "Parent": "parent_id_openmrs",
+          "Other": "other_id_openmrs"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "informantAddress",
+        "label": "Address",
+        "hint": "Address",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "informant_phone",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "informantPhone",
+        "label": "Phone",
+        "hint": "Phone",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_fields",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "label",
+        "text": "Official Details",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "officialName",
+        "label": "Full Name",
+        "hint": "Full Name",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_ID",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "officialId",
+        "label": "Personal ID number",
+        "hint": "Personal ID number",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "officialPosition",
+        "label": "Official position",
+        "hint": "Official position",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "physician_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "physicianName",
+        "label": "Name of physician signing MCCD",
+        "hint": "Name of physician signing MCCD",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "physician_position",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "physicianPosition",
+        "label": "Position of physician signing MCCD",
+        "hint": "Position of physician signing MCCD",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_cause",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "deathCause",
+        "label": "Cause of death",
+        "hint": "Cause of death",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "death_manner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "deathManner",
+        "label": "Manner of death",
+        "hint": "Manner of death",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "officialAddress",
+        "label": "Address of official",
+        "hint": "Address of official",
+        "type": "edit_text",
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      },
+      {
+        "key": "official_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "officialNumber",
+        "label": "Phone number of official",
+        "hint": "Phone number of official",
+        "type": "edit_text",
+        "v_numeric": {
+          "value": "true",
+          "err": "Please enter a valid number"
+        },
+        "relevance": {
+          "step1:remove_reason": {
+            "type": "string",
+            "ex": "equalTo(., \"Died\")"
+          }
+        }
+      }
+    ]
+  }
+}

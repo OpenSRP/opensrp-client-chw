@@ -3,11 +3,12 @@ package org.smartregister.chw.presenter;
 import org.smartregister.chw.application.ChwApplication;
 import org.smartregister.chw.core.contract.CoreChildRegisterFragmentContract;
 import org.smartregister.chw.core.utils.CoreConstants;
+import org.smartregister.chw.model.CoreDeadClientsFragmentModel;
 import org.smartregister.chw.util.ChildDBConstants;
 import org.smartregister.family.util.DBConstants;
 
 public class DeadClientsFragmentPresenter extends CoreDeadClientsFragmentPresenter {
-    public DeadClientsFragmentPresenter(CoreChildRegisterFragmentContract.View view, CoreChildRegisterFragmentContract.Model model, String viewConfigurationIdentifier) {
+    public DeadClientsFragmentPresenter(CoreChildRegisterFragmentContract.View view, CoreDeadClientsFragmentModel model, String viewConfigurationIdentifier) {
         super(view, model, viewConfigurationIdentifier);
     }
 

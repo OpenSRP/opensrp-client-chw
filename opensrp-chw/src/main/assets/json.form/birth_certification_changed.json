@@ -74,7 +74,7 @@
         "key": "birth_registration",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "165406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "birthRegistration",
         "openmrs_data_type": "select one",
         "type": "spinner",
         "hint": "Does the birth registration done?",

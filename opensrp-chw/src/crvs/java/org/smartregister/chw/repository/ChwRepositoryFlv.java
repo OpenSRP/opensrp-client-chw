@@ -4,6 +4,7 @@ import android.content.Context;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.smartregister.chw.anc.repository.VisitRepository;
 import org.smartregister.chw.util.RepositoryUtils;
 import org.smartregister.domain.db.Column;
 import org.smartregister.immunization.repository.RecurringServiceRecordRepository;
@@ -40,6 +41,7 @@ public class ChwRepositoryFlv {
                     upgradeToVersion5(context, db);
                     break;
                 case 6:
+//                    upgradeToVersion5(context, db);
                     upgradeToVersion6(db);
                     break;
                 default:
@@ -128,12 +130,13 @@ public class ChwRepositoryFlv {
 
     private static void upgradeToVersion6(SQLiteDatabase db) {
         try {
-            db.execSQL(RepositoryUtils.ADD_DEATH_RECEIVE_COLUMN_TO_ECCHILD);
+            /*db.execSQL(RepositoryUtils.ADD_DEATH_RECEIVE_COLUMN_TO_ECCHILD);
             db.execSQL(RepositoryUtils.ADD_DEATH_CERT_DATE_TO_ECCHILD);
             db.execSQL(RepositoryUtils.ADD_DEATH_RECEIVE_COLUMNS_TO_FAMILY_MEMBER);
             db.execSQL(RepositoryUtils.ADD_DEATH_CERT_DATE_TO_FAMILY_MEMBER);
-            db.execSQL(RepositoryUtils.ADD_BIRTH_REG_TO_CHILD);
-            db.execSQL(RepositoryUtils.ADD_OUT_OF_AREA_CHILD_TABLE);
+            db.execSQL(RepositoryUtils.ADD_BIRTH_REG_TO_CHILD);*/
+//            db.execSQL(RepositoryUtils.ADD_OUT_OF_AREA_CHILD_TABLE);
+            db.execSQL(VisitRepository.ADD_VISIT_GROUP_COLUMN);
         } catch (Exception e) {
             Timber.e(e);
         }

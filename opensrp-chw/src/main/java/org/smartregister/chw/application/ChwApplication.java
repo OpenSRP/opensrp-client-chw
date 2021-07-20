@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -35,6 +36,8 @@ import org.smartregister.chw.activity.FamilyRegisterActivity;
 import org.smartregister.chw.activity.FpRegisterActivity;
 import org.smartregister.chw.activity.LoginActivity;
 import org.smartregister.chw.activity.MalariaRegisterActivity;
+import org.smartregister.chw.activity.OutOfAreaChildActivity;
+import org.smartregister.chw.activity.OutOfAreaDeathActivity;
 import org.smartregister.chw.activity.PncRegisterActivity;
 import org.smartregister.chw.activity.ReferralRegisterActivity;
 import org.smartregister.chw.activity.UpdatesRegisterActivity;
@@ -187,7 +190,6 @@ public class ChwApplication extends CoreChwApplication implements SyncStatusBroa
         //Setup Navigation menu. Done only once when app is created
         NavigationMenu.setupNavigationMenu(this, new NavigationMenuFlv(), new NavigationModelFlv(),
                 getRegisteredActivities(), flavor.hasP2P());
-
 
         initializeLibraries();
 
@@ -361,6 +363,8 @@ public class ChwApplication extends CoreChwApplication implements SyncStatusBroa
         registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.MALARIA_REGISTER_ACTIVITY, MalariaRegisterActivity.class);
         registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.BNOTIFICATION_REGISTER_ACTIVITY, BirthNotificationRegisterActivity.class);
         registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.DEATH_NOTIFICATION_REGISTER_ACTIVITY, DeadClientsActivity.class);
+        registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.OUT_OF_AREA_REGISTER_ACTIVITY, OutOfAreaChildActivity.class);
+        registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.OUT_OF_AREA_DEATH_ACTIVITY, OutOfAreaDeathActivity.class);
         if (BuildConfig.USE_UNIFIED_REFERRAL_APPROACH) {
             registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.REFERRALS_REGISTER_ACTIVITY, ReferralRegisterActivity.class);
         }

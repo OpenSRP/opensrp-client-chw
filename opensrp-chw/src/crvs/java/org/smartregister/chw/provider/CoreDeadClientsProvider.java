@@ -169,7 +169,6 @@ public class CoreDeadClientsProvider implements RecyclerViewProvider<RegisterVie
         View patient = viewHolder.childColumn;
         attachPatientOnclickListener(patient, client);
 
-
         View dueButton = viewHolder.dueButton;
         attachDosageOnclickListener(dueButton, client);
     }

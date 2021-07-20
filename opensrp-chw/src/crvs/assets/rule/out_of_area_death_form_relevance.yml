@@ -1,0 +1,56 @@
+---
+name: step1_dob
+description: dob relevance
+priority: 1
+condition: "!step1_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_age_calculated
+description: Age calculated
+priority: 1
+condition: "true"
+actions:
+- "calculation = (!step1_dob_unknown.isEmpty() && step1_dob_unknown.contains('dob_unknown')) ? step1_age : helper.getDifferenceDays(step1_dob) / 365.25"
+---
+name: step1_age
+description: age relevance
+priority: 1
+condition: "step1_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_dob_calculated
+description: Calculated D.O.B
+priority: 1
+condition: "step1_age_entered != ''"
+actions:
+  - 'calculation = helper.getDOBFromAge(step1_age)'
+---
+name: step1_dob
+description: Final calculated DOB
+priority: 1
+condition: "true"
+actions:
+  - 'calculation = (step1_dob == "" ? step1_dob_calculated : step1_dob)'
+---
+name: step1_date_died
+description: date_died
+priority: 1
+condition: "step1_remove_reason.equals('Died')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_age_at_death
+description: age_at_death
+priority: 1
+condition: "step1_remove_reason.equals('Died')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_age_at_death
+description: Calculated age_at_death
+priority: 1
+condition: "step1_date_died != '' && step1_dob != ''"
+actions:
+  - "calculation =  helper.getDuration(step1_date_died , step1_dob)"

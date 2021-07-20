@@ -143,6 +143,20 @@
             "creates_case": [
               "ec_anc_register"
             ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Out Of Area Child Registration",
+            "creates_case": [
+              "ec_out_of_area_child"
+            ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "Out Of Area Death Registration",
+            "creates_case": [
+              "ec_out_of_area_death"
+            ]
           }
         ]
       }
